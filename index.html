@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Engineering Career Plan — Zero to Architect 2027</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+:root{
+  --ink:#f0faf6;--s1:#ffffff;--s2:#f4fbf8;--edge:#c8ead9;
+  --em:#059669;--em-l:#d1fae5;--em-d:#047857;
+  --gold:#d97706;--gold-l:#fef3c7;--gold-d:#b45309;
+  --text:#0f2d1e;--dim:#4b7a5e;
+  --green:#10b981;--rose:#dc2626;--sky:#0284c7;
+  --mono:'DM Mono',monospace;--body:'DM Sans',sans-serif;--head:'Plus Jakarta Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--text);font-family:var(--body);line-height:1.65;}
+a{color:var(--em-d);text-decoration:none;}a:hover{text-decoration:underline;}
+code{font-family:var(--mono);font-size:.72rem;background:#ecfdf5;color:#065f46;padding:2px 6px;border-radius:3px;border:1px solid #a7f3d0;}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;padding:76px 52px 60px;border-bottom:2px solid var(--edge);display:grid;grid-template-columns:1fr 230px;gap:44px;align-items:center;background:linear-gradient(135deg,#ecfdf5 0%,#fffbeb 100%);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at -5% 50%,rgba(5,150,105,.1) 0%,transparent 60%),radial-gradient(ellipse 60% 60% at 105% 20%,rgba(217,119,6,.08) 0%,transparent 60%);pointer-events:none;}
+.hero-body{position:relative;z-index:1;}
+.eyebrow{font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--em-d);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.eyebrow::before{content:'';width:30px;height:1px;background:var(--em-d);}
+h1{font-family:var(--head);font-size:clamp(2rem,4.5vw,3.4rem);font-weight:800;line-height:1.05;letter-spacing:-.025em;margin-bottom:14px;color:var(--text);}
+h1 em{font-style:normal;color:var(--em-d);}
+.hero-sub{font-size:.92rem;color:var(--dim);max-width:530px;line-height:1.76;margin-bottom:22px;}
+.tags{display:flex;flex-wrap:wrap;gap:6px;}
+.tag{font-family:var(--mono);font-size:9px;padding:3px 10px;border-radius:20px;border:1px solid;white-space:nowrap;}
+.tg{border-color:rgba(5,150,105,.4);color:var(--em-d);background:rgba(5,150,105,.08);}
+.ti{border-color:rgba(217,119,6,.4);color:var(--gold-d);background:rgba(217,119,6,.08);}
+.ta{border-color:rgba(217,119,6,.5);color:var(--gold);background:rgba(253,243,199,.6);}
+.tn{border-color:var(--edge);color:var(--dim);background:rgba(255,255,255,.7);}
+
+/* ID CARD */
+.id-card{position:relative;z-index:1;background:white;border:1.5px solid var(--edge);border-radius:13px;padding:19px 17px;box-shadow:0 4px 20px rgba(5,150,105,.08);}
+.id-head{font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase;margin-bottom:11px;}
+.id-row{display:flex;justify-content:space-between;align-items:baseline;padding:5px 0;border-bottom:1px solid var(--edge);font-size:.73rem;}
+.id-row:last-child{border-bottom:none;}
+.id-k{color:var(--dim);}
+.id-v{font-family:var(--head);font-weight:700;color:var(--em-d);}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(6,1fr);border-bottom:2px solid var(--edge);}
+.stat{padding:17px 12px;text-align:center;background:white;border-right:1px solid var(--edge);}
+.stat:last-child{border-right:none;}
+.sn{font-family:var(--head);font-size:1.7rem;font-weight:800;color:var(--em-d);display:block;line-height:1;}
+.sl{font-family:var(--mono);font-size:8px;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-top:3px;}
+
+/* WRAP */
+.wrap{max-width:1200px;margin:0 auto;padding:0 44px 100px;}
+@media(max-width:720px){.wrap{padding:0 16px 60px;}.hero{grid-template-columns:1fr;padding:44px 16px 36px;}.id-card{display:none;}.stats{grid-template-columns:repeat(3,1fr);}}
+
+/* SEC HEAD */
+.sec{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin:54px 0 22px;display:flex;align-items:center;gap:12px;}
+.sec::after{content:'';flex:1;height:1px;background:var(--edge);}
+.sec .badge{font-size:8px;padding:2px 8px;border-radius:10px;background:var(--em-d);color:white;font-weight:700;text-transform:none;letter-spacing:.03em;}
+
+/* CALLOUT */
+.ctx{border-left:3px solid var(--em);background:rgba(5,150,105,.06);padding:13px 17px;border-radius:0 8px 8px 0;font-size:.82rem;color:#065f46;margin-bottom:10px;border:1px solid rgba(5,150,105,.15);border-left:3px solid var(--em);}
+.ctx strong{color:var(--em-d);}
+.ctx.am{border-left:3px solid var(--gold);border-color:rgba(217,119,6,.2);background:rgba(253,243,199,.5);color:#92400e;}
+.ctx.am strong{color:var(--gold-d);}
+
+/* TIMELINE */
+.tl{display:grid;grid-template-columns:repeat(4,1fr);border:1.5px solid var(--edge);border-radius:12px;overflow:hidden;background:white;}
+.tlq{padding:15px 16px;border-right:1px solid var(--edge);}
+.tlq:last-child{border-right:none;}
+.tlph{font-family:var(--mono);font-size:8px;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px;}
+.tlti{font-family:var(--head);font-size:.81rem;font-weight:700;margin-bottom:2px;color:var(--text);}
+.tlmo{font-size:.69rem;color:var(--dim);margin-bottom:7px;}
+.tlce{font-family:var(--mono);font-size:7.5px;color:var(--gold-d);}
+.tlbar{height:3px;border-radius:2px;margin-top:7px;}
+
+/* CERT TRACK */
+.ct{border:1.5px solid var(--edge);border-radius:12px;overflow:hidden;}
+.ctr{display:grid;grid-template-columns:68px 1fr auto;align-items:center;gap:13px;padding:13px 17px;border-bottom:1px solid var(--edge);background:white;}
+.ctr:last-child{border-bottom:none;}
+.ctq{font-family:var(--mono);font-size:8.5px;color:var(--dim);text-align:center;}
+.cti h5{font-size:.83rem;font-weight:600;margin-bottom:2px;color:var(--text);}
+.cti p{font-size:.71rem;color:var(--dim);line-height:1.5;}
+.ctb{font-family:var(--mono);font-size:7.5px;padding:3px 8px;border-radius:8px;white-space:nowrap;}
+.cb-aws{background:rgba(217,119,6,.1);color:var(--gold-d);border:1px solid rgba(217,119,6,.3);}
+.cb-gcp{background:rgba(2,132,199,.1);color:var(--sky);border:1px solid rgba(2,132,199,.3);}
+.cb-k8s{background:rgba(5,150,105,.1);color:var(--em-d);border:1px solid rgba(5,150,105,.3);}
+
+/* PHASE CARDS */
+.pc{background:white;border:1.5px solid var(--edge);border-radius:14px;margin-bottom:16px;overflow:hidden;transition:border-color .2s;box-shadow:0 2px 8px rgba(5,150,105,.04);}
+.pc:hover{border-color:rgba(5,150,105,.4);box-shadow:0 4px 16px rgba(5,150,105,.1);}
+.ph{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:15px;padding:17px 21px;cursor:pointer;border-bottom:1px solid transparent;background:white;}
+.pc.open .ph{border-bottom-color:var(--edge);background:linear-gradient(135deg,#f0fdf4,#fffbeb);}
+.pbadge{font-family:var(--head);font-size:9.5px;font-weight:700;padding:5px 12px;border-radius:7px;color:white;white-space:nowrap;letter-spacing:.03em;}
+.pi h3{font-family:var(--head);font-size:.98rem;font-weight:700;letter-spacing:-.01em;margin-bottom:1px;color:var(--text);}
+.pi p{font-size:.73rem;color:var(--dim);}
+.pcert{font-family:var(--mono);font-size:8px;color:var(--gold-d);border:1px solid rgba(217,119,6,.35);padding:3px 9px;border-radius:10px;white-space:nowrap;background:rgba(253,243,199,.5);}
+.ptog{font-size:17px;color:var(--dim);transition:transform .25s;user-select:none;}
+.pc.open .ptog{transform:rotate(45deg);color:var(--em-d);}
+.pb{display:none;}
+.pc.open .pb{display:block;}
+
+/* TABS */
+.tabs{display:flex;border-bottom:1px solid var(--edge);background:#f0fdf4;}
+.tbtn{font-family:var(--mono);font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;padding:10px 16px;border:none;background:none;color:var(--dim);cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;}
+.tbtn:hover{color:var(--em-d);background:rgba(5,150,105,.05);}
+.tbtn.on{color:var(--em-d);border-bottom-color:var(--em-d);background:rgba(5,150,105,.06);font-weight:600;}
+.tp{display:none;padding:21px;background:var(--s2);}
+.tp.on{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.tp.full.on{display:block;}
+@media(max-width:640px){.tp.on{grid-template-columns:1fr;}}
+
+/* INNER */
+.ib+.ib{margin-top:15px;}
+.ib h4{font-family:var(--mono);font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--em-d);margin-bottom:8px;padding-bottom:5px;border-bottom:1.5px solid var(--edge);}
+
+/* resource list */
+ul.rl{list-style:none;}
+ul.rl li{font-size:.79rem;padding:4px 0 4px 14px;position:relative;color:#1f4d32;border-bottom:1px solid var(--edge);}
+ul.rl li:last-child{border-bottom:none;}
+ul.rl li::before{content:'›';position:absolute;left:0;top:4px;color:var(--em-d);font-weight:700;}
+.fs{font-family:var(--mono);font-size:7.5px;color:#065f46;margin-left:4px;border:1px solid rgba(5,150,105,.4);padding:1px 5px;border-radius:3px;background:#d1fae5;}
+.src{font-family:var(--mono);font-size:7.5px;color:var(--dim);margin-left:3px;border:1px solid var(--edge);padding:1px 5px;border-radius:3px;background:white;}
+
+/* checklist */
+ul.cl{list-style:none;}
+ul.cl li{font-size:.79rem;padding:3px 0 3px 13px;position:relative;color:#1f4d32;}
+ul.cl li::before{content:'▸';position:absolute;left:0;color:var(--gold-d);font-size:9px;}
+
+/* skill chips */
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px;}
+.chip{font-family:var(--mono);font-size:8.5px;padding:3px 9px;border-radius:5px;border:1px solid var(--edge);color:var(--dim);background:white;}
+.chip.new{border-color:rgba(5,150,105,.45);color:var(--em-d);background:rgba(5,150,105,.07);font-weight:500;}
+.chip.carry{border-color:rgba(217,119,6,.45);color:var(--gold-d);background:rgba(253,243,199,.5);}
+.chip.deepen{border-color:rgba(2,132,199,.4);color:var(--sky);background:rgba(2,132,199,.06);}
+
+/* weeks */
+.weeks{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:5px;}
+.wk{background:white;border:1px solid var(--edge);border-radius:7px;padding:9px 11px;}
+.wkl{font-family:var(--mono);font-size:8px;color:var(--em-d);margin-bottom:4px;font-weight:600;}
+.wk p{font-size:.72rem;color:var(--dim);line-height:1.45;}
+@media(max-width:540px){.weeks{grid-template-columns:1fr 1fr;}}
+
+/* PROJECT */
+.proj{background:white;border:1.5px solid rgba(5,150,105,.3);border-radius:10px;padding:17px;box-shadow:0 2px 12px rgba(5,150,105,.06);}
+.projl{font-family:var(--mono);font-size:8px;color:var(--em-d);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.proj h5{font-family:var(--head);font-size:.91rem;font-weight:700;margin-bottom:10px;color:var(--text);}
+.steps{list-style:none;counter-reset:s;}
+.steps li{counter-increment:s;position:relative;padding:5px 0 5px 28px;font-size:.77rem;color:#2d6a47;border-bottom:1px solid var(--edge);}
+.steps li:last-child{border-bottom:none;}
+.steps li::before{content:counter(s);position:absolute;left:0;top:7px;font-family:var(--mono);font-size:8.5px;font-weight:700;color:white;background:var(--em-d);width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:17px;text-align:center;}
+.outcome{margin-top:11px;font-size:.75rem;color:#065f46;padding:8px 12px;background:rgba(5,150,105,.07);border:1px solid rgba(5,150,105,.25);border-radius:6px;display:flex;align-items:flex-start;gap:7px;}
+.outcome::before{content:'OUTCOME';font-family:var(--mono);font-size:7px;flex-shrink:0;margin-top:2px;color:white;background:var(--em-d);padding:1px 5px;border-radius:3px;font-weight:700;}
+
+/* REVIEW */
+.rev{background:rgba(5,150,105,.05);border:1.5px solid rgba(5,150,105,.25);border-radius:9px;padding:13px 15px;}
+.revl{font-family:var(--mono);font-size:8px;color:var(--em-d);letter-spacing:.1em;text-transform:uppercase;margin-bottom:7px;font-weight:600;}
+.rev ul{list-style:none;}
+.rev ul li{font-size:.77rem;color:#065f46;padding:3px 0 3px 14px;position:relative;}
+.rev ul li::before{content:'✓';position:absolute;left:0;color:var(--em-d);font-size:9px;font-weight:700;}
+
+/* CERT DETAIL */
+.cd{background:rgba(253,243,199,.6);border:1.5px solid rgba(217,119,6,.3);border-radius:9px;padding:13px 15px;margin-bottom:10px;}
+.cd:last-child{margin-bottom:0;}
+.cdl{font-family:var(--mono);font-size:8px;color:var(--gold-d);letter-spacing:.1em;text-transform:uppercase;margin-bottom:7px;font-weight:600;}
+.cd h5{font-size:.86rem;font-weight:700;color:#78350f;margin-bottom:4px;}
+.cd p{font-size:.74rem;color:#92400e;line-height:1.5;}
+.cdmeta{display:flex;flex-wrap:wrap;gap:7px;margin-top:7px;}
+.cdmeta span{font-family:var(--mono);font-size:7.5px;color:var(--gold-d);border:1px solid rgba(217,119,6,.3);padding:2px 7px;border-radius:7px;background:white;}
+
+/* LIBRARY GRID */
+.libg{display:grid;grid-template-columns:repeat(auto-fill,minmax(172px,1fr));gap:9px;}
+.libc{background:white;border:1px solid var(--edge);border-radius:8px;padding:11px 13px;}
+.libn{font-family:var(--mono);font-size:11px;font-weight:600;margin-bottom:3px;color:var(--em-d);}
+.libw{font-size:.72rem;color:var(--dim);margin-bottom:6px;line-height:1.4;}
+.libcmd{font-family:var(--mono);font-size:8.5px;background:#ecfdf5;color:#065f46;padding:3px 7px;border-radius:4px;display:inline-block;border:1px solid #a7f3d0;}
+.libb{font-family:var(--mono);font-size:7.5px;padding:2px 6px;border-radius:8px;margin-top:6px;display:inline-block;border:1px solid;}
+.lbc{background:rgba(220,38,38,.07);color:var(--rose);border-color:rgba(220,38,38,.25);}
+.lba{background:rgba(217,119,6,.08);color:var(--gold-d);border-color:rgba(217,119,6,.3);}
+.lbr{background:rgba(5,150,105,.08);color:var(--em-d);border-color:rgba(5,150,105,.3);}
+.lbu{background:rgba(217,119,6,.08);color:var(--gold);border-color:rgba(217,119,6,.25);}
+.lbe{background:rgba(5,150,105,.08);color:#065f46;border-color:rgba(5,150,105,.25);}
+
+/* PYTHON GRID */
+.pyg{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.pyb{background:white;border:1px solid var(--edge);border-radius:7px;padding:10px 12px;}
+.pyb h5{font-size:.77rem;font-weight:700;color:var(--em-d);margin-bottom:6px;}
+.pyb ul{list-style:none;}
+.pyb ul li{font-size:.71rem;color:var(--dim);padding:2px 0 2px 10px;position:relative;}
+.pyb ul li::before{content:'·';position:absolute;left:0;color:var(--gold-d);}
+@media(max-width:500px){.pyg{grid-template-columns:1fr;}}
+
+/* CODE */
+.cblock{background:#0f2d1e;border:1px solid #1a4d32;border-radius:7px;padding:13px 15px;font-family:var(--mono);font-size:.72rem;color:#6ee7b7;line-height:1.7;overflow-x:auto;margin-top:8px;}
+.cm{color:#4b7a5e;}.ck{color:#fbbf24;}.cs{color:#a7f3d0;}
+
+/* SKILLS MATRIX */
+.mxg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;}
+@media(max-width:620px){.mxg{grid-template-columns:1fr;}}
+.mxc{background:white;border:1.5px solid var(--edge);border-radius:9px;padding:13px;}
+.mxc h4{font-family:var(--mono);font-size:9px;color:var(--em-d);letter-spacing:.12em;text-transform:uppercase;margin-bottom:9px;padding-bottom:5px;border-bottom:1.5px solid var(--edge);}
+.mxr{display:flex;justify-content:space-between;align-items:center;padding:3px 0;font-size:.72rem;color:#1f4d32;}
+.mxbw{width:58px;height:5px;background:var(--em-l);border-radius:2px;overflow:hidden;}
+.mxb{height:100%;border-radius:2px;}
+
+/* VISION */
+.vg{display:grid;grid-template-columns:repeat(auto-fit,minmax(188px,1fr));gap:9px;}
+.vc{background:white;border:1px solid var(--edge);border-radius:10px;padding:15px;border-top:3px solid;box-shadow:0 2px 8px rgba(5,150,105,.05);}
+.vc h5{font-family:var(--head);font-size:.86rem;font-weight:700;margin-bottom:3px;color:var(--text);}
+.vcy{font-family:var(--mono);font-size:8px;color:var(--dim);margin-bottom:7px;}
+.vc p{font-size:.72rem;color:var(--dim);line-height:1.5;}
+.vc ul{list-style:none;margin-top:6px;}
+.vc ul li{font-size:.7rem;color:#2d6a47;padding:2px 0 2px 10px;position:relative;}
+.vc ul li::before{content:'·';position:absolute;left:0;color:var(--em-d);}
+
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
+@media(max-width:560px){.g2{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-body">
+    <div class="eyebrow">Personal Career Blueprint · Jan 2027 → Dec 2027</div>
+    <h1>10 Years Full Stack GE<br>→ <em>AI Systems Architect</em></h1>
+    <p class="hero-sub">You have NestJS, Docker, Kubernetes, AWS, and 10 years of production engineering. This plan doesn't pivot you — it compounds you. Every phase maps your existing skills to AI equivalents and builds forward.</p>
+    <div class="tags">
+      <span class="tag tg">Python Zero → Intermediate</span>
+      <span class="tag ti">24 Mandatory Libraries</span>
+      <span class="tag ta">5 Certifications</span>
+      <span class="tag tg">12 Step-by-Step Projects</span>
+      <span class="tag tn">Mac M4 · AWS · GCP · Anthropic · OpenAI</span>
+      <span class="tag ti">20-Year Vision</span>
+    </div>
+  </div>
+  <div class="id-card">
+    <div class="id-head">Your Current Stack</div>
+    <div class="id-row"><span class="id-k">Experience</span><span class="id-v">10 yrs</span></div>
+    <div class="id-row"><span class="id-k">Company</span><span class="id-v">GE</span></div>
+    <div class="id-row"><span class="id-k">Runtime</span><span class="id-v">NestJS</span></div>
+    <div class="id-row"><span class="id-k">Infra</span><span class="id-v">K8s + Docker</span></div>
+    <div class="id-row"><span class="id-k">Cloud</span><span class="id-v">AWS</span></div>
+    <div class="id-row"><span class="id-k">AI done</span><span class="id-v">LangChain</span></div>
+    <div class="id-row"><span class="id-k">Goal</span><span class="id-v" style="color:var(--amber)">AI Architect</span></div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat"><span class="sn">8</span><div class="sl">Phases</div></div>
+  <div class="stat"><span class="sn">5</span><div class="sl">Certifications</div></div>
+  <div class="stat"><span class="sn">12</span><div class="sl">Projects</div></div>
+  <div class="stat"><span class="sn">24</span><div class="sl">Libraries</div></div>
+  <div class="stat"><span class="sn">20</span><div class="sl">Year Vision</div></div>
+  <div class="stat"><span class="sn">0→Sr.</span><div class="sl">AI Level</div></div>
+</div>
+
+<div class="wrap">
+
+<div class="sec">Why This Plan Is Built for You</div>
+<div class="g2">
+  <div class="ctx"><strong>Your superpower:</strong> 80% of junior AI engineers struggle with Docker, K8s, REST APIs, and cloud deployments. You mastered all of it at GE. You skip that entire learning curve and go straight to LLM orchestration, RAG, agents, and production AI. Your learning speed here is 3× a non-engineer learner.</div>
+  <div class="ctx am"><strong>The 20-year play:</strong> AI automates tasks, not people who architect AI systems at scale. The engineers who stay irreplaceable are those who integrate LLMs into production infrastructure — which is exactly what your background sets you up to do. This is a power-up, not a career switch.</div>
+</div>
+
+<div class="sec">12-Month Roadmap at a Glance</div>
+<div class="tl">
+  <div class="tlq" style="background:rgba(5,150,105,.06)"><div class="tlph">Phase 0A+0B</div><div class="tlti">Pre-Requisites</div><div class="tlmo">Python Zero→Mid · 24 Libraries</div><div class="tlce">3–4 weeks · Start here</div><div class="tlbar" style="background:var(--em-d)"></div></div>
+  <div class="tlq" style="background:rgba(217,119,6,.05)"><div class="tlph">Q1 · Jan–Mar</div><div class="tlti">AI Foundations</div><div class="tlmo">Prompting · LangChain LCEL · RAG</div><div class="tlce">🏆 AWS Cloud Practitioner</div><div class="tlbar" style="background:var(--gold)"></div></div>
+  <div class="tlq" style="background:rgba(5,150,105,.08)"><div class="tlph">Q2 · Apr–Jun</div><div class="tlti">Agents + LLMOps</div><div class="tlmo">LangGraph · Bedrock · LangSmith</div><div class="tlce">🏆 AWS SAA + CKA</div><div class="tlbar" style="background:var(--em-d)"></div></div>
+  <div class="tlq" style="background:rgba(217,119,6,.07)"><div class="tlph">Q3–Q4 · Jul–Dec</div><div class="tlti">Production + Architect</div><div class="tlmo">Fine-tune · GCP · MCP · SaaS</div><div class="tlce">🏆 GCP ML Eng + AWS ML Spec</div><div class="tlbar" style="background:var(--gold-d)"></div></div>
+</div>
+
+<div class="sec">Certification Roadmap <span class="badge">5 certs · $1,295 total</span></div>
+<div class="ct">
+  <div class="ctr"><div class="ctq">Q1<br>Feb</div><div class="cti"><h5>AWS Certified Cloud Practitioner (CLF-C02)</h5><p>Formalise your AWS knowledge from GE. Fast pass — you know 70% already. ~20 hrs study.</p></div><div class="ctb cb-aws">AWS · $100</div></div>
+  <div class="ctr"><div class="ctq">Q2<br>May</div><div class="cti"><h5>AWS Solutions Architect Associate (SAA-C03)</h5><p>Architecture, IAM, VPC, serverless patterns. Foundation for deploying AI workloads at scale. ~40 hrs.</p></div><div class="ctb cb-aws">AWS · $300</div></div>
+  <div class="ctr"><div class="ctq">Q2<br>Jun</div><div class="cti"><h5>Certified Kubernetes Administrator (CKA)</h5><p>You run K8s at GE — this certifies it. Required for AI model serving on K8s (KServe, Ray Serve). ~25 hrs.</p></div><div class="ctb cb-k8s">CNCF · $395</div></div>
+  <div class="ctr"><div class="ctq">Q3<br>Sep</div><div class="cti"><h5>Google Cloud Professional ML Engineer</h5><p>Vertex AI, Gemini APIs, ML pipelines, model monitoring. Strongest AI-specific cloud cert available. ~60 hrs.</p></div><div class="ctb cb-gcp">GCP · $200</div></div>
+  <div class="ctr"><div class="ctq">Q4<br>Dec</div><div class="cti"><h5>AWS Certified Machine Learning Specialty (MLS-C01)</h5><p>SageMaker, Bedrock, ML architecture on AWS. Paired with SAA-C03, completes your AWS AI picture. ~60 hrs.</p></div><div class="ctb cb-aws">AWS · $300</div></div>
+</div>
+
+<!-- ══ PRE-REQ PHASES ══ -->
+<div class="sec">Pre-Requisite Phases — Complete Before Month 1 <span class="badge">Start Here</span></div>
+<div class="ctx" style="margin-bottom:20px"><strong>Note:</strong> If you're comfortable with Python basics and have used numpy/pandas, skim Phase 0A in 1 week. If Python is new, give it 3 weeks. Never skip Phase 0B — these 24 libraries appear in every project across all 12 months.</div>
+
+<!-- PHASE 0A -->
+<div class="pc open" id="ph0a">
+  <div class="ph" onclick="tog('ph0a')">
+    <div class="pbadge" style="background:linear-gradient(135deg,#059669,#10b981)">Phase 0A</div>
+    <div class="pi"><h3>🐍 Python — Zero to Intermediate</h3><p>2–3 weeks · Variables → OOP → async/await → everything GenAI needs</p></div>
+    <div class="pcert">No cert · Foundation sprint</div>
+    <div class="ptog">+</div>
+  </div>
+  <div class="pb">
+    <div class="tabs">
+      <button class="tbtn on" onclick="swt(this,'ph0a','learn')">📚 Learn</button>
+      <button class="tbtn" onclick="swt(this,'ph0a','topics')">📋 Topics</button>
+      <button class="tbtn" onclick="swt(this,'ph0a','project')">🛠 Project</button>
+      <button class="tbtn" onclick="swt(this,'ph0a','skills')">⚡ Skills</button>
+    </div>
+    <div class="tp on" data-p="learn" data-c="ph0a">
+      <div>
+        <div class="ib"><h4>Courses — In Order</h4>
+          <ul class="rl">
+            <li><a href="https://www.kaggle.com/learn/python" target="_blank">Kaggle Python Course</a><span class="fs">Free</span><span class="src">5 hrs · Start here, very fast</span></li>
+            <li><a href="https://cs50.harvard.edu/python/2022/" target="_blank">CS50P — Python (Harvard)</a><span class="fs">Free</span><span class="src">Most thorough, structured</span></li>
+            <li><a href="https://realpython.com/python-basics/" target="_blank">Real Python Basics</a><span class="fs">Free</span><span class="src">Deep-dive articles</span></li>
+            <li><a href="https://docs.python.org/3/tutorial/" target="_blank">Official Python Tutorial Ch 1–10</a><span class="fs">Free</span><span class="src">Reference quality</span></li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Mac M4 Setup Checklist</h4>
+          <ul class="cl">
+            <li>Homebrew: run install script from brew.sh</li>
+            <li>pyenv: <code>brew install pyenv</code> → <code>pyenv install 3.11.9</code> → <code>pyenv global 3.11.9</code></li>
+            <li>VS Code from code.visualstudio.com → Python + Jupyter extensions</li>
+            <li>Ollama (local LLMs free): <code>brew install ollama</code> → <code>ollama pull llama3.2</code></li>
+            <li>virtualenv: <code>python -m venv ~/genai-env</code> → activate in .zshrc</li>
+            <li>Register free accounts: OpenAI, Anthropic, AWS Free Tier, GCP Free, HuggingFace</li>
+            <li>Keys in <code>~/.zshrc</code>: <code>export OPENAI_API_KEY="sk-..."</code></li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Minimal AI Call — Write from Scratch</h4>
+          <div class="cblock">
+<span class="ck">import</span> os, json
+<span class="ck">from</span> dotenv <span class="ck">import</span> load_dotenv
+<span class="ck">import</span> requests
+
+load_dotenv()  <span class="cm"># reads .env file</span>
+key = os.getenv(<span class="cs">"ANTHROPIC_API_KEY"</span>)
+
+<span class="ck">def</span> ask(prompt: <span class="ck">str</span>) -> <span class="ck">str</span>:
+    r = requests.post(
+        <span class="cs">"https://api.anthropic.com/v1/messages"</span>,
+        headers={<span class="cs">"x-api-key"</span>: key,
+                 <span class="cs">"anthropic-version"</span>: <span class="cs">"2023-06-01"</span>,
+                 <span class="cs">"content-type"</span>: <span class="cs">"application/json"</span>},
+        json={<span class="cs">"model"</span>: <span class="cs">"claude-haiku-4-5"</span>,
+              <span class="cs">"max_tokens"</span>: 256,
+              <span class="cs">"messages"</span>: [{<span class="cs">"role"</span>: <span class="cs">"user"</span>,
+                             <span class="cs">"content"</span>: prompt}]}
+    )
+    <span class="ck">return</span> r.json()[<span class="cs">"content"</span>][0][<span class="cs">"text"</span>]
+
+print(ask(<span class="cs">"Explain RAG in 2 sentences"</span>))</div>
+        </div>
+      </div>
+      <div>
+        <div class="ib"><h4>NestJS → Python Transfer Map</h4>
+          <ul class="cl">
+            <li>NestJS DTOs → Pydantic models (exact same concept, different syntax)</li>
+            <li>NestJS pipes → Python LCEL pipe operator <code>|</code></li>
+            <li>NestJS guards → LangGraph <code>interrupt()</code> checkpoints</li>
+            <li>NestJS interceptors → LangChain callbacks</li>
+            <li><code>async/await</code> TypeScript → identical in Python 3.11</li>
+            <li>Docker <code>.env</code> files → <code>python-dotenv</code>, same pattern</li>
+            <li>Jest tests → pytest (same philosophy)</li>
+            <li><code>StreamableFile</code> NestJS → <code>StreamingResponse</code> FastAPI</li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Week-by-Week</h4>
+          <div class="weeks">
+            <div class="wk"><div class="wkl">Week 1</div><p>Variables → loops → functions → Kaggle Python complete</p></div>
+            <div class="wk"><div class="wkl">Week 2</div><p>OOP → file I/O → JSON → exceptions → CS50P weeks 1–5</p></div>
+            <div class="wk"><div class="wkl">Week 3</div><p>async/await → requests → Pydantic → call first AI API from scratch</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="topics" data-c="ph0a">
+      <div class="ib"><h4>Python Topics You Must Cover for GenAI</h4>
+        <div class="pyg">
+          <div class="pyb"><h5>Core Syntax</h5><ul><li>Variables, types, f-strings</li><li>if/else, for, while loops</li><li>Functions, *args, **kwargs</li><li>List, dict, set, tuple</li><li>List/dict comprehensions</li><li>String methods</li></ul></div>
+          <div class="pyb"><h5>Intermediate Python</h5><ul><li>Classes and OOP basics</li><li>try/except exception handling</li><li>File I/O (open, read, write)</li><li>JSON module (loads, dumps)</li><li>Virtual environments + pip</li><li>Decorators (basic)</li></ul></div>
+          <div class="pyb"><h5>Standard Library</h5><ul><li>os, sys, pathlib</li><li>re (regex basics)</li><li>datetime, time</li><li>collections (Counter, defaultdict)</li><li>typing (type hints)</li><li>logging module</li></ul></div>
+          <div class="pyb"><h5>AI-Critical Python</h5><ul><li>async/await for streaming tokens</li><li>requests + httpx for HTTP</li><li>environment variables (.env)</li><li>dataclasses, TypedDict</li><li>Pydantic v2 models</li><li>Generator functions (yield)</li></ul></div>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="project" data-c="ph0a">
+      <div class="proj">
+        <div class="projl">Phase 0A Project · Step by Step</div>
+        <h5>"Hello AI" — Raw API Client (No SDK, No Framework)</h5>
+        <ul class="steps">
+          <li>Create <code>~/projects/hello-ai/</code>. Create <code>.env</code> with <code>OPENAI_API_KEY</code> and <code>ANTHROPIC_API_KEY</code>. Use <code>python-dotenv</code> to load. Never hardcode.</li>
+          <li>Write <code>ask_openai.py</code> using only <code>requests</code> — call <code>api.openai.com/v1/chat/completions</code>. Print raw JSON first. Then extract just the text content.</li>
+          <li>Write <code>ask_claude.py</code> using only <code>requests</code> — call <code>api.anthropic.com/v1/messages</code>. Print raw JSON. Note how the response shape differs from OpenAI.</li>
+          <li>Add Pydantic model: <code>class AIResponse(BaseModel): text: str; model: str; tokens_used: int</code>. Parse both responses into it.</li>
+          <li>Add <code>argparse</code> CLI: <code>python ask_openai.py "What is RAG?" --max-tokens 100</code></li>
+          <li>Add async streaming: rewrite as <code>async def</code> + <code>async for chunk in response</code>. Tokens print one by one.</li>
+          <li>Write <code>compare.py</code>: send same prompt to both APIs simultaneously. Print side by side with latency in ms using <code>time.perf_counter()</code>.</li>
+        </ul>
+        <div class="outcome">You understand the HTTP layer under every AI framework. You can call any LLM API without a library. When LangChain changes its API (again), you'll know what's happening underneath.</div>
+      </div>
+    </div>
+    <div class="tp full" data-p="skills" data-c="ph0a">
+      <div class="ib"><h4>Skills You Exit Phase 0A With</h4>
+        <div class="chips">
+          <span class="chip new">Python syntax (zero to functional)</span><span class="chip new">Pydantic v2 models</span>
+          <span class="chip new">async/await for streaming</span><span class="chip new">HTTP calls to AI APIs</span>
+          <span class="chip new">.env secret management</span><span class="chip new">argparse CLI tools</span>
+          <span class="chip carry">REST API concepts (you had this)</span><span class="chip carry">async from TypeScript (transfers)</span>
+          <span class="chip carry">Docker .env pattern (identical)</span>
+        </div>
+      </div>
+      <div class="ib" style="margin-top:16px">
+        <div class="rev">
+          <div class="revl">Phase 0A Exit Gate</div>
+          <ul>
+            <li>Call OpenAI and Anthropic APIs from memory without docs</li>
+            <li>Parse response into a Pydantic model</li>
+            <li>Stream tokens to terminal in real time using async</li>
+            <li>compare.py sends same prompt to both and shows latency</li>
+            <li>All API keys loaded from .env, never hardcoded</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 0B -->
+<div class="pc" id="ph0b">
+  <div class="ph" onclick="tog('ph0b')">
+    <div class="pbadge" style="background:linear-gradient(135deg,#d97706,#f59e0b)">Phase 0B</div>
+    <div class="pi"><h3>📦 Mandatory Libraries — The Full GenAI Stack</h3><p>1–2 weeks · Install, understand, and smoke-test all 24 libraries used across 12 months</p></div>
+    <div class="pcert">No cert · Tooling sprint</div>
+    <div class="ptog">+</div>
+  </div>
+  <div class="pb">
+    <div class="tabs">
+      <button class="tbtn on" onclick="swt(this,'ph0b','libs')">📦 All 24 Libraries</button>
+      <button class="tbtn" onclick="swt(this,'ph0b','install')">💻 Install</button>
+      <button class="tbtn" onclick="swt(this,'ph0b','project')">🛠 Project</button>
+    </div>
+    <div class="tp full on" data-p="libs" data-c="ph0b">
+      <div class="ib"><h4>All 24 Mandatory Libraries — Grouped by Purpose</h4>
+        <div class="libg">
+          <div class="libc"><div class="libn">numpy</div><div class="libw">Arrays and math. Embeddings are numpy float arrays.</div><div class="libcmd">pip install numpy</div><br><span class="libb lbc">Core · Every month</span></div>
+          <div class="libc"><div class="libn">pandas</div><div class="libw">DataFrames for datasets, CSVs, eval results.</div><div class="libcmd">pip install pandas</div><br><span class="libb lbc">Core · Data</span></div>
+          <div class="libc"><div class="libn">matplotlib</div><div class="libw">Plot eval metrics, latency trends, embedding clusters.</div><div class="libcmd">pip install matplotlib</div><br><span class="libb lbc">Core · Charts</span></div>
+          <div class="libc"><div class="libn">python-dotenv</div><div class="libw">Load .env API keys. Used in EVERY project forever.</div><div class="libcmd">pip install python-dotenv</div><br><span class="libb lbc">Core · Security</span></div>
+          <div class="libc"><div class="libn">pydantic</div><div class="libw">Data validation. NestJS DTO equivalent. LangChain uses it everywhere.</div><div class="libcmd">pip install pydantic</div><br><span class="libb lbc">Core · Must know</span></div>
+          <div class="libc"><div class="libn">tiktoken</div><div class="libw">Count tokens before calling API. Prevent surprise bills.</div><div class="libcmd">pip install tiktoken</div><br><span class="libb lbc">Core · Cost control</span></div>
+          <div class="libc"><div class="libn">openai</div><div class="libw">Official OpenAI SDK. Chat, embeddings, function calling.</div><div class="libcmd">pip install openai</div><br><span class="libb lba">AI API</span></div>
+          <div class="libc"><div class="libn">anthropic</div><div class="libw">Official Anthropic SDK. Claude models + tool use.</div><div class="libcmd">pip install anthropic</div><br><span class="libb lba">AI API</span></div>
+          <div class="libc"><div class="libn">boto3</div><div class="libw">AWS SDK for Python. Bedrock, S3, Lambda, OpenSearch.</div><div class="libcmd">pip install boto3</div><br><span class="libb lba">Cloud · AWS</span></div>
+          <div class="libc"><div class="libn">google-cloud-aiplatform</div><div class="libw">GCP Vertex AI SDK. Gemini, embeddings, pipelines.</div><div class="libcmd">pip install google-cloud-aiplatform</div><br><span class="libb lba">Cloud · GCP</span></div>
+          <div class="libc"><div class="libn">langchain</div><div class="libw">Core orchestration: chains, LCEL, memory, output parsers.</div><div class="libcmd">pip install langchain</div><br><span class="libb lba">Orchestration</span></div>
+          <div class="libc"><div class="libn">langchain-openai</div><div class="libw">LangChain ↔ OpenAI models and embeddings.</div><div class="libcmd">pip install langchain-openai</div><br><span class="libb lba">Orchestration</span></div>
+          <div class="libc"><div class="libn">langchain-anthropic</div><div class="libw">LangChain ↔ Claude models.</div><div class="libcmd">pip install langchain-anthropic</div><br><span class="libb lba">Orchestration</span></div>
+          <div class="libc"><div class="libn">langgraph</div><div class="libw">Stateful agent graphs. Nodes + edges + TypedDict state.</div><div class="libcmd">pip install langgraph</div><br><span class="libb lba">Agents</span></div>
+          <div class="libc"><div class="libn">chromadb</div><div class="libw">Local vector DB. Zero config on M4. Best for learning RAG.</div><div class="libcmd">pip install chromadb</div><br><span class="libb lbr">RAG · Vector DB</span></div>
+          <div class="libc"><div class="libn">faiss-cpu</div><div class="libw">Fast similarity search. Efficient vector lookup at scale.</div><div class="libcmd">pip install faiss-cpu</div><br><span class="libb lbr">RAG · Search</span></div>
+          <div class="libc"><div class="libn">sentence-transformers</div><div class="libw">Free open-source embeddings. Runs locally on M4, zero API cost.</div><div class="libcmd">pip install sentence-transformers</div><br><span class="libb lbr">RAG · Embeddings</span></div>
+          <div class="libc"><div class="libn">pypdf</div><div class="libw">Parse PDFs for RAG ingestion. Most common doc format.</div><div class="libcmd">pip install pypdf</div><br><span class="libb lbr">RAG · Docs</span></div>
+          <div class="libc"><div class="libn">unstructured</div><div class="libw">Parse HTML, DOCX, tables, images. Real-world messy docs.</div><div class="libcmd">pip install unstructured</div><br><span class="libb lbr">RAG · Docs</span></div>
+          <div class="libc"><div class="libn">streamlit</div><div class="libw">AI web apps in pure Python. No frontend skills needed.</div><div class="libcmd">pip install streamlit</div><br><span class="libb lbu">UI · Quick apps</span></div>
+          <div class="libc"><div class="libn">gradio</div><div class="libw">Instant AI demos. Public share link in 2 lines of code.</div><div class="libcmd">pip install gradio</div><br><span class="libb lbu">UI · Demos</span></div>
+          <div class="libc"><div class="libn">fastapi + uvicorn</div><div class="libw">Production REST API. NestJS equivalent in Python.</div><div class="libcmd">pip install fastapi uvicorn</div><br><span class="libb lbu">Backend · API</span></div>
+          <div class="libc"><div class="libn">ragas</div><div class="libw">Evaluate RAG pipelines: faithfulness, relevancy, precision.</div><div class="libcmd">pip install ragas</div><br><span class="libb lbe">Evaluation</span></div>
+          <div class="libc"><div class="libn">langsmith</div><div class="libw">Trace every LLM call. LLMOps dashboard. Free tier.</div><div class="libcmd">pip install langsmith</div><br><span class="libb lbe">Monitoring</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="install" data-c="ph0b">
+      <div class="ib"><h4>One-Shot Install Command</h4>
+        <div class="cblock">pip install numpy pandas matplotlib python-dotenv pydantic tiktoken \
+  openai anthropic boto3 google-cloud-aiplatform \
+  langchain langchain-openai langchain-anthropic langgraph \
+  chromadb faiss-cpu sentence-transformers pypdf unstructured \
+  streamlit gradio fastapi uvicorn ragas langsmith \
+  mlx-lm ollama tavily-python deepeval jupyter notebook</div>
+      </div>
+      <div class="ib" style="margin-top:16px"><h4>Library Quickstart Docs — 30 min each</h4>
+        <ul class="rl">
+          <li><a href="https://numpy.org/learn/" target="_blank">NumPy Quickstart</a><span class="fs">Free</span></li>
+          <li><a href="https://www.kaggle.com/learn/pandas" target="_blank">Kaggle Pandas Course</a><span class="fs">Free</span></li>
+          <li><a href="https://platform.openai.com/docs/quickstart" target="_blank">OpenAI Python Quickstart</a><span class="fs">Free</span></li>
+          <li><a href="https://docs.anthropic.com/en/api/getting-started" target="_blank">Anthropic SDK Getting Started</a><span class="fs">Free</span></li>
+          <li><a href="https://python.langchain.com/docs/get_started/quickstart" target="_blank">LangChain Quickstart</a><span class="fs">Free</span></li>
+          <li><a href="https://docs.trychroma.com/getting-started" target="_blank">ChromaDB Getting Started</a><span class="fs">Free</span></li>
+          <li><a href="https://docs.streamlit.io/get-started" target="_blank">Streamlit Get Started</a><span class="fs">Free</span></li>
+          <li><a href="https://docs.pydantic.dev/latest/concepts/models/" target="_blank">Pydantic v2 Models</a><span class="fs">Free</span></li>
+          <li><a href="https://fastapi.tiangolo.com/tutorial/" target="_blank">FastAPI Tutorial</a><span class="fs">Free</span></li>
+          <li><a href="https://docs.ragas.io/en/latest/" target="_blank">RAGAS Evaluation Docs</a><span class="fs">Free</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tp full" data-p="project" data-c="ph0b">
+      <div class="proj">
+        <div class="projl">Phase 0B Project · Step by Step</div>
+        <h5>"Library Smoke Test" — Prove Every Tool Works on Your M4</h5>
+        <ul class="steps">
+          <li>Run one-shot install. Verify: <code>python -c "import numpy, pandas, langchain, chromadb, streamlit; print('all installed')"</code></li>
+          <li>NumPy: create a 1024-dim random float array (simulating an embedding). Compute cosine similarity between two arrays. Print the score.</li>
+          <li>Pandas: load any CSV. Filter rows, group by a column, plot a bar chart with matplotlib. Save as PNG.</li>
+          <li>OpenAI SDK: send a message. Print <code>response.usage.total_tokens</code>. Then use tiktoken to count same prompt BEFORE sending — verify they match.</li>
+          <li>Anthropic SDK: same message to Claude Haiku. Note the different response format. Extract token count.</li>
+          <li>LangChain LCEL: <code>chain = ChatOpenAI() | StrOutputParser()</code>. Invoke. Then pipe two chains together with <code>RunnablePassthrough</code>.</li>
+          <li>ChromaDB: create collection, add 5 text docs with metadata, query with a question. Confirm top result is semantically relevant.</li>
+          <li>sentence-transformers: embed "Paris is the capital of France" and "France's capital city". Cosine similarity should be above 0.90.</li>
+          <li>Streamlit: 10-line app — text input → Claude API call → streaming response. Run with <code>streamlit run app.py</code>.</li>
+          <li>FastAPI: <code>POST /ask</code> endpoint calling OpenAI, returns JSON. Run with uvicorn. Test with curl. Note how similar it is to NestJS.</li>
+        </ul>
+        <div class="outcome">Every library is installed and produces a real result on your Mac M4. You know what each tool does from direct experience. No surprises when they appear in Month 1 projects.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ Q1 ══ -->
+<div class="sec">Quarter 1 — January to March 2027 <span class="badge">AI Foundations</span></div>
+
+<!-- MONTH 1 -->
+<div class="pc" id="m1">
+  <div class="ph" onclick="tog('m1')">
+    <div class="pbadge" style="background:linear-gradient(135deg,#059669,#d97706)">Month 1</div>
+    <div class="pi"><h3>🔄 LangChain Refresh + Prompt Engineering</h3><p>January · LCEL new API · Prompt patterns · Both OpenAI and Anthropic · AWS CLF prep</p></div>
+    <div class="pcert" style="color:var(--amber)">🏆 AWS Cloud Practitioner — study + sit Feb</div>
+    <div class="ptog">+</div>
+  </div>
+  <div class="pb">
+    <div class="tabs">
+      <button class="tbtn on" onclick="swt(this,'m1','learn')">📚 Learn</button>
+      <button class="tbtn" onclick="swt(this,'m1','project')">🛠 Project</button>
+      <button class="tbtn" onclick="swt(this,'m1','skills')">⚡ Skills</button>
+      <button class="tbtn" onclick="swt(this,'m1','rev')">✅ Review</button>
+    </div>
+    <div class="tp on" data-p="learn" data-c="m1">
+      <div>
+        <div class="ib"><h4>Courses</h4>
+          <ul class="rl">
+            <li><a href="https://learn.deeplearning.ai/courses/langchain" target="_blank">LangChain for LLM App Dev</a><span class="fs">Free</span><span class="src">Refresh your Jan 2026 knowledge</span></li>
+            <li><a href="https://learn.deeplearning.ai/courses/chatgpt-prompt-eng-for-devs" target="_blank">ChatGPT Prompt Engineering for Devs</a><span class="fs">Free</span></li>
+            <li><a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview" target="_blank">Anthropic Prompt Engineering Guide</a><span class="fs">Free</span></li>
+            <li><a href="https://python.langchain.com/docs/expression_language/" target="_blank">LCEL Official Docs</a><span class="fs">Free</span><span class="src">New API since your Jan 2026 course</span></li>
+            <li><a href="https://explore.skillbuilder.aws/learn/course/external/view/elearning/134/aws-cloud-practitioner-essentials" target="_blank">AWS Cloud Practitioner Essentials</a><span class="fs">Free</span></li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Prompt Patterns to Master</h4>
+          <ul class="cl">
+            <li><strong>Zero-shot</strong> — direct instruction, no examples</li>
+            <li><strong>Few-shot</strong> — 3–5 examples embedded in prompt</li>
+            <li><strong>Chain-of-Thought (CoT)</strong> — "think step by step"</li>
+            <li><strong>ReAct</strong> — Reason + Act loop (agent foundation)</li>
+            <li><strong>Structured output</strong> — JSON mode + Pydantic</li>
+            <li><strong>LCEL prompt chaining</strong> — output → input of next chain</li>
+            <li><strong>System prompt design</strong> — persona, constraints, format</li>
+          </ul>
+        </div>
+        <div class="ib"><h4>What Changed Since Jan 2026</h4>
+          <ul class="cl">
+            <li>Old: <code>LLMChain(llm=..., prompt=...)</code> → deprecated</li>
+            <li>New LCEL: <code>prompt | llm | parser</code> pipe operator</li>
+            <li><code>RunnablePassthrough</code> — pass data through unchanged</li>
+            <li><code>RunnableParallel</code> — two chains run simultaneously</li>
+            <li>Streaming: <code>async for chunk in chain.astream(input)</code></li>
+            <li>LangServe deprecated → use FastAPI directly instead</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="ib"><h4>Week-by-Week</h4>
+          <div class="weeks">
+            <div class="wk"><div class="wkl">Week 1</div><p>Prompt patterns with GPT-4o-mini and Claude Haiku. Write 20 prompts using each pattern. Compare outputs.</p></div>
+            <div class="wk"><div class="wkl">Week 2</div><p>LCEL: pipe operator, RunnableParallel, streaming, Pydantic output parsers.</p></div>
+            <div class="wk"><div class="wkl">Week 3</div><p>AWS CLF-C02: 2hrs/day + 200 practice questions on ExamTopics. You know 70% already.</p></div>
+            <div class="wk"><div class="wkl">Week 4</div><p>Build PromptBench project + sit AWS Cloud Practitioner exam.</p></div>
+          </div>
+        </div>
+        <div class="ib"><h4>Libraries in Use This Month</h4>
+          <ul class="cl">
+            <li><code>langchain</code> <code>langchain-openai</code> <code>langchain-anthropic</code></li>
+            <li><code>pydantic</code> for structured output parsing</li>
+            <li><code>tiktoken</code> to count tokens before every call</li>
+            <li><code>streamlit</code> for the Streamlit UI</li>
+            <li><code>pandas</code> to log and analyse experiments</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="project" data-c="m1">
+      <div class="proj">
+        <div class="projl">Month 1 Project · Step by Step</div>
+        <h5>"PromptBench" — Multi-Model Prompt Testing Lab</h5>
+        <ul class="steps">
+          <li>Build LCEL chain: <code>ChatPromptTemplate.from_messages([...]) | ChatOpenAI(model="gpt-4o-mini") | StrOutputParser()</code>. Invoke it. Confirm output appears.</li>
+          <li>Build parallel chain with Claude: same structure with <code>ChatAnthropic(model="claude-haiku-4-5")</code>.</li>
+          <li>Wrap both in <code>RunnableParallel(gpt=chain_gpt, claude=chain_claude)</code>. Invoke once — both models run simultaneously. Compare latency.</li>
+          <li>Add streaming with <code>chain.astream()</code>. Print tokens as they arrive with model label prefix: <code>[GPT] word1 word2...</code></li>
+          <li>Write Pydantic output parser: <code>class Result(BaseModel): summary: str; confidence: float; key_points: list[str]</code>. Use <code>JsonOutputParser(pydantic_object=Result)</code>.</li>
+          <li>Build template library: 5 parametrised <code>ChatPromptTemplate</code>s for summarise / classify / extract / generate / evaluate with <code>{topic}</code>, <code>{tone}</code>, <code>{length}</code> variables.</li>
+          <li>Add tiktoken: count tokens in every prompt BEFORE sending. Print: "Sending 142 tokens, ~$0.000028".</li>
+          <li>Build Streamlit UI: text area for prompt, model dropdown, side-by-side output columns showing GPT vs Claude with token count and latency per model.</li>
+          <li>Log every experiment to <code>experiments.csv</code>: <code>prompt_id, model, tokens_in, tokens_out, latency_ms, pattern, score</code>. Manually score outputs 1–5.</li>
+          <li>Run 50 experiments. Use pandas to find which model wins per prompt pattern. Write 5 findings in README.</li>
+        </ul>
+        <div class="outcome">Personal prompt testing tool you'll use all year. Deep LCEL understanding. Data showing when GPT beats Claude and vice versa. AWS Cloud Practitioner ✓</div>
+      </div>
+    </div>
+    <div class="tp full" data-p="skills" data-c="m1">
+      <div class="ib"><h4>Skills You Carry In</h4>
+        <div class="chips"><span class="chip carry">REST API design</span><span class="chip carry">async/await from TypeScript</span><span class="chip carry">JSON handling</span><span class="chip carry">CLI tooling</span><span class="chip carry">Docker .env files</span><span class="chip carry">HTTP request/response lifecycle</span></div>
+      </div>
+      <div class="ib" style="margin-top:13px"><h4>Skills You Gain</h4>
+        <div class="chips"><span class="chip new">LCEL pipe composition</span><span class="chip new">RunnableParallel</span><span class="chip new">Streaming LLM tokens</span><span class="chip new">Pydantic output parsers</span><span class="chip new">Prompt pattern library</span><span class="chip new">Token cost awareness</span><span class="chip new">AWS Cloud Practitioner ✓</span></div>
+      </div>
+    </div>
+    <div class="tp full" data-p="rev" data-c="m1">
+      <div class="rev">
+        <div class="revl">Month 1 Exit Criteria</div>
+        <ul>
+          <li>Write a 3-step LCEL chain from memory without looking at docs</li>
+          <li>RunnableParallel running GPT and Claude simultaneously, results correctly labelled</li>
+          <li>Pydantic output parser enforcing JSON structure from both models</li>
+          <li>experiments.csv has 50+ rows with analysis and 5 documented findings</li>
+          <li>Streamlit app runs at localhost:8501 with streaming tokens visible</li>
+          <li>AWS Cloud Practitioner certificate in hand 🏆</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MONTH 2 -->
+<div class="pc" id="m2">
+  <div class="ph" onclick="tog('m2')">
+    <div class="pbadge" style="background:linear-gradient(135deg,#047857,#059669)">Month 2</div>
+    <div class="pi"><h3>🔍 RAG — Retrieval-Augmented Generation</h3><p>February · Embeddings · ChromaDB · HyDE · MultiQuery · RAGAS evaluation</p></div>
+    <div class="pcert">Start AWS SAA-C03 study this month</div>
+    <div class="ptog">+</div>
+  </div>
+  <div class="pb">
+    <div class="tabs">
+      <button class="tbtn on" onclick="swt(this,'m2','learn')">📚 Learn</button>
+      <button class="tbtn" onclick="swt(this,'m2','project')">🛠 Project</button>
+      <button class="tbtn" onclick="swt(this,'m2','skills')">⚡ Skills</button>
+      <button class="tbtn" onclick="swt(this,'m2','rev')">✅ Review</button>
+    </div>
+    <div class="tp on" data-p="learn" data-c="m2">
+      <div>
+        <div class="ib"><h4>Courses</h4>
+          <ul class="rl">
+            <li><a href="https://learn.deeplearning.ai/courses/building-evaluating-advanced-rag" target="_blank">Building &amp; Evaluating Advanced RAG</a><span class="fs">Free</span></li>
+            <li><a href="https://learn.deeplearning.ai/courses/vector-databases-embeddings-applications" target="_blank">Vector DBs: Embeddings to Apps</a><span class="fs">Free</span></li>
+            <li><a href="https://python.langchain.com/docs/use_cases/question_answering/" target="_blank">LangChain RAG Tutorial</a><span class="fs">Free</span></li>
+            <li><a href="https://docs.ragas.io/en/latest/" target="_blank">RAGAS Evaluation Framework</a><span class="fs">Free</span></li>
+            <li><a href="https://docs.trychroma.com/" target="_blank">ChromaDB Official Docs</a><span class="fs">Free</span></li>
+          </ul>
+        </div>
+        <div class="ib"><h4>RAG Concepts</h4>
+          <ul class="cl">
+            <li>Embeddings: float vectors encoding semantic meaning</li>
+            <li>Cosine similarity: measures meaning, not keyword overlap</li>
+            <li>Chunking: fixed (512 chars), overlap (128), semantic split</li>
+            <li>Dense vs sparse retrieval: embeddings vs BM25 keyword</li>
+            <li>HyDE: embed a hypothetical answer, not the raw question</li>
+            <li>MultiQueryRetriever: 3 rephrasings → 3 retrievals → merge</li>
+            <li>RAGAS: faithfulness, answer_relevancy, context_precision</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="ib"><h4>Your DevOps Skills in RAG</h4>
+          <ul class="cl">
+            <li>You know databases → ChromaDB is just a vector DB: same CRUD</li>
+            <li>REST API skills → RAG retrieval is a structured query with vector math</li>
+            <li>NestJS service patterns → doc ingestion pipeline is same architecture</li>
+            <li>Docker volumes → ChromaDB persistence path: identical mental model</li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Week-by-Week</h4>
+          <div class="weeks">
+            <div class="wk"><div class="wkl">Week 1</div><p>Embeddings theory · sentence-transformers on M4 · cosine similarity in numpy by hand</p></div>
+            <div class="wk"><div class="wkl">Week 2</div><p>ChromaDB: ingest 50 docs · test 3 chunk sizes · measure retrieval precision manually</p></div>
+            <div class="wk"><div class="wkl">Week 3</div><p>Advanced RAG: HyDE + MultiQueryRetriever · RAGAS on all 3 strategies</p></div>
+            <div class="wk"><div class="wkl">Week 4</div><p>Gradio UI + written analysis + project complete</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="project" data-c="m2">
+      <div class="proj">
+        <div class="projl">Month 2 Project · Step by Step</div>
+        <h5>"DocBot" — GE Engineering Docs RAG Chatbot</h5>
+        <ul class="steps">
+          <li>Collect 30–50 documents: GE engineering PDFs, AWS docs, NestJS docs — anything technical you know well. Quality beats quantity.</li>
+          <li>Build ingestion pipeline: <code>pypdf.PdfReader</code> → extract text → clean (strip headers/footers) → chunk. Test all 3 sizes: 256, 512, 1024 chars with 10% overlap. Store each in separate ChromaDB collection.</li>
+          <li>Embed with <code>sentence-transformers all-MiniLM-L6-v2</code> (free, fast on M4). Store in ChromaDB with metadata: <code>source: filename, page: int, chunk_id: int</code>.</li>
+          <li>Build basic RAG chain: question → embed → ChromaDB query top-5 → format context → Claude answers with citation: "According to [filename] page [N]..."</li>
+          <li>Implement <code>MultiQueryRetriever</code>: LLM generates 3 rephrasings of the question, retrieves for all 3, deduplicates by cosine similarity threshold above 0.95.</li>
+          <li>Implement HyDE: send question to Claude, get a hypothetical answer, embed THAT as the search vector. Compare retrieval precision vs raw question embedding.</li>
+          <li>Build RAGAS eval set: manually write 20 question-answer pairs from your docs. Save as JSON. This is your ground truth.</li>
+          <li>Run RAGAS on all 3 strategies. Use pandas to make comparison table: strategy × metric (faithfulness, answer_relevancy, context_precision). Which wins?</li>
+          <li>Build Gradio UI: question input, strategy selector radio buttons, answer + source citations, RAGAS scores shown per response.</li>
+          <li>Write 1-page analysis: which strategy wins under which conditions. This becomes your first technical article draft.</li>
+        </ul>
+        <div class="outcome">Production-grade RAG with evaluation methodology. RAGAS benchmarking across strategies with real data. Very few Year-1 AI engineers can do this — it's a genuine differentiator in interviews.</div>
+      </div>
+    </div>
+    <div class="tp full" data-p="skills" data-c="m2">
+      <div class="ib"><h4>Skills Gained This Month</h4>
+        <div class="chips"><span class="chip new">Vector embeddings</span><span class="chip new">ChromaDB operations</span><span class="chip new">Chunking strategy selection</span><span class="chip new">HyDE advanced retrieval</span><span class="chip new">MultiQueryRetriever</span><span class="chip new">RAGAS evaluation</span><span class="chip new">Document ingestion pipelines</span></div>
+      </div>
+    </div>
+    <div class="tp full" data-p="rev" data-c="m2">
+      <div class="rev">
+        <div class="revl">Month 2 Exit Criteria</div>
+        <ul>
+          <li>50+ docs in ChromaDB with metadata queryable by source and page number</li>
+          <li>Three retrieval strategies benchmarked with RAGAS in a comparison table</li>
+          <li>Best strategy achieves RAGAS faithfulness above 0.75</li>
+          <li>Gradio UI shows answer + source filename + page number citations</li>
+          <li>1-page written analysis with data supporting conclusions</li>
+          <li>Can explain chunk size tradeoffs verbally in 5 minutes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MONTH 3 -->
+<div class="pc" id="m3">
+  <div class="ph" onclick="tog('m3')">
+    <div class="pbadge" style="background:linear-gradient(135deg,#b45309,#d97706)">Month 3</div>
+    <div class="pi"><h3>🤖 AI Agents + LangGraph + Tool Use</h3><p>March · ReAct pattern · LangGraph state machines · CrewAI multi-agent · FastAPI streaming</p></div>
+    <div class="pcert" style="color:var(--amber)">🏆 AWS SAA-C03 — study now, sit May</div>
+    <div class="ptog">+</div>
+  </div>
+  <div class="pb">
+    <div class="tabs">
+      <button class="tbtn on" onclick="swt(this,'m3','learn')">📚 Learn</button>
+      <button class="tbtn" onclick="swt(this,'m3','project')">🛠 Project</button>
+      <button class="tbtn" onclick="swt(this,'m3','skills')">⚡ Skills</button>
+      <button class="tbtn" onclick="swt(this,'m3','rev')">✅ Review</button>
+    </div>
+    <div class="tp on" data-p="learn" data-c="m3">
+      <div>
+        <div class="ib"><h4>Courses</h4>
+          <ul class="rl">
+            <li><a href="https://learn.deeplearning.ai/courses/ai-agents-in-langgraph" target="_blank">AI Agents in LangGraph</a><span class="fs">Free</span></li>
+            <li><a href="https://learn.deeplearning.ai/courses/multi-ai-agent-systems-with-crewai" target="_blank">Multi AI Agent Systems with CrewAI</a><span class="fs">Free</span></li>
+            <li><a href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use" target="_blank">Anthropic Tool Use Guide</a><span class="fs">Free</span></li>
+            <li><a href="https://langchain-ai.github.io/langgraph/" target="_blank">LangGraph Official Docs</a><span class="fs">Free</span></li>
+            <li><a href="https://docs.tavily.com/" target="_blank">Tavily Search API for Agents</a><span class="fs">Free tier</span></li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Agent Concepts</h4>
+          <ul class="cl">
+            <li>Tool calling: JSON schema defines tools, LLM decides when to call them</li>
+            <li>ReAct loop: Observe → Think → Act → Observe → repeat</li>
+            <li>LangGraph: nodes (Python functions) + edges + TypedDict state</li>
+            <li>Conditional edges: branch on state values</li>
+            <li>Human-in-the-loop: <code>interrupt()</code> pauses, waits, resumes</li>
+            <li>Error handling: tool failures, retries, max iterations guard</li>
+          </ul>
+        </div>
+        <div class="ib"><h4>NestJS Skills in Agents</h4>
+          <ul class="cl">
+            <li>NestJS guards → LangGraph <code>interrupt()</code> approval checkpoint</li>
+            <li>NestJS middleware → LangGraph node hooks for logging</li>
+            <li>FastAPI = NestJS in Python: routes, DI, same concepts</li>
+            <li><code>StreamableFile</code> NestJS → <code>StreamingResponse</code> FastAPI</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="ib"><h4>Week-by-Week</h4>
+          <div class="weeks">
+            <div class="wk"><div class="wkl">Week 1</div><p>Tool calling with Claude + GPT. Write 5 custom tools with proper JSON schema definitions.</p></div>
+            <div class="wk"><div class="wkl">Week 2</div><p>LangGraph: 3 nodes, conditional edges, TypedDict state, persistence across calls.</p></div>
+            <div class="wk"><div class="wkl">Week 3</div><p>Human-in-the-loop + CrewAI: researcher + writer + critic agents as a crew.</p></div>
+            <div class="wk"><div class="wkl">Week 4</div><p>FastAPI streaming endpoint + Docker + project complete + SAA study intensifies.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="project" data-c="m3">
+      <div class="proj">
+        <div class="projl">Month 3 Project · Step by Step</div>
+        <h5>"DeepResearch" — Autonomous Agent with Streaming API in Docker</h5>
+        <ul class="steps">
+          <li>Define 5 tools with JSON schemas: <code>web_search(query: str)</code>, <code>read_url(url: str)</code>, <code>extract_facts(text: str) → list</code>, <code>check_contradiction(facts: list) → dict</code>, <code>save_note(content: str)</code>.</li>
+          <li>Register tools with both Claude tool_use format AND OpenAI function_calling format. Note how their schemas differ — document the differences.</li>
+          <li>Build LangGraph: <code>START → plan → {need_search? → search | enough? → write} → END</code>. TypedDict state: <code>{topic, facts, sources, report, iterations, approved}</code>.</li>
+          <li>Add iteration guard: if <code>state["iterations"] &gt; 5</code> force transition to write node. Prevents infinite tool-calling loops.</li>
+          <li>Add human checkpoint before write node: <code>interrupt()</code> shows collected facts, user can edit them, graph resumes with updated state.</li>
+          <li>Build CrewAI version of same task: ResearcherAgent + WriterAgent + EditorAgent. Run both on 5 topics. Compare output quality and latency.</li>
+          <li>Wrap in FastAPI: <code>POST /research {"topic": "..."}</code> → <code>StreamingResponse</code> yielding newline-delimited JSON as agent works.</li>
+          <li>Test with curl: <code>curl -N -X POST localhost:8000/research -H "Content-Type: application/json" -d '{"topic":"RAG vs Fine-tuning"}'</code>. Watch streaming chunks.</li>
+          <li>Dockerise: Dockerfile + <code>docker build -t deepresearch .</code> + <code>docker run -p 8000:8000 --env-file .env deepresearch</code>. Confirm it works in container.</li>
+          <li>Write README with Excalidraw architecture diagram and comparison table: LangGraph vs CrewAI — when to use each.</li>
+        </ul>
+        <div class="outcome">Production-grade agent system with streaming API running in Docker. Your NestJS background makes FastAPI trivial. Agents + API + containers = complete AI microservice ready for deployment.</div>
+      </div>
+    </div>
+    <div class="tp full" data-p="skills" data-c="m3">
+      <div class="ib"><h4>Skills Gained This Month</h4>
+        <div class="chips"><span class="chip new">LangGraph state machines</span><span class="chip new">Tool calling Claude + OpenAI</span><span class="chip new">Human-in-the-loop pattern</span><span class="chip new">CrewAI multi-agent</span><span class="chip new">FastAPI streaming endpoint</span><span class="chip deepen">Docker containerisation (deepened)</span><span class="chip deepen">AWS SAA study in progress</span></div>
+      </div>
+    </div>
+    <div class="tp full" data-p="rev" data-c="m3">
+      <div class="rev">
+        <div class="revl">Month 3 Exit Criteria</div>
+        <ul>
+          <li>Agent with 5 tools handles tool failure gracefully: retries once, then falls back</li>
+          <li>LangGraph state persists correctly across 10+ turns without corruption</li>
+          <li>Human checkpoint: agent pauses, user edits facts, agent resumes correctly</li>
+          <li>FastAPI streaming: curl shows tokens arriving in real time</li>
+          <li>Docker container running: <code>docker ps</code> shows research agent live</li>
+          <li>Written comparison: LangGraph vs CrewAI — when to use each</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ Q2 ══ -->
+<div class="sec">Quarter 2 — April to June 2027 <span class="badge">Agents + LLMOps + Cloud</span></div>
+
+<div class="pc" id="q2">
+  <div class="ph" onclick="tog('q2')">
+    <div class="pbadge" style="background:linear-gradient(135deg,#059669,#047857)">Q2 · Months 4–6</div>
+    <div class="pi"><h3>☁️ AWS Bedrock + LLMOps + Production Deployment</h3><p>April–June · Lambda · OpenSearch · LangSmith · DeepEval in CI · Observability dashboard</p></div>
+    <div class="pcert" style="color:var(--amber)">🏆 AWS SAA (May) + 🏆 CKA (Jun)</div>
+    <div class="ptog">+</div>
+  </div>
+  <div class="pb">
+    <div class="tabs">
+      <button class="tbtn on" onclick="swt(this,'q2','plan')">📅 Monthly Plan</button>
+      <button class="tbtn" onclick="swt(this,'q2','proj')">🛠 Projects</button>
+      <button class="tbtn" onclick="swt(this,'q2','rev')">✅ Q2 Review</button>
+    </div>
+    <div class="tp full on" data-p="plan" data-c="q2">
+      <div class="g2">
+        <div>
+          <div class="ib"><h4>Month 4 — AWS Bedrock + Production RAG (April)</h4>
+            <ul class="rl">
+              <li><a href="https://learn.deeplearning.ai/courses/serverless-llm-apps-amazon-bedrock" target="_blank">Serverless LLM Apps — Amazon Bedrock</a><span class="fs">Free</span></li>
+              <li><a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html" target="_blank">AWS Bedrock User Guide</a><span class="fs">Free</span></li>
+              <li><a href="https://docs.anthropic.com/en/api/claude-on-amazon-bedrock" target="_blank">Claude on Amazon Bedrock</a><span class="fs">Free</span></li>
+            </ul>
+            <ul class="cl" style="margin-top:8px">
+              <li>Invoke Claude via boto3 Bedrock runtime</li>
+              <li>IAM least-privilege: only <code>bedrock:InvokeModel</code></li>
+              <li>Lambda function wrapping Month 2 RAG app</li>
+              <li>API Gateway with API key auth</li>
+              <li>AWS OpenSearch Serverless for vectors</li>
+              <li>CloudWatch: log query, tokens, latency, retrieval count</li>
+              <li>Cost calculator: Bedrock vs running on Mac M4</li>
+            </ul>
+          </div>
+          <div class="ib"><h4>Month 5 — CKA Exam + LLMOps Part 1 (May)</h4>
+            <ul class="rl">
+              <li><a href="https://killer.sh/" target="_blank">killer.sh CKA Simulator</a><span class="src">$30 · best prep</span></li>
+              <li><a href="https://docs.smith.langchain.com/" target="_blank">LangSmith Docs</a><span class="fs">Free tier</span></li>
+            </ul>
+            <ul class="cl" style="margin-top:8px">
+              <li>CKA exam: you run K8s at GE, ~25 hrs study to certify it</li>
+              <li>LangSmith: instrument all 3 projects with <code>@traceable</code></li>
+              <li>Add custom metadata to traces: user_id, query_type, strategy</li>
+              <li>Create LangSmith Dataset from Month 2 RAGAS eval set</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="ib"><h4>Month 6 — LLMOps Dashboard + CI Eval (June)</h4>
+            <ul class="rl">
+              <li><a href="https://learn.deeplearning.ai/courses/evaluating-debugging-generative-ai" target="_blank">Evaluating &amp; Debugging GenAI</a><span class="fs">Free</span></li>
+              <li><a href="https://www.deepeval.com/docs" target="_blank">DeepEval Documentation</a><span class="fs">Free</span></li>
+            </ul>
+            <ul class="cl" style="margin-top:8px">
+              <li>DeepEval: 50 test cases in GitHub Actions CI</li>
+              <li>A/B test 3 prompt variants with scipy significance test</li>
+              <li>Streamlit dashboard: traces, scores, latency, cost/day</li>
+              <li>Post-mortem: 1 hallucination incident, root cause, fix</li>
+            </ul>
+          </div>
+          <div class="ib"><h4>Your DevOps Background = LLMOps Superpower</h4>
+            <ul class="cl">
+              <li>You know SRE observability → apply same principles to LLMs</li>
+              <li>GitHub Actions CI/CD → PR fails if hallucination rate above 5%</li>
+              <li>You define SLOs → LLM SLOs: P95 latency under 2s, faithfulness above 0.85</li>
+              <li>Docker expertise → containerise eval suite for GitHub Actions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="proj" data-c="q2">
+      <div class="g2">
+        <div class="proj">
+          <div class="projl">Month 4 Project · Step by Step</div>
+          <h5>"DocAPI" — Month 2 RAG App Deployed on AWS</h5>
+          <ul class="steps">
+            <li>Create IAM role <code>docapi-role</code>: only <code>bedrock:InvokeModel</code> for Claude ARN. Test with <code>aws iam simulate-principal-policy</code>.</li>
+            <li>Refactor Month 2 chain: swap <code>ChatOpenAI</code> for <code>ChatBedrock(model_id="anthropic.claude-3-5-haiku-20241022-v1:0")</code>.</li>
+            <li>Lambda handler: parse API Gateway event → extract query → run RAG → return <code>{"statusCode": 200, "body": json.dumps(result)}</code>.</li>
+            <li>Deploy Lambda. Set timeout 30s, memory 512MB. Test locally with <code>aws lambda invoke</code> and mock event.</li>
+            <li>Create API Gateway: REST → POST /query → Lambda proxy. Enable API key. Test: <code>curl -H "x-api-key: KEY" -X POST URL/query -d '{"question":"..."}'</code></li>
+            <li>Re-ingest Month 2 docs into AWS OpenSearch Serverless. Update Lambda to query OpenSearch instead of local ChromaDB.</li>
+            <li>Add EventBridge rule: ping Lambda every 5 min to prevent cold starts.</li>
+            <li>Set billing alert at $10. Build cost calculator script: N queries × token price × days = monthly cost.</li>
+            <li>Draw architecture diagram with draw.io or Excalidraw. Add to GitHub README with cost analysis.</li>
+          </ul>
+          <div class="outcome">Month 2 RAG is now a live cloud API. You understand production AI costs. Architecture diagram shows enterprise AI thinking rare in Year 1.</div>
+        </div>
+        <div class="proj">
+          <div class="projl">Month 5–6 Project · Step by Step</div>
+          <h5>"AIObserve" — Full LLMOps Dashboard</h5>
+          <ul class="steps">
+            <li>Add <code>LANGCHAIN_TRACING_V2=true</code> + <code>LANGCHAIN_API_KEY</code> to .env. Re-run all 3 projects. See every trace in LangSmith UI.</li>
+            <li>Add <code>@traceable</code> to all LLM functions. Add metadata: user_id, query_type, retrieval_strategy, chunk_count.</li>
+            <li>Upload Month 2 RAGAS eval set (20 Q&amp;A pairs) to LangSmith as a Dataset benchmark.</li>
+            <li>Write 50 DeepEval test cases: correctness, faithfulness, answer_relevancy, contextual_recall. Run <code>deepeval test run</code> locally first.</li>
+            <li>Add to GitHub Actions: <code>.github/workflows/eval.yml</code> → every PR runs DeepEval. Fail if any metric drops below threshold.</li>
+            <li>Create 3 prompt variants for DocBot. A/B test 100 queries each. Use <code>scipy.stats.ttest_ind</code> for significance (p under 0.05).</li>
+            <li>Set LangSmith alert: P95 latency above 3s in 1hr window → POST to Slack webhook with details.</li>
+            <li>Build Streamlit dashboard: trace count, RAGAS trend chart, token cost/day bar chart, alert status, recent traces table.</li>
+            <li>Deliberately remove a source doc, ask question about it. Document the hallucination. Write 1-page post-mortem: what broke, root cause, fix.</li>
+          </ul>
+          <div class="outcome">AI systems with full SRE-grade observability. Hallucinations caught in CI before users see them. AWS SAA ✓ CKA ✓ LLMOps expertise rare in Year 1.</div>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="rev" data-c="q2">
+      <div class="rev">
+        <div class="revl">Q2 Exit Criteria — 6 Months Complete</div>
+        <ul>
+          <li>Lambda + API Gateway endpoint responding to real HTTP requests with API key auth</li>
+          <li>Bedrock Claude answering RAG queries from AWS OpenSearch Serverless</li>
+          <li>LangSmith traces visible for every LLM call across all 3 projects</li>
+          <li>50 DeepEval tests passing in GitHub Actions on every PR</li>
+          <li>A/B test result: winning prompt variant identified with p under 0.05</li>
+          <li>AWS CLF ✓ + AWS SAA ✓ + CKA ✓ — 3 certifications complete</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ Q3+Q4 ══ -->
+<div class="sec">Quarters 3 &amp; 4 — July to December 2027 <span class="badge">Production AI + Architect</span></div>
+
+<div class="pc" id="q34">
+  <div class="ph" onclick="tog('q34')">
+    <div class="pbadge" style="background:linear-gradient(135deg,#d97706,#f59e0b)">Q3–Q4 · Months 7–12</div>
+    <div class="pi"><h3>🔬 Fine-tuning → GCP → System Design → MCP → Capstone SaaS</h3><p>July–December · MLX on M4 · Vertex AI · KServe · MCP protocol · Ship a real AI product on EKS</p></div>
+    <div class="pcert" style="color:var(--amber)">🏆 GCP ML Engineer (Sep) + 🏆 AWS ML Specialty (Dec)</div>
+    <div class="ptog">+</div>
+  </div>
+  <div class="pb">
+    <div class="tabs">
+      <button class="tbtn on" onclick="swt(this,'q34','plan')">📅 Monthly Plan</button>
+      <button class="tbtn" onclick="swt(this,'q34','capstone')">🚀 Capstone</button>
+      <button class="tbtn" onclick="swt(this,'q34','certs')">🏆 Cert Details</button>
+    </div>
+    <div class="tp full on" data-p="plan" data-c="q34">
+      <div class="g2">
+        <div>
+          <div class="ib"><h4>Month 7 — Fine-tuning on M4 (July)</h4>
+            <ul class="rl">
+              <li><a href="https://learn.deeplearning.ai/courses/finetuning-large-language-models" target="_blank">Finetuning LLMs Course</a><span class="fs">Free</span></li>
+              <li><a href="https://ml-explore.github.io/mlx/" target="_blank">Apple MLX Docs</a><span class="fs">Free · M4 native</span></li>
+              <li><a href="https://github.com/ml-explore/mlx-examples/tree/main/lora" target="_blank">MLX LoRA Examples</a><span class="fs">Free · GitHub</span></li>
+            </ul>
+            <ul class="cl" style="margin-top:8px">
+              <li>LoRA/QLoRA: adapter layers, no full fine-tune cost</li>
+              <li>Create 300 Q&amp;A pairs in your GE engineering domain</li>
+              <li>Fine-tune Llama 3.2 3B on M4 with <code>mlx_lm.lora</code> — no GPU needed</li>
+              <li>Quantise 4-bit: fast M4 inference at no cloud cost</li>
+              <li>DeepEval: compare fine-tuned vs GPT-4o-mini on 50 domain questions</li>
+            </ul>
+          </div>
+          <div class="ib"><h4>Month 8 — GCP Vertex AI (August)</h4>
+            <ul class="rl">
+              <li><a href="https://cloud.google.com/vertex-ai/generative-ai/docs" target="_blank">GCP Vertex AI GenAI Docs</a><span class="fs">Free</span></li>
+              <li><a href="https://www.cloudskillsboost.google/paths/183" target="_blank">Google Cloud AI Learning Path</a><span class="fs">Free</span></li>
+            </ul>
+            <ul class="cl" style="margin-top:8px">
+              <li>Gemini API via Vertex AI SDK: text, multimodal, embeddings</li>
+              <li>Vertex AI Pipelines: compare to LangGraph for ML workflows</li>
+              <li>Cloud Run: deploy Docker AI APIs (your Docker expertise)</li>
+              <li>GCP ML Engineer exam study intensifies this month</li>
+            </ul>
+          </div>
+          <div class="ib"><h4>Month 9 — AI System Design (September)</h4>
+            <ul class="cl">
+              <li>RAG at 1M queries/day: semantic caching saves 70% cost</li>
+              <li>K8s + KServe for model serving (your GE K8s knowledge)</li>
+              <li>Multi-region AI deployment: latency under 200ms globally</li>
+              <li>Responsible AI: PII detection, content filtering, audit logs</li>
+              <li><strong>GCP ML Engineer exam — sit this month</strong></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="ib"><h4>Month 10 — MCP + Advanced Agents (October)</h4>
+            <ul class="cl">
+              <li>Model Context Protocol (MCP) — Anthropic's tool interop standard</li>
+              <li>Build MCP server: expose DocBot and research tools via MCP</li>
+              <li>Advanced LangGraph: subgraphs, Redis/Postgres persistence backends</li>
+              <li>Deploy agent to K8s with HPA and resource limits</li>
+              <li>Agent monitoring at production volume in LangSmith</li>
+            </ul>
+          </div>
+          <div class="ib"><h4>Month 11 — AWS ML Architecture (November)</h4>
+            <ul class="rl">
+              <li><a href="https://explore.skillbuilder.aws/learn/course/external/view/elearning/28/exam-readiness-aws-certified-machine-learning-specialty" target="_blank">AWS ML Specialty Exam Readiness</a><span class="fs">Free</span></li>
+              <li><a href="https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html" target="_blank">AWS SageMaker Docs</a><span class="fs">Free</span></li>
+            </ul>
+            <ul class="cl" style="margin-top:8px">
+              <li>SageMaker: training jobs, real-time endpoints, model registry</li>
+              <li>Security: VPC, PrivateLink for Bedrock, encryption at rest</li>
+              <li>Cost optimisation: Savings Plans, spot instances for training</li>
+              <li>Enterprise AI governance: audit trails, access controls</li>
+            </ul>
+          </div>
+          <div class="ib"><h4>Month 12 — Capstone + AWS ML Cert (December)</h4>
+            <ul class="cl">
+              <li>Ship full-stack AI SaaS product end to end</li>
+              <li>Deploy on EKS — your K8s expertise from GE is the superpower</li>
+              <li>Auth (JWT), billing (Stripe), monitoring (LangSmith + Grafana)</li>
+              <li>CI/CD: GitHub Actions → Docker → ECR → EKS (you already own this)</li>
+              <li><strong>AWS ML Specialty exam — 5th and final cert</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="capstone" data-c="q34">
+      <div class="proj">
+        <div class="projl">Month 12 Capstone · Step by Step</div>
+        <h5>Full-Stack AI SaaS — Choose Your Angle</h5>
+        <ul class="steps">
+          <li><strong>Pick your product</strong> — Option A: AI Code Reviewer (LangGraph agent analyses GitHub PRs) · Option B: AI Engineering Doc Analyst (RAG over GE-style technical docs with citations) · Option C: AI DevOps Assistant (K8s + AWS issue diagnosis with agents using your GE tools). Pick what you know deepest.</li>
+          <li>Architecture first — draw the complete system in Excalidraw before writing code: data flow, LLM calls, vector storage, auth layer, monitoring stack. Review it like a design doc.</li>
+          <li>Local dev with Docker Compose: FastAPI + LangGraph + Postgres (users) + Redis (semantic cache) + ChromaDB (local dev vectors). One <code>docker-compose up</code> starts everything.</li>
+          <li>Backend FastAPI: <code>/auth</code> JWT endpoints, <code>/api/v1/ask</code> streaming response, <code>/api/v1/history</code>, <code>/api/v1/usage</code>. Rate limiting per user tier via Redis.</li>
+          <li>AI pipeline: LangGraph agent with LangSmith tracing on every node. Bedrock Claude for inference. OpenSearch for vectors. Redis semantic cache for repeated queries (saves 70% cost).</li>
+          <li>Frontend with Next.js (your frontend background) using Server-Sent Events for streaming. Auth with NextAuth.js. Tailwind + shadcn/ui components. Usage dashboard per user.</li>
+          <li>Deploy to EKS — Helm charts per service, HPA for LLM API pods, ALB ingress with SSL via ACM, AWS Secrets Manager for all API keys. Zero-downtime rolling deployments.</li>
+          <li>Monitoring: LangSmith for LLM traces, Grafana + Prometheus for K8s metrics, CloudWatch for Bedrock costs, Slack alerts for latency spikes and hallucination rate above 3%.</li>
+          <li>CI/CD: GitHub Actions → lint → DeepEval test suite → docker build → push to ECR → helm upgrade on EKS → smoke test. Full pipeline under 10 minutes.</li>
+          <li>Launch: write technical case study (architecture decisions, cost breakdown, lessons). Record 3-min demo video. Post on Product Hunt. Open-source the architecture on GitHub with comprehensive README. Then sit AWS ML Specialty exam.</li>
+        </ul>
+        <div class="outcome">Live production AI SaaS with auth, billing, monitoring, and CI/CD deployed on EKS. Your GE background means the infrastructure is production-grade from day one. This is the portfolio centrepiece that gets you hired, promoted, or funded.</div>
+      </div>
+    </div>
+    <div class="tp full" data-p="certs" data-c="q34">
+      <div class="cd">
+        <div class="cdl">🏆 GCP Professional Machine Learning Engineer</div>
+        <h5>Sit September 2027</h5>
+        <p>Strongest AI-specific cloud cert available. Covers Vertex AI, Gemini APIs, ML pipelines, model monitoring, responsible AI, BigQuery ML, and cloud ML architecture patterns. Study 60 hrs across Months 8–9.</p>
+        <div class="cdmeta"><span>Exam: $200</span><span>Duration: 2hrs</span><span>Pass rate: ~58%</span><span>Validity: 2 years</span></div>
+      </div>
+      <div class="cd">
+        <div class="cdl">🏆 AWS Certified Machine Learning Specialty (MLS-C01)</div>
+        <h5>Sit December 2027</h5>
+        <p>Covers SageMaker, Bedrock, ML architecture at scale, feature engineering, model evaluation and monitoring, XGBoost on AWS. Combined with SAA-C03 it makes you a complete AWS AI engineer. Study 60 hrs across Months 10–11.</p>
+        <div class="cdmeta"><span>Exam: $300</span><span>Duration: 3hrs</span><span>Pass rate: ~52%</span><span>SAA-C03 recommended first</span><span>Validity: 3 years</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 20 YEAR VISION -->
+<div class="sec">20-Year Career Vision</div>
+<div class="ctx am" style="margin-bottom:18px"><strong>The honest truth:</strong> AI automates tasks. It will not automate engineers who architect, deploy, monitor, and scale AI systems in production. That's exactly what this plan builds. Your 10 years at GE building production systems is the foundation that makes you the person companies need to ship AI reliably and at scale.</div>
+<div class="vg">
+  <div class="vc" style="border-top-color:#059669"><div class="vcy">2026–2027</div><h5>AI Engineer</h5><p>5 certs, 12 projects, production AI systems shipped at GE or new company.</p><ul><li>₹50–90L / $90–130K range</li><li>Open source: LangChain/LangGraph contributions</li><li>Write 4 technical articles about projects</li><li>Speak at local Python/AI meetup</li></ul></div>
+  <div class="vc" style="border-top-color:#d97706"><div class="vcy">2027–2029</div><h5>Senior AI Engineer</h5><p>Lead AI projects. Design multi-agent systems. AI consulting starts.</p><ul><li>Lead AI initiative at GE or AI-first company</li><li>Speak at DevFest / PyCon India / re:Invent</li><li>Side income: AI consulting ₹8,000–15,000/hr</li><li>Mentor 2–3 junior AI engineers</li></ul></div>
+  <div class="vc" style="border-top-color:#047857"><div class="vcy">2029–2032</div><h5>AI Architect / Tech Lead</h5><p>Design enterprise AI platforms. Own the AI layer of a company.</p><ul><li>Design at scale: 10M+ AI queries/day</li><li>Build AI governance frameworks</li><li>Principal Engineer or AI Architect title</li><li>Evaluate new LLMs quarterly as they emerge</li></ul></div>
+  <div class="vc" style="border-top-color:#b45309"><div class="vcy">2032–2040</div><h5>Director / CTO-level</h5><p>Lead AI strategy for a business. Build AI engineering teams.</p><ul><li>Connect AI to measurable business revenue</li><li>Build and scale AI engineering culture</li><li>Angel invest in AI startups you understand</li><li>Possibly: found your own AI company</li></ul></div>
+  <div class="vc" style="border-top-color:#10b981"><div class="vcy">2040–2046</div><h5>Irreplaceable Senior Leader</h5><p>20 years of production AI. Lived through every paradigm shift.</p><ul><li>LLMs → AGI-adjacent → whatever comes next</li><li>Your engineering judgment exceeds any AI tool</li><li>Advise, invest, or build independently</li></ul></div>
+</div>
+
+<!-- SKILLS MATRIX -->
+<div class="sec">Skills After 12 Months</div>
+<div class="mxg">
+  <div class="mxc"><h4>AI Engineering</h4>
+    <div class="mxr">Prompt Engineering<div class="mxbw"><div class="mxb" style="width:95%;background:#059669"></div></div></div>
+    <div class="mxr">RAG + Vector DBs<div class="mxbw"><div class="mxb" style="width:90%;background:#059669"></div></div></div>
+    <div class="mxr">AI Agents / LangGraph<div class="mxbw"><div class="mxb" style="width:85%;background:#059669"></div></div></div>
+    <div class="mxr">LLM Fine-tuning<div class="mxbw"><div class="mxb" style="width:68%;background:#059669"></div></div></div>
+    <div class="mxr">LLMOps + Observability<div class="mxbw"><div class="mxb" style="width:88%;background:#059669"></div></div></div>
+    <div class="mxr">AI System Design<div class="mxbw"><div class="mxb" style="width:80%;background:#059669"></div></div></div>
+  </div>
+  <div class="mxc"><h4>Cloud + Infrastructure</h4>
+    <div class="mxr">AWS (existing + AI)<div class="mxbw"><div class="mxb" style="width:95%;background:#d97706"></div></div></div>
+    <div class="mxr">AWS Bedrock + Lambda<div class="mxbw"><div class="mxb" style="width:88%;background:#d97706"></div></div></div>
+    <div class="mxr">GCP Vertex AI<div class="mxbw"><div class="mxb" style="width:75%;background:#d97706"></div></div></div>
+    <div class="mxr">K8s + EKS + KServe<div class="mxbw"><div class="mxb" style="width:92%;background:#d97706"></div></div></div>
+    <div class="mxr">Docker + CI/CD<div class="mxbw"><div class="mxb" style="width:97%;background:#d97706"></div></div></div>
+    <div class="mxr">Serverless Architecture<div class="mxbw"><div class="mxb" style="width:82%;background:#d97706"></div></div></div>
+  </div>
+  <div class="mxc"><h4>Full Stack AI</h4>
+    <div class="mxr">Python (AI-grade)<div class="mxbw"><div class="mxb" style="width:88%;background:#b45309"></div></div></div>
+    <div class="mxr">FastAPI backends<div class="mxbw"><div class="mxb" style="width:87%;background:#b45309"></div></div></div>
+    <div class="mxr">React + Next.js (existing)<div class="mxbw"><div class="mxb" style="width:92%;background:#b45309"></div></div></div>
+    <div class="mxr">Streamlit / Gradio<div class="mxbw"><div class="mxb" style="width:80%;background:#b45309"></div></div></div>
+    <div class="mxr">LLM Evaluation<div class="mxbw"><div class="mxb" style="width:86%;background:#b45309"></div></div></div>
+    <div class="mxr">AI Product Shipping<div class="mxbw"><div class="mxb" style="width:84%;background:#b45309"></div></div></div>
+  </div>
+</div>
+
+</div>
+
+<footer style="text-align:center;padding:32px;font-size:.7rem;color:var(--dim);border-top:2px solid var(--edge);background:linear-gradient(135deg,#ecfdf5,#fffbeb);">
+  <div style="font-weight:700;color:var(--em-d);margin-bottom:6px;font-family:var(--head);font-size:.8rem;">AI Engineering Career Plan · 10 Years GE Full Stack → AI Architect · Jan–Dec 2027</div>
+  <a href="https://docs.anthropic.com">Anthropic</a> ·
+  <a href="https://platform.openai.com/docs">OpenAI</a> ·
+  <a href="https://python.langchain.com">LangChain</a> ·
+  <a href="https://langchain-ai.github.io/langgraph/">LangGraph</a> ·
+  <a href="https://aws.amazon.com/bedrock">AWS Bedrock</a> ·
+  <a href="https://cloud.google.com/vertex-ai">Vertex AI</a> ·
+  <a href="https://learn.deeplearning.ai">DeepLearning.AI</a>
+</footer>
+
+<script>
+function tog(id){document.getElementById(id).classList.toggle('open');}
+function swt(btn,card,pane){
+  var body=document.getElementById(card).querySelector('.pb');
+  body.querySelectorAll('.tbtn').forEach(function(b){b.classList.remove('on');});
+  btn.classList.add('on');
+  body.querySelectorAll('.tp').forEach(function(p){p.classList.remove('on');});
+  var t=body.querySelector('[data-p="'+pane+'"][data-c="'+card+'"]');
+  if(t)t.classList.add('on');
+}
+document.getElementById('ph0a').classList.add('open');
+</script>
+</body>
+</html>
