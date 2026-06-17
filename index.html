@@ -217,10 +217,302 @@ ul.cl li::before{content:'▸';position:absolute;left:0;color:var(--gold-d);font
 
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
 @media(max-width:560px){.g2{grid-template-columns:1fr;}}
+
+/* ══ TOP PAGE TABS ══ */
+.page-nav {
+  display: flex; background: white;
+  border-bottom: 2px solid var(--edge);
+  position: sticky; top: 0; z-index: 1000;
+  box-shadow: 0 2px 12px rgba(5,150,105,.08);
+}
+.page-tab {
+  padding: 0 32px; height: 52px; display: flex; align-items: center; gap: 9px;
+  font-family: var(--head); font-size: .82rem; font-weight: 600;
+  color: var(--dim); border: none; background: none;
+  cursor: pointer; border-bottom: 3px solid transparent;
+  transition: all .18s; white-space: nowrap; letter-spacing: -.01em;
+}
+.page-tab:hover { color: var(--em-d); background: var(--em-ll); }
+.page-tab.active { color: var(--em-d); border-bottom-color: var(--em-d); background: var(--em-ll); }
+.page-tab .tab-icon { font-size: 1rem; }
+.page-tab .tab-badge {
+  font-family: var(--mono); font-size: 7.5px; font-weight: 700;
+  padding: 2px 7px; border-radius: 10px; letter-spacing: .04em;
+}
+.page-tab.active .tab-badge { background: var(--em-d); color: white; }
+.page-tab:not(.active) .tab-badge { background: var(--edge); color: var(--dim); }
+.page-content { display: none; }
+.page-content.active { display: block; }
+
+/* ══ PYTHON PAGE EXTRAS ══ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg: #f0faf6;
+  --white: #ffffff;
+  --s2: #f4fbf8;
+  --edge: #c8ead9;
+  --edge2: #e2f5ec;
+  --em: #059669;
+  --em-d: #047857;
+  --em-l: #d1fae5;
+  --em-ll: #ecfdf5;
+  --gold: #d97706;
+  --gold-d: #b45309;
+  --gold-l: #fef3c7;
+  --gold-ll: #fffbeb;
+  --red: #dc2626;
+  --red-l: #fee2e2;
+  --text: #0f2d1e;
+  --dim: #4b7a5e;
+  --dim2: #6b9e84;
+  --mono: 'DM Mono', monospace;
+  --head: 'Plus Jakarta Sans', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--head); line-height: 1.6; }
+a { color: var(--em-d); }
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(135deg, #ecfdf5 0%, #fffbeb 100%);
+  border-bottom: 2px solid var(--edge);
+  padding: 52px 48px 44px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 0% 50%, rgba(5,150,105,.09) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 60% at 100% 20%, rgba(217,119,6,.07) 0%, transparent 55%);
+  pointer-events: none;
+}
+.hero-inner { position: relative; z-index: 1; max-width: 860px; }
+.eyebrow {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--em-d); margin-bottom: 12px;
+  display: flex; align-items: center; gap: 10px;
+}
+.eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--em-d); }
+h1 {
+  font-size: clamp(1.8rem, 4vw, 2.9rem); font-weight: 800;
+  line-height: 1.08; letter-spacing: -.025em; margin-bottom: 12px;
+}
+h1 em { font-style: normal; color: var(--em-d); }
+h1 .g { color: var(--gold-d); }
+.hero-sub { font-size: .92rem; color: var(--dim); max-width: 620px; line-height: 1.7; margin-bottom: 20px; }
+.hero-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.pill {
+  font-family: var(--mono); font-size: 9px; padding: 3px 11px;
+  border-radius: 20px; border: 1px solid; white-space: nowrap;
+}
+.pe { border-color: rgba(5,150,105,.4); color: var(--em-d); background: rgba(5,150,105,.07); }
+.pg { border-color: rgba(217,119,6,.4); color: var(--gold-d); background: rgba(217,119,6,.07); }
+.pr { border-color: rgba(220,38,38,.35); color: var(--red); background: rgba(220,38,38,.06); }
+
+/* ── LEGEND ── */
+.legend {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  padding: 14px 24px; background: white;
+  border-bottom: 1px solid var(--edge); align-items: center;
+}
+.legend-label { font-family: var(--mono); font-size: 9px; color: var(--dim); text-transform: uppercase; letter-spacing: .12em; margin-right: 4px; }
+.lbadge {
+  font-family: var(--mono); font-size: 8.5px; font-weight: 600;
+  padding: 3px 10px; border-radius: 20px; border: 1px solid; white-space: nowrap;
+}
+.must { background: #dc2626; color: white; border-color: #dc2626; }
+.nice { background: #d97706; color: white; border-color: #d97706; }
+.skip { background: #e5e7eb; color: #6b7280; border-color: #d1d5db; }
+
+/* ── WRAP ── */
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 40px 80px; }
+@media(max-width:700px) { .wrap { padding: 0 14px 60px; } .hero { padding: 36px 16px 32px; } }
+
+/* ── SECTION HEAD ── */
+.sh {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--dim);
+  margin: 44px 0 18px; display: flex; align-items: center; gap: 12px;
+}
+.sh::after { content: ''; flex: 1; height: 1px; background: var(--edge); }
+.sh .stag {
+  font-size: 8px; padding: 2px 8px; border-radius: 8px;
+  background: var(--em-d); color: white; font-weight: 700;
+  text-transform: none; letter-spacing: .03em;
+}
+
+/* ── TOPIC BLOCK ── */
+.topic-block {
+  background: white; border: 1.5px solid var(--edge);
+  border-radius: 13px; margin-bottom: 12px; overflow: hidden;
+  transition: box-shadow .2s;
+}
+.topic-block:hover { box-shadow: 0 4px 16px rgba(5,150,105,.08); }
+.topic-block.must-block { border-left: 4px solid var(--red); }
+.topic-block.nice-block { border-left: 4px solid var(--gold); }
+.topic-block.skip-block { border-left: 4px solid #d1d5db; opacity: .75; }
+
+.topic-head {
+  display: grid; grid-template-columns: auto 1fr auto;
+  align-items: center; gap: 14px;
+  padding: 14px 18px; cursor: pointer;
+  border-bottom: 1px solid transparent;
+}
+.topic-block.open .topic-head { border-bottom-color: var(--edge); background: var(--em-ll); }
+.topic-block.nice-block.open .topic-head { background: var(--gold-ll); }
+
+.topic-badge-wrap { display: flex; align-items: center; gap: 8px; }
+.topic-icon { font-size: 1.2rem; }
+.topic-info h3 { font-size: .92rem; font-weight: 700; color: var(--text); margin-bottom: 1px; }
+.topic-info .sub { font-size: .72rem; color: var(--dim); }
+.topic-tog { font-size: 16px; color: var(--dim); transition: transform .22s; user-select: none; }
+.topic-block.open .topic-tog { transform: rotate(45deg); color: var(--em-d); }
+
+.topic-body { display: none; }
+.topic-block.open .topic-body { display: block; }
+
+/* ── INNER GRID ── */
+.inner { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; }
+@media(max-width:700px) { .inner { grid-template-columns: 1fr; } }
+.inner-col { padding: 16px 18px; border-right: 1px solid var(--edge); }
+.inner-col:last-child { border-right: none; }
+
+.col-head {
+  font-family: var(--mono); font-size: 8.5px; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1.5px solid var(--edge);
+  display: flex; align-items: center; gap: 6px;
+}
+.col-head.must-h { color: var(--red); border-bottom-color: rgba(220,38,38,.3); }
+.col-head.usecase-h { color: var(--em-d); border-bottom-color: rgba(5,150,105,.3); }
+.col-head.code-h { color: var(--gold-d); border-bottom-color: rgba(217,119,6,.3); }
+
+/* syntax list */
+ul.syn { list-style: none; }
+ul.syn li {
+  font-family: var(--mono); font-size: .73rem;
+  padding: 3px 0 3px 12px; position: relative;
+  color: #1f4d32; border-bottom: 1px solid var(--edge2);
+}
+ul.syn li:last-child { border-bottom: none; }
+ul.syn li::before { content: '·'; position: absolute; left: 0; color: var(--em); }
+ul.syn li .kw { color: var(--red); font-weight: 500; }
+ul.syn li .str { color: var(--gold-d); }
+ul.syn li .comment { color: var(--dim2); }
+
+/* use case cards */
+.uc-list { display: flex; flex-direction: column; gap: 7px; }
+.uc {
+  background: var(--em-ll); border: 1px solid rgba(5,150,105,.2);
+  border-radius: 7px; padding: 8px 11px;
+}
+.uc-label {
+  font-family: var(--mono); font-size: 7px; font-weight: 600;
+  color: var(--em-d); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 3px;
+}
+.uc p { font-size: .73rem; color: #1f4d32; line-height: 1.45; }
+.uc code { font-family: var(--mono); font-size: .68rem; background: rgba(5,150,105,.1); color: var(--em-d); padding: 1px 4px; border-radius: 3px; }
+
+/* code snippet */
+.snip {
+  background: #0a1a0e; border-radius: 7px;
+  padding: 11px 13px; font-family: var(--mono);
+  font-size: .69rem; line-height: 1.7; overflow-x: auto;
+  color: #6ee7b7;
+}
+.snip .ck { color: #fbbf24; }
+.snip .cs { color: #a7f3d0; }
+.snip .cm { color: #3d6b4f; }
+.snip .cr { color: #fca5a5; }
+
+/* ── TIME BUDGET ── */
+.time-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; }
+.time-card {
+  background: white; border: 1.5px solid var(--edge);
+  border-radius: 10px; padding: 16px;
+}
+.time-card.must-card { border-top: 3px solid var(--red); }
+.time-card.nice-card { border-top: 3px solid var(--gold); }
+.time-card.skip-card { border-top: 3px solid #d1d5db; opacity: .6; }
+.time-n { font-size: 1.6rem; font-weight: 800; color: var(--em-d); display: block; }
+.time-l { font-size: .7rem; color: var(--dim); font-family: var(--mono); text-transform: uppercase; letter-spacing: .08em; margin-top: 2px; }
+.time-card p { font-size: .72rem; color: var(--dim); margin-top: 7px; line-height: 1.45; }
+
+/* ── QUICKFIRE TABLE ── */
+.qf-table { width: 100%; border-collapse: collapse; background: white; border: 1.5px solid var(--edge); border-radius: 12px; overflow: hidden; }
+.qf-table th { font-family: var(--mono); font-size: 8.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); background: var(--em-ll); padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--edge); }
+.qf-table td { font-size: .77rem; padding: 9px 14px; border-bottom: 1px solid var(--edge2); color: var(--text); }
+.qf-table tr:last-child td { border-bottom: none; }
+.qf-table tr:hover td { background: var(--em-ll); }
+.qf-table td:first-child { font-family: var(--mono); font-size: .72rem; font-weight: 600; color: var(--em-d); }
+.qf-table td.m { text-align: center; }
+.dot-must { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--red); }
+.dot-nice { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--gold); }
+.dot-skip { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #d1d5db; }
+
+/* ── ORDER BANNER ── */
+.order-row {
+  display: flex; gap: 0; overflow: hidden;
+  border: 1.5px solid var(--edge); border-radius: 12px;
+  margin-bottom: 6px;
+}
+.order-step {
+  flex: 1; padding: 12px 14px; border-right: 1px solid var(--edge);
+  text-align: center; position: relative;
+}
+.order-step:last-child { border-right: none; }
+.order-n { font-size: 1.3rem; font-weight: 800; display: block; }
+.order-l { font-family: var(--mono); font-size: 8px; text-transform: uppercase; letter-spacing: .09em; color: var(--dim); margin-top: 2px; }
+.order-t { font-size: .72rem; color: var(--dim); margin-top: 5px; }
+.order-time { font-family: var(--mono); font-size: 8px; color: var(--em-d); margin-top: 4px; }
+
+/* ── CALLOUT ── */
+.callout {
+  border-left: 3px solid var(--em-d); background: rgba(5,150,105,.06);
+  padding: 13px 17px; border-radius: 0 8px 8px 0;
+  font-size: .82rem; color: #065f46; margin-bottom: 14px;
+  border: 1px solid rgba(5,150,105,.15); border-left: 3px solid var(--em-d);
+}
+.callout strong { color: var(--em-d); }
+.callout.gold { border-left-color: var(--gold); border-color: rgba(217,119,6,.2); background: rgba(253,243,199,.4); color: #78350f; }
+.callout.gold strong { color: var(--gold-d); }
+.callout.red { border-left-color: var(--red); border-color: rgba(220,38,38,.2); background: rgba(220,38,38,.04); color: #7f1d1d; }
+.callout.red strong { color: var(--red); }
+
+/* ── EXIT TEST ── */
+.exit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media(max-width:600px) { .exit-grid { grid-template-columns: 1fr; } }
+.exit-card { background: white; border: 1.5px solid var(--edge); border-radius: 9px; padding: 14px; }
+.exit-card h4 { font-family: var(--mono); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--em-d); margin-bottom: 9px; padding-bottom: 5px; border-bottom: 1.5px solid var(--edge); }
+.exit-card ul { list-style: none; }
+.exit-card ul li { font-size: .77rem; color: #1f4d32; padding: 3px 0 3px 14px; position:relative; }
+.exit-card ul li::before { content: '✓'; position: absolute; left: 0; color: var(--em-d); font-size: 9px; font-weight: 700; }
+.exit-card ul li.fail::before { content: '✗'; color: var(--red); }
+.exit-card ul li.fail { color: var(--red); }
+
 </style>
 </head>
 <body>
 
+<!-- ══ TOP NAVIGATION ══ -->
+<div class="page-nav">
+  <button class="page-tab active" onclick="switchPage('career', this)">
+    <span class="tab-icon">🗺️</span>
+    Career Plan
+    <span class="tab-badge">12 MONTHS</span>
+  </button>
+  <button class="page-tab" onclick="switchPage('python', this)">
+    <span class="tab-icon">🐍</span>
+    Python for GenAI
+    <span class="tab-badge">MANDATORY ONLY</span>
+  </button>
+</div>
+
+<!-- ══ CAREER PLAN PAGE ══ -->
+<div class="page-content active" id="page-career">
 <div class="hero">
   <div class="hero-body">
     <div class="eyebrow">Personal Career Blueprint · Jan 2027 → Dec 2027</div>
@@ -1118,8 +1410,964 @@ print(ask(<span class="cs">"Explain RAG in 2 sentences"</span>))</div>
   <a href="https://cloud.google.com/vertex-ai">Vertex AI</a> ·
   <a href="https://learn.deeplearning.ai">DeepLearning.AI</a>
 </footer>
+</div>
+
+<!-- ══ PYTHON FOR GENAI PAGE ══ -->
+<div class="page-content" id="page-python">
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Python for GenAI · Mandatory vs Optional · Real Use Cases</div>
+    <h1>Stop Learning Python.<br><em>Learn <span class="g">Python for GenAI.</span></em></h1>
+    <p class="hero-sub">Most Python courses teach you 200 topics. GenAI needs 28. This page tells you exactly which ones are mandatory (learn first, no skipping), which are nice-to-have (add later), and which you can completely ignore. Every topic includes the exact GenAI use case so you know <em>why</em> you're learning it before you start.</p>
+    <div class="hero-pills">
+      <span class="pill pr">🔴 11 Mandatory topics — no shortcuts</span>
+      <span class="pill pg">🟡 9 Nice-to-have — add after Month 2</span>
+      <span class="pill pe">⏭ Skip everything else</span>
+    </div>
+  </div>
+</div>
+
+<!-- LEGEND -->
+<div class="legend">
+  <span class="legend-label">Status key —</span>
+  <span class="lbadge must">🔴 MUST LEARN</span>
+  <span style="font-size:.75rem;color:#6b7280">Learn before touching LangChain</span>
+  <span class="lbadge nice">🟡 NICE TO HAVE</span>
+  <span style="font-size:.75rem;color:#6b7280">Add after first project works</span>
+  <span class="lbadge skip">⬜ SKIP</span>
+  <span style="font-size:.75rem;color:#6b7280">Irrelevant for GenAI work</span>
+</div>
+
+<div class="wrap">
+
+<!-- CALLOUT -->
+<div class="sh">Before You Start</div>
+<div class="callout red"><strong>The real goal:</strong> You don't need to learn Python. You need to learn enough Python to call an AI API, parse the response, build a chain, and not break anything. That's 2–3 weeks of focused study, not 3 months. Every topic below links directly to a real GenAI task. If a topic has no GenAI use case, it's not on this list.</div>
+<div class="callout gold"><strong>Your NestJS shortcut:</strong> You already know async/await, JSON, REST calls, typed models, environment variables, and CLI tools. Half of Python for GenAI transfers directly from your TypeScript knowledge. Estimate 40–50% faster than someone learning from scratch.</div>
+
+<!-- STUDY ORDER -->
+<div class="sh">Exact Learning Order <span class="stag">Do This Sequence</span></div>
+<div class="order-row">
+  <div class="order-step" style="background:#fef2f2">
+    <span class="order-n" style="color:#dc2626">1</span>
+    <div class="order-l">Week 1</div>
+    <div class="order-t">Variables, loops, functions, f-strings, list/dict</div>
+    <div class="order-time">Must-haves only</div>
+  </div>
+  <div class="order-step" style="background:#fef2f2">
+    <span class="order-n" style="color:#dc2626">2</span>
+    <div class="order-l">Week 1 end</div>
+    <div class="order-t">Pydantic + dotenv + requests → call your first AI API</div>
+    <div class="order-time">Must-haves only</div>
+  </div>
+  <div class="order-step" style="background:#fef2f2">
+    <span class="order-n" style="color:#dc2626">3</span>
+    <div class="order-l">Week 2</div>
+    <div class="order-t">Classes + OOP + exceptions + file I/O + JSON</div>
+    <div class="order-time">Must-haves only</div>
+  </div>
+  <div class="order-step" style="background:#fef2f2">
+    <span class="order-n" style="color:#dc2626">4</span>
+    <div class="order-l">Week 2 end</div>
+    <div class="order-t">async/await + streaming → LangChain first chain</div>
+    <div class="order-time">Must-haves only</div>
+  </div>
+  <div class="order-step" style="background:#fffbeb">
+    <span class="order-n" style="color:#d97706">5</span>
+    <div class="order-l">Week 3+</div>
+    <div class="order-t">Decorators, generators, dataclasses, typing module</div>
+    <div class="order-time">Nice-to-haves</div>
+  </div>
+  <div class="order-step" style="background:#ecfdf5">
+    <span class="order-n" style="color:#059669">6</span>
+    <div class="order-l">Month 2+</div>
+    <div class="order-t">numpy, pandas, matplotlib — only when RAG project needs them</div>
+    <div class="order-time">Just-in-time</div>
+  </div>
+</div>
+
+<!-- QUICKFIRE TABLE -->
+<div class="sh">Full Topic Reference — Every Python Topic Rated</div>
+<div class="callout"><strong>How to read this:</strong> Red dot = learn it now. Gold dot = learn it when a project needs it. Grey dot = skip entirely for GenAI. Real use case column shows exactly where in your AI projects this appears.</div>
+
+<table class="qf-table">
+  <thead>
+    <tr>
+      <th>Topic</th>
+      <th class="m">Status</th>
+      <th>Real GenAI Use Case</th>
+      <th>Appears In</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Variables, types, f-strings</td><td class="m"><span class="dot-must"></span></td><td>Build prompt strings: <code style="font-family:var(--mono);font-size:.7rem;background:var(--em-ll);padding:1px 4px;border-radius:3px">f"Summarise this: {user_text}"</code></td><td>Every project, line 1</td></tr>
+    <tr><td>Lists and dicts</td><td class="m"><span class="dot-must"></span></td><td>Parse API responses: <code style="font-family:var(--mono);font-size:.7rem;background:var(--em-ll);padding:1px 4px;border-radius:3px">response["choices"][0]["message"]["content"]</code></td><td>Every project</td></tr>
+    <tr><td>List/dict comprehensions</td><td class="m"><span class="dot-must"></span></td><td>Filter retrieved chunks: <code style="font-family:var(--mono);font-size:.7rem;background:var(--em-ll);padding:1px 4px;border-radius:3px">[c for c in chunks if c["score"] > 0.8]</code></td><td>RAG, Month 2</td></tr>
+    <tr><td>Functions + *args/**kwargs</td><td class="m"><span class="dot-must"></span></td><td>Define LangGraph nodes: every node is a Python function with state dict input</td><td>Agents, Month 3</td></tr>
+    <tr><td>Classes + OOP basics</td><td class="m"><span class="dot-must"></span></td><td>LangChain uses classes everywhere. Pydantic models are classes. LCEL Runnables are classes.</td><td>Month 1 onwards</td></tr>
+    <tr><td>Exception handling (try/except)</td><td class="m"><span class="dot-must"></span></td><td>Catch API rate limits, handle tool failures in agents, retry on 429 errors</td><td>Every project</td></tr>
+    <tr><td>File I/O (open, read, write)</td><td class="m"><span class="dot-must"></span></td><td>Load PDFs for RAG, save conversation history, read prompt templates from .txt files</td><td>Month 2 RAG</td></tr>
+    <tr><td>JSON module</td><td class="m"><span class="dot-must"></span></td><td>Parse LLM structured output: <code style="font-family:var(--mono);font-size:.7rem;background:var(--em-ll);padding:1px 4px;border-radius:3px">json.loads(response.content)</code> after forcing JSON format</td><td>Every project</td></tr>
+    <tr><td>async/await</td><td class="m"><span class="dot-must"></span></td><td>Stream tokens from Claude/GPT: <code style="font-family:var(--mono);font-size:.7rem;background:var(--em-ll);padding:1px 4px;border-radius:3px">async for chunk in chain.astream(input)</code></td><td>Month 1 onwards</td></tr>
+    <tr><td>Pydantic models</td><td class="m"><span class="dot-must"></span></td><td>Force structured LLM output, validate API payloads, define LangGraph state TypedDict</td><td>Month 1 onwards</td></tr>
+    <tr><td>python-dotenv (.env files)</td><td class="m"><span class="dot-must"></span></td><td>Load OPENAI_API_KEY, ANTHROPIC_API_KEY securely. Never hardcode. Used in every single project.</td><td>Day 1, forever</td></tr>
+    <tr style="background:#fef9ee"><td>Type hints (typing module)</td><td class="m"><span class="dot-nice"></span></td><td>LangGraph state requires TypedDict. LangChain functions expect typed signatures. Helps IDE autocomplete.</td><td>Month 3 agents</td></tr>
+    <tr style="background:#fef9ee"><td>Decorators (@something)</td><td class="m"><span class="dot-nice"></span></td><td>LangSmith tracing: <code style="font-family:var(--mono);font-size:.7rem;background:#fef3c7;padding:1px 4px;border-radius:3px">@traceable</code> on every function. FastAPI routes use <code style="font-family:var(--mono);font-size:.7rem;background:#fef3c7;padding:1px 4px;border-radius:3px">@app.post("/ask")</code></td><td>Month 5 LLMOps</td></tr>
+    <tr style="background:#fef9ee"><td>Generator functions (yield)</td><td class="m"><span class="dot-nice"></span></td><td>Build streaming response generators for FastAPI: <code style="font-family:var(--mono);font-size:.7rem;background:#fef3c7;padding:1px 4px;border-radius:3px">yield chunk</code> in StreamingResponse</td><td>Month 3 FastAPI</td></tr>
+    <tr style="background:#fef9ee"><td>dataclasses</td><td class="m"><span class="dot-nice"></span></td><td>Define lightweight config objects. Used in some LangChain internals. Pydantic does this better for GenAI.</td><td>Month 2+</td></tr>
+    <tr style="background:#fef9ee"><td>os and pathlib</td><td class="m"><span class="dot-nice"></span></td><td>Build file paths for RAG doc ingestion: <code style="font-family:var(--mono);font-size:.7rem;background:#fef3c7;padding:1px 4px;border-radius:3px">Path("docs/").glob("*.pdf")</code> to process all PDFs in a folder</td><td>Month 2 RAG</td></tr>
+    <tr style="background:#fef9ee"><td>logging module</td><td class="m"><span class="dot-nice"></span></td><td>Log token counts, latency, retrieved chunks to file. Better than print() for production agents.</td><td>Month 4 prod</td></tr>
+    <tr style="background:#fef9ee"><td>re (regex basics)</td><td class="m"><span class="dot-nice"></span></td><td>Clean LLM output: strip markdown fences <code style="font-family:var(--mono);font-size:.7rem;background:#fef3c7;padding:1px 4px;border-radius:3px">```json ... ```</code> from responses before parsing JSON</td><td>Month 2+</td></tr>
+    <tr style="background:#fef9ee"><td>datetime</td><td class="m"><span class="dot-nice"></span></td><td>Timestamp conversation logs, track when documents were ingested into vector DB</td><td>Month 2+</td></tr>
+    <tr style="background:#fef9ee"><td>requests library</td><td class="m"><span class="dot-nice"></span></td><td>Understand what SDKs do under the hood. Call custom AI APIs that have no SDK. Build webhook handlers.</td><td>Phase 0A project</td></tr>
+    <tr style="background:#f3f4f6"><td>numpy (basics only)</td><td class="m"><span class="dot-nice"></span></td><td>Understand embedding arrays. Compute cosine similarity by hand once. After that, ChromaDB/FAISS handles it.</td><td>Month 2 RAG only</td></tr>
+    <tr style="background:#f3f4f6"><td>pandas (basics only)</td><td class="m"><span class="dot-nice"></span></td><td>Log evaluation results to CSV, load test datasets, build RAGAS comparison tables</td><td>Month 2 eval</td></tr>
+    <tr style="background:#f3f4f6"><td>matplotlib (basics only)</td><td class="m"><span class="dot-skip"></span></td><td>Plot RAGAS score trends. Can skip entirely — Streamlit charts work better</td><td>Optional Month 5</td></tr>
+    <tr style="background:#f3f4f6"><td>Inheritance / multiple OOP</td><td class="m"><span class="dot-skip"></span></td><td>Not needed. You'll use LangChain's classes, not write your own inheritance hierarchies.</td><td>Skip</td></tr>
+    <tr style="background:#f3f4f6"><td>Threading / multiprocessing</td><td class="m"><span class="dot-skip"></span></td><td>async/await handles concurrency for GenAI. Threading is the old approach.</td><td>Skip</td></tr>
+    <tr style="background:#f3f4f6"><td>Unit tests / pytest</td><td class="m"><span class="dot-skip"></span></td><td>DeepEval handles AI-specific testing. Standard pytest is overkill for early projects.</td><td>Month 5 only</td></tr>
+    <tr style="background:#f3f4f6"><td>Abstract classes / interfaces</td><td class="m"><span class="dot-skip"></span></td><td>LangChain uses them internally. You will never write one for GenAI work.</td><td>Skip</td></tr>
+    <tr style="background:#f3f4f6"><td>Web scraping (BeautifulSoup)</td><td class="m"><span class="dot-skip"></span></td><td>Tavily Search API handles web search for agents. Scraping is a separate skill.</td><td>Skip</td></tr>
+    <tr style="background:#f3f4f6"><td>Django / Flask</td><td class="m"><span class="dot-skip"></span></td><td>FastAPI is the GenAI standard. Django/Flask are completely irrelevant for this path.</td><td>Skip entirely</td></tr>
+    <tr style="background:#f3f4f6"><td>Data science (statsmodels etc)</td><td class="m"><span class="dot-skip"></span></td><td>Not needed. RAGAS and DeepEval handle AI evaluation. You're not a data scientist.</td><td>Skip entirely</td></tr>
+    <tr style="background:#f3f4f6"><td>Machine learning (sklearn)</td><td class="m"><span class="dot-skip"></span></td><td>Not needed for LLM/GenAI work. This is traditional ML, different field.</td><td>Skip entirely</td></tr>
+  </tbody>
+</table>
+
+<!-- MANDATORY TOPICS DEEP DIVE -->
+<div class="sh">🔴 Mandatory Topics — Deep Dive with Real GenAI Code</div>
+
+<!-- TOPIC 1: Variables + f-strings -->
+<div class="topic-block must-block open" id="t1">
+  <div class="topic-head" onclick="tog('t1')">
+    <div class="topic-badge-wrap">
+      <span class="topic-icon">📝</span>
+      <span class="lbadge must">MUST</span>
+    </div>
+    <div class="topic-info">
+      <h3>Variables, F-strings, Lists, Dicts — The Prompt Building Blocks</h3>
+      <div class="sub">Week 1, Day 1 · Everything in GenAI is a string or a dict · Learn this first, use it forever</div>
+    </div>
+    <div class="topic-tog">+</div>
+  </div>
+  <div class="topic-body">
+    <div class="inner">
+      <div class="inner-col">
+        <div class="col-head must-h">What You Must Know</div>
+        <ul class="syn">
+          <li><span class="kw">name</span> = <span class="str">"Claude"</span> <span class="comment"># string</span></li>
+          <li><span class="kw">tokens</span> = <span class="cr">1024</span> <span class="comment"># int</span></li>
+          <li>prompt = <span class="str">f"Hello {name}"</span></li>
+          <li>msgs = [<span class="str">"hi"</span>, <span class="str">"bye"</span>] <span class="comment"># list</span></li>
+          <li>config = {<span class="str">"model"</span>: <span class="str">"gpt-4o"</span>} <span class="comment"># dict</span></li>
+          <li>config[<span class="str">"model"</span>] <span class="comment"># dict access</span></li>
+          <li>[x <span class="ck">for</span> x <span class="ck">in</span> items <span class="ck">if</span> x] <span class="comment"># comprehension</span></li>
+        </ul>
+      </div>
+      <div class="inner-col">
+        <div class="col-head usecase-h">Real GenAI Use Cases</div>
+        <div class="uc-list">
+          <div class="uc">
+            <div class="uc-label">Prompt Templates</div>
+            <p>Every LLM call is <code>f"Summarise this document: {doc_text}"</code>. F-strings are how you inject user input into prompts.</p>
+          </div>
+          <div class="uc">
+            <div class="uc-label">API Response Parsing</div>
+            <p>OpenAI returns a dict. You access the text as <code>response["choices"][0]["message"]["content"]</code>. Lists and dicts are everything.</p>
+          </div>
+          <div class="uc">
+            <div class="uc-label">Filter Retrieved Chunks</div>
+            <p>RAG returns 10 chunks. You keep only the relevant ones: <code>[c for c in chunks if c.score > 0.75]</code></p>
+          </div>
+        </div>
+      </div>
+      <div class="inner-col">
+        <div class="col-head code-h">Minimum Viable Example</div>
+        <div class="snip">
+<span class="cm"># Build and send a prompt in 6 lines</span>
+user_question = <span class="cs">"What is RAG?"</span>
+context = <span class="cs">"RAG stands for..."</span>
+
+prompt = <span class="ck">f</span><span class="cs">"""Answer based only on context.
+Context: {context}
+Question: {user_question}"""</span>
+
+<span class="cm"># Dict is the API payload format</span>
+payload = {
+    <span class="cs">"model"</span>: <span class="cs">"gpt-4o-mini"</span>,
+    <span class="cs">"messages"</span>: [{
+        <span class="cs">"role"</span>: <span class="cs">"user"</span>,
+        <span class="cs">"content"</span>: prompt
+    }]
+}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOPIC 2: Pydantic -->
+<div class="topic-block must-block" id="t2">
+  <div class="topic-head" onclick="tog('t2')">
+    <div class="topic-badge-wrap">
+      <span class="topic-icon">🔷</span>
+      <span class="lbadge must">MUST</span>
+    </div>
+    <div class="topic-info">
+      <h3>Pydantic Models — Structured LLM Output</h3>
+      <div class="sub">Week 1, Day 3 · NestJS DTOs in Python · Forces LLMs to return JSON you can actually use</div>
+    </div>
+    <div class="topic-tog">+</div>
+  </div>
+  <div class="topic-body">
+    <div class="inner">
+      <div class="inner-col">
+        <div class="col-head must-h">What You Must Know</div>
+        <ul class="syn">
+          <li><span class="ck">from</span> pydantic <span class="ck">import</span> BaseModel</li>
+          <li><span class="ck">class</span> <span class="cr">MyModel</span>(BaseModel):</li>
+          <li>&nbsp;&nbsp;name: <span class="ck">str</span></li>
+          <li>&nbsp;&nbsp;score: <span class="ck">float</span></li>
+          <li>&nbsp;&nbsp;tags: <span class="ck">list</span>[<span class="ck">str</span>]</li>
+          <li>&nbsp;&nbsp;active: <span class="ck">bool</span> = <span class="cr">True</span></li>
+          <li>m = MyModel(name=<span class="cs">"hi"</span>, score=<span class="cr">0.9</span>)</li>
+          <li>m.model_dump() <span class="comment"># → dict</span></li>
+        </ul>
+      </div>
+      <div class="inner-col">
+        <div class="col-head usecase-h">Real GenAI Use Cases</div>
+        <div class="uc-list">
+          <div class="uc">
+            <div class="uc-label">Force Structured LLM Output</div>
+            <p>Tell Claude "respond only in JSON" → parse that JSON into a Pydantic model. Broken JSON = automatic error. No guessing.</p>
+          </div>
+          <div class="uc">
+            <div class="uc-label">LangGraph State</div>
+            <p>Every LangGraph agent state is a <code>TypedDict</code> (basically Pydantic). Defines what data flows between agent nodes.</p>
+          </div>
+          <div class="uc">
+            <div class="uc-label">LangChain Output Parsers</div>
+            <p><code>JsonOutputParser(pydantic_object=MyModel)</code> auto-validates and parses LLM responses into your model.</p>
+          </div>
+        </div>
+      </div>
+      <div class="inner-col">
+        <div class="col-head code-h">Real GenAI Example</div>
+        <div class="snip">
+<span class="ck">from</span> pydantic <span class="ck">import</span> BaseModel
+
+<span class="cm"># Define what you want the LLM to return</span>
+<span class="ck">class</span> <span class="cr">Summary</span>(BaseModel):
+    title: <span class="ck">str</span>
+    key_points: <span class="ck">list</span>[<span class="ck">str</span>]
+    sentiment: <span class="ck">str</span>  <span class="cm"># "positive"|"negative"</span>
+    confidence: <span class="ck">float</span>  <span class="cm"># 0.0 to 1.0</span>
+
+<span class="cm"># LangChain parser enforces this schema</span>
+<span class="ck">from</span> langchain_core.output_parsers <span class="ck">import</span> JsonOutputParser
+parser = JsonOutputParser(pydantic_object=Summary)
+
+<span class="cm"># Now chain it: prompt | llm | parser</span>
+chain = prompt | llm | parser
+result: Summary = chain.invoke({<span class="cs">"text"</span>: doc})
+print(result.key_points)  <span class="cm"># Always a list</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOPIC 3: async/await -->
+<div class="topic-block must-block" id="t3">
+  <div class="topic-head" onclick="tog('t3')">
+    <div class="topic-badge-wrap">
+      <span class="topic-icon">⚡</span>
+      <span class="lbadge must">MUST</span>
+    </div>
+    <div class="topic-info">
+      <h3>async / await — Token Streaming</h3>
+      <div class="sub">Week 2 · Identical to TypeScript async — you already know this · Critical for streaming LLM responses</div>
+    </div>
+    <div class="topic-tog">+</div>
+  </div>
+  <div class="topic-body">
+    <div class="inner">
+      <div class="inner-col">
+        <div class="col-head must-h">What You Must Know</div>
+        <ul class="syn">
+          <li><span class="ck">async def</span> <span class="cr">ask</span>(prompt): <span class="comment"># async function</span></li>
+          <li>&nbsp;&nbsp;result = <span class="ck">await</span> call_api()</li>
+          <li>&nbsp;&nbsp;<span class="ck">return</span> result</li>
+          <li>&nbsp;</li>
+          <li><span class="comment"># Streaming — the key pattern</span></li>
+          <li><span class="ck">async for</span> chunk <span class="ck">in</span> stream:</li>
+          <li>&nbsp;&nbsp;print(chunk, end=<span class="cs">""</span>, flush=<span class="cr">True</span>)</li>
+          <li>&nbsp;</li>
+          <li><span class="comment"># Run async from script</span></li>
+          <li><span class="ck">import</span> asyncio</li>
+          <li>asyncio.run(ask(<span class="cs">"hello"</span>))</li>
+        </ul>
+      </div>
+      <div class="inner-col">
+        <div class="col-head usecase-h">Real GenAI Use Cases</div>
+        <div class="uc-list">
+          <div class="uc">
+            <div class="uc-label">Stream Tokens to Terminal</div>
+            <p>LLMs generate word by word. <code>async for chunk in chain.astream(input)</code> prints each word as it's generated — UX feels instant.</p>
+          </div>
+          <div class="uc">
+            <div class="uc-label">FastAPI Streaming Endpoint</div>
+            <p>Your AI API returns tokens in real time. Users see the response building — not a spinner for 5 seconds then wall of text.</p>
+          </div>
+          <div class="uc">
+            <div class="uc-label">Parallel LLM Calls</div>
+            <p>Call GPT and Claude simultaneously with <code>asyncio.gather()</code>. Halves latency for A/B comparisons.</p>
+          </div>
+        </div>
+      </div>
+      <div class="inner-col">
+        <div class="col-head code-h">Streaming in Practice</div>
+        <div class="snip">
+<span class="ck">import</span> asyncio
+<span class="ck">from</span> langchain_anthropic <span class="ck">import</span> ChatAnthropic
+
+llm = ChatAnthropic(model=<span class="cs">"claude-haiku-4-5"</span>)
+
+<span class="ck">async def</span> <span class="cr">stream_answer</span>(question: <span class="ck">str</span>):
+    <span class="cm"># Tokens print as Claude generates them</span>
+    <span class="ck">async for</span> chunk <span class="ck">in</span> llm.astream(question):
+        print(chunk.content, end=<span class="cs">""</span>, flush=<span class="cr">True</span>)
+    print()  <span class="cm"># newline at end</span>
+
+asyncio.run(stream_answer(<span class="cs">"What is LangGraph?"</span>))
+
+<span class="cm"># FastAPI streaming — same pattern</span>
+<span class="ck">from</span> fastapi.responses <span class="ck">import</span> StreamingResponse
+
+<span class="ck">async def</span> <span class="cr">generate</span>(q):
+    <span class="ck">async for</span> chunk <span class="ck">in</span> llm.astream(q):
+        <span class="ck">yield</span> chunk.content
+
+<span class="ck">return</span> StreamingResponse(generate(q))
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOPIC 4: Classes + OOP -->
+<div class="topic-block must-block" id="t4">
+  <div class="topic-head" onclick="tog('t4')">
+    <div class="topic-badge-wrap">
+      <span class="topic-icon">🏗️</span>
+      <span class="lbadge must">MUST</span>
+    </div>
+    <div class="topic-info">
+      <h3>Classes + OOP — How LangChain Is Built</h3>
+      <div class="sub">Week 2 · You need enough OOP to read and use LangChain classes · Not to build your own</div>
+    </div>
+    <div class="topic-tog">+</div>
+  </div>
+  <div class="topic-body">
+    <div class="inner">
+      <div class="inner-col">
+        <div class="col-head must-h">What You Must Know</div>
+        <ul class="syn">
+          <li><span class="ck">class</span> <span class="cr">Tool</span>:</li>
+          <li>&nbsp;&nbsp;<span class="ck">def</span> <span class="cr">__init__</span>(self, name):</li>
+          <li>&nbsp;&nbsp;&nbsp;&nbsp;self.name = name</li>
+          <li>&nbsp;</li>
+          <li>&nbsp;&nbsp;<span class="ck">def</span> <span class="cr">run</span>(self, input):</li>
+          <li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">return</span> <span class="cs">f"Result: {input}"</span></li>
+          <li>&nbsp;</li>
+          <li>t = Tool(<span class="cs">"search"</span>)</li>
+          <li>t.run(<span class="cs">"Paris"</span>) <span class="comment"># → "Result: Paris"</span></li>
+          <li>&nbsp;</li>
+          <li><span class="comment"># Inheritance (read only)</span></li>
+          <li><span class="ck">class</span> <span class="cr">MyLLM</span>(BaseLLM):</li>
+          <li>&nbsp;&nbsp;... <span class="comment"># LangChain extends this</span></li>
+        </ul>
+      </div>
+      <div class="inner-col">
+        <div class="col-head usecase-h">Real GenAI Use Cases</div>
+        <div class="uc-list">
+          <div class="uc">
+            <div class="uc-label">Instantiate LangChain Objects</div>
+            <p><code>ChatOpenAI(model="gpt-4o-mini", temperature=0)</code> creates a class instance. You need to know what <code>__init__</code> means to understand what parameters to pass.</p>
+          </div>
+          <div class="uc">
+            <div class="uc-label">Define Custom Tools for Agents</div>
+            <p>Agent tools are classes or functions. Writing a web search tool or calculator tool for LangGraph requires knowing class methods.</p>
+          </div>
+          <div class="uc">
+            <div class="uc-label">Understand Error Messages</div>
+            <p>When LangChain throws <code>AttributeError: 'ChatOpenAI' object has no attribute 'invoke'</code> you know it's a class method issue.</p>
+          </div>
+        </div>
+      </div>
+      <div class="inner-col">
+        <div class="col-head code-h">Classes You'll Actually Write</div>
+        <div class="snip">
+<span class="ck">from</span> langchain_core.tools <span class="ck">import</span> tool
+
+<span class="cm"># Tool is just a decorated function (class under hood)</span>
+<span class="ck">@tool</span>
+<span class="ck">def</span> <span class="cr">web_search</span>(query: <span class="ck">str</span>) -> <span class="ck">str</span>:
+    <span class="cs">"""Search the web for current info."""</span>
+    <span class="cm"># Your implementation here</span>
+    <span class="ck">return</span> tavily.search(query)
+
+<span class="cm"># LangGraph state — TypedDict is a class</span>
+<span class="ck">from</span> typing <span class="ck">import</span> TypedDict, Annotated
+
+<span class="ck">class</span> <span class="cr">AgentState</span>(TypedDict):
+    topic: <span class="ck">str</span>
+    facts: <span class="ck">list</span>[<span class="ck">str</span>]
+    report: <span class="ck">str</span>
+    iterations: <span class="ck">int</span>
+
+<span class="cm"># That's all the OOP you need for agents</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOPIC 5: Exceptions -->
+<div class="topic-block must-block" id="t5">
+  <div class="topic-head" onclick="tog('t5')">
+    <div class="topic-badge-wrap">
+      <span class="topic-icon">🛡️</span>
+      <span class="lbadge must">MUST</span>
+    </div>
+    <div class="topic-info">
+      <h3>Exception Handling — AI APIs Fail, A Lot</h3>
+      <div class="sub">Week 2 · Rate limits, timeouts, invalid JSON, tool failures — handle all of them cleanly</div>
+    </div>
+    <div class="topic-tog">+</div>
+  </div>
+  <div class="topic-body">
+    <div class="inner">
+      <div class="inner-col">
+        <div class="col-head must-h">What You Must Know</div>
+        <ul class="syn">
+          <li><span class="ck">try</span>:</li>
+          <li>&nbsp;&nbsp;result = call_api()</li>
+          <li><span class="ck">except</span> <span class="cr">RateLimitError</span>:</li>
+          <li>&nbsp;&nbsp;time.sleep(<span class="cr">60</span>)  <span class="comment"># wait 1 min</span></li>
+          <li>&nbsp;&nbsp;result = call_api()  <span class="comment"># retry</span></li>
+          <li><span class="ck">except</span> <span class="cr">Exception</span> <span class="ck">as</span> e:</li>
+          <li>&nbsp;&nbsp;print(<span class="cs">f"Failed: {e}"</span>)</li>
+          <li>&nbsp;&nbsp;result = <span class="cr">None</span></li>
+          <li><span class="ck">finally</span>:</li>
+          <li>&nbsp;&nbsp;log.close()  <span class="comment"># always runs</span></li>
+        </ul>
+      </div>
+      <div class="inner-col">
+        <div class="col-head usecase-h">Real GenAI Use Cases</div>
+        <div class="uc-list">
+          <div class="uc">
+            <div class="uc-label">Rate Limit Handling</div>
+            <p>OpenAI returns 429 when you hit the rate limit. Without try/except your entire pipeline crashes. With it, you retry after 60 seconds.</p>
+          </div>
+          <div class="uc">
+            <div class="uc-label">Agent Tool Failures</div>
+            <p>A web search tool might fail on a bad URL. Agents need to catch the error, log it, and try a different search query instead of stopping.</p>
+          </div>
+          <div class="uc">
+            <div class="uc-label">JSON Parse Errors</div>
+            <p>LLMs sometimes return malformed JSON even in JSON mode. Catch <code>json.JSONDecodeError</code> and retry with a stricter prompt.</p>
+          </div>
+        </div>
+      </div>
+      <div class="inner-col">
+        <div class="col-head code-h">Production-Grade API Call</div>
+        <div class="snip">
+<span class="ck">import</span> time, json
+<span class="ck">from</span> openai <span class="ck">import</span> RateLimitError, APIError
+
+<span class="ck">def</span> <span class="cr">safe_call</span>(prompt, retries=<span class="cr">3</span>):
+    <span class="ck">for</span> attempt <span class="ck">in</span> range(retries):
+        <span class="ck">try</span>:
+            r = client.chat.completions.create(
+                model=<span class="cs">"gpt-4o-mini"</span>,
+                messages=[{<span class="cs">"role"</span>:<span class="cs">"user"</span>,
+                           <span class="cs">"content"</span>:prompt}],
+                response_format={<span class="cs">"type"</span>:<span class="cs">"json_object"</span>}
+            )
+            <span class="ck">return</span> json.loads(r.choices[<span class="cr">0</span>].message.content)
+        <span class="ck">except</span> RateLimitError:
+            time.sleep(<span class="cr">2</span> ** attempt)  <span class="comment"># exponential backoff</span>
+        <span class="ck">except</span> json.JSONDecodeError:
+            prompt += <span class="cs">"\nRespond ONLY with valid JSON."</span>
+    <span class="ck">return</span> <span class="cr">None</span>  <span class="comment"># failed after retries</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOPIC 6: File I/O + JSON -->
+<div class="topic-block must-block" id="t6">
+  <div class="topic-head" onclick="tog('t6')">
+    <div class="topic-badge-wrap">
+      <span class="topic-icon">📄</span>
+      <span class="lbadge must">MUST</span>
+    </div>
+    <div class="topic-info">
+      <h3>File I/O + JSON Module — The RAG Foundation</h3>
+      <div class="sub">Week 2 · Every RAG pipeline starts with reading files · JSON is the universal format for AI API responses</div>
+    </div>
+    <div class="topic-tog">+</div>
+  </div>
+  <div class="topic-body">
+    <div class="inner">
+      <div class="inner-col">
+        <div class="col-head must-h">What You Must Know</div>
+        <ul class="syn">
+          <li><span class="comment"># Read a file</span></li>
+          <li><span class="ck">with</span> open(<span class="cs">"doc.txt"</span>) <span class="ck">as</span> f:</li>
+          <li>&nbsp;&nbsp;text = f.read()</li>
+          <li>&nbsp;</li>
+          <li><span class="comment"># Write a file</span></li>
+          <li><span class="ck">with</span> open(<span class="cs">"out.json"</span>, <span class="cs">"w"</span>) <span class="ck">as</span> f:</li>
+          <li>&nbsp;&nbsp;json.dump(data, f, indent=<span class="cr">2</span>)</li>
+          <li>&nbsp;</li>
+          <li><span class="comment"># Parse JSON string</span></li>
+          <li>d = json.loads(<span class="cs">'{"a": 1}'</span>)</li>
+          <li><span class="comment"># Serialise to JSON string</span></li>
+          <li>s = json.dumps(d, indent=<span class="cr">2</span>)</li>
+        </ul>
+      </div>
+      <div class="inner-col">
+        <div class="col-head usecase-h">Real GenAI Use Cases</div>
+        <div class="uc-list">
+          <div class="uc">
+            <div class="uc-label">RAG Document Ingestion</div>
+            <p>Read all .txt files in a folder, split into chunks, store in ChromaDB. You need file I/O to load every document.</p>
+          </div>
+          <div class="uc">
+            <div class="uc-label">Save Conversation History</div>
+            <p>Save all Q&amp;A pairs to history.json. Reload on app start. Multi-turn chatbot memory with 3 lines of code.</p>
+          </div>
+          <div class="uc">
+            <div class="uc-label">RAGAS Evaluation Dataset</div>
+            <p>Your 20 ground-truth question-answer pairs live in a JSON file. Load them to run RAGAS benchmarks on your RAG pipeline.</p>
+          </div>
+        </div>
+      </div>
+      <div class="inner-col">
+        <div class="col-head code-h">RAG Ingestion Pattern</div>
+        <div class="snip">
+<span class="ck">import</span> json
+<span class="ck">from</span> pathlib <span class="ck">import</span> Path
+
+<span class="cm"># Load all docs from a folder</span>
+<span class="ck">def</span> <span class="cr">load_docs</span>(folder: <span class="ck">str</span>) -> <span class="ck">list</span>[<span class="ck">dict</span>]:
+    docs = []
+    <span class="ck">for</span> path <span class="ck">in</span> Path(folder).glob(<span class="cs">"*.txt"</span>):
+        <span class="ck">with</span> open(path) <span class="ck">as</span> f:
+            docs.append({
+                <span class="cs">"source"</span>: path.name,
+                <span class="cs">"content"</span>: f.read()
+            })
+    <span class="ck">return</span> docs
+
+<span class="cm"># Save RAGAS eval set</span>
+eval_set = [{
+    <span class="cs">"question"</span>: <span class="cs">"What is RAG?"</span>,
+    <span class="cs">"answer"</span>: <span class="cs">"Retrieval-Augmented Generation..."</span>
+}]
+<span class="ck">with</span> open(<span class="cs">"eval.json"</span>, <span class="cs">"w"</span>) <span class="ck">as</span> f:
+    json.dump(eval_set, f, indent=<span class="cr">2</span>)
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOPIC 7: dotenv -->
+<div class="topic-block must-block" id="t7">
+  <div class="topic-head" onclick="tog('t7')">
+    <div class="topic-badge-wrap">
+      <span class="topic-icon">🔑</span>
+      <span class="lbadge must">MUST</span>
+    </div>
+    <div class="topic-info">
+      <h3>python-dotenv — API Key Security</h3>
+      <div class="sub">Day 1, Forever · If you commit an API key to GitHub, OpenAI will find it and revoke it within 60 seconds</div>
+    </div>
+    <div class="topic-tog">+</div>
+  </div>
+  <div class="topic-body">
+    <div class="inner">
+      <div class="inner-col">
+        <div class="col-head must-h">What You Must Know</div>
+        <ul class="syn">
+          <li><span class="comment"># .env file (never commit this)</span></li>
+          <li>OPENAI_API_KEY=sk-...</li>
+          <li>ANTHROPIC_API_KEY=sk-ant-...</li>
+          <li>&nbsp;</li>
+          <li><span class="comment"># Load in Python</span></li>
+          <li><span class="ck">from</span> dotenv <span class="ck">import</span> load_dotenv</li>
+          <li><span class="ck">import</span> os</li>
+          <li>load_dotenv()  <span class="comment"># reads .env</span></li>
+          <li>key = os.getenv(<span class="cs">"OPENAI_API_KEY"</span>)</li>
+          <li>&nbsp;</li>
+          <li><span class="comment"># .gitignore — add this</span></li>
+          <li>.env</li>
+        </ul>
+      </div>
+      <div class="inner-col">
+        <div class="col-head usecase-h">Real GenAI Use Cases</div>
+        <div class="uc-list">
+          <div class="uc">
+            <div class="uc-label">Every Single Project</div>
+            <p>You will use this in every project, every month, for the entire year. It's 3 lines. Learn it once. Never forget it.</p>
+          </div>
+          <div class="uc">
+            <div class="uc-label">Multiple Provider Keys</div>
+            <p>One .env file holds OpenAI key, Anthropic key, AWS credentials, GCP key, LangSmith key, Tavily key. All loaded in one call.</p>
+          </div>
+          <div class="uc">
+            <div class="uc-label">Matches Docker/NestJS Pattern</div>
+            <p>You already use .env in Docker Compose at GE. This is the exact same thing. <code>load_dotenv()</code> = <code>ConfigService</code> in NestJS.</p>
+          </div>
+        </div>
+      </div>
+      <div class="inner-col">
+        <div class="col-head code-h">Standard Setup Pattern</div>
+        <div class="snip">
+<span class="cm"># Every project starts with this</span>
+<span class="ck">from</span> dotenv <span class="ck">import</span> load_dotenv
+<span class="ck">import</span> os
+
+load_dotenv()  <span class="cm"># load .env from project root</span>
+
+<span class="cm"># Access keys safely</span>
+OPENAI_KEY = os.getenv(<span class="cs">"OPENAI_API_KEY"</span>)
+ANTHROPIC_KEY = os.getenv(<span class="cs">"ANTHROPIC_API_KEY"</span>)
+LANGSMITH_KEY = os.getenv(<span class="cs">"LANGCHAIN_API_KEY"</span>)
+TAVILY_KEY = os.getenv(<span class="cs">"TAVILY_API_KEY"</span>)
+
+<span class="cm"># Fail fast if key is missing</span>
+<span class="ck">if not</span> OPENAI_KEY:
+    <span class="ck">raise</span> ValueError(<span class="cs">"OPENAI_API_KEY not set in .env"</span>)
+
+<span class="cm"># .gitignore must have:</span>
+<span class="cm"># .env</span>
+<span class="cm"># __pycache__/</span>
+<span class="cm"># *.pyc</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NICE TO HAVE SECTION -->
+<div class="sh">🟡 Nice-to-Have Topics — Add After First Project Works</div>
+<div class="callout gold"><strong>When to learn these:</strong> Finish your Month 1 PromptBench project first. Once it runs, add these one at a time as projects need them. Don't front-load nice-to-haves — it delays your first working AI project.</div>
+
+<!-- TOPIC: Decorators -->
+<div class="topic-block nice-block" id="t8">
+  <div class="topic-head" onclick="tog('t8')">
+    <div class="topic-badge-wrap">
+      <span class="topic-icon">🎨</span>
+      <span class="lbadge nice">NICE</span>
+    </div>
+    <div class="topic-info">
+      <h3>Decorators — LangSmith Tracing + FastAPI Routes</h3>
+      <div class="sub">Add in Month 5 when you start LLMOps · @traceable decorator adds observability to every function in one line</div>
+    </div>
+    <div class="topic-tog">+</div>
+  </div>
+  <div class="topic-body">
+    <div class="inner">
+      <div class="inner-col">
+        <div class="col-head must-h">Enough to Know</div>
+        <ul class="syn">
+          <li><span class="comment"># A decorator wraps a function</span></li>
+          <li><span class="ck">@traceable</span>  <span class="comment"># ← this is a decorator</span></li>
+          <li><span class="ck">def</span> <span class="cr">my_rag</span>(question):</li>
+          <li>&nbsp;&nbsp;...</li>
+          <li>&nbsp;</li>
+          <li><span class="comment"># FastAPI routes use decorators</span></li>
+          <li><span class="ck">@app.post</span>(<span class="cs">"/ask"</span>)</li>
+          <li><span class="ck">async def</span> <span class="cr">ask_endpoint</span>(q: str):</li>
+          <li>&nbsp;&nbsp;...</li>
+        </ul>
+      </div>
+      <div class="inner-col">
+        <div class="col-head usecase-h">GenAI Use Case</div>
+        <div class="uc-list">
+          <div class="uc">
+            <div class="uc-label">LangSmith Tracing (Month 5)</div>
+            <p>Add <code>@traceable</code> from LangSmith above any function. Every call is now logged in the LangSmith UI with inputs, outputs, latency, and cost.</p>
+          </div>
+          <div class="uc">
+            <div class="uc-label">FastAPI Route Definition (Month 3)</div>
+            <p><code>@app.post("/research")</code> registers a URL route. Your NestJS controllers use a similar pattern. Direct transfer.</p>
+          </div>
+        </div>
+      </div>
+      <div class="inner-col">
+        <div class="col-head code-h">Real Usage</div>
+        <div class="snip">
+<span class="ck">from</span> langsmith <span class="ck">import</span> traceable
+
+<span class="cm"># Add this to trace any function</span>
+<span class="ck">@traceable</span>(name=<span class="cs">"RAG Pipeline"</span>)
+<span class="ck">def</span> <span class="cr">rag_answer</span>(question: <span class="ck">str</span>) -> <span class="ck">str</span>:
+    chunks = retrieve(question)
+    answer = generate(chunks, question)
+    <span class="ck">return</span> answer
+
+<span class="cm"># This function is now in LangSmith dashboard</span>
+<span class="cm"># Shows: input, output, latency, tokens, cost</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOPIC: Generators -->
+<div class="topic-block nice-block" id="t9">
+  <div class="topic-head" onclick="tog('t9')">
+    <div class="topic-badge-wrap">
+      <span class="topic-icon">🌊</span>
+      <span class="lbadge nice">NICE</span>
+    </div>
+    <div class="topic-info">
+      <h3>Generator Functions (yield) — FastAPI Streaming Responses</h3>
+      <div class="sub">Add in Month 3 when building the FastAPI streaming endpoint · Needed for token-by-token streaming API</div>
+    </div>
+    <div class="topic-tog">+</div>
+  </div>
+  <div class="topic-body">
+    <div class="inner">
+      <div class="inner-col">
+        <div class="col-head must-h">Enough to Know</div>
+        <ul class="syn">
+          <li><span class="comment"># yield sends one value, pauses, resumes</span></li>
+          <li><span class="ck">def</span> <span class="cr">count</span>():</li>
+          <li>&nbsp;&nbsp;<span class="ck">yield</span> <span class="cr">1</span></li>
+          <li>&nbsp;&nbsp;<span class="ck">yield</span> <span class="cr">2</span></li>
+          <li>&nbsp;&nbsp;<span class="ck">yield</span> <span class="cr">3</span></li>
+          <li>&nbsp;</li>
+          <li><span class="ck">for</span> n <span class="ck">in</span> count():</li>
+          <li>&nbsp;&nbsp;print(n)  <span class="comment"># 1 2 3</span></li>
+          <li>&nbsp;</li>
+          <li><span class="comment"># async version for streaming</span></li>
+          <li><span class="ck">async def</span> <span class="cr">gen</span>():</li>
+          <li>&nbsp;&nbsp;<span class="ck">yield</span> chunk</li>
+        </ul>
+      </div>
+      <div class="inner-col">
+        <div class="col-head usecase-h">GenAI Use Case</div>
+        <div class="uc-list">
+          <div class="uc">
+            <div class="uc-label">FastAPI StreamingResponse</div>
+            <p>Build an API endpoint that returns tokens in real time. Your frontend sees words appearing one by one — not a 5 second wait then everything at once.</p>
+          </div>
+        </div>
+      </div>
+      <div class="inner-col">
+        <div class="col-head code-h">Streaming FastAPI Endpoint</div>
+        <div class="snip">
+<span class="ck">from</span> fastapi <span class="ck">import</span> FastAPI
+<span class="ck">from</span> fastapi.responses <span class="ck">import</span> StreamingResponse
+
+app = FastAPI()
+
+<span class="ck">@app.post</span>(<span class="cs">"/ask"</span>)
+<span class="ck">async def</span> <span class="cr">ask</span>(question: <span class="ck">str</span>):
+    <span class="ck">async def</span> <span class="cr">generate</span>():
+        <span class="ck">async for</span> chunk <span class="ck">in</span> llm.astream(question):
+            <span class="ck">yield</span> chunk.content  <span class="cm"># send each token</span>
+    <span class="ck">return</span> StreamingResponse(
+        generate(), media_type=<span class="cs">"text/plain"</span>
+    )
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOPIC: os/pathlib -->
+<div class="topic-block nice-block" id="t10">
+  <div class="topic-head" onclick="tog('t10')">
+    <div class="topic-badge-wrap">
+      <span class="topic-icon">📁</span>
+      <span class="lbadge nice">NICE</span>
+    </div>
+    <div class="topic-info">
+      <h3>os + pathlib — Batch Document Loading for RAG</h3>
+      <div class="sub">Add in Month 2 RAG project · Needed to load all PDFs from a folder, not one by one</div>
+    </div>
+    <div class="topic-tog">+</div>
+  </div>
+  <div class="topic-body">
+    <div class="inner">
+      <div class="inner-col">
+        <div class="col-head must-h">Enough to Know</div>
+        <ul class="syn">
+          <li><span class="ck">from</span> pathlib <span class="ck">import</span> Path</li>
+          <li>&nbsp;</li>
+          <li><span class="comment"># List all PDFs in a folder</span></li>
+          <li>pdfs = Path(<span class="cs">"docs/"</span>).glob(<span class="cs">"*.pdf"</span>)</li>
+          <li>&nbsp;</li>
+          <li><span class="comment"># Build a path safely</span></li>
+          <li>p = Path(<span class="cs">"data"</span>) / <span class="cs">"output.json"</span></li>
+          <li>&nbsp;</li>
+          <li><span class="comment"># Check if exists</span></li>
+          <li><span class="ck">if</span> p.exists():</li>
+          <li>&nbsp;&nbsp;text = p.read_text()</li>
+          <li>&nbsp;</li>
+          <li>os.getenv(<span class="cs">"KEY"</span>)  <span class="comment"># you already know this</span></li>
+        </ul>
+      </div>
+      <div class="inner-col">
+        <div class="col-head usecase-h">GenAI Use Case</div>
+        <div class="uc-list">
+          <div class="uc">
+            <div class="uc-label">Batch PDF Ingestion (Month 2)</div>
+            <p>Loop over all PDFs in your <code>docs/</code> folder with one line: <code>Path("docs/").glob("*.pdf")</code>. Pass each to pypdf, chunk it, embed it, store in ChromaDB.</p>
+          </div>
+        </div>
+      </div>
+      <div class="inner-col">
+        <div class="col-head code-h">Ingest All Docs</div>
+        <div class="snip">
+<span class="ck">from</span> pathlib <span class="ck">import</span> Path
+<span class="ck">from</span> pypdf <span class="ck">import</span> PdfReader
+
+<span class="ck">def</span> <span class="cr">ingest_folder</span>(folder: <span class="ck">str</span>):
+    <span class="ck">for</span> pdf_path <span class="ck">in</span> Path(folder).glob(<span class="cs">"*.pdf"</span>):
+        reader = PdfReader(pdf_path)
+        <span class="ck">for</span> page <span class="ck">in</span> reader.pages:
+            text = page.extract_text()
+            chunks = split_into_chunks(text)
+            <span class="ck">for</span> chunk <span class="ck">in</span> chunks:
+                collection.add(
+                    documents=[chunk],
+                    metadatas=[{
+                        <span class="cs">"source"</span>: pdf_path.name
+                    }],
+                    ids=[f"{pdf_path.stem}_{i}"]
+                )
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKIP SECTION -->
+<div class="sh">⬜ Skip Entirely — Why These Don't Apply</div>
+<div class="callout red"><strong>These are real Python topics.</strong> They're just not GenAI topics. Learning them wastes weeks that you could spend building your first RAG app. Skip them completely on this path.</div>
+
+<table class="qf-table">
+  <thead>
+    <tr><th>Topic</th><th>Why You Can Skip It for GenAI</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Django / Flask</td><td>FastAPI is the GenAI standard. Django is for traditional web apps. Flask is too minimal. You'll never need either on this path.</td></tr>
+    <tr><td>Threading / multiprocessing</td><td>async/await handles all concurrency needs in GenAI. Threading is the older, harder approach. asyncio replaced it.</td></tr>
+    <tr><td>Machine learning (sklearn, numpy deep)</td><td>You're using LLMs via API, not training models from scratch. This is traditional ML — a completely different field.</td></tr>
+    <tr><td>Data science (statsmodels, seaborn)</td><td>DeepEval and RAGAS handle AI evaluation. You're not doing statistical research. Streamlit charts > matplotlib for your use cases.</td></tr>
+    <tr><td>Abstract classes / interfaces</td><td>LangChain uses these internally. You'll never define an abstract class for GenAI work — you'll just use their implementations.</td></tr>
+    <tr><td>Web scraping (BeautifulSoup, Scrapy)</td><td>Tavily Search API gives you clean web content for agents. Scraping is a separate skill, separate project, not needed here.</td></tr>
+    <tr><td>Metaclasses</td><td>Advanced Python internals. Zero relevance to building LLM applications.</td></tr>
+    <tr><td>Context managers (__enter__/__exit__)</td><td>You already use <code>with open() as f:</code> — that's all you need. Writing your own context managers is unnecessary.</td></tr>
+    <tr><td>Unit tests (pytest in depth)</td><td>DeepEval handles LLM-specific testing with AI metrics. Standard pytest is too low-level for testing AI outputs.</td></tr>
+    <tr><td>Virtual envs (venv internals)</td><td>Run <code>python -m venv genai-env</code> once, activate it, forget it. Don't learn virtualenv internals.</td></tr>
+  </tbody>
+</table>
+
+<!-- TIME BUDGET -->
+<div class="sh">Time Budget — How Long This Actually Takes</div>
+<div class="time-grid">
+  <div class="time-card must-card">
+    <span class="time-n">7 days</span>
+    <div class="time-l">Mandatory Topics</div>
+    <p>1–2 hrs/day. Kaggle Python Course + practising the 11 mandatory topics. Stop when you can call an AI API and parse the response.</p>
+  </div>
+  <div class="time-card must-card">
+    <span class="time-n">5 days</span>
+    <div class="time-l">Pydantic + async + OOP</div>
+    <p>Days 8–12. These unlock LangChain. You can't use LCEL without understanding how to read class instantiation and async chains.</p>
+  </div>
+  <div class="time-card nice-card">
+    <span class="time-n">As needed</span>
+    <div class="time-l">Nice-to-have Topics</div>
+    <p>Add decorators when you hit LangSmith. Add generators when you build the FastAPI endpoint. Add pathlib when RAG needs batch loading.</p>
+  </div>
+  <div class="time-card" style="border-top:3px solid var(--em-d)">
+    <span class="time-n" style="color:var(--em-d)">Day 13</span>
+    <div class="time-l">Start LangChain</div>
+    <p>If you can pass the exit test below, start Month 1 LangChain LCEL. Don't wait for "perfect" Python. The rest you learn by doing.</p>
+  </div>
+</div>
+
+<!-- EXIT TEST -->
+<div class="sh">Exit Test — Are You Ready for LangChain?</div>
+<div class="callout"><strong>Rule:</strong> If you can do all 5 things below without searching Google, you're ready. Don't wait for more. Start Month 1.</div>
+<div class="exit-grid">
+  <div class="exit-card">
+    <h4>✓ Things You Can Do</h4>
+    <ul>
+      <li>Call the Anthropic API and print the response text — from memory, no docs</li>
+      <li>Create a Pydantic model with 3 fields and validate a dict against it</li>
+      <li>Write an async function that streams tokens and prints them one at a time</li>
+      <li>Load an API key from a .env file using python-dotenv</li>
+      <li>Read a .txt file, split it into 500-char chunks, print each chunk</li>
+      <li>Catch a RateLimitError exception and retry after 60 seconds</li>
+      <li>Parse a JSON string into a dict and access nested values</li>
+    </ul>
+  </div>
+  <div class="exit-card">
+    <h4>✗ Things That Don't Block You</h4>
+    <ul>
+      <li class="fail">Not knowing threading or multiprocessing — irrelevant</li>
+      <li class="fail">Never built a class with inheritance — don't need to</li>
+      <li class="fail">Haven't touched numpy or pandas yet — add in Month 2</li>
+      <li class="fail">Don't know decorators deeply — enough to copy @traceable</li>
+      <li class="fail">Haven't used pathlib — one line when needed in Month 2</li>
+      <li class="fail">Don't know regex — nice-to-have, not mandatory</li>
+      <li class="fail">Never wrote a generator function — add in Month 3</li>
+    </ul>
+  </div>
+</div>
+
+</div>
+</div>
+
+<footer style="text-align:center;padding:28px;font-size:.7rem;color:var(--dim);border-top:2px solid var(--edge);background:linear-gradient(135deg,#ecfdf5,#fffbeb);">
+  <div style="font-weight:700;color:var(--em-d);font-family:var(--head);font-size:.8rem;margin-bottom:5px">AI Engineering Career Plan · Python for GenAI · 2027</div>
+  <a href="https://docs.anthropic.com">Anthropic</a> ·
+  <a href="https://python.langchain.com">LangChain</a> ·
+  <a href="https://docs.pydantic.dev">Pydantic</a> ·
+  <a href="https://learn.deeplearning.ai">DeepLearning.AI</a>
+</footer>
 
 <script>
+function switchPage(page, btn) {
+  // Hide all pages
+  document.querySelectorAll('.page-content').forEach(function(p) {
+    p.classList.remove('active');
+  });
+  // Deactivate all tabs
+  document.querySelectorAll('.page-tab').forEach(function(b) {
+    b.classList.remove('active');
+  });
+  // Show target page
+  document.getElementById('page-' + page).classList.add('active');
+  btn.classList.add('active');
+  // Scroll to top
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+// Career plan functions
 function tog(id){document.getElementById(id).classList.toggle('open');}
 function swt(btn,card,pane){
   var body=document.getElementById(card).querySelector('.pb');
@@ -1130,6 +2378,13 @@ function swt(btn,card,pane){
   if(t)t.classList.add('on');
 }
 document.getElementById('ph0a').classList.add('open');
+
+// Python page functions
+function tog(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+// open first block by default
+document.getElementById('t1').classList.add('open');
 </script>
 </body>
 </html>
