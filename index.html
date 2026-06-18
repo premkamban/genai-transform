@@ -493,6 +493,83 @@ ul.syn li .comment { color: var(--dim2); }
 .exit-card ul li.fail::before { content: '✗'; color: var(--red); }
 .exit-card ul li.fail { color: var(--red); }
 
+
+/* ══ CICD + AWS EXPAND BLOCKS ══ */
+.xb{background:white;border:1.5px solid var(--edge);border-radius:13px;margin-bottom:12px;overflow:hidden;transition:box-shadow .2s;}
+.xb:hover{box-shadow:0 4px 16px rgba(5,150,105,.08);}
+.xh{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;padding:15px 20px;cursor:pointer;border-bottom:1px solid transparent;background:white;}
+.xb.xopen .xh{border-bottom-color:var(--edge);background:linear-gradient(135deg,#f0fdf4,#fffbeb);}
+.xbd{display:none;}
+.xb.xopen .xbd{display:block;}
+.xtog{font-size:16px;color:var(--dim);transition:transform .22s;user-select:none;}
+.xb.xopen .xtog{transform:rotate(45deg);color:var(--em-d);}
+.pgtab-wrap{}
+@media(max-width:640px){.xh,.xbd>div[style*="grid"]{grid-template-columns:1fr!important;}}
+
+
+/* ══ OUTCOME TAB ══ */
+.ot-hero{background:linear-gradient(135deg,#fffbeb 0%,#ecfdf5 60%,#f0fdf4 100%);border-bottom:2px solid var(--edge);padding:56px 52px 48px;position:relative;overflow:hidden;}
+.ot-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at -5% 55%,rgba(5,150,105,.1) 0%,transparent 55%),radial-gradient(ellipse 55% 60% at 105% 20%,rgba(217,119,6,.09) 0%,transparent 55%);pointer-events:none;}
+.ot-wrap{max-width:1100px;margin:0 auto;padding:0 44px 90px;}
+@media(max-width:700px){.ot-wrap{padding:0 14px 60px;}.ot-hero{padding:38px 16px 34px;}}
+
+/* timeline spine */
+.spine{display:flex;flex-direction:column;gap:0;position:relative;}
+.spine::before{content:'';position:absolute;left:23px;top:24px;bottom:24px;width:2px;background:linear-gradient(180deg,var(--em-d),var(--gold-d));z-index:0;}
+.spine-item{display:grid;grid-template-columns:48px 1fr;gap:18px;align-items:flex-start;margin-bottom:20px;position:relative;z-index:1;}
+.spine-dot{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;position:relative;border:2px solid white;box-shadow:0 2px 12px rgba(0,0,0,.08);}
+.spine-card{background:white;border:1.5px solid var(--edge);border-radius:13px;padding:18px 20px;box-shadow:0 2px 8px rgba(5,150,105,.04);}
+.spine-card h3{font-family:var(--head);font-size:.97rem;font-weight:800;margin-bottom:4px;letter-spacing:-.01em;}
+.spine-card .sc-when{font-family:var(--mono);font-size:8px;text-transform:uppercase;letter-spacing:.14em;margin-bottom:10px;}
+.spine-card .sc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px;}
+@media(max-width:580px){.spine-card .sc-grid{grid-template-columns:1fr;}}
+
+/* outcome pills */
+.opill{font-family:var(--mono);font-size:8.5px;padding:3px 10px;border-radius:20px;border:1px solid;white-space:nowrap;display:inline-block;margin:2px 3px 2px 0;}
+.op-em{border-color:rgba(5,150,105,.4);color:var(--em-d);background:rgba(5,150,105,.07);}
+.op-gold{border-color:rgba(217,119,6,.4);color:var(--gold-d);background:rgba(217,119,6,.07);}
+.op-red{border-color:rgba(220,38,38,.35);color:#dc2626;background:rgba(220,38,38,.05);}
+
+/* salary band */
+.salary-band{background:linear-gradient(135deg,rgba(5,150,105,.08),rgba(217,119,6,.08));border:1.5px solid var(--edge);border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:16px;margin-top:10px;}
+.salary-n{font-family:var(--head);font-size:1.6rem;font-weight:800;color:var(--em-d);}
+.salary-sub{font-size:.72rem;color:var(--dim);line-height:1.5;}
+
+/* can-build grid */
+.cb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;}
+.cb-card{background:white;border:1.5px solid var(--edge);border-radius:11px;padding:15px;border-left:3px solid;}
+.cb-card h4{font-family:var(--head);font-size:.85rem;font-weight:700;margin-bottom:5px;color:var(--text);}
+.cb-card p{font-size:.74rem;color:var(--dim);line-height:1.5;}
+.cb-card .cb-stack{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;}
+.cb-stack-tag{font-family:var(--mono);font-size:7.5px;padding:2px 6px;border-radius:4px;background:var(--em-ll);color:var(--em-d);border:1px solid rgba(5,150,105,.25);}
+
+/* comparison table */
+.comp-table{width:100%;border-collapse:collapse;background:white;border:1.5px solid var(--edge);border-radius:12px;overflow:hidden;}
+.comp-table th{font-family:var(--mono);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);background:var(--em-ll);padding:11px 14px;text-align:left;border-bottom:1px solid var(--edge);}
+.comp-table td{font-size:.78rem;padding:10px 14px;border-bottom:1px solid #e2f5ec;color:var(--text);vertical-align:top;}
+.comp-table tr:last-child td{border-bottom:none;}
+.comp-table tr:hover td{background:#f9fefe;}
+.comp-table td:first-child{font-family:var(--mono);font-size:.72rem;font-weight:600;color:var(--em-d);white-space:nowrap;}
+.td-before{color:#dc2626 !important;font-size:.76rem !important;font-family:var(--body) !important;font-weight:400 !important;}
+.td-after{color:#059669 !important;font-size:.76rem !important;font-family:var(--body) !important;font-weight:400 !important;}
+
+/* big number stat */
+.big-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--edge);border:1.5px solid var(--edge);border-radius:12px;overflow:hidden;margin:20px 0;}
+.big-stat{background:white;padding:18px 14px;text-align:center;}
+.big-n{font-family:var(--head);font-size:2rem;font-weight:800;color:var(--em-d);display:block;line-height:1;}
+.big-l{font-family:var(--mono);font-size:8px;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-top:4px;}
+
+/* callout */
+.oc{border-left:3px solid var(--em-d);background:rgba(5,150,105,.05);padding:13px 17px;border-radius:0 8px 8px 0;font-size:.82rem;color:#065f46;margin:16px 0;border:1px solid rgba(5,150,105,.15);border-left:3px solid var(--em-d);}
+.oc strong{color:var(--em-d);}
+.oc.gold{border-left:3px solid var(--gold-d);border-color:rgba(217,119,6,.2);background:rgba(253,243,199,.4);color:#78350f;}
+.oc.gold strong{color:var(--gold-d);}
+
+/* sh */
+.osh{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin:44px 0 18px;display:flex;align-items:center;gap:12px;}
+.osh::after{content:'';flex:1;height:1px;background:var(--edge);}
+.osh .otag{font-size:8px;padding:2px 8px;border-radius:8px;background:var(--em-d);color:white;font-weight:700;text-transform:none;letter-spacing:.03em;}
+
 </style>
 </head>
 <body>
@@ -508,6 +585,21 @@ ul.syn li .comment { color: var(--dim2); }
     <span class="tab-icon">🐍</span>
     Python for GenAI
     <span class="tab-badge">MANDATORY ONLY</span>
+  </button>
+  <button class="page-tab" onclick="switchPage('cicd', this)">
+    <span class="tab-icon">🔧</span>
+    CI/CD
+    <span class="tab-badge">DOCKER · K8S · HELM</span>
+  </button>
+  <button class="page-tab" onclick="switchPage('aws', this)">
+    <span class="tab-icon">☁️</span>
+    AWS Reference
+    <span class="tab-badge">EKS · ECR · S3 · SECRETS</span>
+  </button>
+  <button class="page-tab" onclick="switchPage('outcome', this)">
+    <span class="tab-icon">🎯</span>
+    If You Follow This
+    <span class="tab-badge">OUTCOMES</span>
   </button>
 </div>
 
@@ -2351,6 +2443,7 @@ app = FastAPI()
 </footer>
 
 <script>
+function xtog(id){var el=document.getElementById(id);el.classList.toggle('xopen');}
 function switchPage(page, btn) {
   // Hide all pages
   document.querySelectorAll('.page-content').forEach(function(p) {
@@ -2386,5 +2479,1696 @@ function tog(id) {
 // open first block by default
 document.getElementById('t1').classList.add('open');
 </script>
+
+<div class="page-content" id="page-cicd">
+
+<div class="pgtab-wrap">
+
+<!-- HERO -->
+<div style="background:linear-gradient(135deg,#ecfdf5 0%,#fffbeb 100%);border-bottom:2px solid var(--edge);padding:52px 48px 44px;position:relative;overflow:hidden;">
+  <div style="position:relative;z-index:1;max-width:860px;">
+    <div style="font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--em-d);margin-bottom:12px;display:flex;align-items:center;gap:10px;"><span style="display:inline-block;width:28px;height:1px;background:var(--em-d)"></span>CI/CD Mastery · Docker → Kubernetes → Helm → Jenkins</div>
+    <h1 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;line-height:1.08;letter-spacing:-.025em;margin-bottom:12px;">Zero to <em style="color:var(--em-d);font-style:normal;">Production Deployments</em><br><span style="color:var(--gold-d);">Docker · K8s · Helm · Jenkins</span></h1>
+    <p style="font-size:.91rem;color:var(--dim);max-width:640px;line-height:1.75;margin-bottom:18px;">You already use Docker and K8s at GE. This reference tells you the exact commands and concepts that matter — mandatory vs nice-to-have — with real use cases for deploying AI applications. No fluff, no theory without purpose.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;">
+      <span style="font-family:var(--mono);font-size:9px;padding:3px 10px;border-radius:20px;border:1px solid rgba(220,38,38,.4);color:#dc2626;background:rgba(220,38,38,.06);">🔴 Docker — 12 must-know commands</span>
+      <span style="font-family:var(--mono);font-size:9px;padding:3px 10px;border-radius:20px;border:1px solid rgba(5,150,105,.4);color:var(--em-d);background:rgba(5,150,105,.06);">🔴 Kubernetes — 15 must-know commands</span>
+      <span style="font-family:var(--mono);font-size:9px;padding:3px 10px;border-radius:20px;border:1px solid rgba(217,119,6,.4);color:var(--gold-d);background:rgba(217,119,6,.06);">🟡 Helm — packaging K8s apps</span>
+      <span style="font-family:var(--mono);font-size:9px;padding:3px 10px;border-radius:20px;border:1px solid rgba(5,150,105,.4);color:var(--em-d);background:rgba(5,150,105,.06);">🔴 Jenkins Pipeline — real AI deploy pipeline</span>
+    </div>
+  </div>
+</div>
+
+<!-- LEGEND -->
+<div style="display:flex;gap:10px;flex-wrap:wrap;padding:13px 24px;background:white;border-bottom:1px solid var(--edge);align-items:center;">
+  <span style="font-family:var(--mono);font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:.12em;">Status —</span>
+  <span style="font-family:var(--mono);font-size:8.5px;font-weight:600;padding:3px 10px;border-radius:20px;background:#dc2626;color:white;border:1px solid #dc2626;">🔴 MUST KNOW</span>
+  <span style="font-size:.75rem;color:#6b7280">Block deployments if you don't know these</span>
+  <span style="font-family:var(--mono);font-size:8.5px;font-weight:600;padding:3px 10px;border-radius:20px;background:#d97706;color:white;border:1px solid #d97706;">🟡 NICE TO HAVE</span>
+  <span style="font-size:.75rem;color:#6b7280">Add when project needs it</span>
+  <span style="font-family:var(--mono);font-size:8.5px;font-weight:600;padding:3px 10px;border-radius:20px;background:#e5e7eb;color:#6b7280;border:1px solid #d1d5db;">⬜ SKIP</span>
+  <span style="font-size:.75rem;color:#6b7280">Not needed for AI app deployments</span>
+</div>
+
+<div style="max-width:1100px;margin:0 auto;padding:0 40px 80px;">
+
+<!-- DOCKER SECTION -->
+<div style="font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin:44px 0 18px;display:flex;align-items:center;gap:12px;">Docker — Container Fundamentals <span style="flex:1;height:1px;background:var(--edge);display:block"></span><span style="font-size:8px;padding:2px 8px;border-radius:8px;background:var(--em-d);color:white;font-weight:700;">MUST KNOW FIRST</span></div>
+
+<!-- Docker Mandatory Commands -->
+<div class="xb" id="d1">
+<div class="xh" onclick="xtog('d1')">
+  <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:1.1rem">🐳</span><span style="font-family:var(--mono);font-size:8.5px;font-weight:600;padding:3px 9px;border-radius:20px;background:#dc2626;color:white;">MUST</span></div>
+  <div><div style="font-family:var(--head);font-size:.95rem;font-weight:700;margin-bottom:1px;">Docker — Mandatory Commands</div><div style="font-size:.72rem;color:var(--dim);">12 commands that cover 90% of daily Docker work · build, run, debug, push</div></div>
+  <div class="xtog">+</div>
+</div>
+<div class="xbd">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+<div style="padding:16px 18px;border-right:1px solid var(--edge);">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#dc2626;margin-bottom:9px;padding-bottom:5px;border-bottom:1.5px solid var(--edge);">Commands You Must Know</div>
+<div style="display:flex;flex-direction:column;gap:7px;">
+<div style="background:#0a1a0e;border-radius:6px;padding:10px 13px;font-family:var(--mono);font-size:.71rem;line-height:1.75;color:#6ee7b7;overflow-x:auto;">
+<div><span style="color:#fbbf24">docker build</span> -t myapp:1.0 .</div>
+<div style="color:#3d6b4f"># -t = tag name, . = use Dockerfile in current dir</div>
+<div><span style="color:#fbbf24">docker run</span> -d -p 8000:8000 --name app myapp:1.0</div>
+<div style="color:#3d6b4f"># -d = detached (background), -p host:container port</div>
+<div><span style="color:#fbbf24">docker run</span> --env-file .env -v $(pwd)/data:/app/data myapp</div>
+<div style="color:#3d6b4f"># env-file loads .env, -v mounts local folder into container</div>
+<div><span style="color:#fbbf24">docker ps</span>              <span style="color:#3d6b4f"># list running containers</span></div>
+<div><span style="color:#fbbf24">docker ps -a</span>           <span style="color:#3d6b4f"># include stopped containers</span></div>
+<div><span style="color:#fbbf24">docker logs</span> -f app     <span style="color:#3d6b4f"># follow logs in real time</span></div>
+<div><span style="color:#fbbf24">docker exec</span> -it app bash  <span style="color:#3d6b4f"># shell inside running container</span></div>
+<div><span style="color:#fbbf24">docker stop</span> app &amp;&amp; <span style="color:#fbbf24">docker rm</span> app  <span style="color:#3d6b4f"># stop + delete</span></div>
+<div><span style="color:#fbbf24">docker images</span>          <span style="color:#3d6b4f"># list local images</span></div>
+<div><span style="color:#fbbf24">docker rmi</span> myapp:1.0    <span style="color:#3d6b4f"># delete image</span></div>
+<div><span style="color:#fbbf24">docker push</span> 123456.dkr.ecr.us-east-1.amazonaws.com/myapp:1.0</div>
+<div><span style="color:#fbbf24">docker pull</span> python:3.11-slim</div>
+</div>
+</div>
+</div>
+<div style="padding:16px 18px;">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--em-d);margin-bottom:9px;padding-bottom:5px;border-bottom:1.5px solid var(--edge);">Dockerfile for AI Apps — Production Pattern</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:10px 13px;font-family:var(--mono);font-size:.71rem;line-height:1.8;color:#6ee7b7;overflow-x:auto;">
+<div style="color:#3d6b4f"># Dockerfile for FastAPI + LangChain app</div>
+<div><span style="color:#fbbf24">FROM</span> python:3.11-slim</div>
+<div style="color:#3d6b4f"># slim = smaller image, no dev tools</div>
+<div><span style="color:#fbbf24">WORKDIR</span> /app</div>
+<div style="color:#3d6b4f"># Copy requirements first (Docker cache layer)</div>
+<div><span style="color:#fbbf24">COPY</span> requirements.txt .</div>
+<div><span style="color:#fbbf24">RUN</span> pip install --no-cache-dir -r requirements.txt</div>
+<div style="color:#3d6b4f"># Copy app code AFTER deps (cache is faster)</div>
+<div><span style="color:#fbbf24">COPY</span> . .</div>
+<div style="color:#3d6b4f"># Never put secrets in Dockerfile - use env vars</div>
+<div><span style="color:#fbbf24">ENV</span> PYTHONDONTWRITEBYTECODE=1</div>
+<div><span style="color:#fbbf24">ENV</span> PYTHONUNBUFFERED=1</div>
+<div><span style="color:#fbbf24">EXPOSE</span> 8000</div>
+<div><span style="color:#fbbf24">CMD</span> ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]</div>
+</div>
+<div style="background:rgba(5,150,105,.06);border:1px solid rgba(5,150,105,.2);border-radius:6px;padding:9px 12px;margin-top:8px;font-size:.73rem;color:#065f46;"><strong style="color:var(--em-d)">WHY copy requirements first?</strong> Docker caches each layer. If you change only app code, Docker reuses the pip install cache. Changing requirements.txt invalidates it. This saves 2–3 min per build.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Docker Compose -->
+<div class="xb" id="d2">
+<div class="xh" onclick="xtog('d2')">
+  <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:1.1rem">🔗</span><span style="font-family:var(--mono);font-size:8.5px;font-weight:600;padding:3px 9px;border-radius:20px;background:#dc2626;color:white;">MUST</span></div>
+  <div><div style="font-family:var(--head);font-size:.95rem;font-weight:700;margin-bottom:1px;">Docker Compose — Multi-Container AI Stack</div><div style="font-size:.72rem;color:var(--dim);">Run FastAPI + Redis + ChromaDB + Postgres in one command · local dev standard for AI apps</div></div>
+  <div class="xtog">+</div>
+</div>
+<div class="xbd">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+<div style="padding:16px 18px;border-right:1px solid var(--edge);">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#dc2626;margin-bottom:9px;padding-bottom:5px;border-bottom:1.5px solid var(--edge);">Commands</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:10px 13px;font-family:var(--mono);font-size:.71rem;line-height:1.75;color:#6ee7b7;">
+<div><span style="color:#fbbf24">docker compose up</span> -d      <span style="color:#3d6b4f"># start all services</span></div>
+<div><span style="color:#fbbf24">docker compose down</span>         <span style="color:#3d6b4f"># stop + remove containers</span></div>
+<div><span style="color:#fbbf24">docker compose down -v</span>      <span style="color:#3d6b4f"># also delete volumes</span></div>
+<div><span style="color:#fbbf24">docker compose logs</span> -f api  <span style="color:#3d6b4f"># follow one service</span></div>
+<div><span style="color:#fbbf24">docker compose build</span>        <span style="color:#3d6b4f"># rebuild images</span></div>
+<div><span style="color:#fbbf24">docker compose exec</span> api bash <span style="color:#3d6b4f"># shell in service</span></div>
+<div><span style="color:#fbbf24">docker compose ps</span>           <span style="color:#3d6b4f"># status of services</span></div>
+</div>
+<div style="margin-top:10px;background:rgba(5,150,105,.06);border:1px solid rgba(5,150,105,.2);border-radius:6px;padding:9px 12px;font-size:.73rem;color:#065f46;">
+<strong style="color:var(--em-d)">Real AI dev workflow:</strong> <code style="font-family:var(--mono);font-size:.68rem;background:rgba(5,150,105,.1);padding:1px 4px;border-radius:3px">docker compose up -d</code> starts your entire AI stack locally. Edit code on host, app reloads inside container via volume mount.
+</div>
+</div>
+<div style="padding:16px 18px;">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--em-d);margin-bottom:9px;padding-bottom:5px;border-bottom:1.5px solid var(--edge);">docker-compose.yml for AI SaaS App</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:10px 13px;font-family:var(--mono);font-size:.69rem;line-height:1.75;color:#6ee7b7;overflow-x:auto;">
+<div style="color:#3d6b4f"># Full AI app stack</div>
+<div>services:</div>
+<div>&nbsp;&nbsp;api:</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;build: .</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;ports: ["8000:8000"]</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;env_file: .env</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;volumes: [".:/app"] <span style="color:#3d6b4f"># hot reload</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;depends_on: [redis, postgres]</div>
+<div>&nbsp;&nbsp;redis:</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;image: redis:7-alpine</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;ports: ["6379:6379"]</div>
+<div>&nbsp;&nbsp;postgres:</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;image: postgres:16</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;environment:</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;POSTGRES_DB: aiapp</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;POSTGRES_PASSWORD: secret</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;volumes: ["pgdata:/var/lib/postgresql/data"]</div>
+<div>&nbsp;&nbsp;chromadb:</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;image: chromadb/chroma</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;ports: ["8001:8000"]</div>
+<div>volumes:</div>
+<div>&nbsp;&nbsp;pgdata:</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- KUBERNETES SECTION -->
+<div style="font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin:44px 0 18px;display:flex;align-items:center;gap:12px;">Kubernetes — Container Orchestration <span style="flex:1;height:1px;background:var(--edge);display:block"></span><span style="font-size:8px;padding:2px 8px;border-radius:8px;background:var(--em-d);color:white;font-weight:700;">YOU RUN THIS AT GE</span></div>
+
+<div class="xb" id="k1">
+<div class="xh" onclick="xtog('k1')">
+  <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:1.1rem">☸️</span><span style="font-family:var(--mono);font-size:8.5px;font-weight:600;padding:3px 9px;border-radius:20px;background:#dc2626;color:white;">MUST</span></div>
+  <div><div style="font-family:var(--head);font-size:.95rem;font-weight:700;margin-bottom:1px;">kubectl — Mandatory Commands</div><div style="font-size:.72rem;color:var(--dim);">15 commands for deploying, debugging, scaling AI apps on any K8s cluster</div></div>
+  <div class="xtog">+</div>
+</div>
+<div class="xbd">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+<div style="padding:16px 18px;border-right:1px solid var(--edge);">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#dc2626;margin-bottom:9px;padding-bottom:5px;border-bottom:1.5px solid var(--edge);">Commands You Must Know</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:10px 13px;font-family:var(--mono);font-size:.7rem;line-height:1.85;color:#6ee7b7;overflow-x:auto;">
+<div style="color:#3d6b4f"># ── DEPLOY ──────────────────────</div>
+<div><span style="color:#fbbf24">kubectl apply</span> -f deployment.yaml  <span style="color:#3d6b4f"># deploy/update</span></div>
+<div><span style="color:#fbbf24">kubectl delete</span> -f deployment.yaml <span style="color:#3d6b4f"># remove resources</span></div>
+<div style="color:#3d6b4f"># ── INSPECT ─────────────────────</div>
+<div><span style="color:#fbbf24">kubectl get</span> pods                  <span style="color:#3d6b4f"># list pods</span></div>
+<div><span style="color:#fbbf24">kubectl get</span> pods -w               <span style="color:#3d6b4f"># watch in real time</span></div>
+<div><span style="color:#fbbf24">kubectl get</span> all -n my-namespace   <span style="color:#3d6b4f"># everything in ns</span></div>
+<div><span style="color:#fbbf24">kubectl describe</span> pod &lt;pod-name&gt;   <span style="color:#3d6b4f"># detailed info</span></div>
+<div><span style="color:#fbbf24">kubectl logs</span> &lt;pod-name&gt; -f        <span style="color:#3d6b4f"># follow logs</span></div>
+<div><span style="color:#fbbf24">kubectl logs</span> &lt;pod&gt; --previous     <span style="color:#3d6b4f"># crashed pod logs</span></div>
+<div style="color:#3d6b4f"># ── DEBUG ──────────────────────</div>
+<div><span style="color:#fbbf24">kubectl exec</span> -it &lt;pod&gt; -- bash    <span style="color:#3d6b4f"># shell in pod</span></div>
+<div><span style="color:#fbbf24">kubectl port-forward</span> pod/&lt;p&gt; 8080:8000 <span style="color:#3d6b4f"># local access</span></div>
+<div><span style="color:#fbbf24">kubectl get events</span> --sort-by=.lastTimestamp <span style="color:#3d6b4f"># errors</span></div>
+<div style="color:#3d6b4f"># ── SCALE / UPDATE ─────────────</div>
+<div><span style="color:#fbbf24">kubectl scale</span> deploy/api --replicas=3</div>
+<div><span style="color:#fbbf24">kubectl rollout status</span> deploy/api  <span style="color:#3d6b4f"># deploy progress</span></div>
+<div><span style="color:#fbbf24">kubectl rollout undo</span> deploy/api    <span style="color:#3d6b4f"># instant rollback</span></div>
+<div><span style="color:#fbbf24">kubectl set image</span> deploy/api app=myapp:2.0 <span style="color:#3d6b4f"># update image</span></div>
+</div>
+</div>
+<div style="padding:16px 18px;">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--em-d);margin-bottom:9px;padding-bottom:5px;border-bottom:1.5px solid var(--edge);">Deployment + Service + HPA for AI App</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:10px 13px;font-family:var(--mono);font-size:.69rem;line-height:1.75;color:#6ee7b7;overflow-x:auto;">
+<div style="color:#3d6b4f"># deployment.yaml</div>
+<div>apiVersion: apps/v1</div>
+<div>kind: Deployment</div>
+<div>metadata:</div>
+<div>&nbsp;&nbsp;name: ai-api</div>
+<div>spec:</div>
+<div>&nbsp;&nbsp;replicas: 2</div>
+<div>&nbsp;&nbsp;selector:</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;matchLabels: {app: ai-api}</div>
+<div>&nbsp;&nbsp;template:</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;spec:</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;containers:</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- name: api</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image: 123.dkr.ecr.us-east-1.amazonaws.com/ai-api:v1</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ports: [{containerPort: 8000}]</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;envFrom:</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- secretRef: {name: ai-secrets} <span style="color:#3d6b4f"># from K8s Secret</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resources:</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;requests: {memory: "256Mi", cpu: "250m"}</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;limits: {memory: "1Gi", cpu: "1000m"}</div>
+<div style="color:#3d6b4f">---</div>
+<div>kind: HorizontalPodAutoscaler</div>
+<div>spec:</div>
+<div>&nbsp;&nbsp;minReplicas: 2 &nbsp;maxReplicas: 10</div>
+<div>&nbsp;&nbsp;metrics: [{type: Resource, resource: {name: cpu, target: {averageUtilization: 70}}}]</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- K8s Secrets + ConfigMaps -->
+<div class="xb" id="k2">
+<div class="xh" onclick="xtog('k2')">
+  <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:1.1rem">🔐</span><span style="font-family:var(--mono);font-size:8.5px;font-weight:600;padding:3px 9px;border-radius:20px;background:#dc2626;color:white;">MUST</span></div>
+  <div><div style="font-family:var(--head);font-size:.95rem;font-weight:700;margin-bottom:1px;">K8s Secrets + ConfigMaps — API Keys in Production</div><div style="font-size:.72rem;color:var(--dim);">How to inject OPENAI_API_KEY into a K8s pod without hardcoding it · critical for AI apps</div></div>
+  <div class="xtog">+</div>
+</div>
+<div class="xbd">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+<div style="padding:16px 18px;border-right:1px solid var(--edge);">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#dc2626;margin-bottom:9px;padding-bottom:5px;border-bottom:1.5px solid var(--edge);">Creating Secrets</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:10px 13px;font-family:var(--mono);font-size:.7rem;line-height:1.85;color:#6ee7b7;">
+<div style="color:#3d6b4f"># Create secret from literal values</div>
+<div><span style="color:#fbbf24">kubectl create secret</span> generic ai-secrets \</div>
+<div>&nbsp;&nbsp;--from-literal=OPENAI_API_KEY=sk-... \</div>
+<div>&nbsp;&nbsp;--from-literal=ANTHROPIC_API_KEY=sk-ant-...</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Create secret from .env file</div>
+<div><span style="color:#fbbf24">kubectl create secret</span> generic ai-secrets \</div>
+<div>&nbsp;&nbsp;--from-env-file=.env</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># View secrets (base64 encoded)</div>
+<div><span style="color:#fbbf24">kubectl get secret</span> ai-secrets -o yaml</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Decode a secret value</div>
+<div><span style="color:#fbbf24">kubectl get secret</span> ai-secrets \</div>
+<div>&nbsp;&nbsp;-o jsonpath='{.data.OPENAI_API_KEY}' | base64 -d</div>
+</div>
+<div style="margin-top:10px;background:rgba(5,150,105,.06);border:1px solid rgba(5,150,105,.2);border-radius:6px;padding:9px 12px;font-size:.73rem;color:#065f46;"><strong style="color:var(--em-d)">AI App pattern:</strong> Store all API keys (OpenAI, Anthropic, LangSmith) in one K8s Secret. Reference it in your Deployment with <code style="font-family:var(--mono);font-size:.68rem;background:rgba(5,150,105,.1);padding:1px 4px;border-radius:3px">envFrom.secretRef</code>. All keys injected as env vars.</div>
+</div>
+<div style="padding:16px 18px;">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--em-d);margin-bottom:9px;padding-bottom:5px;border-bottom:1.5px solid var(--edge);">ConfigMap for Non-Secret Config</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:10px 13px;font-family:var(--mono);font-size:.69rem;line-height:1.75;color:#6ee7b7;">
+<div style="color:#3d6b4f"># ConfigMap for app settings (not secrets)</div>
+<div>apiVersion: v1</div>
+<div>kind: ConfigMap</div>
+<div>metadata: {name: ai-config}</div>
+<div>data:</div>
+<div>&nbsp;&nbsp;MODEL_NAME: "gpt-4o-mini"</div>
+<div>&nbsp;&nbsp;MAX_TOKENS: "1024"</div>
+<div>&nbsp;&nbsp;ENVIRONMENT: "production"</div>
+<div>&nbsp;&nbsp;LOG_LEVEL: "INFO"</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Reference in Deployment</div>
+<div>envFrom:</div>
+<div>- configMapRef:</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;name: ai-config</div>
+<div>- secretRef:</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;name: ai-secrets</div>
+<div style="color:#3d6b4f"># Both injected as env vars in pod</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- HELM SECTION -->
+<div style="font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin:44px 0 18px;display:flex;align-items:center;gap:12px;">Helm — Kubernetes Package Manager <span style="flex:1;height:1px;background:var(--edge);display:block"></span><span style="font-size:8px;padding:2px 8px;border-radius:8px;background:#d97706;color:white;font-weight:700;">NICE TO HAVE</span></div>
+
+<div class="xb" id="h1">
+<div class="xh" onclick="xtog('h1')">
+  <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:1.1rem">⛵</span><span style="font-family:var(--mono);font-size:8.5px;font-weight:600;padding:3px 9px;border-radius:20px;background:#d97706;color:white;">NICE</span></div>
+  <div><div style="font-family:var(--head);font-size:.95rem;font-weight:700;margin-bottom:1px;">Helm — Package, Version, and Deploy AI Apps</div><div style="font-size:.72rem;color:var(--dim);">Helm wraps K8s YAML into reusable charts · manage dev vs prod configs · add after raw kubectl works</div></div>
+  <div class="xtog">+</div>
+</div>
+<div class="xbd">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+<div style="padding:16px 18px;border-right:1px solid var(--edge);">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#d97706;margin-bottom:9px;padding-bottom:5px;border-bottom:1.5px solid var(--edge);">Key Helm Commands</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:10px 13px;font-family:var(--mono);font-size:.7rem;line-height:1.85;color:#6ee7b7;">
+<div><span style="color:#fbbf24">helm create</span> my-ai-app   <span style="color:#3d6b4f"># scaffold chart folder</span></div>
+<div><span style="color:#fbbf24">helm install</span> ai-app ./my-ai-app \</div>
+<div>&nbsp;&nbsp;-f values-prod.yaml   <span style="color:#3d6b4f"># deploy with prod values</span></div>
+<div><span style="color:#fbbf24">helm upgrade</span> ai-app ./my-ai-app \</div>
+<div>&nbsp;&nbsp;--set image.tag=v2.0  <span style="color:#3d6b4f"># update image version</span></div>
+<div><span style="color:#fbbf24">helm rollback</span> ai-app 1  <span style="color:#3d6b4f"># rollback to revision 1</span></div>
+<div><span style="color:#fbbf24">helm list</span>                <span style="color:#3d6b4f"># all installed charts</span></div>
+<div><span style="color:#fbbf24">helm uninstall</span> ai-app   <span style="color:#3d6b4f"># remove everything</span></div>
+<div><span style="color:#fbbf24">helm template</span> ./chart   <span style="color:#3d6b4f"># preview YAML output</span></div>
+<div><span style="color:#fbbf24">helm lint</span> ./chart       <span style="color:#3d6b4f"># validate chart</span></div>
+</div>
+<div style="margin-top:10px;background:rgba(217,119,6,.06);border:1px solid rgba(217,119,6,.2);border-radius:6px;padding:9px 12px;font-size:.73rem;color:#78350f;"><strong style="color:var(--gold-d)">When to add Helm:</strong> Once you have working raw K8s YAML and you want to reuse the same charts for dev/staging/prod with different values files. Not before.</div>
+</div>
+<div style="padding:16px 18px;">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-d);margin-bottom:9px;padding-bottom:5px;border-bottom:1.5px solid var(--edge);">values.yaml for AI App</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:10px 13px;font-family:var(--mono);font-size:.69rem;line-height:1.75;color:#6ee7b7;">
+<div style="color:#3d6b4f"># values.yaml (committed, no secrets)</div>
+<div>image:</div>
+<div>&nbsp;&nbsp;repository: 123.dkr.ecr.us-east-1.amazonaws.com/ai-api</div>
+<div>&nbsp;&nbsp;tag: "v1.0.0"</div>
+<div>&nbsp;&nbsp;pullPolicy: Always</div>
+<div>&nbsp;</div>
+<div>replicaCount: 2</div>
+<div>&nbsp;</div>
+<div>service:</div>
+<div>&nbsp;&nbsp;type: ClusterIP</div>
+<div>&nbsp;&nbsp;port: 8000</div>
+<div>&nbsp;</div>
+<div>hpa:</div>
+<div>&nbsp;&nbsp;enabled: true</div>
+<div>&nbsp;&nbsp;minReplicas: 2</div>
+<div>&nbsp;&nbsp;maxReplicas: 10</div>
+<div>&nbsp;&nbsp;cpuTargetPercent: 70</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># values-prod.yaml (override for prod)</div>
+<div>replicaCount: 5</div>
+<div>image: {tag: "v2.0.0"}</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- JENKINS SECTION -->
+<div style="font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin:44px 0 18px;display:flex;align-items:center;gap:12px;">Jenkins Pipeline — CI/CD for AI Apps <span style="flex:1;height:1px;background:var(--edge);display:block"></span><span style="font-size:8px;padding:2px 8px;border-radius:8px;background:var(--em-d);color:white;font-weight:700;">PRODUCTION PATTERN</span></div>
+
+<div class="xb" id="j1">
+<div class="xh" onclick="xtog('j1')">
+  <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:1.1rem">🔧</span><span style="font-family:var(--mono);font-size:8.5px;font-weight:600;padding:3px 9px;border-radius:20px;background:#dc2626;color:white;">MUST</span></div>
+  <div><div style="font-family:var(--head);font-size:.95rem;font-weight:700;margin-bottom:1px;">Jenkinsfile — Full AI App CI/CD Pipeline</div><div style="font-size:.72rem;color:var(--dim);">Lint → Test → AI Eval → Docker Build → Push to ECR → Deploy to EKS · production-grade</div></div>
+  <div class="xtog">+</div>
+</div>
+<div class="xbd">
+<div style="padding:16px 18px;">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#dc2626;margin-bottom:9px;padding-bottom:5px;border-bottom:1.5px solid var(--edge);">Complete Jenkinsfile for AI Application</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:14px 16px;font-family:var(--mono);font-size:.69rem;line-height:1.8;color:#6ee7b7;overflow-x:auto;">
+<div><span style="color:#fbbf24">pipeline</span> {</div>
+<div>&nbsp;&nbsp;<span style="color:#fbbf24">agent</span> { docker { image <span style="color:#a7f3d0">'python:3.11-slim'</span> } }</div>
+<div>&nbsp;</div>
+<div>&nbsp;&nbsp;<span style="color:#fbbf24">environment</span> {</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;AWS_REGION = <span style="color:#a7f3d0">'us-east-1'</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;ECR_REPO = <span style="color:#a7f3d0">'123456.dkr.ecr.us-east-1.amazonaws.com/ai-api'</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;IMAGE_TAG = <span style="color:#a7f3d0">"\${env.BUILD_NUMBER}"</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#3d6b4f">// Load secrets from Jenkins credentials store</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;OPENAI_API_KEY = credentials(<span style="color:#a7f3d0">'openai-api-key'</span>)</div>
+<div>&nbsp;&nbsp;}</div>
+<div>&nbsp;</div>
+<div>&nbsp;&nbsp;<span style="color:#fbbf24">stages</span> {</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#fbbf24">stage</span>(<span style="color:#a7f3d0">'Lint + Test'</span>) {</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;steps {</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sh <span style="color:#a7f3d0">'pip install ruff &amp;&amp; ruff check .'</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sh <span style="color:#a7f3d0">'pip install -r requirements.txt'</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sh <span style="color:#a7f3d0">'pytest tests/ -v --tb=short'</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#fbbf24">stage</span>(<span style="color:#a7f3d0">'AI Eval Gate'</span>) {</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#3d6b4f">// Fail pipeline if RAG quality drops</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;steps {</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sh <span style="color:#a7f3d0">'pip install deepeval &amp;&amp; deepeval test run tests/eval/'</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#fbbf24">stage</span>(<span style="color:#a7f3d0">'Docker Build + Push to ECR'</span>) {</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;steps {</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;script {</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#3d6b4f">// Auth with ECR</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sh <span style="color:#a7f3d0">'aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ECR_REPO'</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sh <span style="color:#a7f3d0">'docker build -t $ECR_REPO:$IMAGE_TAG .'</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sh <span style="color:#a7f3d0">'docker push $ECR_REPO:$IMAGE_TAG'</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#fbbf24">stage</span>(<span style="color:#a7f3d0">'Deploy to EKS'</span>) {</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;steps {</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#3d6b4f">// Update kubeconfig for EKS cluster</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sh <span style="color:#a7f3d0">'aws eks update-kubeconfig --name my-cluster --region $AWS_REGION'</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#3d6b4f">// Helm upgrade with new image tag</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sh <span style="color:#a7f3d0">'helm upgrade --install ai-app ./helm/ai-app --set image.tag=$IMAGE_TAG --set image.repository=$ECR_REPO'</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#3d6b4f">// Wait for rollout to complete</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sh <span style="color:#a7f3d0">'kubectl rollout status deployment/ai-api --timeout=300s'</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div>&nbsp;&nbsp;}</div>
+<div>&nbsp;&nbsp;<span style="color:#fbbf24">post</span> {</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;failure {</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sh <span style="color:#a7f3d0">'kubectl rollout undo deployment/ai-api'</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;slackSend channel: <span style="color:#a7f3d0">'#alerts'</span>, message: <span style="color:#a7f3d0">'Deploy FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}'</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div>&nbsp;&nbsp;}</div>
+<div>}</div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin-top:12px;">
+  <div style="background:rgba(5,150,105,.06);border:1px solid rgba(5,150,105,.2);border-radius:7px;padding:10px 12px;font-size:.73rem;color:#065f46;"><strong style="color:var(--em-d)">Stage 1: Lint+Test</strong><br>ruff catches Python issues. pytest runs unit tests. If either fails, pipeline stops — no bad code reaches ECR.</div>
+  <div style="background:rgba(217,119,6,.06);border:1px solid rgba(217,119,6,.2);border-radius:7px;padding:10px 12px;font-size:.73rem;color:#78350f;"><strong style="color:var(--gold-d)">Stage 2: AI Eval Gate</strong><br>DeepEval runs your 50 test cases. If RAG faithfulness drops below 0.8 or hallucination spikes, the pipeline fails before deploy.</div>
+  <div style="background:rgba(5,150,105,.06);border:1px solid rgba(5,150,105,.2);border-radius:7px;padding:10px 12px;font-size:.73rem;color:#065f46;"><strong style="color:var(--em-d)">Stage 4: Auto Rollback</strong><br><code style="font-family:var(--mono);font-size:.68rem;background:rgba(5,150,105,.1);padding:1px 4px;border-radius:3px">post.failure</code> block auto-rolls back K8s deployment and alerts Slack. Zero-downtime failure recovery.</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- GITHUB ACTIONS -->
+<div class="xb" id="j2">
+<div class="xh" onclick="xtog('j2')">
+  <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:1.1rem">🐙</span><span style="font-family:var(--mono);font-size:8.5px;font-weight:600;padding:3px 9px;border-radius:20px;background:var(--em-d);color:white;">NICE</span></div>
+  <div><div style="font-family:var(--head);font-size:.95rem;font-weight:700;margin-bottom:1px;">GitHub Actions — Simpler Alternative to Jenkins</div><div style="font-size:.72rem;color:var(--dim);">No server to maintain · YAML in .github/workflows/ · best for personal projects and open source</div></div>
+  <div class="xtog">+</div>
+</div>
+<div class="xbd">
+<div style="padding:16px 18px;">
+<div style="background:#0a1a0e;border-radius:6px;padding:14px 16px;font-family:var(--mono);font-size:.69rem;line-height:1.8;color:#6ee7b7;overflow-x:auto;">
+<div style="color:#3d6b4f"># .github/workflows/deploy.yml</div>
+<div>on:</div>
+<div>&nbsp;&nbsp;push: {branches: [main]}</div>
+<div>jobs:</div>
+<div>&nbsp;&nbsp;deploy:</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;runs-on: ubuntu-latest</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;steps:</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;- uses: actions/checkout@v4</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;- name: Run AI Eval</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;run: pip install deepeval &amp;&amp; deepeval test run</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;env: {OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}}</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;- name: Build and Push to ECR</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uses: aws-actions/amazon-ecr-login@v2</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;- run: |</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;docker build -t $ECR_REPO:$GITHUB_SHA .</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;docker push $ECR_REPO:$GITHUB_SHA</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;- name: Deploy to EKS</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;run: |</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aws eks update-kubeconfig --name my-cluster</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;helm upgrade --install ai-app ./helm --set image.tag=$GITHUB_SHA</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- SKIP TABLE -->
+<div style="font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin:44px 0 18px;display:flex;align-items:center;gap:12px;">What to Skip <span style="flex:1;height:1px;background:var(--edge);display:block"></span></div>
+<table style="width:100%;border-collapse:collapse;background:white;border:1.5px solid var(--edge);border-radius:12px;overflow:hidden;">
+  <thead><tr><th style="font-family:var(--mono);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);background:var(--em-ll);padding:10px 14px;text-align:left;border-bottom:1px solid var(--edge);">Topic</th><th style="font-family:var(--mono);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);background:var(--em-ll);padding:10px 14px;text-align:left;border-bottom:1px solid var(--edge);">Why Skip</th></tr></thead>
+  <tbody>
+    <tr><td style="font-family:var(--mono);font-size:.72rem;padding:9px 14px;border-bottom:1px solid #e2f5ec;color:var(--em-d);font-weight:600;">Docker Swarm</td><td style="font-size:.77rem;padding:9px 14px;border-bottom:1px solid #e2f5ec;">Kubernetes replaced it. Nobody uses Swarm in production anymore.</td></tr>
+    <tr><td style="font-family:var(--mono);font-size:.72rem;padding:9px 14px;border-bottom:1px solid #e2f5ec;color:var(--em-d);font-weight:600;">K8s Operators / CRDs</td><td style="font-size:.77rem;padding:9px 14px;border-bottom:1px solid #e2f5ec;">Advanced K8s extension pattern. You won't need to write these for AI app deployments.</td></tr>
+    <tr><td style="font-family:var(--mono);font-size:.72rem;padding:9px 14px;border-bottom:1px solid #e2f5ec;color:var(--em-d);font-weight:600;">Groovy scripted pipeline</td><td style="font-size:.77rem;padding:9px 14px;border-bottom:1px solid #e2f5ec;">Old Jenkins style. Use declarative pipeline (the one above). Much simpler.</td></tr>
+    <tr><td style="font-family:var(--mono);font-size:.72rem;padding:9px 14px;border-bottom:1px solid #e2f5ec;color:var(--em-d);font-weight:600;">Ansible / Chef / Puppet</td><td style="font-size:.77rem;padding:9px 14px;border-bottom:1px solid #e2f5ec;">Configuration management tools. Docker containers make these irrelevant for new apps.</td></tr>
+    <tr><td style="font-family:var(--mono);font-size:.72rem;padding:9px 14px;color:var(--em-d);font-weight:600;">K8s StatefulSets / DaemonSets</td><td style="font-size:.77rem;padding:9px 14px;">Advanced K8s resource types. Deployment covers 95% of AI app needs. Learn when you need them.</td></tr>
+  </tbody>
+</table>
+
+</div><!-- /inner wrap -->
+</div><!-- /pgtab-wrap -->
+
+</div>
+
+<div class="page-content" id="page-aws">
+
+<div class="pgtab-wrap">
+
+<!-- HERO -->
+<div style="background:linear-gradient(135deg,#fffbeb 0%,#ecfdf5 100%);border-bottom:2px solid var(--edge);padding:52px 48px 44px;position:relative;overflow:hidden;">
+  <div style="position:relative;z-index:1;max-width:860px;">
+    <div style="font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-d);margin-bottom:12px;display:flex;align-items:center;gap:10px;"><span style="display:inline-block;width:28px;height:1px;background:var(--gold-d)"></span>AWS for AI Engineers · Mandatory vs Nice-to-Have · Real Commands</div>
+    <h1 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;line-height:1.08;letter-spacing:-.025em;margin-bottom:12px;"><em style="color:var(--gold-d);font-style:normal;">AWS Services</em> That Matter<br><span style="color:var(--em-d);">for Deploying AI Applications</span></h1>
+    <p style="font-size:.91rem;color:var(--dim);max-width:640px;line-height:1.75;margin-bottom:18px;">You already use AWS at GE. This reference cuts through the 200+ AWS services to show you exactly which ones block your AI deployments (mandatory) and which extend them (nice-to-have). Every service includes real commands you'll run, not just descriptions.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;">
+      <span style="font-family:var(--mono);font-size:9px;padding:3px 10px;border-radius:20px;border:1px solid rgba(220,38,38,.4);color:#dc2626;background:rgba(220,38,38,.06);">🔴 EKS · ECR · Secrets Manager · IAM · S3 — block deployments</span>
+      <span style="font-family:var(--mono);font-size:9px;padding:3px 10px;border-radius:20px;border:1px solid rgba(217,119,6,.4);color:var(--gold-d);background:rgba(217,119,6,.06);">🟡 Bedrock · Lambda · CloudWatch · RDS — extend capabilities</span>
+    </div>
+  </div>
+</div>
+
+<!-- LEGEND -->
+<div style="display:flex;gap:10px;flex-wrap:wrap;padding:13px 24px;background:white;border-bottom:1px solid var(--edge);align-items:center;">
+  <span style="font-family:var(--mono);font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:.12em;">Status —</span>
+  <span style="font-family:var(--mono);font-size:8.5px;font-weight:600;padding:3px 10px;border-radius:20px;background:#dc2626;color:white;border:1px solid #dc2626;">🔴 MUST KNOW</span>
+  <span style="font-size:.75rem;color:#6b7280">Need these to deploy an AI app on AWS</span>
+  <span style="font-family:var(--mono);font-size:8.5px;font-weight:600;padding:3px 10px;border-radius:20px;background:#d97706;color:white;border:1px solid #d97706;">🟡 NICE TO HAVE</span>
+  <span style="font-size:.75rem;color:#6b7280">Add as projects grow</span>
+</div>
+
+<div style="max-width:1100px;margin:0 auto;padding:0 40px 80px;">
+
+<!-- IAM -->
+<div style="font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin:44px 0 18px;display:flex;align-items:center;gap:12px;">IAM — Identity and Access Management <span style="flex:1;height:1px;background:var(--edge);display:block"></span><span style="font-size:8px;padding:2px 8px;border-radius:8px;background:#dc2626;color:white;font-weight:700;">LEARN FIRST</span></div>
+
+<div class="xb" id="a1">
+<div class="xh" onclick="xtog('a1')">
+  <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:1.1rem">🔐</span><span style="font-family:var(--mono);font-size:8.5px;font-weight:600;padding:3px 9px;border-radius:20px;background:#dc2626;color:white;">MUST</span></div>
+  <div><div style="font-family:var(--head);font-size:.95rem;font-weight:700;margin-bottom:1px;">IAM — Roles, Policies, and Least Privilege</div><div style="font-size:.72rem;color:var(--dim);">Every AWS service interaction goes through IAM · wrong permissions = nothing works · over-permissions = security incident</div></div>
+  <div class="xtog">+</div>
+</div>
+<div class="xbd">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+<div style="padding:16px 18px;border-right:1px solid var(--edge);">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#dc2626;margin-bottom:9px;padding-bottom:5px;border-bottom:1.5px solid var(--edge);">Key Concepts + Commands</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:10px 13px;font-family:var(--mono);font-size:.7rem;line-height:1.85;color:#6ee7b7;overflow-x:auto;">
+<div style="color:#3d6b4f"># Create IAM role for EKS node group</div>
+<div><span style="color:#fbbf24">aws iam create-role</span> \</div>
+<div>&nbsp;&nbsp;--role-name EKSNodeRole \</div>
+<div>&nbsp;&nbsp;--assume-role-policy-document file://trust.json</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Attach policy to role</div>
+<div><span style="color:#fbbf24">aws iam attach-role-policy</span> \</div>
+<div>&nbsp;&nbsp;--role-name EKSNodeRole \</div>
+<div>&nbsp;&nbsp;--policy-arn arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Create minimal policy for Bedrock only</div>
+<div><span style="color:#fbbf24">aws iam create-policy</span> \</div>
+<div>&nbsp;&nbsp;--policy-name BedrockInvokeOnly \</div>
+<div>&nbsp;&nbsp;--policy-document '{</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;"Statement": [{</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Effect": "Allow",</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Action": "bedrock:InvokeModel",</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Resource": "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude*"</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;}]</div>
+<div>&nbsp;&nbsp;}'</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Check what identity you're using</div>
+<div><span style="color:#fbbf24">aws sts get-caller-identity</span></div>
+</div>
+</div>
+<div style="padding:16px 18px;">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--em-d);margin-bottom:9px;padding-bottom:5px;border-bottom:1.5px solid var(--edge);">Roles for Every AI App Component</div>
+<div style="display:flex;flex-direction:column;gap:8px;">
+  <div style="background:rgba(5,150,105,.06);border:1px solid rgba(5,150,105,.2);border-radius:7px;padding:10px 12px;">
+    <div style="font-family:var(--mono);font-size:8px;color:var(--em-d);font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;">EKS Pod Role (IRSA)</div>
+    <div style="font-size:.73rem;color:#1f4d32">Your AI API pod needs: <code style="font-family:var(--mono);font-size:.68rem;background:rgba(5,150,105,.1);padding:1px 4px;border-radius:3px">bedrock:InvokeModel</code>, <code style="font-family:var(--mono);font-size:.68rem;background:rgba(5,150,105,.1);padding:1px 4px;border-radius:3px">s3:GetObject</code> (for RAG docs), <code style="font-family:var(--mono);font-size:.68rem;background:rgba(5,150,105,.1);padding:1px 4px;border-radius:3px">secretsmanager:GetSecretValue</code>. Nothing else.</div>
+  </div>
+  <div style="background:rgba(217,119,6,.06);border:1px solid rgba(217,119,6,.2);border-radius:7px;padding:10px 12px;">
+    <div style="font-family:var(--mono);font-size:8px;color:var(--gold-d);font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;">Jenkins/GitHub Actions Role</div>
+    <div style="font-size:.73rem;color:#78350f">CI/CD needs: <code style="font-family:var(--mono);font-size:.68rem;background:rgba(217,119,6,.1);padding:1px 4px;border-radius:3px">ecr:GetAuthorizationToken</code>, <code style="font-family:var(--mono);font-size:.68rem;background:rgba(217,119,6,.1);padding:1px 4px;border-radius:3px">ecr:PushImage</code>, <code style="font-family:var(--mono);font-size:.68rem;background:rgba(217,119,6,.1);padding:1px 4px;border-radius:3px">eks:DescribeCluster</code>. Never give admin.</div>
+  </div>
+  <div style="background:rgba(220,38,38,.05);border:1px solid rgba(220,38,38,.2);border-radius:7px;padding:10px 12px;">
+    <div style="font-family:var(--mono);font-size:8px;color:#dc2626;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;">Rule: Least Privilege</div>
+    <div style="font-size:.73rem;color:#7f1d1d">Never use AdministratorAccess in production. Always create specific policies. One role per component. Audit with <code style="font-family:var(--mono);font-size:.68rem">aws iam simulate-principal-policy</code> before deploying.</div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- SECRETS MANAGER -->
+<div style="font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin:44px 0 18px;display:flex;align-items:center;gap:12px;">Secrets Manager — API Keys in Production <span style="flex:1;height:1px;background:var(--edge);display:block"></span></div>
+
+<div class="xb" id="a2">
+<div class="xh" onclick="xtog('a2')">
+  <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:1.1rem">🔑</span><span style="font-family:var(--mono);font-size:8.5px;font-weight:600;padding:3px 9px;border-radius:20px;background:#dc2626;color:white;">MUST</span></div>
+  <div><div style="font-family:var(--head);font-size:.95rem;font-weight:700;margin-bottom:1px;">AWS Secrets Manager — OpenAI + Anthropic Keys in Production</div><div style="font-size:.72rem;color:var(--dim);">Never put API keys in K8s YAML or .env on servers · Secrets Manager rotates, audits, and secures all credentials</div></div>
+  <div class="xtog">+</div>
+</div>
+<div class="xbd">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+<div style="padding:16px 18px;border-right:1px solid var(--edge);">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#dc2626;margin-bottom:9px;padding-bottom:5px;border-bottom:1.5px solid var(--edge);">CLI Commands</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:10px 13px;font-family:var(--mono);font-size:.7rem;line-height:1.85;color:#6ee7b7;">
+<div style="color:#3d6b4f"># Create a secret (all AI keys in one JSON)</div>
+<div><span style="color:#fbbf24">aws secretsmanager create-secret</span> \</div>
+<div>&nbsp;&nbsp;--name prod/ai-app/api-keys \</div>
+<div>&nbsp;&nbsp;--secret-string '{</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;"OPENAI_API_KEY": "sk-...",</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;"ANTHROPIC_API_KEY": "sk-ant-...",</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;"LANGCHAIN_API_KEY": "ls__..."</div>
+<div>&nbsp;&nbsp;}'</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Retrieve in CLI</div>
+<div><span style="color:#fbbf24">aws secretsmanager get-secret-value</span> \</div>
+<div>&nbsp;&nbsp;--secret-id prod/ai-app/api-keys \</div>
+<div>&nbsp;&nbsp;--query SecretString --output text</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Update a secret</div>
+<div><span style="color:#fbbf24">aws secretsmanager update-secret</span> \</div>
+<div>&nbsp;&nbsp;--secret-id prod/ai-app/api-keys \</div>
+<div>&nbsp;&nbsp;--secret-string '{...updated...}'</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># List secrets</div>
+<div><span style="color:#fbbf24">aws secretsmanager list-secrets</span></div>
+</div>
+</div>
+<div style="padding:16px 18px;">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--em-d);margin-bottom:9px;padding-bottom:5px;border-bottom:1.5px solid var(--edge);">Fetch in Python App</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:10px 13px;font-family:var(--mono);font-size:.7rem;line-height:1.8;color:#6ee7b7;">
+<div><span style="color:#fbbf24">import</span> boto3, json</div>
+<div>&nbsp;</div>
+<div><span style="color:#fbbf24">def</span> <span style="color:#a7f3d0">get_secrets</span>():</div>
+<div>&nbsp;&nbsp;client = boto3.client(<span style="color:#a7f3d0">'secretsmanager'</span>)</div>
+<div>&nbsp;&nbsp;resp = client.get_secret_value(</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;SecretId=<span style="color:#a7f3d0">'prod/ai-app/api-keys'</span></div>
+<div>&nbsp;&nbsp;)</div>
+<div>&nbsp;&nbsp;<span style="color:#3d6b4f"># Returns JSON string → parse it</span></div>
+<div>&nbsp;&nbsp;<span style="color:#fbbf24">return</span> json.loads(resp[<span style="color:#a7f3d0">'SecretString'</span>])</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># At app startup</div>
+<div>secrets = get_secrets()</div>
+<div>os.environ[<span style="color:#a7f3d0">'OPENAI_API_KEY'</span>] = secrets[<span style="color:#a7f3d0">'OPENAI_API_KEY'</span>]</div>
+<div>os.environ[<span style="color:#a7f3d0">'ANTHROPIC_API_KEY'</span>] = secrets[<span style="color:#a7f3d0">'ANTHROPIC_API_KEY'</span>]</div>
+</div>
+<div style="margin-top:8px;background:rgba(5,150,105,.06);border:1px solid rgba(5,150,105,.2);border-radius:6px;padding:9px 12px;font-size:.73rem;color:#065f46;"><strong style="color:var(--em-d)">In EKS:</strong> Use the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/integrating_csi_driver.html" target="_blank" style="color:var(--em-d)">Secrets Store CSI Driver</a> to auto-mount Secrets Manager values as K8s secrets. Your pod gets them as env vars without any code change.</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ECR -->
+<div style="font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin:44px 0 18px;display:flex;align-items:center;gap:12px;">ECR — Container Registry <span style="flex:1;height:1px;background:var(--edge);display:block"></span></div>
+
+<div class="xb" id="a3">
+<div class="xh" onclick="xtog('a3')">
+  <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:1.1rem">📦</span><span style="font-family:var(--mono);font-size:8.5px;font-weight:600;padding:3px 9px;border-radius:20px;background:#dc2626;color:white;">MUST</span></div>
+  <div><div style="font-family:var(--head);font-size:.95rem;font-weight:700;margin-bottom:1px;">ECR — Elastic Container Registry</div><div style="font-size:.72rem;color:var(--dim);">Private Docker registry · where Jenkins pushes images · where EKS pulls them · every AI app deploy goes through ECR</div></div>
+  <div class="xtog">+</div>
+</div>
+<div class="xbd">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+<div style="padding:16px 18px;border-right:1px solid var(--edge);">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#dc2626;margin-bottom:9px;padding-bottom:5px;border-bottom:1.5px solid var(--edge);">Every Command You Need</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:10px 13px;font-family:var(--mono);font-size:.7rem;line-height:1.85;color:#6ee7b7;overflow-x:auto;">
+<div style="color:#3d6b4f"># Create repository</div>
+<div><span style="color:#fbbf24">aws ecr create-repository</span> \</div>
+<div>&nbsp;&nbsp;--repository-name ai-api \</div>
+<div>&nbsp;&nbsp;--image-scanning-configuration scanOnPush=true</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Login to ECR (run before docker push)</div>
+<div><span style="color:#fbbf24">aws ecr get-login-password</span> --region us-east-1 | \</div>
+<div>&nbsp;&nbsp;<span style="color:#fbbf24">docker login</span> --username AWS --password-stdin \</div>
+<div>&nbsp;&nbsp;123456.dkr.ecr.us-east-1.amazonaws.com</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Tag and push (standard deploy flow)</div>
+<div>ECR=123456.dkr.ecr.us-east-1.amazonaws.com/ai-api</div>
+<div><span style="color:#fbbf24">docker build</span> -t $ECR:v1.0 .</div>
+<div><span style="color:#fbbf24">docker push</span> $ECR:v1.0</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># List images in a repo</div>
+<div><span style="color:#fbbf24">aws ecr list-images</span> --repository-name ai-api</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Delete old images (cost saving)</div>
+<div><span style="color:#fbbf24">aws ecr batch-delete-image</span> \</div>
+<div>&nbsp;&nbsp;--repository-name ai-api \</div>
+<div>&nbsp;&nbsp;--image-ids imageTag=v0.9</div>
+</div>
+</div>
+<div style="padding:16px 18px;">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--em-d);margin-bottom:9px;padding-bottom:5px;border-bottom:1.5px solid var(--edge);">Lifecycle Policy — Auto-Delete Old Images</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:10px 13px;font-family:var(--mono);font-size:.69rem;line-height:1.75;color:#6ee7b7;overflow-x:auto;">
+<div style="color:#3d6b4f"># Keep only last 10 images, delete rest</div>
+<div style="color:#3d6b4f"># Saves ECR storage costs automatically</div>
+<div><span style="color:#fbbf24">aws ecr put-lifecycle-policy</span> \</div>
+<div>&nbsp;&nbsp;--repository-name ai-api \</div>
+<div>&nbsp;&nbsp;--lifecycle-policy-text '{</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;"rules": [{</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"rulePriority": 1,</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"description": "Keep last 10 images",</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selection": {</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tagStatus": "any",</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"countType": "imageCountMoreThan",</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"countNumber": 10</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"action": {"type": "expire"}</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;}]</div>
+<div>&nbsp;&nbsp;}'</div>
+</div>
+<div style="margin-top:8px;background:rgba(5,150,105,.06);border:1px solid rgba(5,150,105,.2);border-radius:6px;padding:9px 12px;font-size:.73rem;color:#065f46;"><strong style="color:var(--em-d)">Cost tip:</strong> ECR charges $0.10/GB/month. AI app images are 1–3 GB. Lifecycle policy keeps costs under $5/month automatically.</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- EKS -->
+<div style="font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin:44px 0 18px;display:flex;align-items:center;gap:12px;">EKS — Managed Kubernetes <span style="flex:1;height:1px;background:var(--edge);display:block"></span></div>
+
+<div class="xb" id="a4">
+<div class="xh" onclick="xtog('a4')">
+  <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:1.1rem">☸️</span><span style="font-family:var(--mono);font-size:8.5px;font-weight:600;padding:3px 9px;border-radius:20px;background:#dc2626;color:white;">MUST</span></div>
+  <div><div style="font-family:var(--head);font-size:.95rem;font-weight:700;margin-bottom:1px;">EKS — Where Your AI App Runs in Production</div><div style="font-size:.72rem;color:var(--dim);">Managed K8s on AWS · you already use K8s at GE · eksctl + kubectl is all you need</div></div>
+  <div class="xtog">+</div>
+</div>
+<div class="xbd">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+<div style="padding:16px 18px;border-right:1px solid var(--edge);">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#dc2626;margin-bottom:9px;padding-bottom:5px;border-bottom:1.5px solid var(--edge);">EKS Commands</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:10px 13px;font-family:var(--mono);font-size:.7rem;line-height:1.85;color:#6ee7b7;overflow-x:auto;">
+<div style="color:#3d6b4f"># Create cluster (eksctl)</div>
+<div><span style="color:#fbbf24">eksctl create cluster</span> \</div>
+<div>&nbsp;&nbsp;--name ai-cluster \</div>
+<div>&nbsp;&nbsp;--region us-east-1 \</div>
+<div>&nbsp;&nbsp;--node-type t3.medium \</div>
+<div>&nbsp;&nbsp;--nodes 2 --nodes-min 1 --nodes-max 5</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Connect kubectl to EKS cluster</div>
+<div><span style="color:#fbbf24">aws eks update-kubeconfig</span> \</div>
+<div>&nbsp;&nbsp;--name ai-cluster --region us-east-1</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Verify connection</div>
+<div><span style="color:#fbbf24">kubectl get nodes</span>  <span style="color:#3d6b4f"># should list EC2 nodes</span></div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># List clusters</div>
+<div><span style="color:#fbbf24">aws eks list-clusters</span> --region us-east-1</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Get cluster info</div>
+<div><span style="color:#fbbf24">aws eks describe-cluster</span> --name ai-cluster</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Delete cluster (save costs when not using)</div>
+<div><span style="color:#fbbf24">eksctl delete cluster</span> --name ai-cluster</div>
+</div>
+</div>
+<div style="padding:16px 18px;">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--em-d);margin-bottom:9px;padding-bottom:5px;border-bottom:1.5px solid var(--edge);">IRSA — Pod-Level IAM (Must Know)</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:10px 13px;font-family:var(--mono);font-size:.69rem;line-height:1.75;color:#6ee7b7;overflow-x:auto;">
+<div style="color:#3d6b4f"># IRSA = IAM Roles for Service Accounts</div>
+<div style="color:#3d6b4f"># Gives each K8s pod its own AWS role</div>
+<div style="color:#3d6b4f"># No shared credentials on nodes</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Enable OIDC for cluster</div>
+<div><span style="color:#fbbf24">eksctl utils associate-iam-oidc-provider</span> \</div>
+<div>&nbsp;&nbsp;--cluster ai-cluster --approve</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Create service account with IAM role</div>
+<div><span style="color:#fbbf24">eksctl create iamserviceaccount</span> \</div>
+<div>&nbsp;&nbsp;--name ai-api-sa \</div>
+<div>&nbsp;&nbsp;--namespace default \</div>
+<div>&nbsp;&nbsp;--cluster ai-cluster \</div>
+<div>&nbsp;&nbsp;--attach-policy-arn arn:aws:iam::123456:policy/BedrockInvokeOnly \</div>
+<div>&nbsp;&nbsp;--approve</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Reference in Deployment</div>
+<div>spec:</div>
+<div>&nbsp;&nbsp;serviceAccountName: ai-api-sa</div>
+<div style="color:#3d6b4f"># Pod now has Bedrock access via IAM role</div>
+</div>
+<div style="margin-top:8px;background:rgba(5,150,105,.06);border:1px solid rgba(5,150,105,.2);border-radius:6px;padding:9px 12px;font-size:.73rem;color:#065f46;"><strong style="color:var(--em-d)">Why IRSA:</strong> Each pod gets its own IAM role. Your AI API pod gets Bedrock access. Your worker pod gets S3 access. They can't access each other's resources. Security principle of least privilege at the pod level.</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- S3 -->
+<div style="font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin:44px 0 18px;display:flex;align-items:center;gap:12px;">S3 — Object Storage for AI <span style="flex:1;height:1px;background:var(--edge);display:block"></span></div>
+
+<div class="xb" id="a5">
+<div class="xh" onclick="xtog('a5')">
+  <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:1.1rem">🪣</span><span style="font-family:var(--mono);font-size:8.5px;font-weight:600;padding:3px 9px;border-radius:20px;background:#dc2626;color:white;">MUST</span></div>
+  <div><div style="font-family:var(--head);font-size:.95rem;font-weight:700;margin-bottom:1px;">S3 — Store RAG Documents, Models, Logs</div><div style="font-size:.72rem;color:var(--dim);">Central store for PDF documents (RAG source), fine-tuned model weights, eval datasets, conversation logs</div></div>
+  <div class="xtog">+</div>
+</div>
+<div class="xbd">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+<div style="padding:16px 18px;border-right:1px solid var(--edge);">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#dc2626;margin-bottom:9px;padding-bottom:5px;border-bottom:1.5px solid var(--edge);">CLI Commands</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:10px 13px;font-family:var(--mono);font-size:.7rem;line-height:1.85;color:#6ee7b7;overflow-x:auto;">
+<div><span style="color:#fbbf24">aws s3 mb</span> s3://my-ai-docs <span style="color:#3d6b4f"># create bucket</span></div>
+<div><span style="color:#fbbf24">aws s3 cp</span> docs/ s3://my-ai-docs/ --recursive  <span style="color:#3d6b4f"># upload folder</span></div>
+<div><span style="color:#fbbf24">aws s3 cp</span> s3://my-ai-docs/file.pdf . <span style="color:#3d6b4f"># download file</span></div>
+<div><span style="color:#fbbf24">aws s3 ls</span> s3://my-ai-docs/            <span style="color:#3d6b4f"># list files</span></div>
+<div><span style="color:#fbbf24">aws s3 rm</span> s3://my-ai-docs/old.pdf    <span style="color:#3d6b4f"># delete file</span></div>
+<div><span style="color:#fbbf24">aws s3 sync</span> ./new-docs s3://my-ai-docs/ <span style="color:#3d6b4f"># sync folder</span></div>
+</div>
+<div style="margin-top:9px;background:#0a1a0e;border-radius:6px;padding:10px 13px;font-family:var(--mono);font-size:.7rem;line-height:1.8;color:#6ee7b7;">
+<div style="color:#3d6b4f"># Python boto3 — load PDFs for RAG</div>
+<div><span style="color:#fbbf24">import</span> boto3</div>
+<div>s3 = boto3.client(<span style="color:#a7f3d0">'s3'</span>)</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># List all PDFs in bucket</div>
+<div>resp = s3.list_objects_v2(</div>
+<div>&nbsp;&nbsp;Bucket=<span style="color:#a7f3d0">'my-ai-docs'</span>, Prefix=<span style="color:#a7f3d0">'pdfs/'</span></div>
+<div>)</div>
+<div><span style="color:#fbbf24">for</span> obj <span style="color:#fbbf24">in</span> resp[<span style="color:#a7f3d0">'Contents'</span>]:</div>
+<div>&nbsp;&nbsp;s3.download_file(<span style="color:#a7f3d0">'my-ai-docs'</span>, obj[<span style="color:#a7f3d0">'Key'</span>], f<span style="color:#a7f3d0">"/tmp/{obj['Key'].split('/')[-1]}"</span>)</div>
+</div>
+</div>
+<div style="padding:16px 18px;">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--em-d);margin-bottom:9px;padding-bottom:5px;border-bottom:1.5px solid var(--edge);">What to Store in S3 for AI Apps</div>
+<div style="display:flex;flex-direction:column;gap:8px;">
+  <div style="background:rgba(5,150,105,.06);border:1px solid rgba(5,150,105,.2);border-radius:7px;padding:10px 12px;font-size:.73rem;color:#1f4d32;"><strong style="color:var(--em-d)">RAG Source Documents</strong><br>Upload all PDFs/docs to S3. RAG ingestion pipeline reads from S3 on startup → embeds → ChromaDB/OpenSearch. When you update docs, re-trigger ingestion. S3 = single source of truth.</div>
+  <div style="background:rgba(217,119,6,.06);border:1px solid rgba(217,119,6,.2);border-radius:7px;padding:10px 12px;font-size:.73rem;color:#78350f;"><strong style="color:var(--gold-d)">Fine-tuned Model Weights</strong><br>After mlx-lm fine-tunes on M4, upload the adapter weights to S3. EKS pods download on startup. Versioned by date. Rollback = load older weights.</div>
+  <div style="background:rgba(5,150,105,.06);border:1px solid rgba(5,150,105,.2);border-radius:7px;padding:10px 12px;font-size:.73rem;color:#1f4d32;"><strong style="color:var(--em-d)">Eval Datasets + Results</strong><br>Store RAGAS eval sets and results as JSON. LangSmith exports to S3. Historical eval scores tracked over time.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- BEDROCK + LAMBDA + CLOUDWATCH -->
+<div style="font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin:44px 0 18px;display:flex;align-items:center;gap:12px;">Nice-to-Have Services <span style="flex:1;height:1px;background:var(--edge);display:block"></span><span style="font-size:8px;padding:2px 8px;border-radius:8px;background:#d97706;color:white;font-weight:700;">ADD AS NEEDED</span></div>
+
+<div class="xb" id="a6">
+<div class="xh" onclick="xtog('a6')">
+  <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:1.1rem">🤖</span><span style="font-family:var(--mono);font-size:8.5px;font-weight:600;padding:3px 9px;border-radius:20px;background:#d97706;color:white;">NICE</span></div>
+  <div><div style="font-family:var(--head);font-size:.95rem;font-weight:700;margin-bottom:1px;">Bedrock · Lambda · CloudWatch · RDS · ALB · VPC</div><div style="font-size:.72rem;color:var(--dim);">Bedrock for managed LLMs · Lambda for serverless AI endpoints · CloudWatch for monitoring · add when projects need them</div></div>
+  <div class="xtog">+</div>
+</div>
+<div class="xbd">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+<div style="padding:16px 18px;border-right:1px solid var(--edge);">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#d97706;margin-bottom:9px;padding-bottom:5px;border-bottom:1.5px solid var(--edge);">Bedrock — Managed LLMs (Month 4)</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:10px 13px;font-family:var(--mono);font-size:.7rem;line-height:1.85;color:#6ee7b7;overflow-x:auto;">
+<div style="color:#3d6b4f"># List available foundation models</div>
+<div><span style="color:#fbbf24">aws bedrock list-foundation-models</span> \</div>
+<div>&nbsp;&nbsp;--query "modelSummaries[].modelId"</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Invoke Claude via boto3</div>
+<div><span style="color:#fbbf24">import</span> boto3, json</div>
+<div>bedrock = boto3.client(<span style="color:#a7f3d0">'bedrock-runtime'</span>)</div>
+<div>resp = bedrock.invoke_model(</div>
+<div>&nbsp;&nbsp;modelId=<span style="color:#a7f3d0">'anthropic.claude-3-5-haiku-20241022-v1:0'</span>,</div>
+<div>&nbsp;&nbsp;body=json.dumps({</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#a7f3d0">'messages'</span>: [{<span style="color:#a7f3d0">'role'</span>: <span style="color:#a7f3d0">'user'</span>, <span style="color:#a7f3d0">'content'</span>: <span style="color:#a7f3d0">'Hello'</span>}],</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#a7f3d0">'max_tokens'</span>: 256,</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#a7f3d0">'anthropic_version'</span>: <span style="color:#a7f3d0">'bedrock-2023-05-31'</span></div>
+<div>&nbsp;&nbsp;})</div>
+<div>)</div>
+<div>text = json.loads(resp[<span style="color:#a7f3d0">'body'</span>].read())[<span style="color:#a7f3d0">'content'</span>][0][<span style="color:#a7f3d0">'text'</span>]</div>
+</div>
+</div>
+<div style="padding:16px 18px;">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#d97706;margin-bottom:9px;padding-bottom:5px;border-bottom:1.5px solid var(--edge);">CloudWatch — Monitor Your AI App</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:10px 13px;font-family:var(--mono);font-size:.7rem;line-height:1.85;color:#6ee7b7;overflow-x:auto;">
+<div style="color:#3d6b4f"># View logs from EKS pods via CloudWatch</div>
+<div><span style="color:#fbbf24">aws logs get-log-events</span> \</div>
+<div>&nbsp;&nbsp;--log-group /aws/eks/ai-cluster/ai-api \</div>
+<div>&nbsp;&nbsp;--log-stream-name &lt;stream&gt;</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Create alarm: alert if LLM latency > 5s</div>
+<div><span style="color:#fbbf24">aws cloudwatch put-metric-alarm</span> \</div>
+<div>&nbsp;&nbsp;--alarm-name LLMHighLatency \</div>
+<div>&nbsp;&nbsp;--metric-name ResponseTime \</div>
+<div>&nbsp;&nbsp;--threshold 5000 \</div>
+<div>&nbsp;&nbsp;--comparison-operator GreaterThanThreshold \</div>
+<div>&nbsp;&nbsp;--alarm-actions arn:aws:sns:...your-sns-topic</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Set billing alarm at $50</div>
+<div><span style="color:#fbbf24">aws cloudwatch put-metric-alarm</span> \</div>
+<div>&nbsp;&nbsp;--alarm-name BillingAlert50 \</div>
+<div>&nbsp;&nbsp;--metric-name EstimatedCharges \</div>
+<div>&nbsp;&nbsp;--namespace AWS/Billing \</div>
+<div>&nbsp;&nbsp;--threshold 50 \</div>
+<div>&nbsp;&nbsp;--alarm-actions arn:aws:sns:...:billing-alert</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- WHAT TO SKIP -->
+<div style="font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin:44px 0 18px;display:flex;align-items:center;gap:12px;">AWS Services to Skip (for now) <span style="flex:1;height:1px;background:var(--edge);display:block"></span></div>
+<table style="width:100%;border-collapse:collapse;background:white;border:1.5px solid var(--edge);border-radius:12px;overflow:hidden;">
+  <thead><tr><th style="font-family:var(--mono);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);background:var(--em-ll);padding:10px 14px;text-align:left;border-bottom:1px solid var(--edge);">Service</th><th style="font-family:var(--mono);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);background:var(--em-ll);padding:10px 14px;text-align:left;border-bottom:1px solid var(--edge);">Why Skip for Now</th></tr></thead>
+  <tbody>
+    <tr><td style="font-family:var(--mono);font-size:.72rem;padding:9px 14px;border-bottom:1px solid #e2f5ec;color:var(--em-d);font-weight:600;">SageMaker</td><td style="font-size:.77rem;padding:9px 14px;border-bottom:1px solid #e2f5ec;">For traditional ML training jobs and endpoints. Bedrock + EKS handles all GenAI workloads. Add in Month 11.</td></tr>
+    <tr><td style="font-family:var(--mono);font-size:.72rem;padding:9px 14px;border-bottom:1px solid #e2f5ec;color:var(--em-d);font-weight:600;">AWS Step Functions</td><td style="font-size:.77rem;padding:9px 14px;border-bottom:1px solid #e2f5ec;">LangGraph replaces Step Functions for AI orchestration. Step Functions is for non-LLM workflows.</td></tr>
+    <tr><td style="font-family:var(--mono);font-size:.72rem;padding:9px 14px;border-bottom:1px solid #e2f5ec;color:var(--em-d);font-weight:600;">Elastic Beanstalk</td><td style="font-size:.77rem;padding:9px 14px;border-bottom:1px solid #e2f5ec;">Old deployment service. EKS + Helm is the right pattern. Don't learn both.</td></tr>
+    <tr><td style="font-family:var(--mono);font-size:.72rem;padding:9px 14px;border-bottom:1px solid #e2f5ec;color:var(--em-d);font-weight:600;">CloudFormation</td><td style="font-size:.77rem;padding:9px 14px;border-bottom:1px solid #e2f5ec;">Terraform or eksctl handles infrastructure. CloudFormation is verbose XML-style YAML. Skip for now.</td></tr>
+    <tr><td style="font-family:var(--mono);font-size:.72rem;padding:9px 14px;color:var(--em-d);font-weight:600;">Kinesis / Redshift</td><td style="font-size:.77rem;padding:9px 14px;">Streaming data pipelines and data warehousing. Not needed for AI app deployments at this stage.</td></tr>
+  </tbody>
+</table>
+
+
+
+<!-- ══════════════════════════════════════════
+     MESSAGE QUEUES — Full Deep Dive
+══════════════════════════════════════════ -->
+<div style="font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin:52px 0 18px;display:flex;align-items:center;gap:12px;">Message Queues — SQS vs Kafka vs ActiveMQ vs PgBoss <span style="flex:1;height:1px;background:var(--edge);display:block"></span><span style="font-size:8px;padding:2px 8px;border-radius:8px;background:var(--em-d);color:white;font-weight:700;">DEEP DIVE</span></div>
+
+<!-- CALLOUT: WHY QUEUES IN AI -->
+<div style="border-left:3px solid var(--em-d);background:rgba(5,150,105,.05);padding:14px 18px;border-radius:0 8px 8px 0;font-size:.83rem;color:#065f46;margin-bottom:16px;border:1px solid rgba(5,150,105,.15);border-left:3px solid var(--em-d);">
+  <strong style="color:var(--em-d)">Why queues matter for AI apps:</strong> LLM calls take 2–15 seconds. A user uploads 50 PDFs for RAG ingestion. A batch of 500 documents needs re-embedding. An agent fires 10 parallel tool calls. Without a queue, your API times out, requests drop, and users get errors. Queues decouple the "accept request" step from the "do the slow AI work" step — the API responds instantly, the work happens asynchronously.
+</div>
+
+<!-- DECISION MATRIX -->
+<div class="xb" id="mq0">
+<div class="xh" onclick="xtog('mq0')">
+  <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:1.2rem">⚖️</span><span style="font-family:var(--mono);font-size:8.5px;font-weight:600;padding:3px 9px;border-radius:20px;background:#dc2626;color:white;">DECIDE FIRST</span></div>
+  <div><div style="font-family:var(--head);font-size:.97rem;font-weight:700;margin-bottom:1px;">Which Queue Should You Use? Decision Matrix</div>
+  <div style="font-size:.72rem;color:var(--dim);">One table that answers the "what do I pick" question before going deep on each option</div></div>
+  <div class="xtog">+</div>
+</div>
+<div class="xbd">
+<div style="padding:18px;">
+<table style="width:100%;border-collapse:collapse;background:white;border:1.5px solid var(--edge);border-radius:10px;overflow:hidden;font-size:.77rem;">
+  <thead>
+    <tr>
+      <th style="font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);background:var(--em-ll);padding:10px 13px;text-align:left;border-bottom:1px solid var(--edge);border-right:1px solid var(--edge);">If your situation is...</th>
+      <th style="font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--em-d);background:var(--em-ll);padding:10px 13px;text-align:center;border-bottom:1px solid var(--edge);border-right:1px solid var(--edge);">Use This</th>
+      <th style="font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);background:var(--em-ll);padding:10px 13px;text-align:left;border-bottom:1px solid var(--edge);">Why</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background:#fef9ee">
+      <td style="padding:10px 13px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;color:var(--text);">You're already on AWS and want <strong>zero ops overhead</strong></td>
+      <td style="padding:10px 13px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;"><span style="font-family:var(--mono);font-size:8.5px;font-weight:700;padding:3px 9px;border-radius:10px;background:rgba(217,119,6,.15);color:var(--gold-d);border:1px solid rgba(217,119,6,.3);">AWS SQS</span></td>
+      <td style="padding:10px 13px;border-bottom:1px solid #e2f5ec;color:var(--dim);">Fully managed. No servers. Pay per message. Works with Lambda triggers. Best fit for AI app async tasks on AWS.</td>
+    </tr>
+    <tr>
+      <td style="padding:10px 13px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;color:var(--text);">You need <strong>event streaming</strong>, replay old messages, or high-throughput logs (millions/sec)</td>
+      <td style="padding:10px 13px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;"><span style="font-family:var(--mono);font-size:8.5px;font-weight:700;padding:3px 9px;border-radius:10px;background:rgba(5,150,105,.12);color:var(--em-d);border:1px solid rgba(5,150,105,.3);">Kafka</span></td>
+      <td style="padding:10px 13px;border-bottom:1px solid #e2f5ec;color:var(--dim);">Keeps messages for days/weeks. Multiple consumers can replay. GE uses it for event-driven architectures at industrial scale.</td>
+    </tr>
+    <tr style="background:#fef9ee">
+      <td style="padding:10px 13px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;color:var(--text);">You have <strong>Postgres already</strong> and want simple job queuing without a new service</td>
+      <td style="padding:10px 13px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;"><span style="font-family:var(--mono);font-size:8.5px;font-weight:700;padding:3px 9px;border-radius:10px;background:rgba(129,140,248,.12);color:#6366f1;border:1px solid rgba(99,102,241,.3);">PgBoss</span></td>
+      <td style="padding:10px 13px;border-bottom:1px solid #e2f5ec;color:var(--dim);">Jobs live in a Postgres table. No new infrastructure. Perfect for medium-scale AI workloads when you already have RDS.</td>
+    </tr>
+    <tr>
+      <td style="padding:10px 13px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;color:var(--text);">You're building with <strong>NestJS/Node.js</strong> and need a battle-tested message broker with routing</td>
+      <td style="padding:10px 13px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;"><span style="font-family:var(--mono);font-size:8.5px;font-weight:700;padding:3px 9px;border-radius:10px;background:rgba(220,38,38,.1);color:#dc2626;border:1px solid rgba(220,38,38,.25);">ActiveMQ / RabbitMQ</span></td>
+      <td style="padding:10px 13px;border-bottom:1px solid #e2f5ec;color:var(--dim);">AMQP protocol. NestJS has native support. Complex routing rules (topic exchanges, fanout). JMS-compatible for enterprise Java shops like GE.</td>
+    </tr>
+    <tr>
+      <td style="padding:10px 13px;border-right:1px solid #e2f5ec;color:var(--text);">You need <strong>fast, ephemeral</strong> queuing in-process or simple pub/sub with Redis already deployed</td>
+      <td style="padding:10px 13px;border-right:1px solid #e2f5ec;text-align:center;"><span style="font-family:var(--mono);font-size:8.5px;font-weight:700;padding:3px 9px;border-radius:10px;background:rgba(56,189,248,.12);color:#0284c7;border:1px solid rgba(2,132,199,.3);">Redis Streams / BullMQ</span></td>
+      <td style="padding:10px 13px;color:var(--dim);">Redis-native. BullMQ (built on Redis) has excellent Node.js/NestJS support. Good for AI job queues when Redis is already in your stack.</td>
+    </tr>
+  </tbody>
+</table>
+<div style="margin-top:12px;background:rgba(217,119,6,.06);border:1px solid rgba(217,119,6,.2);border-radius:7px;padding:11px 14px;font-size:.78rem;color:#78350f;">
+  <strong style="color:var(--gold-d)">For your AI SaaS capstone project:</strong> Use <strong>SQS</strong> for AWS-native async AI tasks (document ingestion, re-embedding, agent jobs) and <strong>BullMQ / Redis</strong> for in-cluster job queuing in K8s. These two cover 95% of AI app queue needs without Kafka's operational complexity.
+</div>
+</div>
+</div>
+</div>
+
+<!-- SQS -->
+<div class="xb" id="mq1">
+<div class="xh" onclick="xtog('mq1')">
+  <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:1.2rem">📬</span><span style="font-family:var(--mono);font-size:8.5px;font-weight:700;padding:3px 9px;border-radius:20px;background:rgba(217,119,6,.15);color:var(--gold-d);border:1px solid rgba(217,119,6,.3);">AWS SQS</span></div>
+  <div><div style="font-family:var(--head);font-size:.97rem;font-weight:700;margin-bottom:1px;">Amazon SQS — Serverless Queue, Zero Ops, AWS-Native</div>
+  <div style="font-size:.72rem;color:var(--dim);">Best for AI app async jobs on AWS · Lambda triggers · $0.40 per million messages · no servers to manage</div></div>
+  <div class="xtog">+</div>
+</div>
+<div class="xbd">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+<div style="padding:17px 18px;border-right:1px solid var(--edge);">
+
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-d);margin-bottom:10px;padding-bottom:5px;border-bottom:1.5px solid rgba(217,119,6,.25);">Core Concepts You Must Know</div>
+<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px;">
+  <div style="background:#fffbeb;border:1px solid rgba(217,119,6,.2);border-radius:7px;padding:10px 12px;">
+    <div style="font-family:var(--mono);font-size:8px;color:var(--gold-d);font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px;">Standard vs FIFO Queue</div>
+    <div style="font-size:.74rem;color:#78350f;line-height:1.5;"><strong>Standard:</strong> At-least-once delivery, messages may arrive out of order. Fine for most AI tasks (re-embedding a doc doesn't care about order). <strong>FIFO:</strong> Exactly-once, strictly ordered. Use when order matters (process chapter 1 before chapter 2).</div>
+  </div>
+  <div style="background:#fffbeb;border:1px solid rgba(217,119,6,.2);border-radius:7px;padding:10px 12px;">
+    <div style="font-family:var(--mono);font-size:8px;color:var(--gold-d);font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px;">Visibility Timeout</div>
+    <div style="font-size:.74rem;color:#78350f;line-height:1.5;">When a worker picks up a message, it becomes invisible to other workers for N seconds (your <code style="font-family:var(--mono);font-size:.68rem;background:rgba(217,119,6,.1);padding:1px 4px;border-radius:3px">visibility_timeout</code>). If your Lambda takes 30s to embed a document, set timeout to 60s. If the worker crashes, the message reappears and another worker picks it up.</div>
+  </div>
+  <div style="background:#fffbeb;border:1px solid rgba(217,119,6,.2);border-radius:7px;padding:10px 12px;">
+    <div style="font-family:var(--mono);font-size:8px;color:var(--gold-d);font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px;">Dead Letter Queue (DLQ)</div>
+    <div style="font-size:.74rem;color:#78350f;line-height:1.5;">If a message fails 3 times (embedding fails because the PDF is corrupt), move it to a DLQ instead of blocking the queue. Inspect failed messages without losing them. Set <code style="font-family:var(--mono);font-size:.68rem;background:rgba(217,119,6,.1);padding:1px 4px;border-radius:3px">maxReceiveCount=3</code> to trigger DLQ move.</div>
+  </div>
+</div>
+
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px;padding-bottom:5px;border-bottom:1.5px solid rgba(217,119,6,.25);">CLI Commands</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:11px 13px;font-family:var(--mono);font-size:.69rem;line-height:1.8;color:#6ee7b7;overflow-x:auto;">
+<div style="color:#3d6b4f"># Create a standard queue</div>
+<div><span style="color:#fbbf24">aws sqs create-queue</span> \</div>
+<div>&nbsp;&nbsp;--queue-name ai-doc-ingestion \</div>
+<div>&nbsp;&nbsp;--attributes VisibilityTimeout=300,MessageRetentionPeriod=86400</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Send a job (e.g. "ingest this PDF")</div>
+<div><span style="color:#fbbf24">aws sqs send-message</span> \</div>
+<div>&nbsp;&nbsp;--queue-url https://sqs.us-east-1.amazonaws.com/123/ai-doc-ingestion \</div>
+<div>&nbsp;&nbsp;--message-body '{"s3_key": "docs/report.pdf", "user_id": "u123"}'</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Receive + process (long-poll, waits up to 20s for message)</div>
+<div><span style="color:#fbbf24">aws sqs receive-message</span> \</div>
+<div>&nbsp;&nbsp;--queue-url https://sqs.us-east-1.amazonaws.com/123/ai-doc-ingestion \</div>
+<div>&nbsp;&nbsp;--wait-time-seconds 20 \</div>
+<div>&nbsp;&nbsp;--max-number-of-messages 10</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Delete message after successful processing</div>
+<div><span style="color:#fbbf24">aws sqs delete-message</span> \</div>
+<div>&nbsp;&nbsp;--queue-url ... \</div>
+<div>&nbsp;&nbsp;--receipt-handle &lt;handle-from-receive&gt;</div>
+</div>
+</div>
+
+<div style="padding:17px 18px;">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--em-d);margin-bottom:10px;padding-bottom:5px;border-bottom:1.5px solid rgba(5,150,105,.3);">Real AI Use Case — Async Document Ingestion</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:11px 13px;font-family:var(--mono);font-size:.68rem;line-height:1.8;color:#6ee7b7;overflow-x:auto;">
+<div style="color:#3d6b4f"># FastAPI: accept upload, enqueue, return immediately</div>
+<div><span style="color:#fbbf24">import</span> boto3, json</div>
+<div>sqs = boto3.client(<span style="color:#a7f3d0">'sqs'</span>)</div>
+<div>QUEUE_URL = <span style="color:#a7f3d0">'https://sqs.us-east-1.amazonaws.com/123/ai-doc-ingestion'</span></div>
+<div>&nbsp;</div>
+<div><span style="color:#fbbf24">@app.post</span>(<span style="color:#a7f3d0">'/upload'</span>)</div>
+<div><span style="color:#fbbf24">async def</span> upload_doc(file: UploadFile):</div>
+<div>&nbsp;&nbsp;s3_key = <span style="color:#a7f3d0">f'docs/{file.filename}'</span></div>
+<div>&nbsp;&nbsp;<span style="color:#3d6b4f"># 1. Save file to S3</span></div>
+<div>&nbsp;&nbsp;s3.upload_fileobj(file.file, <span style="color:#a7f3d0">'my-bucket'</span>, s3_key)</div>
+<div>&nbsp;&nbsp;<span style="color:#3d6b4f"># 2. Enqueue ingestion job</span></div>
+<div>&nbsp;&nbsp;sqs.send_message(</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;QueueUrl=QUEUE_URL,</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;MessageBody=json.dumps({</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#a7f3d0">'s3_key'</span>: s3_key,</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#a7f3d0">'chunk_size'</span>: 512</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;})</div>
+<div>&nbsp;&nbsp;)</div>
+<div>&nbsp;&nbsp;<span style="color:#3d6b4f"># Returns instantly — ingestion happens async</span></div>
+<div>&nbsp;&nbsp;<span style="color:#fbbf24">return</span> {<span style="color:#a7f3d0">'status'</span>: <span style="color:#a7f3d0">'queued'</span>, <span style="color:#a7f3d0">'file'</span>: file.filename}</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Lambda worker — triggered by SQS automatically</div>
+<div><span style="color:#fbbf24">def</span> lambda_handler(event, context):</div>
+<div>&nbsp;&nbsp;<span style="color:#fbbf24">for</span> record <span style="color:#fbbf24">in</span> event[<span style="color:#a7f3d0">'Records'</span>]:</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;body = json.loads(record[<span style="color:#a7f3d0">'body'</span>])</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#3d6b4f"># Download from S3, chunk, embed, store in OpenSearch</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;ingest_document(body[<span style="color:#a7f3d0">'s3_key'</span>], body[<span style="color:#a7f3d0">'chunk_size'</span>])</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#3d6b4f"># Lambda deletes message automatically on success</span></div>
+</div>
+<div style="margin-top:10px;background:rgba(5,150,105,.06);border:1px solid rgba(5,150,105,.2);border-radius:6px;padding:10px 12px;font-size:.73rem;color:#065f46;">
+<strong style="color:var(--em-d)">AWS SQS → Lambda trigger:</strong> In the AWS console, add SQS as an event source for your Lambda. Lambda automatically polls SQS, batches up to 10 messages, calls your handler, and deletes on success. Zero polling code needed.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- KAFKA -->
+<div class="xb" id="mq2">
+<div class="xh" onclick="xtog('mq2')">
+  <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:1.2rem">🌊</span><span style="font-family:var(--mono);font-size:8.5px;font-weight:700;padding:3px 9px;border-radius:20px;background:rgba(5,150,105,.12);color:var(--em-d);border:1px solid rgba(5,150,105,.3);">Apache Kafka</span></div>
+  <div><div style="font-family:var(--head);font-size:.97rem;font-weight:700;margin-bottom:1px;">Kafka — Event Streaming at Scale, Message Replay, Real-Time Pipelines</div>
+  <div style="font-size:.72rem;color:var(--dim);">GE-scale event streaming · millions of events/sec · messages retained days/weeks · multiple consumers can replay same events</div></div>
+  <div class="xtog">+</div>
+</div>
+<div class="xbd">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+<div style="padding:17px 18px;border-right:1px solid var(--edge);">
+
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--em-d);margin-bottom:10px;padding-bottom:5px;border-bottom:1.5px solid rgba(5,150,105,.3);">Core Concepts</div>
+<div style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px;">
+  <div style="background:var(--em-ll);border:1px solid rgba(5,150,105,.2);border-radius:7px;padding:10px 12px;">
+    <div style="font-family:var(--mono);font-size:8px;color:var(--em-d);font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px;">Topic / Partition / Offset</div>
+    <div style="font-size:.74rem;color:#1f4d32;line-height:1.5;"><strong>Topic</strong> = named stream (e.g. <code style="font-family:var(--mono);font-size:.68rem;background:rgba(5,150,105,.1);padding:1px 4px;border-radius:3px">rag.document.uploaded</code>). <strong>Partition</strong> = parallel lanes within a topic for throughput. <strong>Offset</strong> = position in the log — consumers track their own offset so they can replay from any point.</div>
+  </div>
+  <div style="background:var(--em-ll);border:1px solid rgba(5,150,105,.2);border-radius:7px;padding:10px 12px;">
+    <div style="font-family:var(--mono);font-size:8px;color:var(--em-d);font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px;">Consumer Group</div>
+    <div style="font-size:.74rem;color:#1f4d32;line-height:1.5;">Multiple consumers in the same group share partitions — scales processing. Different groups (e.g. RAG embedder + audit logger) each get ALL messages independently. SQS can't do this multi-consumer pattern.</div>
+  </div>
+  <div style="background:var(--em-ll);border:1px solid rgba(5,150,105,.2);border-radius:7px;padding:10px 12px;">
+    <div style="font-family:var(--mono);font-size:8px;color:var(--em-d);font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px;">Message Retention (the key difference vs SQS)</div>
+    <div style="font-size:.74rem;color:#1f4d32;line-height:1.5;">Kafka keeps messages for 7 days by default (configurable forever). You can replay all document upload events to re-index your entire RAG system. SQS deletes messages after processing. Kafka doesn't.</div>
+  </div>
+</div>
+
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--em-d);margin-bottom:8px;padding-bottom:5px;border-bottom:1.5px solid rgba(5,150,105,.3);">Python Producer + Consumer</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:11px 13px;font-family:var(--mono);font-size:.68rem;line-height:1.8;color:#6ee7b7;overflow-x:auto;">
+<div><span style="color:#fbbf24">from</span> kafka <span style="color:#fbbf24">import</span> KafkaProducer, KafkaConsumer</div>
+<div><span style="color:#fbbf24">import</span> json</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Producer: publish document upload event</div>
+<div>producer = KafkaProducer(</div>
+<div>&nbsp;&nbsp;bootstrap_servers=[<span style="color:#a7f3d0">'kafka:9092'</span>],</div>
+<div>&nbsp;&nbsp;value_serializer=<span style="color:#fbbf24">lambda</span> v: json.dumps(v).encode()</div>
+<div>)</div>
+<div>producer.send(<span style="color:#a7f3d0">'rag.document.uploaded'</span>, {</div>
+<div>&nbsp;&nbsp;<span style="color:#a7f3d0">'s3_key'</span>: <span style="color:#a7f3d0">'docs/report.pdf'</span>,</div>
+<div>&nbsp;&nbsp;<span style="color:#a7f3d0">'user_id'</span>: <span style="color:#a7f3d0">'u123'</span></div>
+<div>})</div>
+<div>producer.flush()</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Consumer: RAG embedder worker</div>
+<div>consumer = KafkaConsumer(</div>
+<div>&nbsp;&nbsp;<span style="color:#a7f3d0">'rag.document.uploaded'</span>,</div>
+<div>&nbsp;&nbsp;bootstrap_servers=[<span style="color:#a7f3d0">'kafka:9092'</span>],</div>
+<div>&nbsp;&nbsp;group_id=<span style="color:#a7f3d0">'rag-embedder'</span>,   <span style="color:#3d6b4f"># share load across workers</span></div>
+<div>&nbsp;&nbsp;value_deserializer=<span style="color:#fbbf24">lambda</span> m: json.loads(m.decode())</div>
+<div>)</div>
+<div><span style="color:#fbbf24">for</span> msg <span style="color:#fbbf24">in</span> consumer:</div>
+<div>&nbsp;&nbsp;embed_and_store(msg.value[<span style="color:#a7f3d0">'s3_key'</span>])</div>
+</div>
+</div>
+
+<div style="padding:17px 18px;">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--em-d);margin-bottom:10px;padding-bottom:5px;border-bottom:1.5px solid rgba(5,150,105,.3);">Real AI Use Cases Where Kafka Wins</div>
+<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px;">
+  <div style="background:var(--em-ll);border:1px solid rgba(5,150,105,.2);border-radius:7px;padding:11px 13px;">
+    <div style="font-family:var(--mono);font-size:8px;color:var(--em-d);font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;">📡 GE-Scale Event Pipeline</div>
+    <div style="font-size:.77rem;color:#1f4d32;line-height:1.55;">GE industrial sensors emit millions of events/sec. AI anomaly detection models consume that stream in real time. One Kafka topic — multiple consumers: the AI model, the audit log, the dashboard, the alert system — all get the same events independently.</div>
+  </div>
+  <div style="background:var(--em-ll);border:1px solid rgba(5,150,105,.2);border-radius:7px;padding:11px 13px;">
+    <div style="font-family:var(--mono);font-size:8px;color:var(--em-d);font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;">🔄 RAG Re-Index (Replay)</div>
+    <div style="font-size:.77rem;color:#1f4d32;line-height:1.55;">You switch from OpenAI embeddings to a better model. Instead of re-uploading all documents, you replay the <code style="font-family:var(--mono);font-size:.68rem;background:rgba(5,150,105,.1);padding:1px 4px;border-radius:3px">rag.document.uploaded</code> topic from the beginning. All 10,000 docs re-embedded in one command.</div>
+  </div>
+  <div style="background:var(--em-ll);border:1px solid rgba(5,150,105,.2);border-radius:7px;padding:11px 13px;">
+    <div style="font-family:var(--mono);font-size:8px;color:var(--em-d);font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;">🤖 Agent Action Log</div>
+    <div style="font-size:.77rem;color:#1f4d32;line-height:1.55;">Every LangGraph agent tool call, state transition, and decision is published to a Kafka topic. Your compliance team replays last month's agent decisions. Your ML team trains on agent behaviour patterns.</div>
+  </div>
+</div>
+<div style="background:rgba(217,119,6,.06);border:1px solid rgba(217,119,6,.2);border-radius:7px;padding:11px 13px;font-size:.75rem;color:#78350f;">
+  <strong style="color:var(--gold-d)">AWS managed options:</strong> <strong>Amazon MSK</strong> (Managed Streaming for Kafka) — runs Kafka on AWS without managing brokers. <strong>Amazon Kinesis</strong> — AWS-proprietary Kafka alternative, simpler but less ecosystem. For new AI projects: MSK if you have Kafka expertise, SQS if you want zero-ops.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ACTIVEMQ / RABBITMQ -->
+<div class="xb" id="mq3">
+<div class="xh" onclick="xtog('mq3')">
+  <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:1.2rem">📨</span><span style="font-family:var(--mono);font-size:8.5px;font-weight:700;padding:3px 9px;border-radius:20px;background:rgba(220,38,38,.1);color:#dc2626;border:1px solid rgba(220,38,38,.25);">ActiveMQ / RabbitMQ</span></div>
+  <div><div style="font-family:var(--head);font-size:.97rem;font-weight:700;margin-bottom:1px;">ActiveMQ / RabbitMQ — AMQP Brokers, Complex Routing, NestJS Native</div>
+  <div style="font-size:.72rem;color:var(--dim);">Battle-tested message brokers · AMQP protocol · NestJS microservices module has built-in support · GE enterprise Java shops use ActiveMQ</div></div>
+  <div class="xtog">+</div>
+</div>
+<div class="xbd">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+<div style="padding:17px 18px;border-right:1px solid var(--edge);">
+
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#dc2626;margin-bottom:10px;padding-bottom:5px;border-bottom:1.5px solid rgba(220,38,38,.25);">Core Concepts</div>
+<div style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px;">
+  <div style="background:#fef2f2;border:1px solid rgba(220,38,38,.15);border-radius:7px;padding:10px 12px;">
+    <div style="font-family:var(--mono);font-size:8px;color:#dc2626;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px;">Exchange → Binding → Queue</div>
+    <div style="font-size:.74rem;color:#7f1d1d;line-height:1.5;">Producer sends to an <strong>Exchange</strong>. The exchange routes to <strong>Queues</strong> based on routing rules (<strong>Bindings</strong>). Three types: <strong>Direct</strong> (exact match), <strong>Topic</strong> (wildcard like <code style="font-family:var(--mono);font-size:.68rem">rag.#</code>), <strong>Fanout</strong> (broadcast to all queues). More expressive than SQS.</div>
+  </div>
+  <div style="background:#fef2f2;border:1px solid rgba(220,38,38,.15);border-radius:7px;padding:10px 12px;">
+    <div style="font-family:var(--mono);font-size:8px;color:#dc2626;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px;">ActiveMQ vs RabbitMQ</div>
+    <div style="font-size:.74rem;color:#7f1d1d;line-height:1.5;"><strong>ActiveMQ</strong>: JMS-compatible (Java Message Service). GE uses it because GE systems are heavily Java. Supports OpenWire, STOMP, MQTT, AMQP. <strong>RabbitMQ</strong>: AMQP-native, easier to deploy in Docker/K8s, better management UI, preferred for new Node.js/Python projects.</div>
+  </div>
+</div>
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#dc2626;margin-bottom:8px;padding-bottom:5px;border-bottom:1.5px solid rgba(220,38,38,.25);">NestJS + RabbitMQ (your stack)</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:11px 13px;font-family:var(--mono);font-size:.68rem;line-height:1.8;color:#6ee7b7;overflow-x:auto;">
+<div style="color:#3d6b4f"># NestJS microservices — built-in RabbitMQ</div>
+<div style="color:#3d6b4f"># main.ts</div>
+<div>app = <span style="color:#fbbf24">await</span> NestFactory.createMicroservice(AppModule, {</div>
+<div>&nbsp;&nbsp;transport: Transport.RMQ,</div>
+<div>&nbsp;&nbsp;options: {</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;urls: [<span style="color:#a7f3d0">'amqp://localhost:5672'</span>],</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;queue: <span style="color:#a7f3d0">'ai_jobs'</span>,</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;queueOptions: { durable: <span style="color:#fbbf24">true</span> }</div>
+<div>&nbsp;&nbsp;}</div>
+<div>});</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Controller receives message</div>
+<div>@MessagePattern(<span style="color:#a7f3d0">'ingest_document'</span>)</div>
+<div><span style="color:#fbbf24">async</span> ingestDoc(@Payload() data: IngestDto) {</div>
+<div>&nbsp;&nbsp;<span style="color:#fbbf24">return</span> <span style="color:#fbbf24">await</span> <span style="color:#fbbf24">this</span>.ragService.ingest(data);</div>
+<div>}</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Client sends message</div>
+<div><span style="color:#fbbf24">this</span>.client.send(<span style="color:#a7f3d0">'ingest_document'</span>, {</div>
+<div>&nbsp;&nbsp;s3Key: <span style="color:#a7f3d0">'docs/report.pdf'</span></div>
+<div>}).subscribe();</div>
+</div>
+</div>
+
+<div style="padding:17px 18px;">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--em-d);margin-bottom:10px;padding-bottom:5px;border-bottom:1.5px solid rgba(5,150,105,.3);">Real AI Use Case — Routing by Document Type</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:11px 13px;font-family:var(--mono);font-size:.68rem;line-height:1.8;color:#6ee7b7;overflow-x:auto;">
+<div style="color:#3d6b4f"># Topic exchange routes different AI jobs</div>
+<div style="color:#3d6b4f"># to different queues based on routing key:</div>
+<div style="color:#3d6b4f"># "ingest.pdf" → pdf-embedder queue</div>
+<div style="color:#3d6b4f"># "ingest.html" → html-parser queue</div>
+<div style="color:#3d6b4f"># "agent.*" → all agent-related queues (fanout)</div>
+<div style="color:#3d6b4f"># Python with pika (RabbitMQ client)</div>
+<div><span style="color:#fbbf24">import</span> pika, json</div>
+<div>conn = pika.BlockingConnection(</div>
+<div>&nbsp;&nbsp;pika.ConnectionParameters(<span style="color:#a7f3d0">'localhost'</span>)</div>
+<div>)</div>
+<div>ch = conn.channel()</div>
+<div>ch.exchange_declare(exchange=<span style="color:#a7f3d0">'ai_events'</span>, exchange_type=<span style="color:#a7f3d0">'topic'</span>)</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f"># Route PDF to pdf-embedder, HTML to html-parser</div>
+<div>ch.basic_publish(</div>
+<div>&nbsp;&nbsp;exchange=<span style="color:#a7f3d0">'ai_events'</span>,</div>
+<div>&nbsp;&nbsp;routing_key=<span style="color:#a7f3d0">'ingest.pdf'</span>,</div>
+<div>&nbsp;&nbsp;body=json.dumps({<span style="color:#a7f3d0">'file'</span>: <span style="color:#a7f3d0">'report.pdf'</span>})</div>
+<div>)</div>
+</div>
+<div style="margin-top:12px;">
+  <div style="background:#fef2f2;border:1px solid rgba(220,38,38,.15);border-radius:7px;padding:11px 13px;font-size:.74rem;color:#7f1d1d;">
+    <strong style="color:#dc2626">When to choose RabbitMQ over SQS:</strong> You're already running NestJS microservices with RabbitMQ. You need complex routing rules (different doc types → different workers). You want a self-hosted option that works on-premise at GE. You need request-reply pattern (RPC over message queue) — NestJS supports this natively with <code style="font-family:var(--mono);font-size:.68rem">@MessagePattern</code>.
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- PGBOSS -->
+<div class="xb" id="mq4">
+<div class="xh" onclick="xtog('mq4')">
+  <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:1.2rem">🐘</span><span style="font-family:var(--mono);font-size:8.5px;font-weight:700;padding:3px 9px;border-radius:20px;background:rgba(99,102,241,.12);color:#6366f1;border:1px solid rgba(99,102,241,.3);">PgBoss</span></div>
+  <div><div style="font-family:var(--head);font-size:.97rem;font-weight:700;margin-bottom:1px;">PgBoss — Job Queue Inside Postgres, Zero New Infrastructure</div>
+  <div style="font-size:.72rem;color:var(--dim);">Jobs stored in a Postgres table · perfect when you already have RDS · no separate queue service · Node.js / TypeScript native · transactional job creation</div></div>
+  <div class="xtog">+</div>
+</div>
+<div class="xbd">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+<div style="padding:17px 18px;border-right:1px solid var(--edge);">
+
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6366f1;margin-bottom:10px;padding-bottom:5px;border-bottom:1.5px solid rgba(99,102,241,.25);">Why PgBoss Is Underrated for AI Apps</div>
+<div style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px;">
+  <div style="background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.2);border-radius:7px;padding:10px 12px;">
+    <div style="font-family:var(--mono);font-size:8px;color:#6366f1;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px;">Jobs in a Postgres Table</div>
+    <div style="font-size:.74rem;color:var(--text);line-height:1.5;">PgBoss creates a <code style="font-family:var(--mono);font-size:.68rem;background:rgba(99,102,241,.1);padding:1px 4px;border-radius:3px">pgboss.job</code> table in your existing Postgres database. A job is just a row. You can query it with SQL, join it with your business data, and inspect it with your existing DB tools — no separate monitoring dashboard needed.</div>
+  </div>
+  <div style="background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.2);border-radius:7px;padding:10px 12px;">
+    <div style="font-family:var(--mono);font-size:8px;color:#6366f1;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px;">Transactional Job Creation</div>
+    <div style="font-size:.74rem;color:var(--text);line-height:1.5;">Create a user AND enqueue an embedding job in the same Postgres transaction. If the user creation fails, the job is never created. Impossible with SQS or RabbitMQ — you can't atomically write to a DB and send a message in one transaction.</div>
+  </div>
+  <div style="background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.2);border-radius:7px;padding:10px 12px;">
+    <div style="font-family:var(--mono);font-size:8px;color:#6366f1;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px;">Scheduled + Delayed Jobs</div>
+    <div style="font-size:.74rem;color:var(--text);line-height:1.5;">Schedule a re-indexing job to run every Sunday at 2am. Delay an email by 30 minutes. Set a job to run in 7 days. All built-in. All in Postgres. No cron infrastructure.</div>
+  </div>
+</div>
+
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6366f1;margin-bottom:8px;padding-bottom:5px;border-bottom:1.5px solid rgba(99,102,241,.25);">TypeScript / NestJS Example</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:11px 13px;font-family:var(--mono);font-size:.68rem;line-height:1.8;color:#6ee7b7;overflow-x:auto;">
+<div><span style="color:#fbbf24">import</span> PgBoss <span style="color:#fbbf24">from</span> <span style="color:#a7f3d0">'pg-boss'</span></div>
+<div>const boss = <span style="color:#fbbf24">new</span> PgBoss(<span style="color:#a7f3d0">'postgresql://user:pass@rds-host/mydb'</span>)</div>
+<div><span style="color:#fbbf24">await</span> boss.start()</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f">// Enqueue: "embed this document"</div>
+<div><span style="color:#fbbf24">await</span> boss.send(<span style="color:#a7f3d0">'embed-document'</span>, {</div>
+<div>&nbsp;&nbsp;s3Key: <span style="color:#a7f3d0">'docs/report.pdf'</span>,</div>
+<div>&nbsp;&nbsp;userId: <span style="color:#a7f3d0">'u123'</span>,</div>
+<div>&nbsp;&nbsp;chunkSize: 512</div>
+<div>})</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f">// Worker: process embedding jobs</div>
+<div><span style="color:#fbbf24">await</span> boss.work(<span style="color:#a7f3d0">'embed-document'</span>, <span style="color:#fbbf24">async</span> (job) =&gt; {</div>
+<div>&nbsp;&nbsp;const { s3Key, chunkSize } = job.data</div>
+<div>&nbsp;&nbsp;<span style="color:#fbbf24">await</span> embedAndStore(s3Key, chunkSize)</div>
+<div>&nbsp;&nbsp;<span style="color:#3d6b4f">// Return without throwing = job succeeded</span></div>
+<div>})</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f">// Schedule weekly re-index (cron syntax)</div>
+<div><span style="color:#fbbf24">await</span> boss.schedule(<span style="color:#a7f3d0">'weekly-reindex'</span>, <span style="color:#a7f3d0">'0 2 * * 0'</span>, {})</div>
+</div>
+</div>
+
+<div style="padding:17px 18px;">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--em-d);margin-bottom:10px;padding-bottom:5px;border-bottom:1.5px solid rgba(5,150,105,.3);">Real AI Use Case — Transactional Job Creation</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:11px 13px;font-family:var(--mono);font-size:.68rem;line-height:1.8;color:#6ee7b7;overflow-x:auto;">
+<div style="color:#3d6b4f">// The killer feature: atomic job + DB write</div>
+<div style="color:#3d6b4f">// User signs up → embed their profile simultaneously</div>
+<div style="color:#3d6b4f">// If user write fails → job never created (no orphan jobs)</div>
+<div><span style="color:#fbbf24">async</span> <span style="color:#fbbf24">function</span> createUserAndQueueEmbedding(userData) {</div>
+<div>&nbsp;&nbsp;return <span style="color:#fbbf24">await</span> db.transaction(<span style="color:#fbbf24">async</span> (trx) =&gt; {</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#3d6b4f">// Step 1: create user in transaction</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;const user = <span style="color:#fbbf24">await</span> trx(<span style="color:#a7f3d0">'users'</span>).insert(userData)</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#3d6b4f">// Step 2: enqueue embedding job in same transaction</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#fbbf24">await</span> boss.send(<span style="color:#a7f3d0">'embed-user-profile'</span>, {</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userId: user.id,</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;profile: userData.bio</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;}, { db: trx })  <span style="color:#3d6b4f">// ← pass the transaction!</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#3d6b4f">// If ANYTHING throws, BOTH roll back</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;return user</div>
+<div>&nbsp;&nbsp;})</div>
+<div>}</div>
+</div>
+<div style="margin-top:12px;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.2);border-radius:7px;padding:11px 13px;font-size:.74rem;color:var(--text);">
+  <strong style="color:#6366f1">Inspect PgBoss jobs with plain SQL:</strong><br>
+  <code style="font-family:var(--mono);font-size:.68rem;background:rgba(99,102,241,.08);padding:3px 7px;border-radius:3px;display:block;margin-top:5px;color:#a5b4fc">SELECT name, state, createdon, data FROM pgboss.job WHERE name = 'embed-document' ORDER BY createdon DESC LIMIT 20;</code>
+  <span style="font-size:.72rem;color:var(--dim);margin-top:5px;display:block">States: created → active → completed / failed / expired. Failed jobs have error details in the <code style="font-family:var(--mono);font-size:.68rem">output</code> column.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- BULLMQ / REDIS STREAMS -->
+<div class="xb" id="mq5">
+<div class="xh" onclick="xtog('mq5')">
+  <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:1.2rem">⚡</span><span style="font-family:var(--mono);font-size:8.5px;font-weight:700;padding:3px 9px;border-radius:20px;background:rgba(2,132,199,.12);color:#0284c7;border:1px solid rgba(2,132,199,.3);">BullMQ / Redis</span></div>
+  <div><div style="font-family:var(--head);font-size:.97rem;font-weight:700;margin-bottom:1px;">BullMQ + Redis Streams — Fast In-Cluster Job Queue, NestJS Native</div>
+  <div style="font-size:.72rem;color:var(--dim);">Redis-native · BullMQ has excellent NestJS module · great for AI job queues when Redis is already in your stack · built-in retries, priorities, rate limiting</div></div>
+  <div class="xtog">+</div>
+</div>
+<div class="xbd">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+<div style="padding:17px 18px;border-right:1px solid var(--edge);">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0284c7;margin-bottom:10px;padding-bottom:5px;border-bottom:1.5px solid rgba(2,132,199,.25);">Core Features for AI Apps</div>
+<div style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px;">
+  <div style="background:rgba(2,132,199,.06);border:1px solid rgba(2,132,199,.2);border-radius:7px;padding:10px 12px;">
+    <div style="font-family:var(--mono);font-size:8px;color:#0284c7;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px;">Job Priorities + Rate Limiting</div>
+    <div style="font-size:.74rem;color:var(--text);line-height:1.5;">Priority queue: paying users' embedding jobs run before free tier. Rate limit: max 10 Bedrock calls/sec across all workers — built-in, no manual throttling code.</div>
+  </div>
+  <div style="background:rgba(2,132,199,.06);border:1px solid rgba(2,132,199,.2);border-radius:7px;padding:10px 12px;">
+    <div style="font-family:var(--mono);font-size:8px;color:#0284c7;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px;">Retry with Backoff</div>
+    <div style="font-size:.74rem;color:var(--text);line-height:1.5;">LLM API call fails with rate limit? BullMQ auto-retries with exponential backoff. Define max retries and delay. Failed jobs stay in the failed set — inspect in Bull Board dashboard.</div>
+  </div>
+</div>
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0284c7;margin-bottom:8px;padding-bottom:5px;border-bottom:1.5px solid rgba(2,132,199,.25);">NestJS + BullMQ</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:11px 13px;font-family:var(--mono);font-size:.68rem;line-height:1.8;color:#6ee7b7;overflow-x:auto;">
+<div style="color:#3d6b4f">// app.module.ts</div>
+<div>BullModule.registerQueue({ name: <span style="color:#a7f3d0">'ai-tasks'</span> })</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f">// ai.service.ts — enqueue</div>
+<div>@InjectQueue(<span style="color:#a7f3d0">'ai-tasks'</span>) <span style="color:#fbbf24">private</span> queue: Queue</div>
+<div><span style="color:#fbbf24">async</span> enqueueEmbedding(s3Key: <span style="color:#fbbf24">string</span>) {</div>
+<div>&nbsp;&nbsp;<span style="color:#fbbf24">await</span> <span style="color:#fbbf24">this</span>.queue.add(<span style="color:#a7f3d0">'embed'</span>, { s3Key }, {</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;attempts: 3,</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;backoff: { type: <span style="color:#a7f3d0">'exponential'</span>, delay: 2000 },</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;priority: user.isPaid ? 1 : 10</div>
+<div>&nbsp;&nbsp;})</div>
+<div>}</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f">// ai.processor.ts — worker</div>
+<div>@Processor(<span style="color:#a7f3d0">'ai-tasks'</span>)</div>
+<div><span style="color:#fbbf24">export class</span> AiProcessor {</div>
+<div>&nbsp;&nbsp;@Process(<span style="color:#a7f3d0">'embed'</span>)</div>
+<div>&nbsp;&nbsp;<span style="color:#fbbf24">async</span> handleEmbed(job: Job) {</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#fbbf24">await</span> embedAndStore(job.data.s3Key)</div>
+<div>&nbsp;&nbsp;}</div>
+<div>}</div>
+</div>
+</div>
+
+<div style="padding:17px 18px;">
+<div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--em-d);margin-bottom:10px;padding-bottom:5px;border-bottom:1.5px solid rgba(5,150,105,.3);">Real AI Use Case — Rate-Limited LLM Processing</div>
+<div style="background:#0a1a0e;border-radius:6px;padding:11px 13px;font-family:var(--mono);font-size:.68rem;line-height:1.8;color:#6ee7b7;overflow-x:auto;">
+<div style="color:#3d6b4f">// Problem: 500 docs to embed, OpenAI rate limit = 60 RPM</div>
+<div style="color:#3d6b4f">// BullMQ rate limiter handles this automatically</div>
+<div>const queue = <span style="color:#fbbf24">new</span> Queue(<span style="color:#a7f3d0">'bulk-embed'</span>, { connection: redis })</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f">// Add all 500 jobs at once</div>
+<div><span style="color:#fbbf24">for</span> (const doc of documents) {</div>
+<div>&nbsp;&nbsp;<span style="color:#fbbf24">await</span> queue.add(<span style="color:#a7f3d0">'embed'</span>, { docId: doc.id })</div>
+<div>}</div>
+<div>&nbsp;</div>
+<div style="color:#3d6b4f">// Worker processes max 50/min — never hits rate limit</div>
+<div>const worker = <span style="color:#fbbf24">new</span> Worker(<span style="color:#a7f3d0">'bulk-embed'</span>, <span style="color:#fbbf24">async</span> (job) =&gt; {</div>
+<div>&nbsp;&nbsp;<span style="color:#fbbf24">await</span> openai.embeddings.create({ input: job.data.text })</div>
+<div>}, {</div>
+<div>&nbsp;&nbsp;connection: redis,</div>
+<div>&nbsp;&nbsp;limiter: { max: 50, duration: 60_000 } <span style="color:#3d6b4f">// 50 per min</span></div>
+<div>})</div>
+</div>
+<div style="margin-top:12px;background:rgba(2,132,199,.06);border:1px solid rgba(2,132,199,.2);border-radius:7px;padding:11px 13px;font-size:.74rem;color:var(--text);">
+  <strong style="color:#0284c7">Bull Board — Free UI:</strong> Add <code style="font-family:var(--mono);font-size:.68rem;background:rgba(2,132,199,.1);padding:1px 4px;border-radius:3px">@bull-board/api</code> and <code style="font-family:var(--mono);font-size:.68rem;background:rgba(2,132,199,.1);padding:1px 4px;border-radius:3px">@bull-board/express</code>. Mount at <code style="font-family:var(--mono);font-size:.68rem;background:rgba(2,132,199,.1);padding:1px 4px;border-radius:3px">/admin/queues</code>. Live dashboard shows active jobs, completed, failed, retry attempts — no external monitoring service needed.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- SIDE-BY-SIDE COMPARISON TABLE -->
+<div class="xb" id="mq6">
+<div class="xh" onclick="xtog('mq6')">
+  <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:1.2rem">📊</span><span style="font-family:var(--mono);font-size:8.5px;font-weight:600;padding:3px 9px;border-radius:20px;background:var(--em-d);color:white;">COMPARISON</span></div>
+  <div><div style="font-family:var(--head);font-size:.97rem;font-weight:700;margin-bottom:1px;">All 5 Options Side-by-Side — Every Dimension That Matters</div>
+  <div style="font-size:.72rem;color:var(--dim);">Latency · throughput · ops cost · replay · ordering · transaction · NestJS support · AI use case fit</div></div>
+  <div class="xtog">+</div>
+</div>
+<div class="xbd">
+<div style="padding:18px;overflow-x:auto;">
+<table style="width:100%;min-width:720px;border-collapse:collapse;background:white;border:1.5px solid var(--edge);border-radius:10px;overflow:hidden;font-size:.74rem;">
+  <thead>
+    <tr>
+      <th style="font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);background:var(--em-ll);padding:10px 12px;text-align:left;border-bottom:1px solid var(--edge);border-right:1px solid var(--edge);">Feature</th>
+      <th style="font-family:var(--mono);font-size:8px;color:var(--gold-d);background:rgba(253,243,199,.5);padding:10px 12px;text-align:center;border-bottom:1px solid var(--edge);border-right:1px solid var(--edge);">SQS</th>
+      <th style="font-family:var(--mono);font-size:8px;color:var(--em-d);background:rgba(5,150,105,.06);padding:10px 12px;text-align:center;border-bottom:1px solid var(--edge);border-right:1px solid var(--edge);">Kafka / MSK</th>
+      <th style="font-family:var(--mono);font-size:8px;color:#dc2626;background:rgba(220,38,38,.05);padding:10px 12px;text-align:center;border-bottom:1px solid var(--edge);border-right:1px solid var(--edge);">RabbitMQ</th>
+      <th style="font-family:var(--mono);font-size:8px;color:#6366f1;background:rgba(99,102,241,.05);padding:10px 12px;text-align:center;border-bottom:1px solid var(--edge);border-right:1px solid var(--edge);">PgBoss</th>
+      <th style="font-family:var(--mono);font-size:8px;color:#0284c7;background:rgba(2,132,199,.05);padding:10px 12px;text-align:center;border-bottom:1px solid var(--edge);">BullMQ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;font-weight:600;color:var(--text);">Ops overhead</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:var(--em-d);font-weight:600;">Zero (managed)</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:#dc2626;">High (MSK reduces it)</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:var(--gold-d);">Medium (Docker easy)</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:var(--em-d);font-weight:600;">Zero (uses Postgres)</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;text-align:center;color:var(--em-d);">Low (uses Redis)</td></tr>
+    <tr><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;font-weight:600;color:var(--text);">Message replay</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:#dc2626;">✗ Deleted on ack</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:var(--em-d);font-weight:600;">✓ Days/weeks</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:#dc2626;">✗ Deleted on ack</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:var(--gold-d);">Partial (failed jobs)</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;text-align:center;color:var(--gold-d);">Partial (failed jobs)</td></tr>
+    <tr><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;font-weight:600;color:var(--text);">Multi-consumer same msg</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:#dc2626;">✗ One consumer</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:var(--em-d);font-weight:600;">✓ Consumer groups</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:var(--em-d);">✓ Fanout exchange</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:#dc2626;">✗ One consumer</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;text-align:center;color:#dc2626;">✗ One consumer</td></tr>
+    <tr><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;font-weight:600;color:var(--text);">Transactional enqueue</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:#dc2626;">✗</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:#dc2626;">✗</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:#dc2626;">✗</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:var(--em-d);font-weight:600;">✓ Same PG txn</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;text-align:center;color:#dc2626;">✗</td></tr>
+    <tr><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;font-weight:600;color:var(--text);">Built-in rate limiting</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:#dc2626;">✗ Manual</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:#dc2626;">✗ Manual</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:#dc2626;">✗ Manual</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:var(--gold-d);">Partial</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;text-align:center;color:var(--em-d);font-weight:600;">✓ Built-in</td></tr>
+    <tr><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;font-weight:600;color:var(--text);">NestJS native support</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:var(--gold-d);">Via AWS SDK</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:var(--gold-d);">Via kafkajs</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:var(--em-d);font-weight:600;">✓ @nestjs/microservices</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:var(--em-d);">✓ pg-boss npm</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;text-align:center;color:var(--em-d);font-weight:600;">✓ @nestjs/bull</td></tr>
+    <tr><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;font-weight:600;color:var(--text);">Throughput ceiling</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:var(--em-d);">Very high (AWS scales)</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:var(--em-d);font-weight:600;">Millions/sec</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:var(--gold-d);">Tens of thousands/sec</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;border-right:1px solid #e2f5ec;text-align:center;color:var(--gold-d);">PG limits (~1k/sec)</td><td style="padding:9px 12px;border-bottom:1px solid #e2f5ec;text-align:center;color:var(--em-d);">Hundreds of thousands/sec</td></tr>
+    <tr><td style="padding:9px 12px;border-right:1px solid #e2f5ec;font-weight:600;color:var(--text);">Best AI use case</td><td style="padding:9px 12px;border-right:1px solid #e2f5ec;color:var(--dim);">Async doc ingestion on AWS, Lambda triggers</td><td style="padding:9px 12px;border-right:1px solid #e2f5ec;color:var(--dim);">GE sensor events, RAG replay, agent audit log</td><td style="padding:9px 12px;border-right:1px solid #e2f5ec;color:var(--dim);">NestJS microservices, routed AI jobs by doc type</td><td style="padding:9px 12px;border-right:1px solid #e2f5ec;color:var(--dim);">Transactional AI jobs, scheduled re-indexing</td><td style="padding:9px 12px;color:var(--dim);">Rate-limited LLM calls, priority queues for paid users</td></tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+
+</div><!-- /inner wrap -->
+</div><!-- /pgtab-wrap -->
+
+</div>
+
+
+
+<div class="page-content" id="page-outcome">
+<div class="ot-hero">
+  <div style="position:relative;z-index:1;max-width:860px;">
+    <div style="font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--em-d);margin-bottom:14px;display:flex;align-items:center;gap:10px;"><span style="display:inline-block;width:28px;height:1px;background:var(--em-d)"></span>If You Follow This Plan — Concrete Outcomes</div>
+    <h1 style="font-family:var(--head);font-size:clamp(1.9rem,4.5vw,3.1rem);font-weight:800;line-height:1.06;letter-spacing:-.025em;margin-bottom:14px;">You become the <em style="font-style:normal;color:var(--em-d);">engineer who ships AI</em> — not the one who reads about it.</h1>
+    <p style="font-size:.93rem;color:var(--dim);max-width:660px;line-height:1.76;margin-bottom:22px;">This is not a motivation page. These are the specific, verifiable outcomes you get from completing this plan — what you can build, what title you can claim, what you can charge, and why your GE production background makes you worth more than a bootcamp grad with the same AI certs.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:20px;">
+      <div style="background:rgba(255,255,255,.8);border:1.5px solid var(--edge);border-radius:10px;padding:14px;text-align:center;"><span style="font-family:var(--head);font-size:1.9rem;font-weight:800;color:var(--em-d);display:block">12</span><span style="font-family:var(--mono);font-size:8px;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;">Shipped Projects</span></div>
+      <div style="background:rgba(255,255,255,.8);border:1.5px solid var(--edge);border-radius:10px;padding:14px;text-align:center;"><span style="font-family:var(--head);font-size:1.9rem;font-weight:800;color:var(--em-d);display:block">5</span><span style="font-family:var(--mono);font-size:8px;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;">Certifications</span></div>
+      <div style="background:rgba(255,255,255,.8);border:1.5px solid var(--edge);border-radius:10px;padding:14px;text-align:center;"><span style="font-family:var(--head);font-size:1.9rem;font-weight:800;color:var(--gold-d);display:block">₹90L+</span><span style="font-family:var(--mono);font-size:8px;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;">Realistic Salary</span></div>
+      <div style="background:rgba(255,255,255,.8);border:1.5px solid var(--edge);border-radius:10px;padding:14px;text-align:center;"><span style="font-family:var(--head);font-size:1.9rem;font-weight:800;color:var(--em-d);display:block">1</span><span style="font-family:var(--mono);font-size:8px;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;">Live AI SaaS Product</span></div>
+      <div style="background:rgba(255,255,255,.8);border:1.5px solid var(--edge);border-radius:10px;padding:14px;text-align:center;"><span style="font-family:var(--head);font-size:1.9rem;font-weight:800;color:var(--em-d);display:block">3×</span><span style="font-family:var(--mono);font-size:8px;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;">Learning Speed vs Non-Engineer</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="ot-wrap">
+
+<!-- WHAT YOU CAN BUILD -->
+<div class="osh">What You Can Build After 12 Months <span class="otag">VERIFIED BY PROJECTS</span></div>
+<div class="oc"><strong>Not just "understand AI" —</strong> you will have shipped these systems, measured their quality with RAGAS/DeepEval, deployed them to AWS EKS, and monitored them with LangSmith. Each item below corresponds to a real project in the plan.</div>
+
+<div class="cb-grid">
+  <div class="cb-card" style="border-left-color:var(--em-d)">
+    <h4>🔍 RAG Document System</h4>
+    <p>Ingest any set of PDFs, answer questions with source citations, benchmark 3 retrieval strategies against each other with RAGAS scores.</p>
+    <div class="cb-stack"><span class="cb-stack-tag">LangChain</span><span class="cb-stack-tag">ChromaDB</span><span class="cb-stack-tag">sentence-transformers</span><span class="cb-stack-tag">RAGAS</span><span class="cb-stack-tag">Gradio</span></div>
+  </div>
+  <div class="cb-card" style="border-left-color:var(--gold-d)">
+    <h4>🤖 Autonomous Research Agent</h4>
+    <p>Agent that searches the web, reads URLs, extracts facts, resolves contradictions, and writes structured reports — fully autonomous with human approval checkpoint.</p>
+    <div class="cb-stack"><span class="cb-stack-tag">LangGraph</span><span class="cb-stack-tag">Tavily</span><span class="cb-stack-tag">CrewAI</span><span class="cb-stack-tag">FastAPI</span><span class="cb-stack-tag">Docker</span></div>
+  </div>
+  <div class="cb-card" style="border-left-color:var(--em-d)">
+    <h4>☁️ Production AI API on AWS</h4>
+    <p>Lambda + Bedrock + OpenSearch RAG endpoint with API key auth, CloudWatch logging, cost tracking, and architecture diagram.</p>
+    <div class="cb-stack"><span class="cb-stack-tag">AWS Bedrock</span><span class="cb-stack-tag">Lambda</span><span class="cb-stack-tag">OpenSearch</span><span class="cb-stack-tag">boto3</span><span class="cb-stack-tag">IAM</span></div>
+  </div>
+  <div class="cb-card" style="border-left-color:var(--gold-d)">
+    <h4>📊 LLMOps Dashboard</h4>
+    <p>Full observability: trace every LLM call, A/B test prompts with statistical significance, catch hallucinations in CI before they hit users.</p>
+    <div class="cb-stack"><span class="cb-stack-tag">LangSmith</span><span class="cb-stack-tag">DeepEval</span><span class="cb-stack-tag">GitHub Actions</span><span class="cb-stack-tag">Streamlit</span></div>
+  </div>
+  <div class="cb-card" style="border-left-color:#10b981">
+    <h4>🔬 Fine-tuned Model on M4</h4>
+    <p>Domain-specific Llama 3.2 3B trained on your own data, quantised to 4-bit, running locally with zero cloud cost. Benchmarked against GPT-4o-mini.</p>
+    <div class="cb-stack"><span class="cb-stack-tag">mlx-lm</span><span class="cb-stack-tag">LoRA</span><span class="cb-stack-tag">Ollama</span><span class="cb-stack-tag">DeepEval</span></div>
+  </div>
+  <div class="cb-card" style="border-left-color:#dc2626">
+    <h4>🚀 Full-Stack AI SaaS</h4>
+    <p>Auth, billing, streaming AI responses, LangGraph agent backend, Next.js frontend, deployed on EKS with Helm, full CI/CD, monitoring. Live product.</p>
+    <div class="cb-stack"><span class="cb-stack-tag">EKS</span><span class="cb-stack-tag">Helm</span><span class="cb-stack-tag">Next.js</span><span class="cb-stack-tag">FastAPI</span><span class="cb-stack-tag">LangGraph</span><span class="cb-stack-tag">Stripe</span></div>
+  </div>
+</div>
+
+<!-- BEFORE / AFTER -->
+<div class="osh">Before vs After — Specific Changes</div>
+
+<table class="comp-table">
+  <thead>
+    <tr><th>Dimension</th><th>Today (Before)</th><th>After 12 Months</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Job Title</td>
+      <td class="td-before">Full Stack Engineer / NestJS developer</td>
+      <td class="td-after">AI Engineer / AI Systems Engineer — verifiable with 5 certs and 12 GitHub projects</td>
+    </tr>
+    <tr>
+      <td>India Salary</td>
+      <td class="td-before">~₹30–55L (10 yrs full stack)</td>
+      <td class="td-after">₹70–120L for AI Engineer roles at product companies (Flipkart, Swiggy, Razorpay, AI startups)</td>
+    </tr>
+    <tr>
+      <td>What you build</td>
+      <td class="td-before">REST APIs, frontend features, Docker deployments</td>
+      <td class="td-after">RAG pipelines, AI agents, LLMOps dashboards, fine-tuned models, AI SaaS products</td>
+    </tr>
+    <tr>
+      <td>AWS usage</td>
+      <td class="td-before">EC2, S3, basic EKS — infra-level usage</td>
+      <td class="td-after">Bedrock, Lambda AI endpoints, OpenSearch vectors, ECR + EKS + Helm CI/CD — AI-native AWS</td>
+    </tr>
+    <tr>
+      <td>LLM interaction</td>
+      <td class="td-before">ChatGPT for personal use, basic LangChain from Jan 2026 course</td>
+      <td class="td-after">Build multi-agent systems, deploy fine-tuned models, evaluate hallucination rates, monitor production LLM calls</td>
+    </tr>
+    <tr>
+      <td>Interviewing</td>
+      <td class="td-before">"I have used LangChain" — no projects to show</td>
+      <td class="td-after">Open 6 GitHub repos, show live SaaS product, present LangSmith dashboard, explain RAGAS benchmark results</td>
+    </tr>
+    <tr>
+      <td>Certifications</td>
+      <td class="td-before">None (or general cloud certs)</td>
+      <td class="td-after">AWS CLF + AWS SAA + CKA + GCP ML Engineer + AWS ML Specialty — full AI cloud stack certified</td>
+    </tr>
+    <tr>
+      <td>Replaceability</td>
+      <td class="td-before">Any senior full stack engineer with NestJS experience can do your job</td>
+      <td class="td-after">You can deploy AI to production at scale using K8s — most AI engineers can't do that part</td>
+    </tr>
+    <tr>
+      <td>Independent income</td>
+      <td class="td-before">Salary only</td>
+      <td class="td-after">Consulting at ₹8,000–15,000/hr for AI integration projects. Your own SaaS product as revenue source.</td>
+    </tr>
+    <tr>
+      <td>GE position</td>
+      <td class="td-before">Full stack developer on existing products</td>
+      <td class="td-after">Can lead GE's internal AI tooling initiative — the only engineer at GE India with both production infra + AI skills combined</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- MONTH BY MONTH MILESTONE SPINE -->
+<div class="osh">Month-by-Month — What You Have After Each Phase</div>
+
+<div class="spine">
+
+  <div class="spine-item">
+    <div class="spine-dot" style="background:linear-gradient(135deg,#ecfdf5,#d1fae5);">📝</div>
+    <div class="spine-card">
+      <div class="sc-when" style="color:var(--em-d)">Week 2–3 · Phase 0A + 0B Complete</div>
+      <h3>Python works. 24 libraries installed and tested.</h3>
+      <p style="font-size:.78rem;color:var(--dim);line-height:1.6;margin-top:5px;">You can call OpenAI and Anthropic APIs from memory, parse JSON into a Pydantic model, stream tokens to terminal, load API keys from .env. Every library imports without error on Mac M4. You're ready for LangChain.</p>
+      <div style="margin-top:8px"><span class="opill op-em">Calls both AI APIs</span><span class="opill op-em">24 libs installed</span><span class="opill op-gold">Pydantic parsing</span><span class="opill op-gold">async streaming</span></div>
+    </div>
+  </div>
+
+  <div class="spine-item">
+    <div class="spine-dot" style="background:linear-gradient(135deg,#fffbeb,#fef3c7);">🏆</div>
+    <div class="spine-card">
+      <div class="sc-when" style="color:var(--gold-d)">Month 1 (February) · AWS Cloud Practitioner</div>
+      <h3>First cert. Personal prompt testing tool shipped.</h3>
+      <p style="font-size:.78rem;color:var(--dim);line-height:1.6;margin-top:5px;">AWS Cloud Practitioner certificate on your LinkedIn. PromptBench project live — a Streamlit app that tests GPT vs Claude on 5 prompt patterns, logs 50+ experiments to CSV, shows which model wins per task type with data. You have documented findings, not opinions.</p>
+      <div style="margin-top:8px"><span class="opill op-gold">AWS CLF ✓</span><span class="opill op-em">LCEL chains</span><span class="opill op-em">RunnableParallel</span><span class="opill op-gold">First GitHub project</span></div>
+    </div>
+  </div>
+
+  <div class="spine-item">
+    <div class="spine-dot" style="background:linear-gradient(135deg,#ecfdf5,#a7f3d0);">🔍</div>
+    <div class="spine-card">
+      <div class="sc-when" style="color:var(--em-d)">Month 2 (March) · RAG System Complete</div>
+      <h3>RAG chatbot with RAGAS benchmark — most Year-1 engineers can't do this.</h3>
+      <p style="font-size:.78rem;color:var(--dim);line-height:1.6;margin-top:5px;">DocBot ingests 50+ PDFs from your GE domain, answers with page-level citations, and you've benchmarked 3 retrieval strategies against a 20-question eval set using RAGAS. You have a comparison table with faithfulness and relevancy scores. This level of evaluation rigour is rare — most engineers just build, never measure.</p>
+      <div style="margin-top:8px"><span class="opill op-em">RAG pipeline</span><span class="opill op-em">RAGAS eval</span><span class="opill op-em">HyDE + MultiQuery</span><span class="opill op-gold">Written analysis</span></div>
+    </div>
+  </div>
+
+  <div class="spine-item">
+    <div class="spine-dot" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">🤖</div>
+    <div class="spine-card">
+      <div class="sc-when" style="color:var(--gold-d)">Month 3 (April) · Agent + Streaming API in Docker</div>
+      <h3>Autonomous agent with streaming FastAPI — running in Docker.</h3>
+      <p style="font-size:.78rem;color:var(--dim);line-height:1.6;margin-top:5px;">DeepResearch agent uses 5 tools, has a human-in-the-loop approval step, exposes a FastAPI streaming endpoint, and runs in a Docker container. You've also built the same agent in CrewAI and written a comparison. Someone at GE says "build us an AI tool" — you can do it in a weekend now.</p>
+      <div style="margin-top:8px"><span class="opill op-em">LangGraph agent</span><span class="opill op-em">Tool calling</span><span class="opill op-gold">FastAPI streaming</span><span class="opill op-gold">Docker deployed</span></div>
+    </div>
+  </div>
+
+  <div class="spine-item">
+    <div class="spine-dot" style="background:linear-gradient(135deg,#ecfdf5,#6ee7b7);">☁️</div>
+    <div class="spine-card">
+      <div class="sc-when" style="color:var(--em-d)">Month 4–5 (May–June) · AWS SAA + CKA + Cloud RAG Live</div>
+      <h3>3 certs. Month 2 RAG app running on AWS as a live API.</h3>
+      <p style="font-size:.78rem;color:var(--dim);line-height:1.6;margin-top:5px;">AWS Solutions Architect Associate + CKA (Kubernetes cert — fast because you already run K8s at GE). DocBot is now a live Lambda + Bedrock + OpenSearch API with API key auth, receiving real HTTP requests. You've built a cost calculator showing exactly what this costs per 1000 queries.</p>
+      <div style="margin-top:8px"><span class="opill op-gold">AWS SAA ✓</span><span class="opill op-gold">CKA ✓</span><span class="opill op-em">Live cloud API</span><span class="opill op-em">Cost modelled</span></div>
+    </div>
+  </div>
+
+  <div class="spine-item">
+    <div class="spine-dot" style="background:linear-gradient(135deg,#d1fae5,#059669);">📊</div>
+    <div class="spine-card">
+      <div class="sc-when" style="color:var(--em-d)">Month 6 (June) · LLMOps + Hallucination Detection in CI</div>
+      <h3>6 months complete. AI systems with SRE-grade observability.</h3>
+      <p style="font-size:.78rem;color:var(--dim);line-height:1.6;margin-top:5px;">Every LLM call across all 3 projects is traced in LangSmith. 50 DeepEval tests run in GitHub Actions CI — a PR fails automatically if hallucination rate climbs. A/B tested 3 prompt variants with statistical significance. You have a Streamlit monitoring dashboard and a post-mortem on a real hallucination you deliberately introduced and fixed. This is the observability layer most companies are still trying to build.</p>
+      <div style="margin-top:8px"><span class="opill op-em">LangSmith tracing</span><span class="opill op-em">CI eval gate</span><span class="opill op-gold">A/B tested</span><span class="opill op-gold">Post-mortem written</span></div>
+    </div>
+  </div>
+
+  <div class="spine-item">
+    <div class="spine-dot" style="background:linear-gradient(135deg,#fef3c7,#d97706);">🔬</div>
+    <div class="spine-card">
+      <div class="sc-when" style="color:var(--gold-d)">Month 7–8 (July–August) · Fine-tuned Model + GCP</div>
+      <h3>Domain model fine-tuned on M4 for free. GCP skills added.</h3>
+      <p style="font-size:.78rem;color:var(--dim);line-height:1.6;margin-top:5px;">You've fine-tuned Llama 3.2 3B on 300 rows of GE engineering domain data using MLX on your Mac M4 — zero cloud cost. The fine-tuned model outperforms GPT-4o-mini on your domain with a DeepEval comparison report to prove it. You've also deployed an AI endpoint on GCP Cloud Run and understand Vertex AI, making you cloud-agnostic.</p>
+      <div style="margin-top:8px"><span class="opill op-em">Fine-tuned model</span><span class="opill op-em">MLX LoRA on M4</span><span class="opill op-gold">GCP Cloud Run</span><span class="opill op-gold">Benchmark report</span></div>
+    </div>
+  </div>
+
+  <div class="spine-item">
+    <div class="spine-dot" style="background:linear-gradient(135deg,#ecfdf5,#047857);">🏆</div>
+    <div class="spine-card">
+      <div class="sc-when" style="color:var(--em-d)">Month 9 (September) · GCP ML Engineer Cert</div>
+      <h3>4th certification. You can design AI systems at scale.</h3>
+      <p style="font-size:.78rem;color:var(--dim);line-height:1.6;margin-top:5px;">GCP Professional ML Engineer certificate — the strongest AI-specific cloud cert in the market. Combined with AWS SAA, you can architect AI workloads on both major clouds. You understand semantic caching (saves 70% LLM cost at scale), KServe for model serving on K8s, and multi-region AI deployment patterns.</p>
+      <div style="margin-top:8px"><span class="opill op-gold">GCP ML Eng ✓</span><span class="opill op-em">Vertex AI</span><span class="opill op-em">KServe on K8s</span><span class="opill op-em">Semantic caching</span></div>
+    </div>
+  </div>
+
+  <div class="spine-item">
+    <div class="spine-dot" style="background:linear-gradient(135deg,#fef3c7,#b45309);">🚀</div>
+    <div class="spine-card">
+      <div class="sc-when" style="color:var(--gold-d)">Month 12 (December) · AWS ML Specialty + Live SaaS</div>
+      <h3>5 certs. Live AI SaaS on EKS. Ready for senior AI roles.</h3>
+      <p style="font-size:.78rem;color:var(--dim);line-height:1.6;margin-top:5px;">AWS ML Specialty in hand. Your capstone SaaS product is live — auth, billing, streaming AI responses, LangGraph agents, deployed on EKS with Helm, monitored with LangSmith + Grafana, full GitHub Actions CI/CD. You've written a technical case study on LinkedIn. You have a 3-minute demo video. Your GitHub has 12 repos with READMEs and architecture diagrams. This is a Senior AI Engineer portfolio.</p>
+      <div style="margin-top:8px"><span class="opill op-gold">AWS ML Spec ✓</span><span class="opill op-em">Live SaaS product</span><span class="opill op-em">12 GitHub projects</span><span class="opill op-gold">LinkedIn case study</span></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- WHY YOUR BACKGROUND MAKES THIS DIFFERENT -->
+<div class="osh">Why Your GE Background Makes You Rare</div>
+<div class="oc gold"><strong>The uncomfortable truth:</strong> There are thousands of people finishing the same DeepLearning.AI courses this year. Most can build a RAG chatbot that runs locally. Very few can deploy it reliably to production, monitor it like an SRE, handle failures gracefully, and make it cost-efficient at scale. That second group is you.</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;">
+  <div style="background:white;border:1.5px solid var(--edge);border-radius:11px;padding:17px;">
+    <div style="font-family:var(--mono);font-size:8.5px;color:#dc2626;text-transform:uppercase;letter-spacing:.12em;font-weight:600;margin-bottom:10px;padding-bottom:6px;border-bottom:1.5px solid var(--edge);">❌ Typical Year-1 AI Engineer</div>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:7px;">
+      <li style="font-size:.78rem;color:var(--text);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:#dc2626">✗</span>Builds RAG that works in Jupyter — breaks in production</li>
+      <li style="font-size:.78rem;color:var(--text);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:#dc2626">✗</span>No evaluation — "it feels accurate" is the benchmark</li>
+      <li style="font-size:.78rem;color:var(--text);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:#dc2626">✗</span>Can't deploy — needs a DevOps engineer to ship anything</li>
+      <li style="font-size:.78rem;color:var(--text);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:#dc2626">✗</span>No monitoring — discovers hallucinations from user complaints</li>
+      <li style="font-size:.78rem;color:var(--text);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:#dc2626">✗</span>Hardcoded API keys in GitHub repos</li>
+      <li style="font-size:.78rem;color:var(--text);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:#dc2626">✗</span>No cost awareness — gets surprised by $500 OpenAI bill</li>
+    </ul>
+  </div>
+  <div style="background:white;border:1.5px solid var(--edge);border-radius:11px;padding:17px;">
+    <div style="font-family:var(--mono);font-size:8.5px;color:var(--em-d);text-transform:uppercase;letter-spacing:.12em;font-weight:600;margin-bottom:10px;padding-bottom:6px;border-bottom:1.5px solid rgba(5,150,105,.3);">✅ You, After This Plan</div>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:7px;">
+      <li style="font-size:.78rem;color:var(--text);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--em-d)">✓</span>RAG deployed on EKS with HPA, zero-downtime rolling deploys</li>
+      <li style="font-size:.78rem;color:var(--text);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--em-d)">✓</span>RAGAS scores, DeepEval CI gate — hallucinations caught before users see them</li>
+      <li style="font-size:.78rem;color:var(--text);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--em-d)">✓</span>Jenkins pipeline: code push → eval → Docker → ECR → EKS in 8 min</li>
+      <li style="font-size:.78rem;color:var(--text);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--em-d)">✓</span>LangSmith traces every call, alerts on latency spikes, Grafana dashboard</li>
+      <li style="font-size:.78rem;color:var(--text);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--em-d)">✓</span>All secrets in AWS Secrets Manager, IRSA pod-level IAM, no hardcoded keys ever</li>
+      <li style="font-size:.78rem;color:var(--text);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--em-d)">✓</span>Cost calculator, semantic caching saves 70%, billing alarms set</li>
+    </ul>
+  </div>
+</div>
+
+<!-- SALARY REALITY -->
+<div class="osh">Salary Reality — India Market 2027</div>
+<div class="oc"><strong>These are conservative estimates</strong> based on current AI engineering demand in India. The market moves fast. Senior AI Engineers with production experience and cloud certs are rarer than senior React developers — supply is still well below demand.</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:4px;">
+  <div style="background:white;border:1.5px solid var(--edge);border-radius:11px;padding:18px;">
+    <div style="font-family:var(--mono);font-size:8px;color:var(--dim);text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px;">GE — Stay and Lead AI</div>
+    <div style="font-family:var(--head);font-size:1.8rem;font-weight:800;color:var(--em-d)">₹60–80L</div>
+    <div style="font-size:.73rem;color:var(--dim);margin-top:4px;line-height:1.5">Lead GE India's AI tooling initiative. You're the only engineer combining production infra + AI engineering. High leverage, immediate impact on existing systems.</div>
+  </div>
+  <div style="background:white;border:1.5px solid var(--edge);border-radius:11px;padding:18px;">
+    <div style="font-family:var(--mono);font-size:8px;color:var(--dim);text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px;">Product Company (Flipkart / Razorpay / Swiggy)</div>
+    <div style="font-family:var(--head);font-size:1.8rem;font-weight:800;color:var(--em-d)">₹80–120L</div>
+    <div style="font-size:.73rem;color:var(--dim);margin-top:4px;line-height:1.5">Senior AI Engineer with full-stack + infra skills. Companies like Razorpay and Groww are actively hiring engineers who can ship AI end-to-end — not just prototype it.</div>
+  </div>
+  <div style="background:white;border:1.5px solid var(--edge);border-radius:11px;padding:18px;">
+    <div style="font-family:var(--mono);font-size:8px;color:var(--dim);text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px;">AI Startup (Seed to Series B)</div>
+    <div style="font-family:var(--head);font-size:1.8rem;font-weight:800;color:var(--gold-d)">₹70–100L + ESOPs</div>
+    <div style="font-size:.73rem;color:var(--dim);margin-top:4px;line-height:1.5">First or second AI engineer at an early-stage startup. Upside in equity. You ship the entire AI layer. High risk, high reward — your 10 yr experience reduces the execution risk.</div>
+  </div>
+  <div style="background:white;border:1.5px solid var(--edge);border-radius:11px;padding:18px;border-top:2px solid var(--gold-d);">
+    <div style="font-family:var(--mono);font-size:8px;color:var(--dim);text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px;">Consulting (Side / Independent)</div>
+    <div style="font-family:var(--head);font-size:1.8rem;font-weight:800;color:var(--gold-d)">₹8,000–15,000/hr</div>
+    <div style="font-size:.73rem;color:var(--dim);margin-top:4px;line-height:1.5">Integrate AI into existing enterprise systems. Most companies need someone who understands their Docker/K8s/AWS infra AND can add LLMs to it. That's you. 10 hrs/week = ₹30–50L/yr additional.</div>
+  </div>
+</div>
+
+<!-- 3 THINGS THAT COULD STOP YOU -->
+<div class="osh">The 3 Things That Could Stop You — And How to Prevent Them</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
+  <div style="background:rgba(220,38,38,.04);border:1.5px solid rgba(220,38,38,.2);border-radius:11px;padding:16px;">
+    <div style="font-family:var(--mono);font-size:8.5px;color:#dc2626;text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:8px;">🚫 Risk 1 — Perfectionism</div>
+    <p style="font-size:.77rem;color:#7f1d1d;line-height:1.55;margin-bottom:10px;">Spending 3 weeks on Python basics before touching LangChain. Waiting until you "fully understand" embeddings before building RAG. Rebuilding the same project 3 times before moving to the next month.</p>
+    <div style="font-size:.75rem;color:var(--em-d);font-weight:600;">Prevention:</div>
+    <p style="font-size:.75rem;color:var(--dim);line-height:1.5;">The exit tests in the plan are your gatekeepers — not "do I fully understand this". Pass the 7-item Python exit test → start Month 1. That's it.</p>
+  </div>
+  <div style="background:rgba(220,38,38,.04);border:1.5px solid rgba(220,38,38,.2);border-radius:11px;padding:16px;">
+    <div style="font-family:var(--mono);font-size:8.5px;color:#dc2626;text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:8px;">🚫 Risk 2 — Tutorial Hell</div>
+    <p style="font-size:.77rem;color:#7f1d1d;line-height:1.55;margin-bottom:10px;">Watching 5 different RAG tutorials but never building your own. Collecting courses on LangChain, Agents, CrewAI without shipping a single project. Having 10 Jupyter notebooks that "work" but nothing deployed.</p>
+    <div style="font-size:.75rem;color:var(--em-d);font-weight:600;">Prevention:</div>
+    <p style="font-size:.75rem;color:var(--dim);line-height:1.5;">Every month has one deliverable. One GitHub repo. One README. The project steps are so specific that building is faster than watching another tutorial.</p>
+  </div>
+  <div style="background:rgba(220,38,38,.04);border:1.5px solid rgba(220,38,38,.2);border-radius:11px;padding:16px;">
+    <div style="font-family:var(--mono);font-size:8.5px;color:#dc2626;text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:8px;">🚫 Risk 3 — The 5-Month Gap</div>
+    <p style="font-size:.77rem;color:#7f1d1d;line-height:1.55;margin-bottom:10px;">You already had a 5-month gap after your January 2026 LangChain course. The gap between learning and building is where motivation dies. The gap between projects is where skills decay.</p>
+    <div style="font-size:.75rem;color:var(--em-d);font-weight:600;">Prevention:</div>
+    <p style="font-size:.75rem;color:var(--dim);line-height:1.5;">1–1.5 hrs on weekdays, 3–4 hrs on weekends. Missing one day is fine. Missing one week means adding a week to the month. Never skip the project — only the course watching is optional.</p>
+  </div>
+</div>
+
+<!-- BOTTOM LINE -->
+<div class="osh">The Bottom Line</div>
+<div style="background:linear-gradient(135deg,#ecfdf5,#fffbeb);border:2px solid var(--edge);border-radius:14px;padding:28px 32px;margin-top:4px;">
+  <div style="font-family:var(--head);font-size:1.3rem;font-weight:800;color:var(--text);margin-bottom:14px;letter-spacing:-.02em;">In 12 months you go from <span style="color:#dc2626">&#34;I took a LangChain course in January&#34;</span> to <span style="color:var(--em-d)">&#34;I shipped 12 AI projects, hold 5 cloud certs, have a live SaaS on EKS, and can tell you the hallucination rate of my RAG system.&#34;</span></div>
+  <p style="font-size:.87rem;color:var(--dim);line-height:1.7;margin-bottom:16px;">That second statement gets interviews at Razorpay, Anthropic India, Swiggy, and every AI startup Series A and above. The first statement gets you ghosted. The difference is not talent — it's shipping. This plan gives you a project every month so you always have something to ship.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;">
+    <span style="font-family:var(--mono);font-size:9px;padding:4px 12px;border-radius:20px;background:var(--em-d);color:white;font-weight:600;">12 projects shipped</span>
+    <span style="font-family:var(--mono);font-size:9px;padding:4px 12px;border-radius:20px;background:var(--gold-d);color:white;font-weight:600;">5 certifications earned</span>
+    <span style="font-family:var(--mono);font-size:9px;padding:4px 12px;border-radius:20px;background:var(--em-d);color:white;font-weight:600;">1 live SaaS product</span>
+    <span style="font-family:var(--mono);font-size:9px;padding:4px 12px;border-radius:20px;background:var(--gold-d);color:white;font-weight:600;">₹70–120L salary range unlocked</span>
+    <span style="font-family:var(--mono);font-size:9px;padding:4px 12px;border-radius:20px;background:var(--em-d);color:white;font-weight:600;">Production AI skills few engineers have</span>
+  </div>
+</div>
+
+</div><!-- /ot-wrap -->
+</div><!-- /page-outcome -->
+
 </body>
 </html>
