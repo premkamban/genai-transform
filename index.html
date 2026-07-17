@@ -682,9 +682,9 @@ ul.syn li .comment { color: var(--dim2); }
 <div class="sec">12-Month Roadmap at a Glance</div>
 <div class="tl">
   <div class="tlq" style="background:rgba(5,150,105,.06)"><div class="tlph">Phase 0A+0B</div><div class="tlti">Pre-Requisites</div><div class="tlmo">Python Zero→Mid · 24 Libraries</div><div class="tlce">3–4 weeks · Start here</div><div class="tlbar" style="background:var(--em-d)"></div></div>
-  <div class="tlq" style="background:rgba(217,119,6,.05)"><div class="tlph">Q1 · Jan–Mar</div><div class="tlti">AI Foundations</div><div class="tlmo">Prompting · LangChain LCEL · RAG</div><div class="tlce">🏆 AWS Cloud Practitioner</div><div class="tlbar" style="background:var(--gold)"></div></div>
+  <div class="tlq" style="background:rgba(217,119,6,.05)"><div class="tlph">Q1 · Jan–Mar</div><div class="tlti">AI Foundations</div><div class="tlmo">Prompting · LangChain LCEL · Context Eng (RAG)</div><div class="tlce">🏆 AWS Cloud Practitioner</div><div class="tlbar" style="background:var(--gold)"></div></div>
   <div class="tlq" style="background:rgba(5,150,105,.08)"><div class="tlph">Q2 · Apr–Jun</div><div class="tlti">Agents + LLMOps</div><div class="tlmo">LangGraph · Bedrock · LangSmith</div><div class="tlce">🏆 AWS SAA + CKA</div><div class="tlbar" style="background:var(--em-d)"></div></div>
-  <div class="tlq" style="background:rgba(217,119,6,.07)"><div class="tlph">Q3–Q4 · Jul–Dec</div><div class="tlti">Production + Architect</div><div class="tlmo">Fine-tune · GCP · MCP · SaaS</div><div class="tlce">🏆 GCP ML Eng + AWS ML Spec</div><div class="tlbar" style="background:var(--gold-d)"></div></div>
+  <div class="tlq" style="background:rgba(217,119,6,.07)"><div class="tlph">Q3–Q4 · Jul–Dec</div><div class="tlti">Production + Architect</div><div class="tlmo">Fine-tune · GCP · Harness Eng · SaaS</div><div class="tlce">🏆 GCP ML Eng + AWS ML Spec</div><div class="tlbar" style="background:var(--gold-d)"></div></div>
 </div>
 
 <div class="sec">Certification Roadmap <span class="badge">5 certs · $1,295 total</span></div>
@@ -994,6 +994,14 @@ print(ask(<span class="cs">"Explain RAG in 2 sentences"</span>))</div>
             <li><code>pandas</code> to log and analyse experiments</li>
           </ul>
         </div>
+        <div class="ib"><h4>Where This Fits — Prompt → Context → Harness</h4>
+          <ul class="cl">
+            <li><strong>Prompt engineering</strong> (this month) — wording a single request well. Necessary base skill, but not a career on its own anymore</li>
+            <li><strong>Context engineering</strong> (Month 2, RAG) — deciding what the model sees: retrieval, memory, tool outputs, token budget. A data/systems problem, not a wording problem</li>
+            <li><strong>Harness engineering</strong> (Month 10, MCP) — building the environment an agent operates in: tool contracts, permission gating, sandboxing, feedback loops. Where your infra background compounds hardest</li>
+            <li>Each layer sits on top of the last — you climb this stack across the year, you don't stay on rung one</li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="tp full" data-p="project" data-c="m1">
@@ -1043,7 +1051,7 @@ print(ask(<span class="cs">"Explain RAG in 2 sentences"</span>))</div>
 <div class="pc" id="m2">
   <div class="ph" onclick="tog('m2')">
     <div class="pbadge" style="background:linear-gradient(135deg,#047857,#059669)">Month 2</div>
-    <div class="pi"><h3>🔍 RAG — Retrieval-Augmented Generation</h3><p>February · Embeddings · ChromaDB · HyDE · MultiQuery · RAGAS evaluation</p></div>
+    <div class="pi"><h3>🔍 Context Engineering — RAG, Memory &amp; Token Budget</h3><p>February · Embeddings · ChromaDB · HyDE · MultiQuery · RAGAS evaluation · Memory design</p></div>
     <div class="pcert">Start AWS SAA-C03 study this month</div>
     <div class="ptog">+</div>
   </div>
@@ -1074,6 +1082,16 @@ print(ask(<span class="cs">"Explain RAG in 2 sentences"</span>))</div>
             <li>HyDE: embed a hypothetical answer, not the raw question</li>
             <li>MultiQueryRetriever: 3 rephrasings → 3 retrievals → merge</li>
             <li>RAGAS: faithfulness, answer_relevancy, context_precision</li>
+            <li>Token budget: system prompt + history + tool results + retrieved chunks all compete for the same fixed context window — you allocate it, the model doesn't</li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Context Engineering — RAG Is One Tactic, Not the Whole Job</h4>
+          <ul class="cl">
+            <li>Context engineering = everything that ends up in the model's context window, not just retrieved docs</li>
+            <li>Conversation memory: raw buffer vs rolling summary vs vector-store memory — each trades cost against recall differently</li>
+            <li>Tool-output injection: how you format a function result back into context shapes how well the next model call uses it</li>
+            <li>Context ordering: models weight recent and start-of-context tokens differently — placement matters, not just presence</li>
+            <li>RAG is the retrieval half of this discipline. This month you also build the memory half</li>
           </ul>
         </div>
       </div>
@@ -1117,7 +1135,7 @@ print(ask(<span class="cs">"Explain RAG in 2 sentences"</span>))</div>
     </div>
     <div class="tp full" data-p="skills" data-c="m2">
       <div class="ib"><h4>Skills Gained This Month</h4>
-        <div class="chips"><span class="chip new">Vector embeddings</span><span class="chip new">ChromaDB operations</span><span class="chip new">Chunking strategy selection</span><span class="chip new">HyDE advanced retrieval</span><span class="chip new">MultiQueryRetriever</span><span class="chip new">RAGAS evaluation</span><span class="chip new">Document ingestion pipelines</span></div>
+        <div class="chips"><span class="chip new">Vector embeddings</span><span class="chip new">ChromaDB operations</span><span class="chip new">Chunking strategy selection</span><span class="chip new">HyDE advanced retrieval</span><span class="chip new">MultiQueryRetriever</span><span class="chip new">RAGAS evaluation</span><span class="chip new">Document ingestion pipelines</span><span class="chip new">Context window budgeting</span><span class="chip new">Conversation memory design</span></div>
       </div>
     </div>
     <div class="tp full" data-p="rev" data-c="m2">
@@ -1362,7 +1380,7 @@ print(ask(<span class="cs">"Explain RAG in 2 sentences"</span>))</div>
 <div class="pc" id="q34">
   <div class="ph" onclick="tog('q34')">
     <div class="pbadge" style="background:linear-gradient(135deg,#d97706,#f59e0b)">Q3–Q4 · Months 7–12</div>
-    <div class="pi"><h3>🔬 Fine-tuning → GCP → System Design → MCP → Capstone SaaS</h3><p>July–December · MLX on M4 · Vertex AI · KServe · MCP protocol · Ship a real AI product on EKS</p></div>
+    <div class="pi"><h3>🔬 Fine-tuning → GCP → System Design → Harness Engineering → Capstone SaaS</h3><p>July–December · MLX on M4 · Vertex AI · KServe · Harness engineering + MCP protocol · Ship a real AI product on EKS</p></div>
     <div class="pcert" style="color:var(--amber)">🏆 GCP ML Engineer (Sep) + 🏆 AWS ML Specialty (Dec)</div>
     <div class="ptog">+</div>
   </div>
@@ -1412,10 +1430,14 @@ print(ask(<span class="cs">"Explain RAG in 2 sentences"</span>))</div>
           </div>
         </div>
         <div>
-          <div class="ib"><h4>Month 10 — MCP + Advanced Agents (October)</h4>
+          <div class="ib"><h4>Month 10 — Harness Engineering + MCP (October)</h4>
             <ul class="cl">
-              <li>Model Context Protocol (MCP) — Anthropic's tool interop standard</li>
+              <li>Harness engineering: the environment an agent operates in — tool contracts, permission gating, sandboxing, feedback loops. Claude Code is a reference implementation to study</li>
+              <li>Model Context Protocol (MCP) — Anthropic's tool interop standard; the plumbing layer of a harness</li>
               <li>Build MCP server: expose DocBot and research tools via MCP</li>
+              <li>Permission design: classify each tool call as read-only, side-effecting, or irreversible — gate the last two behind explicit approval</li>
+              <li>Agent loop control: define stop conditions, max iterations, and failure fallbacks so it can't loop forever or take an unbounded action</li>
+              <li>Eval the harness, not just the model: trajectory evals (right tools, right order, stopped when it should) on top of output-quality evals</li>
               <li>Advanced LangGraph: subgraphs, Redis/Postgres persistence backends</li>
               <li>Deploy agent to K8s with HPA and resource limits</li>
               <li>Agent monitoring at production volume in LangSmith</li>
