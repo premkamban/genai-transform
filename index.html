@@ -631,6 +631,16 @@ ul.syn li .comment { color: var(--dim2); }
     If You Follow This
     <span class="tab-badge">OUTCOMES</span>
   </button>
+  <button class="page-tab" onclick="switchPage('writer', this)">
+    <span class="tab-icon">✍️</span>
+    Become a Writer
+    <span class="tab-badge">GLOBAL RECOGNITION</span>
+  </button>
+  <button class="page-tab" onclick="switchPage('chef', this)">
+    <span class="tab-icon">👨‍🍳</span>
+    Culinary Chef
+    <span class="tab-badge">TAMIL NADU · SOUTH INDIAN</span>
+  </button>
   <button class="install-btn" id="installBtn" onclick="installApp()">⬇ Install App</button>
 </div>
 
@@ -4261,6 +4271,1318 @@ window.addEventListener('appinstalled', function () {
 
 </div><!-- /ot-wrap -->
 </div><!-- /page-outcome -->
+
+<!-- ══ WRITER PAGE ══ -->
+<div class="page-content" id="page-writer">
+<div class="hero">
+  <div class="hero-body">
+    <div class="eyebrow">Writing Career Blueprint · Blank Page → Global Recognition</div>
+    <h1>Zero Experience<br>→ <em>Globally Published Writer</em></h1>
+    <p class="hero-sub">You don't need an MFA or a childhood diary to become a serious writer. You need a reading list, a daily habit, a feedback loop, and a submission system — run consistently for years. This plan takes you from a blank page to a body of work that editors, agents, and prize juries take seriously.</p>
+    <div class="tags">
+      <span class="tag tg">Zero → Working Writer</span>
+      <span class="tag ti">100+ Book Reading List</span>
+      <span class="tag ta">Craft + Submission System</span>
+      <span class="tag tg">MFA Optional</span>
+      <span class="tag tn">Litmags · Agents · Publishers</span>
+      <span class="tag ti">Global Awards Ladder</span>
+    </div>
+  </div>
+  <div class="id-card">
+    <div class="id-head">Your Starting Point</div>
+    <div class="id-row"><span class="id-k">Experience</span><span class="id-v">Beginner</span></div>
+    <div class="id-row"><span class="id-k">Genre</span><span class="id-v">Undecided</span></div>
+    <div class="id-row"><span class="id-k">Habit</span><span class="id-v">None yet</span></div>
+    <div class="id-row"><span class="id-k">Reading</span><span class="id-v">Casual</span></div>
+    <div class="id-row"><span class="id-k">Portfolio</span><span class="id-v">Empty</span></div>
+    <div class="id-row"><span class="id-k">Goal</span><span class="id-v" style="color:var(--amber)">Globally Recognized Writer</span></div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat"><span class="sn">6</span><div class="sl">Phases</div></div>
+  <div class="stat"><span class="sn">100+</span><div class="sl">Books To Read</div></div>
+  <div class="stat"><span class="sn">50</span><div class="sl">Pieces Written</div></div>
+  <div class="stat"><span class="sn">30+</span><div class="sl">Submissions / Year</div></div>
+  <div class="stat"><span class="sn">20+</span><div class="sl">Films Studied</div></div>
+  <div class="stat"><span class="sn">5–10</span><div class="sl">Years To Mastery</div></div>
+</div>
+
+<div class="wrap">
+
+<div class="sec">Why Writers Are Made, Not Born</div>
+<div class="g2">
+  <div class="ctx"><strong>The real skill:</strong> Writing talent is 10% instinct and 90% pattern-matching from wide reading, plus thousands of hours of deliberate practice. Every writer you admire read hundreds of books before publishing a sentence worth remembering. You start with the reading, not the writing.</div>
+  <div class="ctx am"><strong>Global recognition is a system, not luck:</strong> Booker and Pulitzer winners didn't skip the litmag stage. The path is: daily practice → short-form publication → agent/publisher → national prizes → translation → international prizes. Skipping steps rarely works — but every step here is learnable.</div>
+</div>
+
+<div class="sec">Roadmap at a Glance</div>
+<div class="cb-grid">
+  <div class="cb-card" style="border-left-color:var(--em-d)"><h4>📖 Phase 1 — Read Like a Writer</h4><p>Months 1–2 · Build the daily reading + journaling habit before writing for an audience.</p></div>
+  <div class="cb-card" style="border-left-color:var(--gold-d)"><h4>✍️ Phase 2 — Craft Fundamentals</h4><p>Months 2–5 · Voice, POV, structure, dialogue, scene vs. summary — the mechanics.</p></div>
+  <div class="cb-card" style="border-left-color:var(--em-d)"><h4>🎯 Phase 3 — Choose Your Lane</h4><p>Months 5–10 · Fiction, nonfiction, poetry or screenwriting — build a 10–15 piece portfolio.</p></div>
+  <div class="cb-card" style="border-left-color:#10b981"><h4>🔁 Phase 4 — Workshops & Revision</h4><p>Ongoing from month 3 · Feedback loops, critique groups, ruthless revision discipline.</p></div>
+  <div class="cb-card" style="border-left-color:var(--gold-d)"><h4>📬 Phase 5 — Publishing Path</h4><p>Months 8–18 · Literary magazines → agents → book deal or self-publishing.</p></div>
+  <div class="cb-card" style="border-left-color:#dc2626"><h4>🌍 Phase 6 — Platform & Global Recognition</h4><p>Year 2+ · Awards ladder, translation, residencies, literary festivals.</p></div>
+</div>
+
+<!-- PHASE W1 -->
+<div class="sec">The 6 Phases <span class="badge">Start Here</span></div>
+<div class="pc open" id="w1">
+  <div class="ph" onclick="tog('w1')">
+    <div class="pbadge" style="background:linear-gradient(135deg,#059669,#10b981)">Phase 1</div>
+    <div class="pi"><h3>📖 Read Like a Writer, Then Build the Habit</h3><p>1–2 months · Reading method + a daily writing practice that survives bad days</p></div>
+    <div class="pcert">No output pressure · Foundation</div>
+    <div class="ptog">+</div>
+  </div>
+  <div class="pb">
+    <div class="tabs">
+      <button class="tbtn on" onclick="swt(this,'w1','learn')">📚 Learn</button>
+      <button class="tbtn" onclick="swt(this,'w1','canon')">🎬 Books &amp; Films</button>
+      <button class="tbtn" onclick="swt(this,'w1','project')">🛠 Practice</button>
+      <button class="tbtn" onclick="swt(this,'w1','skills')">⚡ Milestones</button>
+    </div>
+    <div class="tp on" data-p="learn" data-c="w1">
+      <div>
+        <div class="ib"><h4>Read With a Pencil</h4>
+          <ul class="cl">
+            <li>1 book a week minimum, alternating a classic and something published in the last 5 years</li>
+            <li>Annotate structure, not plot: where does the scene turn? Where does the writer withhold information?</li>
+            <li>Keep a <em>commonplace book</em> — copy out sentences, images, or lines that stop you cold</li>
+            <li>Re-read one favourite chapter aloud, once a week, to feel sentence rhythm</li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Resources</h4>
+          <ul class="rl">
+            <li><a href="https://www.pw.org" target="_blank">Poets &amp; Writers</a><span class="fs">Free</span><span class="src">Magazines, contests, MFA directory</span></li>
+            <li><a href="https://www.masterclass.com/categories/writing" target="_blank">MasterClass — Writing</a><span class="fs">Paid</span><span class="src">Atwood, Gaiman, Rushdie, King</span></li>
+            <li><a href="https://nanowrimo.org" target="_blank">NaNoWriMo</a><span class="fs">Free</span><span class="src">Habit + community, every November</span></li>
+            <li><a href="https://750words.com" target="_blank">750 Words</a><span class="fs">Freemium</span><span class="src">Private daily writing tracker</span></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="ib"><h4>The Daily Practice</h4>
+          <ul class="cl">
+            <li>Morning pages — 3 handwritten pages, no editing, no re-reading (Julia Cameron's method)</li>
+            <li>20–30 minutes free writing daily, timer on, no backspace</li>
+            <li>Copy one admired paragraph by hand daily — feel the sentence length pattern in your wrist</li>
+            <li>Track the streak, not the quality — day 1 and day 100 both count equally</li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Your Engineer's Edge</h4>
+          <p style="font-size:.79rem;color:#1f4d32;line-height:1.6">A daily-commit habit and a daily-pages habit are the same discipline. Debugging is revision: you already know how to sit with something broken until it isn't. This transfers directly — most beginning writers have to learn discipline from zero. You don't.</p>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="canon" data-c="w1">
+      <div class="g2">
+        <div class="ib"><h4>Craft Books To Read First</h4>
+          <ul class="rl">
+            <li>On Writing — Stephen King<span class="src">Memoir + craft</span></li>
+            <li>Bird by Bird — Anne Lamott<span class="src">On process and fear</span></li>
+            <li>On Writing Well — William Zinsser<span class="src">Nonfiction clarity</span></li>
+            <li>The Elements of Style — Strunk &amp; White<span class="src">Sentence-level rules</span></li>
+            <li>Reading Like a Writer — Francine Prose<span class="src">How to annotate craft</span></li>
+            <li>The Art of Fiction — John Gardner<span class="src">Deeper technique</span></li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Films About the Writing Life</h4>
+          <ul class="rl">
+            <li>Dead Poets Society (1989)<span class="src">Why words matter</span></li>
+            <li>Finding Forrester (2000)<span class="src">Mentor + apprentice</span></li>
+            <li>Wonder Boys (2000)<span class="src">The messy draft years</span></li>
+            <li>Paterson (2016)<span class="src">Writing as daily ritual</span></li>
+            <li>Midnight in Paris (2011)<span class="src">Romanticism vs. craft</span></li>
+            <li>Capote (2005)<span class="src">Research obsession, cost of ambition</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="project" data-c="w1">
+      <div class="proj">
+        <div class="projl">Phase 1 Practice · Step by Step</div>
+        <h5>8-Week Reading &amp; Journaling Sprint</h5>
+        <ul class="steps">
+          <li>Pick 8 books — alternate classic and contemporary — and schedule one per week</li>
+          <li>Start morning pages the same day. Missing a day is fine; missing a week means restarting the streak count only, not the habit</li>
+          <li>Open a commonplace book (notebook or Notion) — add at least one line per book that stopped you</li>
+          <li>Watch 2 films from the list above and write one page on what the writing/editing choices reveal about structure</li>
+          <li>End of month 2: read 8 books cover to cover with notes, and have 40+ raw journal pages</li>
+        </ul>
+        <div class="outcome">You have a reading log, a daily habit that survives bad days, and raw material. You're not "trying to write" anymore — you're already writing.</div>
+      </div>
+    </div>
+    <div class="tp full" data-p="skills" data-c="w1">
+      <div class="ib"><h4>Skills You Exit Phase 1 With</h4>
+        <div class="chips">
+          <span class="chip new">Daily writing habit</span><span class="chip new">Active, annotated reading</span>
+          <span class="chip new">Commonplace book</span><span class="chip new">Reading log (8+ books)</span>
+          <span class="chip new">Pattern recognition in prose</span>
+        </div>
+      </div>
+      <div class="ib" style="margin-top:16px">
+        <div class="rev">
+          <div class="revl">Phase 1 Exit Gate</div>
+          <ul>
+            <li>Wrote every day for 30+ days, streak tracked somewhere</li>
+            <li>Read 8+ books cover to cover with structural notes</li>
+            <li>Can name 3 authors whose sentence rhythm you're studying and why</li>
+            <li>Have 40+ pages of raw, unedited material</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE W2 -->
+<div class="pc" id="w2">
+  <div class="ph" onclick="tog('w2')">
+    <div class="pbadge" style="background:linear-gradient(135deg,#d97706,#f59e0b)">Phase 2</div>
+    <div class="pi"><h3>✍️ Craft Fundamentals — Voice, POV, Structure</h3><p>2–4 months · The mechanics that separate a diary entry from a publishable piece</p></div>
+    <div class="pcert">No cert · Craft sprint</div>
+    <div class="ptog">+</div>
+  </div>
+  <div class="pb">
+    <div class="tabs">
+      <button class="tbtn on" onclick="swt(this,'w2','learn')">📚 Learn</button>
+      <button class="tbtn" onclick="swt(this,'w2','canon')">🎬 Books &amp; Films</button>
+      <button class="tbtn" onclick="swt(this,'w2','project')">🛠 Practice</button>
+      <button class="tbtn" onclick="swt(this,'w2','skills')">⚡ Milestones</button>
+    </div>
+    <div class="tp on" data-p="learn" data-c="w2">
+      <div>
+        <div class="ib"><h4>Core Craft Topics</h4>
+          <ul class="cl">
+            <li>Point of view: first, close third, omniscient — and why the choice changes everything</li>
+            <li>Scene vs. summary — when to slow down and dramatise, when to compress</li>
+            <li>Dialogue that does two jobs at once: reveals character AND moves plot</li>
+            <li>Show vs. tell — and why "always show" is bad advice taken too far</li>
+            <li>Structure: three-act, five-act, and the essay's classic "turn"</li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Courses</h4>
+          <ul class="rl">
+            <li><a href="https://www.coursera.org/specializations/creative-writing" target="_blank">Creative Writing Specialization — Wesleyan</a><span class="fs">Free audit</span><span class="src">Coursera, 5 courses</span></li>
+            <li><a href="https://www.coursera.org/specializations/good-with-words" target="_blank">Good with Words — Univ. of Michigan</a><span class="fs">Free audit</span><span class="src">Coursera, editing focus</span></li>
+            <li><a href="https://blog.reedsy.com/learning/" target="_blank">Reedsy Learning</a><span class="fs">Free</span><span class="src">Short craft courses by email</span></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="ib"><h4>Grammar &amp; Style, Fast</h4>
+          <ul class="cl">
+            <li>Learn the rules before you break them on purpose — style is informed deviation, not ignorance</li>
+            <li>Cut adverbs and filter words ("she felt", "he saw") in a revision pass</li>
+            <li>Read your draft aloud — every stumble is an edit</li>
+            <li>One sentence, one idea. Compound sentences hide two weak ones</li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Weekly Rhythm</h4>
+          <div class="weeks">
+            <div class="wk"><div class="wkl">Wk 1–4</div><p>POV + scene work — rewrite one scene in 3 different POVs</p></div>
+            <div class="wk"><div class="wkl">Wk 5–8</div><p>Dialogue drills — write scenes that are dialogue-only</p></div>
+            <div class="wk"><div class="wkl">Wk 9–12</div><p>Structure — outline 3 short stories using different structures</p></div>
+            <div class="wk"><div class="wkl">Wk 13–16</div><p>Full drafts — write and finish 2 complete short pieces</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="canon" data-c="w2">
+      <div class="g2">
+        <div class="ib"><h4>Deeper Craft Books</h4>
+          <ul class="rl">
+            <li>Story — Robert McKee<span class="src">Structure, screenwriting roots</span></li>
+            <li>Save the Cat Writes a Novel — Jessica Brody<span class="src">Beat-sheet structure</span></li>
+            <li>The Art of Fiction — David Lodge<span class="src">Technique in short essays</span></li>
+            <li>Steering the Craft — Ursula K. Le Guin<span class="src">Sentence-level workshop</span></li>
+            <li>The Sense of Style — Steven Pinker<span class="src">Grammar with a linguist's eye</span></li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Films for Structure &amp; Dialogue Study</h4>
+          <ul class="rl">
+            <li>Before Sunrise / Before Sunset<span class="src">Dialogue carrying a whole film</span></li>
+            <li>Adaptation (2002)<span class="src">Structure eating itself, on purpose</span></li>
+            <li>The Social Network (2010)<span class="src">Sorkin dialogue rhythm</span></li>
+            <li>Manchester by the Sea (2016)<span class="src">Scene vs. summary, grief pacing</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="project" data-c="w2">
+      <div class="proj">
+        <div class="projl">Phase 2 Practice · Step by Step</div>
+        <h5>Craft Drills → 2 Finished Short Pieces</h5>
+        <ul class="steps">
+          <li>Take one scene from your journal and rewrite it in first person, close third, and omniscient — compare</li>
+          <li>Write a 500-word scene that is dialogue only — no action tags, no interiority</li>
+          <li>Outline 3 short story premises using 3-act, five-act, and a McKee-style structure</li>
+          <li>Draft and finish 2 short pieces (1,500–3,000 words) start to end, no editing mid-draft</li>
+          <li>Do one full revision pass on each, reading both aloud before calling them done</li>
+        </ul>
+        <div class="outcome">You can name the craft choices you're making, not just feel your way through a draft. You have 2 finished, revised pieces ready for outside eyes.</div>
+      </div>
+    </div>
+    <div class="tp full" data-p="skills" data-c="w2">
+      <div class="ib"><h4>Skills You Exit Phase 2 With</h4>
+        <div class="chips">
+          <span class="chip new">POV control</span><span class="chip new">Scene vs. summary judgement</span>
+          <span class="chip new">Functional dialogue</span><span class="chip new">Basic structure vocabulary</span>
+          <span class="chip new">A self-editing pass</span>
+        </div>
+      </div>
+      <div class="ib" style="margin-top:16px">
+        <div class="rev">
+          <div class="revl">Phase 2 Exit Gate</div>
+          <ul>
+            <li>2 finished, revised short pieces (1,500–3,000 words each)</li>
+            <li>Can explain why you chose the POV and structure you used</li>
+            <li>Read both pieces aloud and fixed what stumbled</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE W3 -->
+<div class="pc" id="w3">
+  <div class="ph" onclick="tog('w3')">
+    <div class="pbadge" style="background:linear-gradient(135deg,#059669,#10b981)">Phase 3</div>
+    <div class="pi"><h3>🎯 Choose Your Lane &amp; Build a Portfolio</h3><p>4–8 months · Fiction, nonfiction, poetry, or screenwriting — 10–15 finished pieces</p></div>
+    <div class="pcert">No cert · Portfolio sprint</div>
+    <div class="ptog">+</div>
+  </div>
+  <div class="pb">
+    <div class="tabs">
+      <button class="tbtn on" onclick="swt(this,'w3','learn')">📚 Learn</button>
+      <button class="tbtn" onclick="swt(this,'w3','canon')">🎬 Books &amp; Films</button>
+      <button class="tbtn" onclick="swt(this,'w3','project')">🛠 Practice</button>
+      <button class="tbtn" onclick="swt(this,'w3','skills')">⚡ Milestones</button>
+    </div>
+    <div class="tp on" data-p="learn" data-c="w3">
+      <div>
+        <div class="ib"><h4>Pick a Lane (You Can Switch Later)</h4>
+          <ul class="cl">
+            <li><strong>Literary/genre fiction</strong> — if you're drawn to character and invented worlds</li>
+            <li><strong>Narrative nonfiction/essay</strong> — if your journal entries keep circling real events</li>
+            <li><strong>Poetry</strong> — if you're editing single lines more than plot</li>
+            <li><strong>Screenwriting</strong> — if you "see" scenes before you have sentences for them</li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Genre-Specific Resources</h4>
+          <ul class="rl">
+            <li><a href="https://www.clarionwriters.ucsd.edu" target="_blank">Clarion Workshop</a><span class="fs">Paid</span><span class="src">Speculative fiction, 6-week intensive</span></li>
+            <li><a href="https://poets.org" target="_blank">Poets.org (Academy of American Poets)</a><span class="fs">Free</span><span class="src">Poetry forms, prompts</span></li>
+            <li><a href="https://www.oscars.org/nicholl" target="_blank">Nicholl Fellowship — AMPAS</a><span class="fs">Free entry info</span><span class="src">Top screenwriting fellowship</span></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="ib"><h4>Portfolio Targets by Lane</h4>
+          <ul class="cl">
+            <li>Fiction/nonfiction: 10–15 short stories or essays, 1,500–5,000 words each</li>
+            <li>Poetry: 25–40 poems across 3–4 forms/styles</li>
+            <li>Screenwriting: 2 finished short scripts + 1 feature outline</li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Why a Portfolio, Not One Novel</h4>
+          <p style="font-size:.79rem;color:#1f4d32;line-height:1.6">A first novel written before you've finished 10 short pieces is usually a very long learning exercise. Short-form output compounds faster: more reps, more finished endings, more submission opportunities, more feedback cycles per year.</p>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="canon" data-c="w3">
+      <div class="g2">
+        <div class="ib"><h4>Contemporary Must-Reads By Lane</h4>
+          <ul class="rl">
+            <li>Interpreter of Maladies — Jhumpa Lahiri<span class="src">Short story craft</span></li>
+            <li>The Empathy Exams — Leslie Jamison<span class="src">Personal essay</span></li>
+            <li>Citizen — Claudia Rankine<span class="src">Hybrid poetry/essay</span></li>
+            <li>Nine Stories — J.D. Salinger<span class="src">Short story economy</span></li>
+            <li>Save the Cat! (screenwriting) — Blake Snyder<span class="src">Beat sheets for scripts</span></li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Films by Adapted Source Material</h4>
+          <ul class="rl">
+            <li>No Country for Old Men (from Cormac McCarthy)<span class="src">Prose economy on screen</span></li>
+            <li>Life of Pi (from Yann Martel)<span class="src">Structure of a frame story</span></li>
+            <li>Brokeback Mountain (from Annie Proulx short story)<span class="src">Short story → feature</span></li>
+            <li>The Shawshank Redemption (from Stephen King novella)<span class="src">Voice-over narration done right</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="project" data-c="w3">
+      <div class="proj">
+        <div class="projl">Phase 3 Practice · Step by Step</div>
+        <h5>Build the Body of Work</h5>
+        <ul class="steps">
+          <li>Commit to one primary lane for the next 6 months — you can still write in others occasionally</li>
+          <li>Draft one new piece every 2–3 weeks; finish the draft before editing anything</li>
+          <li>Alternate drafting weeks with revision weeks — never revise the piece you just finished immediately</li>
+          <li>By month 8, have 10–15 finished, polished pieces in your primary lane</li>
+          <li>Rank them — pick your strongest 5 as your "submission-ready" set</li>
+        </ul>
+        <div class="outcome">You have a real portfolio, not a folder of drafts. You know your strongest work and why it's strong.</div>
+      </div>
+    </div>
+    <div class="tp full" data-p="skills" data-c="w3">
+      <div class="ib"><h4>Skills You Exit Phase 3 With</h4>
+        <div class="chips">
+          <span class="chip new">A defined genre/lane</span><span class="chip new">10–15 finished pieces</span>
+          <span class="chip new">A submission-ready top 5</span><span class="chip new">Drafting-vs-revising rhythm</span>
+        </div>
+      </div>
+      <div class="ib" style="margin-top:16px">
+        <div class="rev">
+          <div class="revl">Phase 3 Exit Gate</div>
+          <ul>
+            <li>10+ finished, polished pieces in one primary lane</li>
+            <li>Can rank your own work and explain the ranking</li>
+            <li>Have never revised a draft on the same day you finished it</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE W4 -->
+<div class="pc" id="w4">
+  <div class="ph" onclick="tog('w4')">
+    <div class="pbadge" style="background:linear-gradient(135deg,#0891b2,#06b6d4)">Phase 4</div>
+    <div class="pi"><h3>🔁 Workshops, Feedback &amp; Revision Discipline</h3><p>Ongoing from month 3 · Learn to take criticism without losing the work</p></div>
+    <div class="pcert">No cert · Runs alongside every other phase</div>
+    <div class="ptog">+</div>
+  </div>
+  <div class="pb">
+    <div class="tabs">
+      <button class="tbtn on" onclick="swt(this,'w4','learn')">📚 Learn</button>
+      <button class="tbtn" onclick="swt(this,'w4','canon')">🎬 Books &amp; Films</button>
+      <button class="tbtn" onclick="swt(this,'w4','project')">🛠 Practice</button>
+      <button class="tbtn" onclick="swt(this,'w4','skills')">⚡ Milestones</button>
+    </div>
+    <div class="tp on" data-p="learn" data-c="w4">
+      <div>
+        <div class="ib"><h4>Where to Get Feedback</h4>
+          <ul class="rl">
+            <li><a href="https://www.scribophile.com" target="_blank">Scribophile</a><span class="fs">Freemium</span><span class="src">Karma-based critique community</span></li>
+            <li><a href="https://critiquecircle.com" target="_blank">Critique Circle</a><span class="fs">Free</span><span class="src">Structured critique queue</span></li>
+            <li><a href="https://www.reddit.com/r/DestructiveReaders" target="_blank">r/DestructiveReaders</a><span class="fs">Free</span><span class="src">Blunt, high-effort critique</span></li>
+            <li>Local library or bookstore writing groups<span class="fs">Free/low-cost</span><span class="src">In-person accountability</span></li>
+          </ul>
+        </div>
+        <div class="ib"><h4>How to Take Feedback</h4>
+          <ul class="cl">
+            <li>Collect 3+ readers' notes before changing a single word — one opinion is noise</li>
+            <li>Separate "this doesn't work for me" from "this is technically broken"</li>
+            <li>Never defend the piece out loud in the room — just listen and take notes</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="ib"><h4>The Revision Passes</h4>
+          <ul class="cl">
+            <li>Pass 1 — structure: does the piece open and end in the right place?</li>
+            <li>Pass 2 — scene: cut summary that should be scene, and scene that should be summary</li>
+            <li>Pass 3 — line edit: sentence rhythm, word repetition, filter words</li>
+            <li>Pass 4 — proofread: read backward, sentence by sentence, to catch typos your brain skips</li>
+          </ul>
+        </div>
+        <div class="ib"><h4>MFA — Optional, Not Required</h4>
+          <p style="font-size:.79rem;color:#1f4d32;line-height:1.6">An MFA buys you 2 years of structured workshop feedback and a cohort. It does not buy you talent or guaranteed publication. If you want the structure, look at <a href="https://workshop.uiowa.edu" target="_blank">Iowa Writers' Workshop</a> as the benchmark program — but a strong critique-group habit can replace most of what an MFA offers, for free.</p>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="canon" data-c="w4">
+      <div class="g2">
+        <div class="ib"><h4>Books on Revision &amp; Editing</h4>
+          <ul class="rl">
+            <li>Self-Editing for Fiction Writers — Browne &amp; King<span class="src">Line-level revision</span></li>
+            <li>Refuse to Be Done — Matt Bell<span class="src">Whole-draft revision system</span></li>
+            <li>The Forest for the Trees — Betsy Lerner<span class="src">Editor's-eye view of writers</span></li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Films on Mentorship &amp; Criticism</h4>
+          <ul class="rl">
+            <li>Genius (2016)<span class="src">Editor Max Perkins &amp; Thomas Wolfe</span></li>
+            <li>Trumbo (2015)<span class="src">Writing under pressure and scrutiny</span></li>
+            <li>Whiplash (2014)<span class="src">The cost of brutal feedback, cautionary</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="project" data-c="w4">
+      <div class="proj">
+        <div class="projl">Phase 4 Practice · Step by Step</div>
+        <h5>Build a Standing Feedback Loop</h5>
+        <ul class="steps">
+          <li>Join 2 critique communities (one online, one local/in-person if possible)</li>
+          <li>Submit one piece per month for critique, and critique 2–3 others' work in return</li>
+          <li>Run every piece through the 4 revision passes before it's called "finished"</li>
+          <li>Keep a "feedback log" — recurring notes across pieces are your actual blind spots</li>
+        </ul>
+        <div class="outcome">You have a repeatable feedback loop instead of a one-off edit, and a documented list of your recurring craft weaknesses to fix on purpose.</div>
+      </div>
+    </div>
+    <div class="tp full" data-p="skills" data-c="w4">
+      <div class="ib"><h4>Skills You Exit Phase 4 With</h4>
+        <div class="chips">
+          <span class="chip new">4-pass revision system</span><span class="chip new">Standing critique group</span>
+          <span class="chip new">Feedback log of blind spots</span><span class="chip new">Non-defensive listening</span>
+        </div>
+      </div>
+      <div class="ib" style="margin-top:16px">
+        <div class="rev">
+          <div class="revl">Phase 4 Exit Gate</div>
+          <ul>
+            <li>Active in at least one recurring critique group</li>
+            <li>Every submission-ready piece has been through all 4 revision passes</li>
+            <li>Can name your top 2 recurring craft weaknesses from feedback patterns</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE W5 -->
+<div class="pc" id="w5">
+  <div class="ph" onclick="tog('w5')">
+    <div class="pbadge" style="background:linear-gradient(135deg,#d97706,#f59e0b)">Phase 5</div>
+    <div class="pi"><h3>📬 Publishing Path — Magazines → Agents → Books</h3><p>8–18 months · Submission systems, querying, and the self-publish vs. traditional decision</p></div>
+    <div class="pcert">First acceptances</div>
+    <div class="ptog">+</div>
+  </div>
+  <div class="pb">
+    <div class="tabs">
+      <button class="tbtn on" onclick="swt(this,'w5','learn')">📚 Learn</button>
+      <button class="tbtn" onclick="swt(this,'w5','canon')">🎬 Books &amp; Films</button>
+      <button class="tbtn" onclick="swt(this,'w5','project')">🛠 Practice</button>
+      <button class="tbtn" onclick="swt(this,'w5','skills')">⚡ Milestones</button>
+    </div>
+    <div class="tp on" data-p="learn" data-c="w5">
+      <div>
+        <div class="ib"><h4>Literary Magazines First</h4>
+          <ul class="cl">
+            <li>Start with small/mid-tier litmags before top-tier — build a track record</li>
+            <li>Simultaneous submit unless a magazine explicitly forbids it</li>
+            <li>Track every submission: date, response time, rejection type (form vs. personal)</li>
+            <li>Expect 90%+ rejection rate — this is normal, not a signal to stop</li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Submission Tools</h4>
+          <ul class="rl">
+            <li><a href="https://duotrope.com" target="_blank">Duotrope</a><span class="fs">Paid</span><span class="src">Submission tracker + market database</span></li>
+            <li><a href="https://thegrinder.diabolicalplots.com" target="_blank">The Submission Grinder</a><span class="fs">Free</span><span class="src">Free alternative to Duotrope</span></li>
+            <li><a href="https://www.submittable.com" target="_blank">Submittable</a><span class="fs">Free</span><span class="src">Platform most litmags use to receive work</span></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="ib"><h4>Agents &amp; Publishers</h4>
+          <ul class="rl">
+            <li><a href="https://querytracker.net" target="_blank">QueryTracker</a><span class="fs">Freemium</span><span class="src">Agent database + query tracking</span></li>
+            <li><a href="https://www.manuscriptwishlist.com" target="_blank">Manuscript Wish List (#MSWL)</a><span class="fs">Free</span><span class="src">What agents are actively seeking</span></li>
+            <li><a href="https://www.publishersmarketplace.com" target="_blank">Publishers Marketplace</a><span class="fs">Paid</span><span class="src">Real deal data, industry news</span></li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Self-Publish vs. Traditional</h4>
+          <ul class="cl">
+            <li><strong>Traditional:</strong> agent → publisher → advance + royalties, slower, editorial + distribution support, prestige/prize eligibility</li>
+            <li><strong>Self-publish:</strong> full control, faster, higher royalty %, you own marketing entirely — via <a href="https://kdp.amazon.com" target="_blank">Amazon KDP</a></li>
+            <li>Most global literary prizes require traditional publication — factor this in if awards are a goal</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="canon" data-c="w5">
+      <div class="g2">
+        <div class="ib"><h4>Target Literary Magazines (Ladder)</h4>
+          <ul class="rl">
+            <li>One Story, Cheap Pop, Wigleaf<span class="src">Approachable entry tier</span></li>
+            <li>Ploughshares, Tin House, Granta<span class="src">Mid-to-top tier</span></li>
+            <li>The Paris Review, The New Yorker<span class="src">Top tier, aspirational</span></li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Books on the Business Side</h4>
+          <ul class="rl">
+            <li>The Business of Being a Writer — Jane Friedman<span class="src">Industry mechanics</span></li>
+            <li>How to Write a Query Letter resources — QueryShark archive<span class="src">Real query breakdowns</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="project" data-c="w5">
+      <div class="proj">
+        <div class="projl">Phase 5 Practice · Step by Step</div>
+        <h5>Run the Submission Machine</h5>
+        <ul class="steps">
+          <li>Build a spreadsheet: piece, magazine, submit date, response window, status</li>
+          <li>Submit your top 5 pieces to 5–8 magazines each, staggered across 2 months</li>
+          <li>Aim for 30+ submissions per year, every year, regardless of rejection rate</li>
+          <li>If working on a book-length project, draft a query letter and test it on 5–10 agents before a full batch send</li>
+          <li>Log every rejection type — a rise in personalised rejections means you're close</li>
+        </ul>
+        <div class="outcome">You have a running submission system instead of one-off hopeful sends — the single biggest predictor of eventually getting published.</div>
+      </div>
+    </div>
+    <div class="tp full" data-p="skills" data-c="w5">
+      <div class="ib"><h4>Skills You Exit Phase 5 With</h4>
+        <div class="chips">
+          <span class="chip new">Submission tracking system</span><span class="chip new">Query letter</span>
+          <span class="chip new">30+ submissions/year cadence</span><span class="chip new">Rejection resilience</span>
+        </div>
+      </div>
+      <div class="ib" style="margin-top:16px">
+        <div class="rev">
+          <div class="revl">Phase 5 Exit Gate</div>
+          <ul>
+            <li>30+ submissions sent in a 12-month period, tracked in a spreadsheet</li>
+            <li>At least one acceptance, or a rising rate of personalised rejections</li>
+            <li>A polished query letter if pursuing a book-length project</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE W6 -->
+<div class="pc" id="w6">
+  <div class="ph" onclick="tog('w6')">
+    <div class="pbadge" style="background:linear-gradient(135deg,#dc2626,#b91c1c)">Phase 6</div>
+    <div class="pi"><h3>🌍 Platform, Awards &amp; Global Recognition</h3><p>Year 2+ · The awards ladder, translation, residencies, and literary festivals</p></div>
+    <div class="pcert">Long game</div>
+    <div class="ptog">+</div>
+  </div>
+  <div class="pb">
+    <div class="tabs">
+      <button class="tbtn on" onclick="swt(this,'w6','learn')">📚 Learn</button>
+      <button class="tbtn" onclick="swt(this,'w6','canon')">🎬 Books &amp; Films</button>
+      <button class="tbtn" onclick="swt(this,'w6','project')">🛠 Practice</button>
+      <button class="tbtn" onclick="swt(this,'w6','skills')">⚡ Milestones</button>
+    </div>
+    <div class="tp on" data-p="learn" data-c="w6">
+      <div>
+        <div class="ib"><h4>The Awards Ladder</h4>
+          <ul class="cl">
+            <li>Litmag-level prizes → magazine's own annual award, often the entry point</li>
+            <li>National anthology prizes: <a href="https://www.pushcartprize.com" target="_blank">Pushcart Prize</a>, O. Henry Award — nominated by editors, not submitted directly</li>
+            <li>Major national prizes: <a href="https://www.nationalbook.org" target="_blank">National Book Award</a>, <a href="https://www.pulitzer.org" target="_blank">Pulitzer Prize</a></li>
+            <li>Global prizes: <a href="https://thebookerprizes.com" target="_blank">Booker Prize</a> (and International Booker for translated fiction), <a href="https://www.nobelprize.org/prizes/literature/" target="_blank">Nobel Prize in Literature</a></li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Residencies</h4>
+          <ul class="rl">
+            <li><a href="https://www.macdowell.org" target="_blank">MacDowell</a><span class="fs">Funded</span><span class="src">Oldest US artist residency</span></li>
+            <li><a href="https://www.yaddo.org" target="_blank">Yaddo</a><span class="fs">Funded</span><span class="src">Saratoga Springs, NY</span></li>
+            <li><a href="https://hedgebrook.org" target="_blank">Hedgebrook</a><span class="fs">Funded</span><span class="src">Residency for women writers</span></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="ib"><h4>Building a Platform</h4>
+          <ul class="cl">
+            <li>Start a newsletter (Substack or similar) once you have 10+ finished pieces — write about process, not just announce publications</li>
+            <li>Read at open mics and local literary events — live reading is a different skill, practice it early</li>
+            <li>Apply to literary festivals as an attendee first, panelist later: <a href="https://jaipurliteraturefestival.org" target="_blank">Jaipur Literature Festival</a>, <a href="https://www.edbookfest.co.uk" target="_blank">Edinburgh International Book Festival</a></li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Translation &amp; International Reach</h4>
+          <ul class="cl">
+            <li>International recognition often follows translation — a strong original-language career usually comes first</li>
+            <li>Literary translators find writers through small-press and litmag publication, not cold outreach</li>
+            <li>Grants for translated fiction (e.g. International Booker) mean writing in a regional/first language is not a disadvantage globally</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="canon" data-c="w6">
+      <div class="g2">
+        <div class="ib"><h4>Writers Who Took This Exact Ladder</h4>
+          <ul class="rl">
+            <li>Alice Munro<span class="src">Litmags → story collections → Nobel</span></li>
+            <li>Jhumpa Lahiri<span class="src">The New Yorker → Pulitzer at 32</span></li>
+            <li>George Saunders<span class="src">Litmags for 15+ years → Booker Prize</span></li>
+            <li>Han Kang<span class="src">Korean-language career → International Booker → Nobel</span></li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Films on the Long Arc of a Career</h4>
+          <ul class="rl">
+            <li>The Hours (2002)<span class="src">Legacy, influence across generations</span></li>
+            <li>Il Postino (1994)<span class="src">Poetry's reach beyond the page</span></li>
+            <li>Sylvia (2003)<span class="src">Cost of a literary life, cautionary</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="project" data-c="w6">
+      <div class="proj">
+        <div class="projl">Phase 6 Practice · Step by Step</div>
+        <h5>Play the Long Game on Purpose</h5>
+        <ul class="steps">
+          <li>Once you have 3+ publications, apply to one residency per year — rejection is normal here too</li>
+          <li>Start a newsletter or simple author site; publish process notes, not just announcements</li>
+          <li>Ask your editor after an acceptance whether the piece is Pushcart-eligible — most magazines nominate automatically, but ask</li>
+          <li>If pursuing a book, discuss translation rights with your agent/publisher once a deal is in place</li>
+          <li>Attend one literary festival a year, in person if possible — the community compounds over a decade</li>
+        </ul>
+        <div class="outcome">Global recognition is the output of a decade of consistent shipping, not a single lucky break. By year 2 you're playing the long game with eyes open, not waiting to be discovered.</div>
+      </div>
+    </div>
+    <div class="tp full" data-p="skills" data-c="w6">
+      <div class="ib"><h4>Skills You Exit Phase 6 With</h4>
+        <div class="chips">
+          <span class="chip new">Author platform</span><span class="chip new">Residency applications</span>
+          <span class="chip new">Awards-ladder awareness</span><span class="chip new">Literary festival network</span>
+        </div>
+      </div>
+      <div class="ib" style="margin-top:16px">
+        <div class="rev">
+          <div class="revl">Phase 6 Exit Gate</div>
+          <ul>
+            <li>3+ publications with track record started</li>
+            <li>Applied to at least 1 residency or fellowship</li>
+            <li>Have a simple public platform (newsletter or site) with process writing on it</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+</div><!-- /page-writer -->
+
+<!-- ══ CULINARY CHEF PAGE ══ -->
+<div class="page-content" id="page-chef">
+<div class="hero">
+  <div class="hero-body">
+    <div class="eyebrow">Culinary Career Blueprint · Home Cook → Professional Chef</div>
+    <h1>Master the <em>Tamil Nadu &amp; South Indian</em><br>Kitchen</h1>
+    <p class="hero-sub">Real chef skill isn't a spice list, it's technique: knife work, batter fermentation science, tempering, regional masala grinding, and plating discipline. This plan takes you from basic kitchen habits to genuine command of Tamil Nadu cuisine, then outward to Kerala, Andhra, and Karnataka — with the professional skills to run a kitchen, not just cook at home.</p>
+    <div class="tags">
+      <span class="tag tg">Knife Skills → Pro Plating</span>
+      <span class="tag ti">Batter Fermentation Science</span>
+      <span class="tag ta">Chettinad Deep Dive</span>
+      <span class="tag tg">6 South Indian Regional Styles</span>
+      <span class="tag tn">FSSAI · IHM · WorldChefs</span>
+      <span class="tag ti">Menu Design &amp; Costing</span>
+    </div>
+  </div>
+  <div class="id-card">
+    <div class="id-head">Your Starting Point</div>
+    <div class="id-row"><span class="id-k">Experience</span><span class="id-v">Home cook</span></div>
+    <div class="id-row"><span class="id-k">Region focus</span><span class="id-v">Tamil Nadu</span></div>
+    <div class="id-row"><span class="id-k">Knife skills</span><span class="id-v">Basic</span></div>
+    <div class="id-row"><span class="id-k">Batter craft</span><span class="id-v">None yet</span></div>
+    <div class="id-row"><span class="id-k">Repertoire</span><span class="id-v">A few dishes</span></div>
+    <div class="id-row"><span class="id-k">Goal</span><span class="id-v" style="color:var(--amber)">Skilled South Indian Chef</span></div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat"><span class="sn">6</span><div class="sl">Phases</div></div>
+  <div class="stat"><span class="sn">60+</span><div class="sl">Core Recipes</div></div>
+  <div class="stat"><span class="sn">6</span><div class="sl">Regional Cuisines</div></div>
+  <div class="stat"><span class="sn">15+</span><div class="sl">Spice Blends</div></div>
+  <div class="stat"><span class="sn">3</span><div class="sl">Certifications</div></div>
+  <div class="stat"><span class="sn">10</span><div class="sl">Signature Dishes</div></div>
+</div>
+
+<div class="wrap">
+
+<div class="sec">Why Go Deep on South Indian Technique</div>
+<div class="g2">
+  <div class="ctx"><strong>Technique-dense, not trend-dependent:</strong> Fermented batters, stone-ground masalas, and layered tempering (tadka) are harder to master than most global cuisines and impossible to fake. Chefs who can genuinely execute idli/dosa science and a real Chettinad masala are rarer than chefs who can plate a steak.</div>
+  <div class="ctx am"><strong>Global demand is rising fast:</strong> Authentic regional Indian food — not "curry house" fusion — is getting international recognition (Michelin guides now list Indian restaurants abroad). Deep regional specialisation, done with real technique, travels well.</div>
+</div>
+
+<div class="sec">Roadmap at a Glance</div>
+<div class="cb-grid">
+  <div class="cb-card" style="border-left-color:var(--em-d)"><h4>🔪 Phase 1 — Kitchen Foundations</h4><p>4–6 weeks · Knife skills, mise en place, hygiene, equipment.</p></div>
+  <div class="cb-card" style="border-left-color:var(--gold-d)"><h4>🍚 Phase 2 — Tamil Nadu Everyday Staples</h4><p>2–3 months · Batter science, sambar/rasam/kootu family, tempering.</p></div>
+  <div class="cb-card" style="border-left-color:var(--em-d)"><h4>🌶️ Phase 3 — Chettinad &amp; Regional Tamil Nadu</h4><p>2–3 months · Chettinad, Kongunadu, Madurai, Thanjavur styles.</p></div>
+  <div class="cb-card" style="border-left-color:#10b981"><h4>🥥 Phase 4 — Wider South Indian Cuisine</h4><p>2–3 months · Kerala, Andhra, Karnataka (Udupi) styles.</p></div>
+  <div class="cb-card" style="border-left-color:var(--gold-d)"><h4>🍽️ Phase 5 — Professional Techniques</h4><p>Ongoing · Plating, menu costing, catering scale, banana-leaf service.</p></div>
+  <div class="cb-card" style="border-left-color:#dc2626"><h4>🏆 Phase 6 — Mastery &amp; Recognition</h4><p>Year 2+ · Certifications, competitions, brand building.</p></div>
+</div>
+
+<!-- PHASE C1 -->
+<div class="sec">The 6 Phases <span class="badge">Start Here</span></div>
+<div class="pc open" id="c1">
+  <div class="ph" onclick="tog('c1')">
+    <div class="pbadge" style="background:linear-gradient(135deg,#059669,#10b981)">Phase 1</div>
+    <div class="pi"><h3>🔪 Kitchen Foundations</h3><p>4–6 weeks · Knife skills, mise en place, hygiene, and core equipment</p></div>
+    <div class="pcert">FSSAI FoSTaC eligible</div>
+    <div class="ptog">+</div>
+  </div>
+  <div class="pb">
+    <div class="tabs">
+      <button class="tbtn on" onclick="swt(this,'c1','learn')">📚 Learn</button>
+      <button class="tbtn" onclick="swt(this,'c1','recipes')">🍽 Recipes</button>
+      <button class="tbtn" onclick="swt(this,'c1','project')">🛠 Practice</button>
+      <button class="tbtn" onclick="swt(this,'c1','skills')">⚡ Skills</button>
+    </div>
+    <div class="tp on" data-p="learn" data-c="c1">
+      <div>
+        <div class="ib"><h4>Knife Skills &amp; Mise en Place</h4>
+          <ul class="cl">
+            <li>Basic cuts: julienne, brunoise, chiffonade — practice on onions, carrots, curry leaves</li>
+            <li>Mise en place discipline: every spice, chopped vegetable, and paste ready before the flame goes on</li>
+            <li>Knife care: honing before every session, sharpening weekly, safe storage</li>
+            <li>Station setup: the way you organise ingredients determines how fast and clean you cook</li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Hygiene &amp; Safety — Get Certified</h4>
+          <ul class="rl">
+            <li><a href="https://fostac.fssai.gov.in" target="_blank">FSSAI FoSTaC</a><span class="fs">Certification</span><span class="src">India's mandatory food safety training</span></li>
+            <li><a href="https://www.fssai.gov.in" target="_blank">FSSAI</a><span class="fs">Reference</span><span class="src">Food Safety and Standards Authority of India</span></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="ib"><h4>Core Equipment for South Indian Cooking</h4>
+          <ul class="cl">
+            <li>Kadai (wok-like pan) and tawa (flat griddle) — dosa/roti surface</li>
+            <li>Idli steamer/pot with plates, appam pan (kal chatti / appachatti)</li>
+            <li>Ural &amp; ulakkai (traditional stone mortar) or a wet grinder for batter and masala paste</li>
+            <li>Uruli (wide bronze/steel vessel) for slow reductions, traditional in Kerala/TN kitchens</li>
+            <li>Small tempering pan (thalippu chatti) — dedicated to tadka only</li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Foundational Techniques</h4>
+          <ul class="cl">
+            <li>Tempering/tadka (thalippu): mustard seeds first, then urad dal, curry leaves, dried chillies — in that order, in hot oil</li>
+            <li>Dry-roasting spices and lentils before grinding — develops flavour before liquid touches them</li>
+            <li>Roux-free thickening using rice flour or ground coconut instead</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="recipes" data-c="c1">
+      <div class="ib"><h4>Phase 1 Practice Dishes — Technique Over Complexity</h4>
+        <div class="pyg">
+          <div class="pyb"><h5>Rice &amp; Dal Basics</h5><ul><li>Plain steamed rice, right water ratio</li><li>Basic thuvaram paruppu (toor dal)</li><li>Ghee rice</li></ul></div>
+          <div class="pyb"><h5>Tempering Practice</h5><ul><li>Thakkali thokku (tomato relish)</li><li>Simple curry leaf tempering on curd rice</li><li>Coconut chutney with tadka</li></ul></div>
+          <div class="pyb"><h5>Knife-Skill Dishes</h5><ul><li>Kosumalli (raw salad, brunoise veg)</li><li>Poriyal (any vegetable, uniform dice)</li><li>Onion-tomato base for gravies</li></ul></div>
+          <div class="pyb"><h5>Hygiene Drills</h5><ul><li>Colour-coded board practice</li><li>FIFO labelling of a home pantry</li><li>Safe reheating of cooked rice</li></ul></div>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="project" data-c="c1">
+      <div class="proj">
+        <div class="projl">Phase 1 Practice · Step by Step</div>
+        <h5>Build the Foundation Habits</h5>
+        <ul class="steps">
+          <li>Practice julienne, brunoise, and chiffonade on 3 vegetables daily for a week</li>
+          <li>Cook one meal per day using full mise en place — everything prepped before the flame is on</li>
+          <li>Do 5 tempering (tadka) reps on different dishes, focused only on the mustard→urad dal→curry leaf sequence</li>
+          <li>Complete FSSAI FoSTaC's basic food safety course</li>
+          <li>Set up a home station: labelled spice tins, a dedicated tempering pan, sharpened knives</li>
+        </ul>
+        <div class="outcome">Your knife work is consistent, your station is organised before you cook, and you have a real hygiene certification — the non-negotiable base every professional kitchen assumes you already have.</div>
+      </div>
+    </div>
+    <div class="tp full" data-p="skills" data-c="c1">
+      <div class="ib"><h4>Skills You Exit Phase 1 With</h4>
+        <div class="chips">
+          <span class="chip new">Consistent knife cuts</span><span class="chip new">Mise en place discipline</span>
+          <span class="chip new">Tempering (tadka) sequence</span><span class="chip new">FSSAI food safety basics</span>
+          <span class="chip new">Core equipment fluency</span>
+        </div>
+      </div>
+      <div class="ib" style="margin-top:16px">
+        <div class="rev">
+          <div class="revl">Phase 1 Exit Gate</div>
+          <ul>
+            <li>Can julienne, brunoise, and chiffonade without measuring</li>
+            <li>Never starts cooking without full mise en place</li>
+            <li>Tempering sequence is automatic — no recipe needed</li>
+            <li>Holds a basic FSSAI food safety certificate</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE C2 -->
+<div class="pc" id="c2">
+  <div class="ph" onclick="tog('c2')">
+    <div class="pbadge" style="background:linear-gradient(135deg,#d97706,#f59e0b)">Phase 2</div>
+    <div class="pi"><h3>🍚 Tamil Nadu Everyday Staples</h3><p>2–3 months · Batter science, sambar/rasam/kootu family, podis, tempering mastery</p></div>
+    <div class="pcert">Core repertoire</div>
+    <div class="ptog">+</div>
+  </div>
+  <div class="pb">
+    <div class="tabs">
+      <button class="tbtn on" onclick="swt(this,'c2','learn')">📚 Learn</button>
+      <button class="tbtn" onclick="swt(this,'c2','recipes')">🍽 Recipes</button>
+      <button class="tbtn" onclick="swt(this,'c2','project')">🛠 Practice</button>
+      <button class="tbtn" onclick="swt(this,'c2','skills')">⚡ Skills</button>
+    </div>
+    <div class="tp on" data-p="learn" data-c="c2">
+      <div>
+        <div class="ib"><h4>Batter Fermentation Science</h4>
+          <ul class="cl">
+            <li>Classic idli/dosa ratio: 4:1 rice to urad dal (adjust toward 3:1 for softer idli, 4:1 for crisper dosa)</li>
+            <li>Soak rice and dal separately (4–6 hrs), grind dal to a light, aerated paste — air incorporation matters more than fineness</li>
+            <li>Fermentation is wild yeast + lactic acid bacteria — warm climates (25–30°C) ferment in 8–10 hrs, colder climates need an oven-light trick or longer time</li>
+            <li>Salt after fermentation, not before — salt slows the microbial activity</li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Reference</h4>
+          <ul class="rl">
+            <li><a href="https://en.wikipedia.org/wiki/Idli" target="_blank">Idli — background &amp; history</a><span class="src">Wikipedia</span></li>
+            <li><a href="https://en.wikipedia.org/wiki/Dosa" target="_blank">Dosa — varieties</a><span class="src">Wikipedia</span></li>
+            <li><a href="https://en.wikipedia.org/wiki/Sambar_(dish)" target="_blank">Sambar — origins &amp; regional variants</a><span class="src">Wikipedia</span></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="ib"><h4>The Kuzhambu / Rasam / Kootu Family</h4>
+          <ul class="cl">
+            <li><strong>Rasam</strong> — thin, tamarind-tomato-pepper base, no dal thickening (milagu rasam, paruppu rasam, tomato rasam)</li>
+            <li><strong>Sambar</strong> — dal-thickened, vegetable-forward, sambar podi as the flavour base</li>
+            <li><strong>Kuzhambu</strong> — tangier, oil-forward gravies (vatha kuzhambu, kara kuzhambu, mor kuzhambu)</li>
+            <li><strong>Kootu</strong> — vegetable + dal + coconut paste, gentler spicing than sambar</li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Podis (Spice Powders) — Make Your Own</h4>
+          <ul class="cl">
+            <li>Idli podi (milagai podi) — roasted dal, red chilli, sesame, asafoetida, ground coarse</li>
+            <li>Sambar podi — coriander-forward, roasted and ground fresh weekly for best flavour</li>
+            <li>Rasam podi — pepper and cumin heavy, lighter roast than sambar podi</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="recipes" data-c="c2">
+      <div class="ib"><h4>Core Tamil Nadu Repertoire</h4>
+        <div class="pyg">
+          <div class="pyb"><h5>Batter Dishes</h5><ul><li>Idli (soft, hotel-style)</li><li>Dosa: plain, ghee roast, rava, set dosa</li><li>Uthappam</li><li>Adai</li></ul></div>
+          <div class="pyb"><h5>Gravies</h5><ul><li>Sambar (mixed vegetable)</li><li>Vatha kuzhambu, kara kuzhambu</li><li>Mor kuzhambu</li><li>3 rasam varieties</li></ul></div>
+          <div class="pyb"><h5>Sides</h5><ul><li>Poriyal (5 vegetables)</li><li>Kootu (2 varieties)</li><li>Medu vadai, masala vadai</li><li>Appalam / vathal</li></ul></div>
+          <div class="pyb"><h5>Rice &amp; Finishing</h5><ul><li>Thayir sadam (curd rice)</li><li>Lemon rice, tamarind rice</li><li>Coconut &amp; tomato chutney</li></ul></div>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="project" data-c="c2">
+      <div class="proj">
+        <div class="projl">Phase 2 Practice · Step by Step</div>
+        <h5>Master the Everyday Tamil Thali</h5>
+        <ul class="steps">
+          <li>Make idli/dosa batter from scratch 4 times, varying the rice:dal ratio each time — taste and texture-test the difference</li>
+          <li>Cook all 3 rasam varieties in one week, tasting side by side</li>
+          <li>Make sambar podi and rasam podi from raw spices — compare against store-bought</li>
+          <li>Cook a full weekday thali from scratch: rice, sambar, rasam, 2 poriyal, curd rice, appalam</li>
+          <li>Repeat the full thali weekly for a month until timing (everything hot, together) is consistent</li>
+        </ul>
+        <div class="outcome">You can produce a balanced Tamil thali from memory, with fermented batter, fresh-ground podi, and correctly timed tempering — the daily-driver skill of every Tamil kitchen.</div>
+      </div>
+    </div>
+    <div class="tp full" data-p="skills" data-c="c2">
+      <div class="ib"><h4>Skills You Exit Phase 2 With</h4>
+        <div class="chips">
+          <span class="chip new">Batter fermentation control</span><span class="chip new">Rasam/sambar/kuzhambu/kootu distinction</span>
+          <span class="chip new">Fresh podi-making</span><span class="chip new">Full thali timing</span>
+        </div>
+      </div>
+      <div class="ib" style="margin-top:16px">
+        <div class="rev">
+          <div class="revl">Phase 2 Exit Gate</div>
+          <ul>
+            <li>Can ferment idli/dosa batter reliably regardless of weather</li>
+            <li>Can cook all 4 gravy types (rasam, sambar, kuzhambu, kootu) without a recipe</li>
+            <li>Makes podis fresh rather than relying on store-bought</li>
+            <li>Can plate a full weekday thali with everything timed hot together</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE C3 -->
+<div class="pc" id="c3">
+  <div class="ph" onclick="tog('c3')">
+    <div class="pbadge" style="background:linear-gradient(135deg,#dc2626,#b91c1c)">Phase 3</div>
+    <div class="pi"><h3>🌶️ Chettinad &amp; Regional Tamil Nadu Deep Dive</h3><p>2–3 months · Chettinad, Kongunadu, Madurai, and Thanjavur styles</p></div>
+    <div class="pcert">Specialisation</div>
+    <div class="ptog">+</div>
+  </div>
+  <div class="pb">
+    <div class="tabs">
+      <button class="tbtn on" onclick="swt(this,'c3','learn')">📚 Learn</button>
+      <button class="tbtn" onclick="swt(this,'c3','recipes')">🍽 Recipes</button>
+      <button class="tbtn" onclick="swt(this,'c3','project')">🛠 Practice</button>
+      <button class="tbtn" onclick="swt(this,'c3','skills')">⚡ Skills</button>
+    </div>
+    <div class="tp on" data-p="learn" data-c="c3">
+      <div>
+        <div class="ib"><h4><a href="https://en.wikipedia.org/wiki/Chettinad_cuisine" target="_blank" style="color:var(--em-d)">Chettinad Cuisine</a> — Technique &amp; Spice Grinding</h4>
+          <ul class="cl">
+            <li>Signature spices: marathi moggu (kapok buds), kalpasi (stone flower/lichen), star anise, fennel — stone-ground, not blended smooth</li>
+            <li>Chettinad masala is roasted dry first, then ground with minimal water — coarser texture than North Indian masalas</li>
+            <li>Meat marination with fresh-ground masala, not pre-mixed powder, is what separates real Chettinad from imitation</li>
+            <li>Heavy use of shallots (sambar onions) instead of regular onions — sweeter, faster-cooking base</li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Regional Style Notes</h4>
+          <ul class="cl">
+            <li><strong>Kongunadu (Coimbatore belt):</strong> earthier, less oil, arisi paruppu sadham, kaara kuzhambu with peanuts</li>
+            <li><strong>Madurai:</strong> bold, mutton-forward — Madurai mutton curry, kari dosai, paruthi paal (cottonseed milk dessert)</li>
+            <li><strong>Thanjavur:</strong> temple-influenced vegetarian cooking — subtler spicing, ghee-forward, vella sadam (sweet rice)</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="ib"><h4>Cookbooks for This Phase</h4>
+          <ul class="rl">
+            <li>Samaithu Paar — S. Meenakshi Ammal<span class="src">The definitive Tamil cookbook trilogy</span></li>
+            <li>Dakshin — Chandra Padmanabhan<span class="src">South Indian classics, well-tested</span></li>
+            <li>Chettinad Kitchen — Meyyammai Murugappan &amp; Visalakshi Ramaswamy<span class="src">Authentic Chettinad technique</span></li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Learn From Practitioners</h4>
+          <ul class="cl">
+            <li>Study Tamil-language home-cooking channels for authentic technique over "fusion" recipe blogs</li>
+            <li>If possible, stage (unpaid trial shift) a shift or two at a Chettinad-specialty restaurant to see stone-grinding at scale</li>
+            <li>Visit a Chettinad household kitchen during a festival if you get the chance — technique is passed hand to hand, not written down fully</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="recipes" data-c="c3">
+      <div class="ib"><h4>Regional Repertoire</h4>
+        <div class="pyg">
+          <div class="pyb"><h5>Chettinad</h5><ul><li>Chettinad chicken curry</li><li>Chettinad mutton curry</li><li>Kaara kuzhambu</li><li>Chettinad pepper chicken (dry)</li></ul></div>
+          <div class="pyb"><h5>Kongunadu</h5><ul><li>Arisi paruppu sadham</li><li>Kaara kuzhambu with peanut</li><li>Kongu-style poriyal</li></ul></div>
+          <div class="pyb"><h5>Madurai</h5><ul><li>Madurai mutton curry</li><li>Kari dosai</li><li>Jigarthanda (dessert drink)</li></ul></div>
+          <div class="pyb"><h5>Thanjavur</h5><ul><li>Vella sadam</li><li>Temple-style sambar (no onion/garlic)</li><li>Ghee-roasted vegetable kootu</li></ul></div>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="project" data-c="c3">
+      <div class="proj">
+        <div class="projl">Phase 3 Practice · Step by Step</div>
+        <h5>Master a Real Chettinad Masala</h5>
+        <ul class="steps">
+          <li>Source whole spices including marathi moggu and kalpasi — dry roast each individually to learn their smell and colour change</li>
+          <li>Stone-grind (or wet-grind with minimal water) a Chettinad masala from scratch — compare to a store-bought Chettinad powder</li>
+          <li>Cook Chettinad chicken curry twice: once with the store-bought powder, once with your fresh-ground masala — taste the difference explicitly</li>
+          <li>Cook one dish from each of the 4 regional styles (Chettinad, Kongunadu, Madurai, Thanjavur) in one month</li>
+          <li>Host a regional Tamil Nadu tasting menu for friends/family — 4 courses, one per region</li>
+        </ul>
+        <div class="outcome">You can grind an authentic Chettinad masala from raw spices and explain, by taste, why it's different from every commercial version — genuine regional specialisation, not a recipe-following imitation.</div>
+      </div>
+    </div>
+    <div class="tp full" data-p="skills" data-c="c3">
+      <div class="ib"><h4>Skills You Exit Phase 3 With</h4>
+        <div class="chips">
+          <span class="chip new">Stone-ground masala technique</span><span class="chip new">4 Tamil Nadu regional styles</span>
+          <span class="chip new">Meat marination from scratch</span><span class="chip new">Whole-spice sourcing &amp; roasting</span>
+        </div>
+      </div>
+      <div class="ib" style="margin-top:16px">
+        <div class="rev">
+          <div class="revl">Phase 3 Exit Gate</div>
+          <ul>
+            <li>Ground a Chettinad masala from raw whole spices, not a pre-mix</li>
+            <li>Can name and cook at least one signature dish from each of the 4 regional styles</li>
+            <li>Hosted or served a multi-course regional tasting to real guests</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE C4 -->
+<div class="pc" id="c4">
+  <div class="ph" onclick="tog('c4')">
+    <div class="pbadge" style="background:linear-gradient(135deg,#0891b2,#06b6d4)">Phase 4</div>
+    <div class="pi"><h3>🥥 Wider South Indian Cuisine</h3><p>2–3 months · Kerala, Andhra, and Karnataka (Udupi) styles</p></div>
+    <div class="pcert">Breadth</div>
+    <div class="ptog">+</div>
+  </div>
+  <div class="pb">
+    <div class="tabs">
+      <button class="tbtn on" onclick="swt(this,'c4','learn')">📚 Learn</button>
+      <button class="tbtn" onclick="swt(this,'c4','recipes')">🍽 Recipes</button>
+      <button class="tbtn" onclick="swt(this,'c4','project')">🛠 Practice</button>
+      <button class="tbtn" onclick="swt(this,'c4','skills')">⚡ Skills</button>
+    </div>
+    <div class="tp on" data-p="learn" data-c="c4">
+      <div>
+        <div class="ib"><h4><a href="https://en.wikipedia.org/wiki/Kerala_cuisine" target="_blank" style="color:var(--em-d)">Kerala Cuisine</a></h4>
+          <ul class="cl">
+            <li>Coconut in every form: grated, milk, oil — the defining fat and thickener</li>
+            <li>Avial (mixed vegetable, coconut-yoghurt), fish curry (kudampuli/gambooge souring), appam + stew</li>
+            <li>Onam sadya as the benchmark multi-course vegetarian banana-leaf meal — study its structure</li>
+          </ul>
+        </div>
+        <div class="ib"><h4><a href="https://en.wikipedia.org/wiki/Andhra_cuisine" target="_blank" style="color:var(--em-d)">Andhra Cuisine</a></h4>
+          <ul class="cl">
+            <li>The spiciest of the South Indian styles — red chilli and tamarind forward</li>
+            <li>Gongura (sorrel leaf) pachadi/mutton, Andhra-style pappu (dal), avakaya pickle</li>
+            <li>Distinct from Tamil cooking in heat level and heavier use of raw garlic</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="ib"><h4><a href="https://en.wikipedia.org/wiki/Udupi_cuisine" target="_blank" style="color:var(--em-d)">Karnataka — Udupi Cuisine</a></h4>
+          <ul class="cl">
+            <li>Udupi restaurants standardised much of "South Indian food" as eaten across India — study why their sambar/dosa differ from Tamil versions</li>
+            <li>Bisi bele bath (spiced rice-lentil one-pot), Mysore masala dosa, Mangalorean coastal seafood curries</li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Cross-Regional Reference</h4>
+          <ul class="rl">
+            <li><a href="https://en.wikipedia.org/wiki/South_Indian_cuisine" target="_blank">South Indian Cuisine — overview</a><span class="src">Wikipedia</span></li>
+            <li>Cooking at Home with Pedatha — Jigyasa Giri &amp; Pratibha Jain<span class="src">Andhra Brahmin cookbook</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="recipes" data-c="c4">
+      <div class="ib"><h4>Wider South Indian Repertoire</h4>
+        <div class="pyg">
+          <div class="pyb"><h5>Kerala</h5><ul><li>Avial</li><li>Fish curry (kudampuli)</li><li>Appam + stew</li><li>3-course Onam sadya spread</li></ul></div>
+          <div class="pyb"><h5>Andhra</h5><ul><li>Gongura pachadi</li><li>Andhra chicken curry</li><li>Pappu (dal)</li><li>Avakaya-style pickle</li></ul></div>
+          <div class="pyb"><h5>Karnataka</h5><ul><li>Bisi bele bath</li><li>Mysore masala dosa</li><li>Mangalorean fish curry</li></ul></div>
+          <div class="pyb"><h5>Comparative Tasting</h5><ul><li>4-region sambar tasting</li><li>4-region dosa tasting</li><li>4-region chutney tasting</li></ul></div>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="project" data-c="c4">
+      <div class="proj">
+        <div class="projl">Phase 4 Practice · Step by Step</div>
+        <h5>Map the South Indian Spectrum</h5>
+        <ul class="steps">
+          <li>Cook the same base dish (sambar, then dosa, then chutney) in all 4 regional styles in the same week — taste side by side</li>
+          <li>Make avial and a Kerala fish curry, focused entirely on coconut technique (grating, milking, tempering with coconut oil)</li>
+          <li>Cook one properly fiery Andhra dish and calibrate your own heat tolerance against a benchmark recipe</li>
+          <li>Cook bisi bele bath and Mysore masala dosa, and compare the Udupi sambar/chutney to your Tamil versions</li>
+          <li>Write a one-page personal reference: how sambar, dosa, and chutney differ across the 4 regions you've now cooked</li>
+        </ul>
+        <div class="outcome">You can articulate — and cook — the real differences between Tamil, Kerala, Andhra, and Karnataka cooking, instead of treating "South Indian food" as one undifferentiated style.</div>
+      </div>
+    </div>
+    <div class="tp full" data-p="skills" data-c="c4">
+      <div class="ib"><h4>Skills You Exit Phase 4 With</h4>
+        <div class="chips">
+          <span class="chip new">Coconut-based cooking (Kerala)</span><span class="chip new">High-heat calibration (Andhra)</span>
+          <span class="chip new">Udupi-style technique (Karnataka)</span><span class="chip new">Comparative regional palate</span>
+        </div>
+      </div>
+      <div class="ib" style="margin-top:16px">
+        <div class="rev">
+          <div class="revl">Phase 4 Exit Gate</div>
+          <ul>
+            <li>Cooked at least 3 signature dishes each from Kerala, Andhra, and Karnataka</li>
+            <li>Can explain the coconut/chilli/tempering differences between all 4 regions from memory</li>
+            <li>Has a written personal reference comparing sambar, dosa, and chutney across regions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE C5 -->
+<div class="pc" id="c5">
+  <div class="ph" onclick="tog('c5')">
+    <div class="pbadge" style="background:linear-gradient(135deg,#059669,#10b981)">Phase 5</div>
+    <div class="pi"><h3>🍽️ Professional Techniques</h3><p>Ongoing · Plating, menu design, food costing, catering scale, service etiquette</p></div>
+    <div class="pcert">Kitchen-ready</div>
+    <div class="ptog">+</div>
+  </div>
+  <div class="pb">
+    <div class="tabs">
+      <button class="tbtn on" onclick="swt(this,'c5','learn')">📚 Learn</button>
+      <button class="tbtn" onclick="swt(this,'c5','recipes')">🍽 Recipes</button>
+      <button class="tbtn" onclick="swt(this,'c5','project')">🛠 Practice</button>
+      <button class="tbtn" onclick="swt(this,'c5','skills')">⚡ Skills</button>
+    </div>
+    <div class="tp on" data-p="learn" data-c="c5">
+      <div>
+        <div class="ib"><h4>Plating &amp; Presentation</h4>
+          <ul class="cl">
+            <li>Banana-leaf service order: salt/pickle first (top-left), then in a fixed traditional sequence — learn it, then modernise deliberately</li>
+            <li>Height, colour contrast, and negative space on a plate — apply restrained modern plating to traditional dishes</li>
+            <li>Garnish with function, not decoration: a curry leaf tempering on top is flavour, not just colour</li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Formal Training Options</h4>
+          <ul class="rl">
+            <li><a href="https://www.nchmct.org" target="_blank">NCHMCT / IHM network</a><span class="fs">Diploma/Degree</span><span class="src">India's national hotel management &amp; catering body</span></li>
+            <li><a href="https://worldchefs.org" target="_blank">WorldChefs (World Association of Chefs Societies)</a><span class="fs">Certification</span><span class="src">Global culinary standards &amp; competitions</span></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="ib"><h4>Menu Design &amp; Costing</h4>
+          <ul class="cl">
+            <li>Cost every dish per portion: raw ingredient cost ÷ target food-cost % = menu price</li>
+            <li>Balance a menu across prep-heavy and quick-fire dishes so the kitchen doesn't bottleneck at service</li>
+            <li>Batch-cook bases (podis, masalas, tempering oils) ahead — scale technique without scaling chaos</li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Catering &amp; Scale</h4>
+          <ul class="cl">
+            <li>Scaling a fermented batter recipe isn't linear — test at 2×, 5×, and 10× before trusting a large batch</li>
+            <li>Hold temperatures for sambar/rasam differ at catering scale — plan for extended service windows</li>
+            <li>Practice mise en place for a 50-cover event, not just a 4-person meal</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="recipes" data-c="c5">
+      <div class="ib"><h4>Professional-Scale Practice Menu</h4>
+        <div class="pyg">
+          <div class="pyb"><h5>Banana-Leaf Thali (10 items)</h5><ul><li>Full traditional-sequence plating</li><li>Rice, 2 gravies, 2 poriyal, chutney</li><li>Payasam, appalam, pickle</li></ul></div>
+          <div class="pyb"><h5>Plated Modern Course</h5><ul><li>Chettinad chicken, deconstructed</li><li>Idli reimagined as a starter</li><li>Rasam served as a shot/soup course</li></ul></div>
+          <div class="pyb"><h5>Costed Set Menu</h5><ul><li>3-course menu with per-plate costing</li><li>Target food-cost % worked out</li></ul></div>
+          <div class="pyb"><h5>Catering Batch Test</h5><ul><li>Sambar scaled 10×</li><li>Batter scaled 5×, fermentation checked</li></ul></div>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="project" data-c="c5">
+      <div class="proj">
+        <div class="projl">Phase 5 Practice · Step by Step</div>
+        <h5>Run It Like a Kitchen, Not a Home Meal</h5>
+        <ul class="steps">
+          <li>Plate the same dish two ways: traditional banana-leaf style and a modern restaurant-style plate — compare</li>
+          <li>Cost out a 3-course set menu using real ingredient prices and a target food-cost percentage</li>
+          <li>Scale one fermented-batter and one gravy recipe to 5× and 10× — document what changes (timing, seasoning, texture)</li>
+          <li>Plan and execute mise en place for a 15–20 person meal solo, timed against a service window</li>
+          <li>Get feedback from actual guests on both plating and pacing, not just taste</li>
+        </ul>
+        <div class="outcome">You can move from "cooking a nice meal" to "running a service" — costed, scaled, plated, and timed like a professional kitchen, not a home dinner.</div>
+      </div>
+    </div>
+    <div class="tp full" data-p="skills" data-c="c5">
+      <div class="ib"><h4>Skills You Exit Phase 5 With</h4>
+        <div class="chips">
+          <span class="chip new">Traditional + modern plating</span><span class="chip new">Menu costing</span>
+          <span class="chip new">Batch scaling</span><span class="chip new">Service timing under pressure</span>
+        </div>
+      </div>
+      <div class="ib" style="margin-top:16px">
+        <div class="rev">
+          <div class="revl">Phase 5 Exit Gate</div>
+          <ul>
+            <li>Costed a real 3-course menu with a target food-cost percentage</li>
+            <li>Successfully scaled a fermented batter recipe to 5× or larger</li>
+            <li>Executed mise en place and service for 15+ covers solo, on time</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE C6 -->
+<div class="pc" id="c6">
+  <div class="ph" onclick="tog('c6')">
+    <div class="pbadge" style="background:linear-gradient(135deg,#dc2626,#b91c1c)">Phase 6</div>
+    <div class="pi"><h3>🏆 Mastery &amp; Recognition</h3><p>Year 2+ · Certifications, competitions, mentorship, and building a brand</p></div>
+    <div class="pcert">Long game</div>
+    <div class="ptog">+</div>
+  </div>
+  <div class="pb">
+    <div class="tabs">
+      <button class="tbtn on" onclick="swt(this,'c6','learn')">📚 Learn</button>
+      <button class="tbtn" onclick="swt(this,'c6','recipes')">🍽 Recipes</button>
+      <button class="tbtn" onclick="swt(this,'c6','project')">🛠 Practice</button>
+      <button class="tbtn" onclick="swt(this,'c6','skills')">⚡ Skills</button>
+    </div>
+    <div class="tp on" data-p="learn" data-c="c6">
+      <div>
+        <div class="ib"><h4>Certifications Worth Pursuing</h4>
+          <ul class="cl">
+            <li>FSSAI FoSTaC advanced/supervisor-level certification</li>
+            <li>Diploma or degree via <a href="https://www.nchmct.org" target="_blank">NCHMCT / an affiliated IHM</a> for formal culinary credentials</li>
+            <li>WorldChefs-recognised certification pathway via <a href="https://worldchefs.org" target="_blank">worldchefs.org</a> for international standing</li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Mentorship &amp; Staging</h4>
+          <ul class="cl">
+            <li>Stage (short unpaid/paid trial) at a well-regarded South Indian specialty restaurant to see professional pace and volume</li>
+            <li>Seek a senior chef mentor — regional technique is still mostly transmitted person to person, not from books alone</li>
+            <li>Trade skills: offer your knife/prep speed in exchange for time learning someone's family masala technique</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="ib"><h4>Competitions</h4>
+          <ul class="cl">
+            <li>WorldChefs Congress "Salon Culinaire" — international judged culinary competitions</li>
+            <li>Local and national Indian Culinary Forum events and hotel-chain-run chef competitions</li>
+            <li>Regional food festivals as a way to cook publicly and get judged feedback at low stakes</li>
+          </ul>
+        </div>
+        <div class="ib"><h4>Build a Brand</h4>
+          <ul class="cl">
+            <li>Document your Chettinad/Tamil Nadu technique on video — authentic regional process content is underserved compared to generic recipe content</li>
+            <li>Write or contribute to a cookbook focused specifically on your regional specialisation</li>
+            <li>Aim toward a pop-up, supper club, or eventually a restaurant/menu-consulting concept built around real regional technique</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="recipes" data-c="c6">
+      <div class="ib"><h4>Signature Dish Portfolio — Your 10</h4>
+        <div class="pyg">
+          <div class="pyb"><h5>Technique Showpieces</h5><ul><li>Stone-ground Chettinad chicken</li><li>Hotel-style soft idli</li><li>Paper roast dosa</li></ul></div>
+          <div class="pyb"><h5>Regional Signatures</h5><ul><li>Madurai mutton curry</li><li>Kerala fish curry (kudampuli)</li><li>Bisi bele bath</li></ul></div>
+          <div class="pyb"><h5>Show-Stopper Course</h5><ul><li>Full Onam-style sadya spread</li><li>Modern-plated Chettinad tasting</li></ul></div>
+          <div class="pyb"><h5>Your Own Twist</h5><ul><li>One dish that's authentically yours — traditional technique, personal signature</li></ul></div>
+        </div>
+      </div>
+    </div>
+    <div class="tp full" data-p="project" data-c="c6">
+      <div class="proj">
+        <div class="projl">Phase 6 Practice · Step by Step</div>
+        <h5>Turn Skill Into Recognition</h5>
+        <ul class="steps">
+          <li>Pursue at least one formal certification (FSSAI advanced, IHM-affiliated diploma, or WorldChefs pathway)</li>
+          <li>Arrange a stage at a South Indian specialty restaurant, even a few shifts, to see professional volume firsthand</li>
+          <li>Enter one competition or judged food festival — the feedback from real judges accelerates growth fast</li>
+          <li>Document your Chettinad masala process and your signature dish on video, start to finish</li>
+          <li>Host a supper club or pop-up built entirely around your regional specialisation — get paying guests, not just friends</li>
+        </ul>
+        <div class="outcome">You go from "cooks South Indian food very well at home" to "has a recognisable specialisation, a certification, and public proof of skill" — the difference between a hobby and a culinary career.</div>
+      </div>
+    </div>
+    <div class="tp full" data-p="skills" data-c="c6">
+      <div class="ib"><h4>Skills You Exit Phase 6 With</h4>
+        <div class="chips">
+          <span class="chip new">Formal certification</span><span class="chip new">Professional kitchen exposure</span>
+          <span class="chip new">Competition experience</span><span class="chip new">Public brand / documented technique</span>
+        </div>
+      </div>
+      <div class="ib" style="margin-top:16px">
+        <div class="rev">
+          <div class="revl">Phase 6 Exit Gate</div>
+          <ul>
+            <li>Holds at least one formal culinary or food-safety certification beyond the basics</li>
+            <li>Completed a stage or mentorship period at a specialty kitchen</li>
+            <li>Has run at least one paid pop-up, supper club, or catered event solo</li>
+            <li>Has public, documented proof of technique (video, writeup, or cookbook contribution)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+</div><!-- /page-chef -->
 
 </body>
 </html>
