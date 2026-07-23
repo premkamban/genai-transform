@@ -709,6 +709,7 @@ ul.syn li .comment { color: var(--dim2); }
 <!-- ══ PRE-REQ PHASES ══ -->
 <div class="sec">Pre-Requisite Phases — Complete Before Month 1 <span class="badge">Start Here</span></div>
 <div class="ctx" style="margin-bottom:20px"><strong>Note:</strong> If you're comfortable with Python basics and have used numpy/pandas, skim Phase 0A in 1 week. If Python is new, give it 3 weeks. Never skip Phase 0B — these 24 libraries appear in every project across all 12 months.</div>
+<div class="ctx" style="margin-bottom:20px"><strong>Have the "Python for Data Analysis" book (McKinney)?</strong> Only ~35% of it is GenAI-relevant — read Ch 3–5, 7, 10 (comprehensions/generators, NumPy arrays for embeddings, pandas basics, string cleanup, groupby) during Phase 0B. Skip Ch 1, 6 (web/DB parts), 8, 9, 11, 12, 13 and Appendix A entirely — that's data-analyst territory this roadmap doesn't need. Full chapter-by-chapter rating with reasons on the <strong>🐍 Python tab</strong>, bottom section.</div>
 
 <!-- PHASE 0A -->
 <div class="pc open" id="ph0a">
@@ -911,6 +912,15 @@ print(ask(<span class="cs">"Explain RAG in 2 sentences"</span>))</div>
           <li><a href="https://fastapi.tiangolo.com/tutorial/" target="_blank">FastAPI Tutorial</a><span class="fs">Free</span></li>
           <li><a href="https://docs.ragas.io/en/latest/" target="_blank">RAGAS Evaluation Docs</a><span class="fs">Free</span></li>
         </ul>
+      </div>
+      <div class="ib" style="margin-top:16px"><h4>📗 Book Companion — Python for Data Analysis (McKinney)</h4>
+        <p style="font-size:.8rem;color:var(--dim);margin-bottom:8px">If you already own it, read these chapters now instead of the numpy/pandas docs above — they cover the same ground with more depth.</p>
+        <ul class="cl">
+          <li><strong>Read now:</strong> Ch 4 (NumPy arrays + vectorized math — this is embeddings math) and Ch 5 (pandas Series/DataFrame basics — this is eval-result logging)</li>
+          <li><strong>Read in Month 2:</strong> Ch 7 (string/regex cleanup for LLM output), Ch 10 (groupby/agg for the RAGAS strategy-comparison table)</li>
+          <li><strong>Skip entirely:</strong> Ch 1, 6 (web/DB sections), 8, 9, 11, 12, 13, Appendix A — data-analyst content, not on this roadmap</li>
+        </ul>
+        <p style="font-size:.75rem;color:var(--dim);margin-top:6px">Full chapter-by-chapter rating and reasoning → 🐍 Python tab, "Book Cross-Reference" section.</p>
       </div>
     </div>
     <div class="tp full" data-p="project" data-c="ph0b">
@@ -2436,6 +2446,39 @@ app = FastAPI()
     <tr><td>Context managers (__enter__/__exit__)</td><td>You already use <code>with open() as f:</code> — that's all you need. Writing your own context managers is unnecessary.</td></tr>
     <tr><td>Unit tests (pytest in depth)</td><td>DeepEval handles LLM-specific testing with AI metrics. Standard pytest is too low-level for testing AI outputs.</td></tr>
     <tr><td>Virtual envs (venv internals)</td><td>Run <code>python -m venv genai-env</code> once, activate it, forget it. Don't learn virtualenv internals.</td></tr>
+  </tbody>
+</table>
+
+<!-- BOOK: PYTHON FOR DATA ANALYSIS -->
+<div class="sh">📗 Book Cross-Reference: <em>Python for Data Analysis</em> (Wes McKinney, 3rd Ed.) <span class="stag">Chapter-by-Chapter Rating</span></div>
+<div class="callout gold"><strong>Why this book at all:</strong> You already own it and it's the best numpy/pandas reference that exists. But it's a <em>data analyst's</em> book, not a GenAI engineer's book — roughly a third of it maps directly to real GenAI work (embeddings math, eval-result tables), a sliver is useful background, and just over half is data-analyst territory (time series, statistical modeling, join/reshape gymnastics) that this roadmap explicitly skips. Use it as a reference to dip into per-chapter, not a cover-to-cover read.</div>
+<div class="callout red"><strong>Where it slots in:</strong> Read the MUST/NICE chapters during <strong>Phase 0B</strong> (numpy/pandas library week) and again lightly in <strong>Month 2</strong> when you build the RAGAS strategy-comparison table. Everything rated SKIP stays skipped for this entire 12-month path.</div>
+
+<table class="qf-table">
+  <thead>
+    <tr>
+      <th>Chapter</th>
+      <th class="m">Status</th>
+      <th>What To Actually Read</th>
+      <th>GenAI Relevance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1 · Preliminaries</td><td class="m"><span class="dot-skip"></span></td><td>Skip entirely.</td><td>Book conventions and "why data analysis" framing — no content to learn.</td></tr>
+    <tr><td>2 · Python Basics, IPython, Jupyter</td><td class="m"><span class="dot-nice"></span></td><td>Skim the syntax review (you already have it from Phase 0A). Read only the IPython/Jupyter workflow section: tab completion, <code>?</code>/<code>??</code> help, magics.</td><td>You'll live in Jupyter for embedding and RAG experiments from Month 2 onward — the notebook workflow habits pay off, the syntax refresher doesn't.</td></tr>
+    <tr><td>3 · Built-In Data Structures, Functions, Files</td><td class="m"><span class="dot-must"></span></td><td>Skim tuple/list/dict/set (already covered). Read the comprehensions, generator expressions, and itertools sections properly.</td><td>Deepens the "generator functions (yield)" nice-to-have topic used for FastAPI streaming, and the file-handling patterns used for RAG doc ingestion.</td></tr>
+    <tr><td>4 · NumPy Basics: Arrays and Vectorized Computation</td><td class="m"><span class="dot-must"></span></td><td>Read ndarray creation, indexing/slicing, and vectorized array math + basic linear algebra (<code>dot</code>, <code>matmul</code>). Skip fancy indexing edge cases, sorting, and the random-number-generation deep dive.</td><td>This <em>is</em> how embeddings work — a 1024-dim numpy float array, and cosine similarity is a dot-product formula. Exactly what Phase 0B's smoke-test project asks you to do by hand.</td></tr>
+    <tr><td>5 · Getting Started with pandas</td><td class="m"><span class="dot-nice"></span></td><td>Read in full — it's short. Series/DataFrame construction, <code>.loc</code>/<code>.iloc</code> indexing, basic arithmetic/alignment.</td><td>Directly upgrades the "pandas (basics only)" row in the quickfire table above — this is your eval-results and CSV-logging skill.</td></tr>
+    <tr><td>6 · Data Loading, Storage, File Formats</td><td class="m"><span class="dot-nice"></span></td><td>Read only <code>read_csv</code>/<code>to_csv</code> and <code>read_json</code>/<code>to_json</code>. Skip HDF5, Feather, Parquet, web API, and database sections completely.</td><td>You already know HTTP/requests from Phase 0A; you won't touch SQL databases on this roadmap. CSV/JSON round-tripping is all you need for eval logs.</td></tr>
+    <tr><td>7 · Data Cleaning and Preparation</td><td class="m"><span class="dot-nice"></span></td><td>Read "Handling Missing Data" and "String Manipulation" (vectorized <code>.str</code> methods + regex) only. Skip outlier detection and permutation/sampling sections.</td><td>The string/regex section reinforces stripping markdown fences (<code>```json ... ```</code>) from LLM output before <code>json.loads()</code> — a real recurring task.</td></tr>
+    <tr style="background:#f3f4f6"><td>8 · Data Wrangling: Join, Combine, Reshape</td><td class="m"><span class="dot-skip"></span></td><td>Skip, except skim <code>pivot_table</code> the one time you build the RAGAS strategy × metric comparison table in Month 2.</td><td>Merge/join/hierarchical-index gymnastics are data-analyst work you won't repeat here.</td></tr>
+    <tr style="background:#f3f4f6"><td>9 · Plotting and Visualization</td><td class="m"><span class="dot-skip"></span></td><td>Skip entirely, including seaborn.</td><td>Phase 0B's smoke test already gives you enough matplotlib to save one PNG. Streamlit covers your real UI needs after that.</td></tr>
+    <tr><td>10 · Data Aggregation and Group Operations</td><td class="m"><span class="dot-nice"></span></td><td>Read <code>groupby</code> + <code>.agg()</code> only. Skip <code>apply</code>/<code>transform</code> advanced patterns.</td><td>Exactly the tool for "which model/strategy wins per prompt pattern" — the Month 2 eval analysis this roadmap already asks for.</td></tr>
+    <tr style="background:#f3f4f6"><td>11 · Time Series</td><td class="m"><span class="dot-skip"></span></td><td>Skip entirely.</td><td>No GenAI use case at this project scale — timestamping a log entry needs <code>datetime</code>, not this chapter.</td></tr>
+    <tr style="background:#f3f4f6"><td>12 · Introduction to Modeling Libraries (patsy, statsmodels, sklearn)</td><td class="m"><span class="dot-skip"></span></td><td>Skip entirely.</td><td>Traditional ML modeling — the same "machine learning (sklearn)" row this roadmap already skips.</td></tr>
+    <tr style="background:#f3f4f6"><td>13 · Data Analysis Examples (bitly, USDA, FEC, baby names)</td><td class="m"><span class="dot-skip"></span></td><td>Skip entirely. If you want the practice, apply <code>groupby</code>/pivot skills to your own RAGAS/eval CSVs instead of these datasets.</td><td>Generic data-science practice sets, zero GenAI content.</td></tr>
+    <tr style="background:#f3f4f6"><td>Appendix A · Advanced NumPy</td><td class="m"><span class="dot-skip"></span></td><td>Skip. Only revisit if you're hand-optimizing an embedding pipeline at production scale — ChromaDB/FAISS abstract this away.</td><td>Memory layout, broadcasting internals, structured arrays — not needed for API-based embeddings.</td></tr>
+    <tr><td>Appendix B · More on the IPython System</td><td class="m"><span class="dot-nice"></span></td><td>15 minutes: <code>%timeit</code> and <code>%debug</code> magics.</td><td>Handy for quick profiling while prototyping RAG chunking/retrieval in a notebook.</td></tr>
   </tbody>
 </table>
 
